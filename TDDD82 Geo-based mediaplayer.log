@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  1 MAR 2016 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.4)  5 MAR 2016 00:35
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -537,33 +537,23 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 [1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-
 ]
 [2
 
 
-] [3
-
-
-] [4
-
-
-] [5
-
-
 ]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 72--77
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 67--72
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
-[6
+[3
 
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
  3168 strings out of 493634
- 39128 string characters out of 3134015
- 105289 words of memory out of 3000000
+ 39128 string characters out of 3134016
+ 103289 words of memory out of 3000000
  6486 multiletter control sequences out of 15000+200000
  45768 words of font info for 65 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -577,9 +567,9 @@ Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 lic/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (6 pages, 89404 bytes).
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (3 pages, 88300 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
