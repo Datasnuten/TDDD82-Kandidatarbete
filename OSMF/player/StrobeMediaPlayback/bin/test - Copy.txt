@@ -1,0 +1,29 @@
+sp:4 sp:7
+length: 5: 4 3 1 2 3
+(1(2(3,4),5))
+r:Follow right::l:Follow left
+r:Check out toilet area::l:Check out hall area
+r:Exit building::l:Look at something else
+
+Helping Hand or Hidden Hurdle: Proxy-assisted HTTP-based Adaptive Streaming Performance
+
+Last working- cyclic
+sp:4 sp:13
+length: 5: 4 3 2 2 3 2 2 2 2 2
+(1(2,5(6,3)))
+r:Follow right::l:Follow left
+r:Check out toilet area::l:Check out hall area
+r:Exit building::l:Look at something else
+
+FHMN VERSION
+length: 5: 5 5 5 5 5 5 5 5 5 5
+begin 1(2,3,4)
+12(3,4)
+124(5,6)
+13(4,5)
+134(5,7)
+14(5,6)
+146(7,8) end
+r:Follow right::l:Follow left
+r:Check out toilet area::l:Check out hall area
+r:Exit building::l:Look at something else

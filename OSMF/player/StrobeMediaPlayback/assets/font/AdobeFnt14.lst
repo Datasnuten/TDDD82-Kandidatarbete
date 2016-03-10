@@ -1,0 +1,94 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PlaybackSans-Black
+FamilyName:Playback Sans
+StyleName:Black
+FullName:Playback Sans Black
+MenuName:Playback Sans Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\osmf\OSMF-patrik\player\StrobeMediaPlayback\assets\Font\PlaybackSans-Black.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:51672
+FileModTime:1332319482
+WeightClass:900
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PlaybackSans-Bold
+FamilyName:Playback Sans
+StyleName:Bold
+FullName:Playback Sans Bold
+MenuName:Playback Sans
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\osmf\OSMF-patrik\player\StrobeMediaPlayback\assets\Font\PlaybackSans-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:53164
+FileModTime:1332319480
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PlaybackSans-Light
+FamilyName:Playback Sans
+StyleName:Light
+FullName:Playback Sans Light
+MenuName:Playback Sans Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\osmf\OSMF-patrik\player\StrobeMediaPlayback\assets\Font\PlaybackSans-Light.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:49712
+FileModTime:1332319482
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PlaybackSans-Regular
+FamilyName:Playback Sans
+StyleName:Regular
+FullName:Playback Sans
+MenuName:Playback Sans
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\osmf\OSMF-patrik\player\StrobeMediaPlayback\assets\Font\PlaybackSans-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:51816
+FileModTime:1332319480
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\osmf\OSMF-patrik\player\StrobeMediaPlayback\assets\Font\PlaybackSansEULA.txt
+FileModTime:1332319480
+%EndFont
+
