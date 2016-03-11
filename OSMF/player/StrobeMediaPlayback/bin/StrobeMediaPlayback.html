@@ -14,16 +14,15 @@
             
             var pqs = new ParsedQueryString();
             var parameterNames = pqs.params(false);
-		 var parameters = {
-                src: "http://130.236.182.199/vod/final_1.3.f4m",
-				autoPlay: "true",
+            var parameters = {
+                src: "http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv",
+                autoPlay: "false",
                 verbose: true,
-				optimizeInitialIndex: "false",
                 controlBarAutoHide: "false",
                 controlBarPosition: "bottom",
                 poster: "images/poster.png"
             };
-           
+            
             for (var i = 0; i < parameterNames.length; i++) {
                 var parameterName = parameterNames[i];
                 parameters[parameterName] = pqs.param(parameterName) ||
@@ -31,7 +30,7 @@
             }
             
        	    var wmodeValue = "direct";
-            var wmodeOptions = ["direct", "opaque", "transparent", "window"]
+            var wmodeOptions = ["direct", "opaque", "transparent", "window"];
             if (parameters.hasOwnProperty("wmode"))
             {
             	if (wmodeOptions.indexOf(parameters.wmode) >= 0)

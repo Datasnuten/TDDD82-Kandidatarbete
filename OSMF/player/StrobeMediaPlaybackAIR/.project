@@ -26,7 +26,7 @@
 		<link>
 			<name>[source path] src</name>
 			<type>2</type>
-			<location>StrobeMediaPlayback/src</location>
+			<locationURI>StrobeMediaPlayback/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
