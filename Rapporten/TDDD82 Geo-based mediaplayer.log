@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  18 MAR 2016 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.4)  19 MAR 2016 00:57
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -485,18 +485,18 @@ LaTeX Warning: Unused global option(s):
 ("TDDD82 Geo-based mediaplayer.aux")
 \openout1 = `"TDDD82 Geo-based mediaplayer.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
 .mkii"
@@ -513,24 +513,24 @@ LaTeX Font Info:    ... okay on input line 22.
 \makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks39
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 28.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 29.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 28.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 29.
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -541,50 +541,40 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ]
 [2
 
-]
-Overfull \hbox (2.68953pt too wide) in paragraph at lines 63--64
-[]\T1/aer/m/n/9 In Em-pow-er-ing the Cre-ative User: Per-son-al-ized HTTP-based
-
- []
-
-[2] <HAS1.png, id=16, 803.0pt x 602.25pt>
+] [2] <HAS1.png, id=17, 803.0pt x 602.25pt>
 File: HAS1.png Graphic file (type png)
  <use HAS1.png>
-Package pdftex.def Info: HAS1.png used on input line 69.
+Package pdftex.def Info: HAS1.png used on input line 71.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 69--70
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 71--72
  [] 
  []
 
-<HAS2.png, id=18, 803.0pt x 602.25pt>
+<HAS2.png, id=19, 803.0pt x 602.25pt>
 File: HAS2.png Graphic file (type png)
  <use HAS2.png>
-Package pdftex.def Info: HAS2.png used on input line 76.
+Package pdftex.def Info: HAS2.png used on input line 78.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 76--77
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 78--79
  [] 
  []
 
-[3 <./HAS1.png> <./HAS2.png>] <teomet.png, id=25, 963.6pt x 722.7pt>
+[3 <./HAS1.png> <./HAS2.png>] <teomet.png, id=26, 469.755pt x 441.14813pt>
 File: teomet.png Graphic file (type png)
 
 <use teomet.png>
-Package pdftex.def Info: teomet.png used on input line 97.
-(pdftex.def)             Requested size: 289.08223pt x 216.81166pt.
-
-Overfull \hbox (49.08223pt too wide) in paragraph at lines 97--98
- [] 
- []
-
-<Media_player.png, id=26, 484.81125pt x 362.85562pt>
+Package pdftex.def Info: teomet.png used on input line 99.
+(pdftex.def)             Requested size: 239.57188pt x 224.98256pt.
+ <Media_player.png, id=27, 484.81125pt x 362.85562pt>
 File: Media_player.png Graphic file (type png)
- <use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 107.
+
+<use Media_player.png>
+Package pdftex.def Info: Media_player.png used on input line 109.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 107--108
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 109--110
  [] 
  []
 
@@ -592,7 +582,7 @@ Overfull \hbox (2.40503pt too wide) in paragraph at lines 107--108
 
 
 ]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 143--149
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 145--151
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
@@ -602,25 +592,26 @@ Overfull \hbox (9.88014pt too wide) in paragraph at lines 143--149
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
  3198 strings out of 493634
- 39482 string characters out of 3134015
+ 39482 string characters out of 3134016
  108283 words of memory out of 3000000
  6506 multiletter control sequences out of 15000+200000
  48558 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,28p,1333b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,28p,1341b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jonathan/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonathan/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:
 /Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 542439 bytes).
+m/cmr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jon
+athan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 541567 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
