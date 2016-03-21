@@ -22,6 +22,7 @@
       <libraryPathEntry kind="3" linkType="1" path="assets/assets.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/OSMF/bin/OSMF.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="assets/assets.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="assets/assetstest_geo.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -33,4 +34,3 @@
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
 </actionScriptProperties>
-

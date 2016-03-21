@@ -174,9 +174,9 @@ package org.osmf.player.chrome
 			//#############
 			//Project Group 9
 			//#############
-			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN, ASSET_play_selected);
-			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL, ASSET_play_normal);
-			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_OVER, ASSET_play_over);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN, ASSET_geoikonSelected);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL, ASSET_geoikon);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_OVER, ASSET_geoikonHover);
 			
 			
 			// Mute:
