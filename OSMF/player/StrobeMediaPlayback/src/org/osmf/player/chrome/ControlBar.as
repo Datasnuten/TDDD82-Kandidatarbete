@@ -129,7 +129,7 @@ package org.osmf.player.chrome
 			
 			// Spacer
 			var afterPlaySpacer:Widget = new Widget();
-			afterPlaySpacer.width = 25;			
+			afterPlaySpacer.width = 10;			
 			
 			addChildWidget(afterPlaySpacer);
 			
@@ -210,7 +210,7 @@ package org.osmf.player.chrome
 
 	// Need to change here as well!
 			configureWidgets
-				(	[ leftMargin, beforePlaySpacer, pauseButton, playButton, jumpButton, multijumpButton, previousButton, nextButton, afterPlaySpacer
+				(	[ leftMargin, beforePlaySpacer, pauseButton, playButton, jumpButton, multijumpButton, mapgpsdirectionButton, previousButton, nextButton, afterPlaySpacer
 					, leftControls		
 					, scrubBar, afterScrubSpacer
 					, timeViewWidget, afterTimeSpacer

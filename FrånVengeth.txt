@@ -19,3 +19,7 @@ widget. The main thing you do is bind the "xFace" to a suiting asset,
 such as upFace to your upFaceAssetID. And implement the logic in the
 onMouseClick event, I just set a boolean in my older download manager,
 not sure what the last version was.
+
+
+//Jonathan
+Vi behöver skapa assets i flash builder på något sätt --> tutorials

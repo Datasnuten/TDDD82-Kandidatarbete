@@ -10,8 +10,9 @@ package org.osmf.player.chrome.widgets
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.events.ProgressEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	
-	import org.osmf.media.*;
 	import org.osmf.media.MediaPlayer;
 	import org.osmf.net.httpstreaming.HTTPDownloadManager;
 	import org.osmf.player.chrome.assets.AssetIDs;
@@ -50,6 +51,7 @@ package org.osmf.player.chrome.widgets
 		// These functions might need some functionality or logic
 		override protected function onMouseOver(event:MouseEvent):void
 		{
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 			mouseOver = true;
 		}
 		override protected function onMouseOut(event:MouseEvent):void
