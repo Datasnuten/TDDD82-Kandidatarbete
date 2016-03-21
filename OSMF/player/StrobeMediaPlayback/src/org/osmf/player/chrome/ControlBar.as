@@ -31,6 +31,7 @@ package org.osmf.player.chrome
 	import org.osmf.player.chrome.widgets.FullScreenEnterButton;
 	import org.osmf.player.chrome.widgets.FullScreenLeaveButton;
 	import org.osmf.player.chrome.widgets.JumpButton;
+	import org.osmf.player.chrome.widgets.MapGpsDirectionButton;
 	import org.osmf.player.chrome.widgets.MultiJumpButton;
 	import org.osmf.player.chrome.widgets.MuteButton;
 	import org.osmf.player.chrome.widgets.PauseButton;
@@ -87,6 +88,12 @@ package org.osmf.player.chrome
 			playButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
 			leftControls.addChildWidget(playButton);
 			
+			var pauseButton:PauseButton = new PauseButton();
+			pauseButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
+			pauseButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
+			leftControls.addChildWidget(pauseButton);
+			
+			//jump button ADDED#########################################################
 			var jumpButton:JumpButton = new JumpButton();
 			jumpButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
 			jumpButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
@@ -100,10 +107,12 @@ package org.osmf.player.chrome
 			multijumpButton.layoutMetadata.width = 16;
 			leftControls.addChildWidget(multijumpButton);
 			
-			var pauseButton:PauseButton = new PauseButton();
-			pauseButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
-			pauseButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
-			leftControls.addChildWidget(pauseButton);
+			//Map-Gps-Direction button (Project Group 9) ADDED#############################
+			var mapgpsdirectionButton:MapGpsDirectionButton = new MapGpsDirectionButton();
+			mapgpsdirectionButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
+			mapgpsdirectionButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
+			leftControls.addChildWidget(mapgpsdirectionButton);
+			
 			
 			// Previous/Next
 			var previousButton:PlaylistPreviousButton = new PlaylistPreviousButton();
@@ -120,7 +129,7 @@ package org.osmf.player.chrome
 			
 			// Spacer
 			var afterPlaySpacer:Widget = new Widget();
-			afterPlaySpacer.width = 10;			
+			afterPlaySpacer.width = 25;			
 			
 			addChildWidget(afterPlaySpacer);
 			

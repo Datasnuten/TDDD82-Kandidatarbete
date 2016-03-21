@@ -1,0 +1,21 @@
+For the button:
+
+OSMF:
+DownloadManager class, this is how I communicate between the player
+and OSMF. I use a static instance for this.
+
+SMP:
+chrome/assetID where I give an id to my new assets, the graphic for the button.
+StrobeMediaPlayback I have added the instance to the download manager
+to the class as a variable, so they can communicate.
+
+smp/chrome/ControlBar decides what elements are added to the control
+bar, so in the configure method I let the control bar widget add my
+button as a child.
+
+ smp/chrome/widget/JumpButton is where I've created my button, there
+isn't much work to be done if you let it inherit from an existing
+widget. The main thing you do is bind the "xFace" to a suiting asset,
+such as upFace to your upFaceAssetID. And implement the logic in the
+onMouseClick event, I just set a boolean in my older download manager,
+not sure what the last version was.

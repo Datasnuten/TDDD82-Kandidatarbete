@@ -170,7 +170,16 @@ package org.osmf.player.chrome
 			addEmbeddedSymbol(AssetIDs.JUMP_BUTTON_8, ASSET_jump8);
 			addEmbeddedSymbol(AssetIDs.JUMP_BUTTON_9, ASSET_jump9);
 			addEmbeddedSymbol(AssetIDs.JUMP_BUTTON_0, ASSET_play_normal);
-
+			
+			//#############
+			//Project Group 9
+			//#############
+			/*addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN, ASSET_map_down);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL, ASSET_map_normal);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_OVER, ASSET_map_over);
+			*/
+			
+			
 			// Mute:
 			addEmbeddedSymbol(AssetIDs.VOLUME_BUTTON_NORMAL, ASSET_volume_low_normal);
 			addEmbeddedSymbol(AssetIDs.VOLUME_BUTTON_DOWN, ASSET_volume_low_selected);
