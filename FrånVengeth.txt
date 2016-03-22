@@ -9,6 +9,9 @@ chrome/assetID where I give an id to my new assets, the graphic for the button.
 StrobeMediaPlayback I have added the instance to the download manager
 to the class as a variable, so they can communicate.
 
+//Jonathan
+chrome/AssetsProvider where we give a view to the button
+
 smp/chrome/ControlBar decides what elements are added to the control
 bar, so in the configure method I let the control bar widget add my
 button as a child.
