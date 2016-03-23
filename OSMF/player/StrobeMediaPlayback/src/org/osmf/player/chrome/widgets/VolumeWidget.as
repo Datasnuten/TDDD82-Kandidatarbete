@@ -23,13 +23,14 @@ package org.osmf.player.chrome.widgets
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.printing.PrintJob;
 	
-	import org.osmf.player.chrome.assets.AssetIDs;
-	import org.osmf.player.chrome.assets.AssetsManager;
-	import org.osmf.player.chrome.events.ScrubberEvent;
 	import org.osmf.events.AudioEvent;
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.media.MediaElement;
+	import org.osmf.player.chrome.assets.AssetIDs;
+	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.player.chrome.events.ScrubberEvent;
 	import org.osmf.traits.AudioTrait;
 	import org.osmf.traits.MediaTraitType;
 
@@ -59,7 +60,6 @@ package org.osmf.player.chrome.widgets
 			addEventListener(MouseEvent.CLICK, onMouseClick);
 			
 			addChild(volumeClickArea);
-
 		}
 		
 		public function get slider():Slider

@@ -31,7 +31,7 @@ package org.osmf.player.chrome
 	import org.osmf.player.chrome.widgets.FullScreenEnterButton;
 	import org.osmf.player.chrome.widgets.FullScreenLeaveButton;
 	import org.osmf.player.chrome.widgets.JumpButton;
-	import org.osmf.player.chrome.widgets.MapGpsDirectionButton;
+	import org.osmf.player.chrome.widgets.GeoMapButton;
 	import org.osmf.player.chrome.widgets.MultiJumpButton;
 	import org.osmf.player.chrome.widgets.MuteButton;
 	import org.osmf.player.chrome.widgets.PauseButton;
@@ -108,7 +108,7 @@ package org.osmf.player.chrome
 			leftControls.addChildWidget(multijumpButton);
 			
 			//Map-Gps-Direction button (Project Group 9) ADDED#############################
-			var mapgpsdirectionButton:MapGpsDirectionButton = new MapGpsDirectionButton();
+			var mapgpsdirectionButton:GeoMapButton = new GeoMapButton();
 			mapgpsdirectionButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
 			mapgpsdirectionButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
 			leftControls.addChildWidget(mapgpsdirectionButton);
@@ -208,7 +208,10 @@ package org.osmf.player.chrome
 			rightMargin.layoutMetadata.horizontalAlign = HorizontalAlign.RIGHT;
 			addChildWidget(rightMargin);				
 
-	// Need to change here as well!
+			// Need to change here as well!
+			//#############################################
+			//Project Group 9 Added mapgpsdirectionButton
+			//#############################################
 			configureWidgets
 				(	[ leftMargin, beforePlaySpacer, pauseButton, playButton, jumpButton, multijumpButton, mapgpsdirectionButton, previousButton, nextButton, afterPlaySpacer
 					, leftControls		
