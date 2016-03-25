@@ -147,12 +147,15 @@ package org.osmf.player.chrome.assets
 		public static const JUMP_BUTTON_0:String = "jumpButton0";
 		
 		//##############
-		//Project Group 9
+		//Added by Project Group 9
 		//##############
 		
 		public static const MAP_GPS_DIRECTION_BUTTON_NORMAL:String = "mapgpsdirectionButtonNormal";
 		public static const MAP_GPS_DIRECTION_BUTTON_DOWN:String = "mapgpsdirectionButtonDown";
 		public static const MAP_GPS_DIRECTION_BUTTON_OVER:String = "mapgpsdirectionButtonOver";
+		public static const MAP_GPS_DIRECTION_DOTARROW_NORMAL:String = "mapgpsdirectionDotarrowNormal";
+		public static const MAP_GPS_DIRECTION_DOTARROW_SELECTED:String = "mapgpsdirectionDotarrowSelected";
+		
 		
 	}
 }

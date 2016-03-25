@@ -23,7 +23,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
-	import org.osmf.player.chrome.hint.WidgetHint;
+	import org.osmf.player.chrome.hint.OwnWidgetHint;
 	
 	public class GeoMapButton extends ButtonWidget
 	{
@@ -54,22 +54,31 @@ package org.osmf.player.chrome.widgets
 		
 		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
 		{
-			WidgetHint.getInstance(this).hide();
+			OwnWidgetHint.getInstance(this).hide();
 			measure();
 			super.layout(Math.max(measuredWidth, availableWidth), Math.max(measuredHeight, availableHeight));
 		}
 		
 		override protected function onMouseClick(event:MouseEvent):void
 		{
-			state = !state;
-			WidgetHint.getInstance(this).horizontalAlign = HorizontalAlign.CENTER;
-			if(geomapWidget) WidgetHint.getInstance(this).widget = geomapWidget;
+			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
+			{
+				state = !state;
+				OwnWidgetHint.getInstance(this).horizontalAlign = HorizontalAlign.CENTER;
+			if(geomapWidget)
+			{
+				OwnWidgetHint.getInstance(this).widget = geomapWidget;
+			}
 			if(state){
 				setFace(down);
 			}
 			else{
-				WidgetHint.getInstance(this).hide();
+				OwnWidgetHint.getInstance(this).hide();
 				setFace(over);
+			}
+			}
+			else{
+				if(geomapWidget) geomapWidget.dispatchEvent(event)
 			}
 			
 		}
@@ -84,11 +93,10 @@ package org.osmf.player.chrome.widgets
 		}
 		override protected function onMouseOut(event:MouseEvent):void
 		{	
-			if(state){
-			state = !state;
-			}
+			if(!state){
 			setFace(up);
-			WidgetHint.getInstance(this).hide();
+			OwnWidgetHint.getInstance(this).hide();
+			}
 			mouseOver = false;
 			
 		}

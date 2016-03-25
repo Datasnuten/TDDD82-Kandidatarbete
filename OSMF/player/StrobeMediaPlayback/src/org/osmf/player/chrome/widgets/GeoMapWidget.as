@@ -9,6 +9,9 @@ package org.osmf.player.chrome.widgets
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
+	import flash.utils.flash_proxy;
 	
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.player.chrome.assets.AssetIDs;
@@ -19,11 +22,12 @@ package org.osmf.player.chrome.widgets
 	{
 		private var geomapClickableArea:Sprite;
 		private var geomapFace:DisplayObject;
-		private var geomap:GeoMapSprite;
+		private var geomapSprite:GeoMapSprite;
 		private var geomapWidth:int = 500;
 		private var geomapHeight:int = 500;
-		private var geomapRadius:int = 170;
+		private var geomapRadius:int = 180;
 		private var geomapAdjust:int = 90;
+		
 		
 		public function GeoMapWidget()
 		{
@@ -35,66 +39,43 @@ package org.osmf.player.chrome.widgets
 			geomapClickableArea = new Sprite();
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			addChild(geomapClickableArea);
-			
 		}
 		
 		override public function configure(xml:XML, assetManager:AssetsManager):void
 		{
 			super.configure(xml, assetManager);	
 			
-			geomap = new GeoMapSprite(geomapWidth-geomapWidth/3,0,geomapRadius);
+			geomapSprite = new GeoMapSprite(geomapWidth-geomapWidth/3,0,geomapRadius, assetManager);
 		
 			geomapClickableArea.x = geomapRadius;
 			geomapClickableArea.y = geomapRadius;
 			geomapClickableArea.graphics.clear();
 			geomapClickableArea.graphics.beginFill(0x49ff00, 0);
-			geomapClickableArea.graphics.drawRect(0,0,geomapWidth+geomapRadius, geomapAdjust + geomap.height/ 3.0);
+			geomapClickableArea.graphics.drawRect(0,0,geomapWidth+geomapRadius, geomapAdjust + geomapSprite.height/ 3.0);
 			geomapClickableArea.graphics.endFill();
-			geomapClickableArea.height = geomapAdjust + geomap.height / 3.0;
+			geomapClickableArea.height = geomapAdjust + geomapSprite.height / 3.0;
 			
-			geomapClickableArea.addChild(geomap);
+			geomapClickableArea.addChild(geomapSprite);
 		}
 		
 		public function get Geomap():GeoMapSprite
 		{
-			return geomap;
+			return geomapSprite;
 		}
 		
 		private function onMouseClick(event:MouseEvent):void
 		{
 			event.stopPropagation();
-			
-			/*if(mouseY > (sliderStart - _slider.height / 2.0) && (_slider.y + _slider.mouseY  < sliderEnd + _slider.height / 2.0))
-			{
-				_slider.y = volumeClickArea.mouseY - _slider.height / 2.0;
-				slider.start(false);
-			}*/
-			
-		}
-		protected function onMouseMove(event:MouseEvent):void
-		{
-			// stop event from propagating back to parent
-			event.stopPropagation();
-			/*if(mouseY > (sliderStart - _slider.height / 2.0) && (_slider.y + _slider.mouseY  < sliderEnd + _slider.height / 2.0))
-			{
-				_slider.y = volumeClickArea.mouseY - _slider.height / 2.0;
-				slider.start(false);
-			}*/
-			
+			geomapSprite.dispatchEvent(event);
 		}
 		
-		protected function onMouseDown(event:MouseEvent):void
-		{
+		private function onMouseOver(event:MouseEvent):void{
 			event.stopPropagation();
-			
-			/*if(mouseY > (sliderStart - _slider.height / 2.0) && (_slider.y + _slider.mouseY  < sliderEnd + _slider.height / 2.0))
+			/*if (event.localY < 0 && (event.localY > height || isNaN(height)))
 			{
-				_slider.y = volumeClickArea.mouseY - _slider.height / 2.0;
-				slider.start(false);
+			Mouse.cursor = flash.ui.MouseCursor.ARROW;
 			}*/
 		}
 	}

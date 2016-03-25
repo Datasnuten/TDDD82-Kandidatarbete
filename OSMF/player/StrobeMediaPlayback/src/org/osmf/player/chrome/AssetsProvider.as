@@ -177,6 +177,8 @@ package org.osmf.player.chrome
 			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN, ASSET_geoikonSelected);
 			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL, ASSET_geoikon);
 			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_OVER, ASSET_geoikonHover);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL, ASSET_dotarrow_normal);
+			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED, ASSET_dotarrow_selected);
 			
 			
 			// Mute:

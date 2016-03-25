@@ -1,43 +1,91 @@
+/*****************************************************
+ *  
+ *  Jonathan Sjölund and Andreas Nordberg
+ *  
+ *****************************************************/
+
 package org.osmf.player.chrome.widgets
 {
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	
+	import org.osmf.layout.HorizontalAlign;
+	import org.osmf.layout.LayoutMode;
+	import org.osmf.player.chrome.assets.AssetIDs;
+	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.player.chrome.hint.WidgetHint;
 
-	public class GeoMapObject extends Sprite
+	public class GeoMapObject extends Widget
 	{
 		private var positionX:int;
 		private var positionY:int;
-		private var radius:int;
 		private var xCoordinate:int;
 		private var yCoordinate:int;
 		private var direction:Number;
 		
-		public function GeoMapObject(positionX:int,positionY:int,radius:int,direction:Number)
+		private var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
+		private var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;;
+		
+		protected var normal:DisplayObject;
+		protected var selected:DisplayObject;
+		
+		protected var currentFace:DisplayObject;
+		
+		public function GeoMapObject(positionX:int,positionY:int,direction:Number,assetManager:AssetsManager)
 		{
-			
+			super();
 			this.positionX = positionX;
 			this.positionY = positionY;
-			this.radius = radius;
 			this.direction = direction;
 			
-			graphics.clear();
-			graphics.beginFill(0xf03026,1);
-			graphics.drawCircle(positionX,positionY,radius);
-			graphics.endFill();
-		}
-	
-		public function get getPositionX():int
-		{
-			return positionX;
+			addEventListener(MouseEvent.CLICK, onMouseClick);
+			
+			normal = assetManager.getDisplayObject(normalFace) || new Sprite();
+			selected = assetManager.getDisplayObject(selectedFace) || new Sprite();
+			
+			normal.x = positionX;
+			normal.y = positionY;
+			normal.rotation = direction;
+			
+			selected.x = positionX;
+			selected.y = positionY;
+			selected.rotation = direction;
+			
+			addEventListener(MouseEvent.CLICK, onMouseClick);
+			
+			updateFace(normal);
 		}
 		
-		public function get getPositionY():int
+		private function updateFace(face:DisplayObject):void
 		{
-			return positionY;
+			if (currentFace != face)
+			{
+				if (currentFace)
+				{
+					removeChild(currentFace);
+				}
+				
+				currentFace = face;
+				
+				if (currentFace)
+				{
+					addChild(currentFace);
+				}
+			}
 		}
 		
-		public function get getRadius():int
+		protected function onMouseClick(event:MouseEvent):void
 		{
-			return radius;
+			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
+			{
+			updateFace(selected);	
+			}
+		}
+		
+		private function update():void
+		{
+			
 		}
 		
 		public function setXcoordinate(xCoordinate:int):void
@@ -62,6 +110,7 @@ package org.osmf.player.chrome.widgets
 		public function setDirection(direction:int):void
 		{
 			this.direction = direction;
+			update();
 		}
 		
 		public function get getDirection():Number
@@ -70,3 +119,16 @@ package org.osmf.player.chrome.widgets
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
