@@ -17,15 +17,9 @@ package org.osmf.player.chrome.widgets
 
 	public class GeoMapSprite extends Sprite
 	{
-<<<<<<< HEAD
-		public var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
-		private var x:int;
-		private var y:int;
-=======
 		private var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
 		private var x2:int;
 		private var y2:int;
->>>>>>> fe05e8842dec81d8165b2085b96da1ec7d2c7400
 		private var Mapradius:int;
 		private var assetManager:AssetsManager;
 		
@@ -47,7 +41,7 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		private function createObjects():void
-		{			
+		{		
 			geomapObject = new GeoMapObject(Mapradius+40,0,assetManager);
 			geomapObject.setDirection(40);
 			geomapObject2 = new GeoMapObject(Mapradius+200,-20,assetManager);
