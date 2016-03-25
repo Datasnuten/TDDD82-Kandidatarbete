@@ -6,16 +6,7 @@
 
 package org.osmf.player.chrome.widgets
 {
-	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.GradientType;
-	import flash.display.Graphics;
-	import flash.display.Scene;
-	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.events.MouseEvent;
-	import flash.external.ExternalInterface;
-	import flash.system.System;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
@@ -37,6 +28,8 @@ package org.osmf.player.chrome.widgets
 			upFace = AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL
 			downFace = AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN;
 			overFace = AssetIDs.MAP_GPS_DIRECTION_BUTTON_OVER;
+			
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 		}
@@ -85,7 +78,10 @@ package org.osmf.player.chrome.widgets
 		
 		override protected function onMouseOver(event:MouseEvent):void
 		{
+			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
+			{
 			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
+			}
 			if(!state){
 			setFace(over);
 			}
@@ -100,6 +96,14 @@ package org.osmf.player.chrome.widgets
 			mouseOver = false;
 			
 		}
+		
+		private function onMouseMove(event:MouseEvent):void
+		{
+			if(geomapWidget){
+				geomapWidget.onMouseMove(event);
+			}
+		}
+		
 		
 	}
 }

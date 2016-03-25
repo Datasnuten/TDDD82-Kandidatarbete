@@ -8,6 +8,8 @@ package org.osmf.player.chrome.widgets
 {
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.player.chrome.assets.AssetsManager;
@@ -15,7 +17,7 @@ package org.osmf.player.chrome.widgets
 
 	public class GeoMapSprite extends Sprite
 	{
-		private var geomapObject,geomapObject2,geomapObject3:GeoMapObject;
+		public var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
 		private var x:int;
 		private var y:int;
 		private var Mapradius:int;
@@ -29,33 +31,33 @@ package org.osmf.player.chrome.widgets
 			this.Mapradius = Mapradius;
 			this.assetManager = assetManager;
 			
-			addEventListener(MouseEvent.CLICK, onMouseClick);
-			
 			graphics.clear();
 			graphics.beginFill(0xffffff,1);
 			graphics.drawCircle(x,y,Mapradius);
 			graphics.endFill();
-			creatObjects();
+			createObjects();
+			
 			
 		}
 		
-		private function creatObjects():void
+		private function createObjects():void
 		{			
-			geomapObject = new GeoMapObject(Mapradius+40,0,40,assetManager);
-			geomapObject2 = new GeoMapObject(Mapradius+200,-20,20,assetManager);
-			geomapObject3 = new GeoMapObject(Mapradius+50,40,10, assetManager);
+			geomapObject = new GeoMapObject(Mapradius+40,0,assetManager);
+			geomapObject.setDirection(40);
+			geomapObject2 = new GeoMapObject(Mapradius+200,-20,assetManager);
+			geomapObject2.setDirection(270);
+			geomapObject3 = new GeoMapObject(Mapradius+50,40, assetManager);
+			geomapObject3.setDirection(70);
 			addChild(geomapObject);
 			addChild(geomapObject2);
 			addChild(geomapObject3);
 		}
 		
-		
-		private function onMouseClick(event:MouseEvent):void
+		public function onMouseClick(event:MouseEvent):void
 		{
-			event.stopPropagation();
-			/*geomapObject.dispatchEvent(event);
-			geomapObject2.dispatchEvent(event);
-			geomapObject3.dispatchEvent(event);*/
+			geomapObject.onMouseClick(event);
+			geomapObject2.onMouseClick(event);
+			geomapObject3.onMouseClick(event);
 		}
 	}
 }

@@ -13,10 +13,14 @@ package org.osmf.player.chrome.widgets
 	import flash.ui.MouseCursor;
 	import flash.utils.flash_proxy;
 	
+	import org.osmf.events.AudioEvent;
 	import org.osmf.layout.LayoutMode;
+	import org.osmf.media.MediaElement;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.player.chrome.events.ScrubberEvent;
+	import org.osmf.traits.AudioTrait;
+	import org.osmf.traits.MediaTraitType;
 
 	public class GeoMapWidget extends Widget
 	{
@@ -39,6 +43,7 @@ package org.osmf.player.chrome.widgets
 			geomapClickableArea = new Sprite();
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
+			addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
 			
 			addChild(geomapClickableArea);
 		}
@@ -60,23 +65,20 @@ package org.osmf.player.chrome.widgets
 			geomapClickableArea.addChild(geomapSprite);
 		}
 		
-		public function get Geomap():GeoMapSprite
-		{
-			return geomapSprite;
-		}
-		
 		private function onMouseClick(event:MouseEvent):void
 		{
 			event.stopPropagation();
-			geomapSprite.dispatchEvent(event);
+			geomapSprite.onMouseClick(event);
 		}
 		
-		private function onMouseOver(event:MouseEvent):void{
+		private function onMouseOver(event:MouseEvent):void
+		{
 			event.stopPropagation();
-			/*if (event.localY < 0 && (event.localY > height || isNaN(height)))
-			{
-			Mouse.cursor = flash.ui.MouseCursor.ARROW;
-			}*/
+		}
+		
+		public function onMouseMove(event:MouseEvent):void
+		{
+			
 		}
 	}
 }
