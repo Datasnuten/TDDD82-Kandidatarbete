@@ -16,18 +16,18 @@ package org.osmf.player.chrome.widgets
 		private var x:int;
 		private var y:int;
 		private var Mapradius:int;
-		private var radius:int = 10;
+		private var radius:int = 7;
 		
-		public function GeoMapSprite(x:int,y:int,radius:int) 
+		public function GeoMapSprite(x:int,y:int,Mapradius:int) 
 		{
 			super();
 			this.x = x;
 			this.y = y;
-			this.Mapradius = radius;
+			this.Mapradius = Mapradius;
 			
 			graphics.clear();
 			graphics.beginFill(0xffffff,1);
-			graphics.drawCircle(x,y,radius);
+			graphics.drawCircle(x,y,Mapradius);
 			graphics.endFill();
 			creatObjects();
 			
@@ -35,9 +35,9 @@ package org.osmf.player.chrome.widgets
 		
 		private function creatObjects():void
 		{			
-			geomapObject = new GeoMapObject(Mapradius+radius,0,radius);
-			geomapObject2 = new GeoMapObject(Mapradius+radius+200,-20,radius);
-			geomapObject3 = new GeoMapObject(Mapradius+radius+50,40,radius);
+			geomapObject = new GeoMapObject(Mapradius+radius,0,radius,0);
+			geomapObject2 = new GeoMapObject(Mapradius+radius+200,-20,radius,0);
+			geomapObject3 = new GeoMapObject(Mapradius+radius+50,40,radius,0);
 			addChild(geomapObject);
 			addChild(geomapObject2);
 			addChild(geomapObject3);
