@@ -47,13 +47,14 @@ package org.osmf.player.chrome.widgets
 		
 		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
 		{
-			OwnWidgetHint.getInstance(this).hide();
+			//OwnWidgetHint.getInstance(this).hide();
 			measure();
 			super.layout(Math.max(measuredWidth, availableWidth), Math.max(measuredHeight, availableHeight));
 		}
 		
 		override protected function onMouseClick(event:MouseEvent):void
 		{
+			
 			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
 			{
 				state = !state;
@@ -71,7 +72,7 @@ package org.osmf.player.chrome.widgets
 			}
 			}
 			else{
-				if(geomapWidget) geomapWidget.dispatchEvent(event)
+				if(geomapWidget) geomapWidget.dispatchEvent(event);
 			}
 			
 		}
@@ -91,7 +92,7 @@ package org.osmf.player.chrome.widgets
 		{	
 			if(!state){
 			setFace(up);
-			OwnWidgetHint.getInstance(this).hide();
+			//OwnWidgetHint.getInstance(this).hide();
 			}
 			mouseOver = false;
 			

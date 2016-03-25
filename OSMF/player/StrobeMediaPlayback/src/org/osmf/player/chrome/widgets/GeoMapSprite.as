@@ -17,23 +17,29 @@ package org.osmf.player.chrome.widgets
 
 	public class GeoMapSprite extends Sprite
 	{
+<<<<<<< HEAD
 		public var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
 		private var x:int;
 		private var y:int;
+=======
+		private var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
+		private var x2:int;
+		private var y2:int;
+>>>>>>> fe05e8842dec81d8165b2085b96da1ec7d2c7400
 		private var Mapradius:int;
 		private var assetManager:AssetsManager;
 		
-		public function GeoMapSprite(x:int,y:int,Mapradius:int, assetManager:AssetsManager) 
+		public function GeoMapSprite(x1:int,y1:int,Mapradius:int, assetManager:AssetsManager) 
 		{
 			super();
-			this.x = x;
-			this.y = y;
+			this.x2 = x1;
+			this.y2 = y1;
 			this.Mapradius = Mapradius;
 			this.assetManager = assetManager;
 			
 			graphics.clear();
 			graphics.beginFill(0xffffff,1);
-			graphics.drawCircle(x,y,Mapradius);
+			graphics.drawCircle(x1,y1,Mapradius);
 			graphics.endFill();
 			createObjects();
 			
