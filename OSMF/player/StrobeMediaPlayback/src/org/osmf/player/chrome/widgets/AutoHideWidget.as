@@ -72,9 +72,11 @@ package org.osmf.player.chrome.widgets
 		
 		// Overrides
 		//
+		
+		//*******************Changed to always show Control bar
 		override public function set visible(value:Boolean):void
 		{
-			super.visible = value;
+			super.visible = true;
 						
 			startWatchingMouseMoves();				
 		}
