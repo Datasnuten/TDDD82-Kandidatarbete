@@ -9,6 +9,8 @@ package org.osmf.player.chrome.widgets
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	
 	import org.osmf.layout.HorizontalAlign;
 	import org.osmf.layout.LayoutMode;
@@ -29,25 +31,38 @@ package org.osmf.player.chrome.widgets
 		
 		protected var normal:DisplayObject;
 		protected var selected:DisplayObject;
-		private var currentFace:DisplayObject;
+		protected var currentFace:DisplayObject;
+		protected var disabled:DisplayObject;
 		
-		/*protected var currentFace:DisplayObject;*/
+		protected var mouseOver:Boolean;
 		
 		private var state:Boolean = false;
 		
-		public function GeoMapObject(positionX:int,positionY:int,assetManager:AssetsManager)
+		public var disabledFace:String = null;
+		
+		
+		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager)
 		{
 			super();
-			this.positionX = positionX;
+			if(positionX < context.Mapradius){
+				var adjust:int = positionX-context.Mapradius;
+				this.positionX = positionX-adjust;
+			}
+			
 			this.positionY = positionY;
+			
+			mouseEnabled = true;
 			
 			layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
 			layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
+			addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+			addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 			
-			normal = assetManager.getDisplayObject(normalFace) || new Sprite();
-			selected = assetManager.getDisplayObject(selectedFace) || new Sprite();
+			normal = assetManager.getDisplayObject(normalFace);
+			selected = assetManager.getDisplayObject(selectedFace);
+			disabled =  assetManager.getDisplayObject(disabledFace);
 			
 			normal.x = positionX;
 			normal.y = positionY;
@@ -89,6 +104,25 @@ package org.osmf.player.chrome.widgets
 			}else{
 				updateFace(normal);
 			}
+		}
+		
+		public function onMouseOver(event:MouseEvent):void
+		{
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
+			mouseOver = true;
+		}
+		
+		public function onMouseOut(event:MouseEvent):void
+		{
+			Mouse.cursor = flash.ui.MouseCursor.ARROW;
+			mouseOver = false;
+			updateFace(enabled ? normal : disabled);
+		}
+		
+		protected function onMouseDown(event:MouseEvent):void
+		{
+			mouseOver = false;
+			updateFace(enabled ? selected : disabled);
 		}
 		
 		private function update():void

@@ -27,10 +27,7 @@ package org.osmf.player.chrome.widgets
 		private var geomapClickableArea:Sprite;
 		private var geomapFace:DisplayObject;
 		private var geomapSprite:GeoMapSprite;
-		private var geomapWidth:int = 500;
-		private var geomapHeight:int = 500;
 		private var geomapRadius:int = 180;
-		private var geomapAdjust:int = 90;
 		
 		
 		public function GeoMapWidget()
@@ -40,29 +37,19 @@ package org.osmf.player.chrome.widgets
 			
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 			
-			geomapClickableArea = new Sprite();
-			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+			addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 			
-			addChild(geomapClickableArea);
 		}
 		
 		override public function configure(xml:XML, assetManager:AssetsManager):void
 		{
 			super.configure(xml, assetManager);	
 			
-			geomapSprite = new GeoMapSprite(geomapWidth-geomapWidth/3,0,geomapRadius, assetManager);
-		
-			geomapClickableArea.x = geomapRadius;
-			geomapClickableArea.y = geomapRadius;
-			geomapClickableArea.graphics.clear();
-			geomapClickableArea.graphics.beginFill(0x49ff00, 0);
-			geomapClickableArea.graphics.drawRect(0,0,geomapWidth+geomapRadius, geomapAdjust + geomapSprite.height/ 3.0);
-			geomapClickableArea.graphics.endFill();
-			geomapClickableArea.height = geomapAdjust + geomapSprite.height / 3.0;
+			geomapSprite = new GeoMapSprite(2*geomapRadius,geomapRadius-geomapRadius/5,geomapRadius, assetManager);
 			
-			geomapClickableArea.addChild(geomapSprite);
+			addChild(geomapSprite);
 		}
 		
 		private function onMouseClick(event:MouseEvent):void
@@ -76,9 +63,16 @@ package org.osmf.player.chrome.widgets
 			event.stopPropagation();
 		}
 		
+		public function onMouseOut(event:MouseEvent):void
+		{
+			event.stopPropagation();
+			Mouse.cursor = flash.ui.MouseCursor.ARROW;
+			
+		}
+		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			
+			event.stopPropagation();
 		}
 	}
 }

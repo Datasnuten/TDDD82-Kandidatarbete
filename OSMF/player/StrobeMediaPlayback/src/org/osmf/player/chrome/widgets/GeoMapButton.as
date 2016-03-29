@@ -92,7 +92,7 @@ package org.osmf.player.chrome.widgets
 		{	
 			if(!state){
 			setFace(up);
-			//OwnWidgetHint.getInstance(this).hide();
+			OwnWidgetHint.getInstance(this).hide();
 			}
 			mouseOver = false;
 			
