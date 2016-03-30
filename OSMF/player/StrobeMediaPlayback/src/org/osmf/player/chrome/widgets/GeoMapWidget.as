@@ -37,9 +37,8 @@ package org.osmf.player.chrome.widgets
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-		/*	addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);*/
-			addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
-			addEventListener(MouseEvent.MOUSE_MOVE, onMouseOut);
+			/*addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);*/
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 		}
 		
@@ -59,20 +58,14 @@ package org.osmf.player.chrome.widgets
 			geomapSprite.onMouseClick(event);
 		}
 		
-		/*private function onMouseOver(event:MouseEvent):void
+/*		private function onMouseOver(event:MouseEvent):void
 		{
 			event.stopPropagation();
-		}*/
-		
-		public function onMouseOut(event:MouseEvent):void
-		{
-			event.stopPropagation();
-			Mouse.cursor = flash.ui.MouseCursor.ARROW;
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 		}
 		
-		public function onMouseMove(event:MouseEvent):void
+*/		public function onMouseMove(event:MouseEvent):void
 		{
-			event.stopPropagation();
 			geomapSprite.onMouseMove(event);
 		}
 	}

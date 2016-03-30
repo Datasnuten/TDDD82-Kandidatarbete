@@ -43,7 +43,7 @@ package org.osmf.player.chrome.widgets
 			graphics.endFill();
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			super.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			/*addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);*/
 			
 			createObjects();
 		}
@@ -112,9 +112,9 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			/*geomapObject.onMouseMove(event);
+			geomapObject.onMouseMove(event);
 			geomapObject2.onMouseMove(event);
-			geomapObject3.onMouseMove(event);*/
+			geomapObject3.onMouseMove(event);
 		}
 		
 		/*public function onMouseOver(event:MouseEvent):void
@@ -122,8 +122,8 @@ package org.osmf.player.chrome.widgets
 			geomapObject.onMouseOver(event);
 			geomapObject2.onMouseOver(event);
 			geomapObject3.onMouseOver(event);
-		}*/
-		
+		}
+		*/
 	}
 }
 

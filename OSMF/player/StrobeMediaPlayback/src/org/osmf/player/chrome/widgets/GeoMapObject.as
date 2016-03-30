@@ -101,9 +101,10 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseX < positionX+width && mouseX > positionX && mouseY < positionY+height && mouseY > positionY){
+			/*if(mouseY < positionY+height && mouseY > positionY){
 				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-			}
+			}*/
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 			
 		}
 		
