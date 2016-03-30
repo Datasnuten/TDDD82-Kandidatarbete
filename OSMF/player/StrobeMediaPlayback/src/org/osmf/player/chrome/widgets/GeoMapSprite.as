@@ -11,10 +11,12 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextField;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
+	import flash.utils.flash_proxy;
 	
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.logging.Log;
 	import org.osmf.player.chrome.assets.AssetsManager;
+	
 	
 
 	public class GeoMapSprite extends Sprite
@@ -26,6 +28,9 @@ package org.osmf.player.chrome.widgets
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
 		public var object:int;
+		
+		private var array:Array;
+		/*private var aList:ArrayList;*/
 		
 		public function GeoMapSprite(x1:int,y1:int,Mapradius:int, assetManager:AssetsManager) 
 		{
@@ -43,7 +48,7 @@ package org.osmf.player.chrome.widgets
 			graphics.endFill();
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			/*addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);*/
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			createObjects();
 		}
@@ -76,25 +81,17 @@ package org.osmf.player.chrome.widgets
 		
 		private function createObjects():void
 		{	
-			var array:Array = new Array();
+			/*array = new Array.<GeoMapObject>;*/
 			geomapObject = new GeoMapObject(this,x2-100,y2,assetManager);
-			geomapObject.setDirection(180);
+			geomapObject.setDirection(70);
 			geomapObject2 = new GeoMapObject(this,x2+80,-80+y2,assetManager);
 			geomapObject2.setDirection(270);
 			geomapObject3 = new GeoMapObject(this,x2,120+y2, assetManager);
 			geomapObject3.setDirection(0);
 			
-			array.push(geomapObject);
+			/*array.push(geomapObject);
 			array.push(geomapObject2);
-			array.push(geomapObject3);
-			
-			for each( var widget:Widget in array)
-			{
-				if (widget)
-				{
-					widget.configure(<default/>, assetManager);					
-				}
-			}
+			array.push(geomapObject3);*/
 			
 			addChild(geomapObject);
 			addChild(geomapObject2);
@@ -103,27 +100,28 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseClick(event:MouseEvent):void
 		{
+			/*for(var i:int = 0;i<array.length;i++){
+				if(array[i].indexOf(geomapObject).getState != true && array[i].indexOf(geomapObject).getIfHoldingOver == true){
+					//Do nothing
+				}
+				else if(array[i].getState != true){
+					array[i].resetFace;
+				}
+			}*/
 			geomapObject.onMouseClick(event);
 			geomapObject2.onMouseClick(event);
 			geomapObject3.onMouseClick(event);
 			
-				
 		}
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 			geomapObject.onMouseMove(event);
 			geomapObject2.onMouseMove(event);
 			geomapObject3.onMouseMove(event);
 		}
 		
-		/*public function onMouseOver(event:MouseEvent):void
-		{
-			geomapObject.onMouseOver(event);
-			geomapObject2.onMouseOver(event);
-			geomapObject3.onMouseOver(event);
-		}
-		*/
 	}
 }
 

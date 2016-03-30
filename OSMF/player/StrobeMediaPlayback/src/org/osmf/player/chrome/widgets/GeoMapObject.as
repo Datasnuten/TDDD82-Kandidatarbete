@@ -16,9 +16,11 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.layout.HorizontalAlign;
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.layout.VerticalAlign;
+	import org.osmf.metadata.Metadata;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.player.chrome.hint.OwnWidgetHint;
+
 
 	public class GeoMapObject extends Widget
 	{
@@ -38,8 +40,11 @@ package org.osmf.player.chrome.widgets
 		protected var mouseOver:Boolean;
 		
 		private var state:Boolean = false;
+		private var holdingOver:Boolean = false;
 		
 		private var context:GeoMapSprite;
+		
+		private var video:Metadata;
 		
 		
 		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager)
@@ -60,8 +65,7 @@ package org.osmf.player.chrome.widgets
 			selected.y = this.positionY;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			/*addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);*/
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			updateFace(normal);
 		}
@@ -82,7 +86,6 @@ package org.osmf.player.chrome.widgets
 					addChildAt(currentFace, 0);
 					
 					measure();
-					
 					width = currentFace.width;
 					height = currentFace.height;
 				}
@@ -91,27 +94,27 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseClick(event:MouseEvent):void
 		{
+			if(holdingOver){
 			state = !state;
 			if(state){
 			updateFace(selected);
 			}else{
 				updateFace(normal);
 			}
+			}
 		}
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			/*if(mouseY < positionY+height && mouseY > positionY){
-				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-			}*/
-			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
+			if(mouseY < positionY+selected.height && mouseY > positionY-selected.height && mouseX < positionX+selected.width && mouseX > positionX-selected.width){
+				Mouse.cursor = flash.ui.MouseCursor.ARROW;
+				holdingOver = true;
+			}else{
+				holdingOver = false;
+			}
 			
 		}
 		
-		/*public function onMouseOver(event:MouseEvent):void
-		{
-		Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-		}*/
 		
 		public function setXcoordinate(xCoordinate:int):void
 		{
@@ -147,6 +150,8 @@ package org.osmf.player.chrome.widgets
 		public function setPositionX(positionX:int):void
 		{
 			this.positionX = positionX;
+			normal.x = positionX;
+			selected.x = positionX;
 		}
 		
 		public function get getPositionX():int
@@ -157,6 +162,8 @@ package org.osmf.player.chrome.widgets
 		public function setPositioY(positionY:int):void
 		{
 			this.positionY = positionY;
+			normal.y = positionY;
+			selected.y = positionY;
 		}
 		
 		public function get getPositionY():int
@@ -167,6 +174,31 @@ package org.osmf.player.chrome.widgets
 		public function get getCurrentFace():DisplayObject
 		{
 			return currentFace;
+		}
+		
+		public function resetFace():void
+		{
+			updateFace(normal);
+		}
+		
+		public function setVideo(video:Metadata):void
+		{
+			this.video = video;
+		}
+		
+		public function get getVideo():Metadata
+		{
+			return video;
+		}
+		
+		public function get getIfHoldingOver():Boolean
+		{
+			return holdingOver;
+		}
+		
+		public function get getState():Boolean
+		{
+			return state;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  22 MAR 2016 17:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  30 MAR 2016 15:33
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -591,10 +591,10 @@ Overfull \hbox (9.88014pt too wide) in paragraph at lines 145--151
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
- 3198 strings out of 493634
- 39482 string characters out of 3134015
- 108283 words of memory out of 3000000
- 6506 multiletter control sequences out of 15000+200000
+ 3199 strings out of 493634
+ 39495 string characters out of 3134015
+ 108286 words of memory out of 3000000
+ 6507 multiletter control sequences out of 15000+200000
  48558 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  41i,8n,28p,1341b,282s stack positions out of 5000i,500n,10000p,200000b,50000s

@@ -1,0 +1,9 @@
+Interesting classes: 
+Advertisementplugin -> osmf/advertisementplugin/src/org.osm.advertisementplugin/
+HTTTPDownloadManager -> osmf/net/httpstreaming/
+
+Advertisementplugin will we use for showing/streaming the URL video. We can hardcode that every geomapObject has a video (video[1],video[2]...).
+When streaming we will start with a default video (video[2]) which downloads till it reaches it maxbuffer.
+While that video doesn't buffer anymore we can start buffer the other videos during that downtime.
+This is done in a roundrobin way, look at the code we got from Venget. This is done in the HTTPDownloadmanager (we add that roundrobin code, which we adjust to work for us).
+ 
