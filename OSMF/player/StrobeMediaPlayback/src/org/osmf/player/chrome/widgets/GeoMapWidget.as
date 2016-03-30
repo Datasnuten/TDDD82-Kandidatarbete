@@ -24,7 +24,6 @@ package org.osmf.player.chrome.widgets
 
 	public class GeoMapWidget extends Widget
 	{
-		private var geomapClickableArea:Sprite;
 		private var geomapFace:DisplayObject;
 		private var geomapSprite:GeoMapSprite;
 		private var geomapRadius:int = 180;
@@ -38,8 +37,9 @@ package org.osmf.player.chrome.widgets
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+		/*	addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);*/
 			addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseOut);
 			
 		}
 		
@@ -49,6 +49,7 @@ package org.osmf.player.chrome.widgets
 			
 			geomapSprite = new GeoMapSprite(2*geomapRadius,geomapRadius-geomapRadius/5,geomapRadius, assetManager);
 			
+			geomapSprite.mouseEnabled = true;
 			addChild(geomapSprite);
 		}
 		
@@ -58,21 +59,21 @@ package org.osmf.player.chrome.widgets
 			geomapSprite.onMouseClick(event);
 		}
 		
-		private function onMouseOver(event:MouseEvent):void
+		/*private function onMouseOver(event:MouseEvent):void
 		{
 			event.stopPropagation();
-		}
+		}*/
 		
 		public function onMouseOut(event:MouseEvent):void
 		{
 			event.stopPropagation();
 			Mouse.cursor = flash.ui.MouseCursor.ARROW;
-			
 		}
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
 			event.stopPropagation();
+			geomapSprite.onMouseMove(event);
 		}
 	}
 }

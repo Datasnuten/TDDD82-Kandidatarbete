@@ -110,9 +110,9 @@ package org.osmf.player.chrome.widgets
 				updateFace(down);
 				scrubTimer.start();
 				dispatchEvent(new ScrubberEvent(ScrubberEvent.SCRUB_START));
-
+				
 				startDrag
-					( lockCenter
+				( lockCenter
 					, new Rectangle
 							( rangeY == 0.0 ? _origin : x
 							, rangeX == 0.0 ? _origin : y
