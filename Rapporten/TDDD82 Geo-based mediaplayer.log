@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  30 MAR 2016 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.4)  1 APR 2016 02:54
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -537,52 +537,57 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 [1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-
 ]
-[2
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [2] <HAS1.png, id=17, 803.0pt x 602.25pt>
+
+<HAS1.png, id=10, 803.0pt x 602.25pt>
 File: HAS1.png Graphic file (type png)
  <use HAS1.png>
-Package pdftex.def Info: HAS1.png used on input line 71.
+Package pdftex.def Info: HAS1.png used on input line 73.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 71--72
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 73--74
  [] 
  []
 
-<HAS2.png, id=19, 803.0pt x 602.25pt>
+<HAS2.png, id=12, 803.0pt x 602.25pt>
 File: HAS2.png Graphic file (type png)
  <use HAS2.png>
-Package pdftex.def Info: HAS2.png used on input line 78.
+Package pdftex.def Info: HAS2.png used on input line 81.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 78--79
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 81--82
  [] 
  []
 
-[3 <./HAS1.png> <./HAS2.png>] <teomet.png, id=26, 469.755pt x 441.14813pt>
+[2 <./HAS1.png> <./HAS2.png>] <teomet.png, id=22, 469.755pt x 441.14813pt>
 File: teomet.png Graphic file (type png)
 
 <use teomet.png>
-Package pdftex.def Info: teomet.png used on input line 99.
+Package pdftex.def Info: teomet.png used on input line 105.
 (pdftex.def)             Requested size: 239.57188pt x 224.98256pt.
- <Media_player.png, id=27, 484.81125pt x 362.85562pt>
-File: Media_player.png Graphic file (type png)
 
-<use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 109.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+<Media_player.png, id=26, 484.81125pt x 362.85562pt>
+File: Media_player.png Graphic file (type png)
+ <use Media_player.png>
+Package pdftex.def Info: Media_player.png used on input line 116.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 109--110
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 116--117
  [] 
  []
 
-[4 <./teomet.png> <./Media_player.png>] [5
+[4
+
+ <./teomet.png> <./Media_player.png>] [5
 
 
 ]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 145--151
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 154--160
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
@@ -592,26 +597,28 @@ Overfull \hbox (9.88014pt too wide) in paragraph at lines 145--151
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
  3199 strings out of 493634
- 39495 string characters out of 3134015
- 108286 words of memory out of 3000000
+ 39483 string characters out of 3134016
+ 108318 words of memory out of 3000000
  6507 multiletter control sequences out of 15000+200000
  48558 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,28p,1341b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,28p,1751b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jonathan/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonathan/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:
 /Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jon
-athan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 541430 bytes).
+m/cmmi9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/User
+s/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pf
+b><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
+mb8a.pfb>
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (6 pages, 555270 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -28,9 +28,9 @@
 	\large An interactive interface for geo-based video streaming}
 \maketitle
 
-\cleardoublepage
+%\cleardoublepage
 \pagenumbering{arabic}
-\setcounter{page}{2}
+%\setcounter{page}{2}
 
 \begin{abstract}
 Being able to interact with a video stream can be both fun and educational; however for it to accomplish that the interaction must be seamless. Creating a media player that can allow users to view a video stream from different geographical positions is a challenge that is tackled in this paper. This paper describes the material and methods used to accomplish this kind of media player. And it explains how to achieve a seemingly good and, to higher extent, an enjoyable video streaming experience. A proof-of-concept is shown and provides a result that...(Mention the result here)
@@ -58,18 +58,21 @@ To be able to grasp the concept of how HTTP-adaptive streaming and geo-based str
 
 
 \subsection{Theory}
-Mobile users streaming media sometimes suffers from playback interruption when faced with a bad wireless connection. HTTP-adaptive streaming seeks to resolve this by dynamically changing the bitrate and therefore quality of the stream to make do with the connection that is available to the user. To ensure smooth transitions between these quality swaps HAS also tries to predict the swaps in advance using various methods depending on the HAS framework. There are many algorithms for these predictions, but a brief example would be to use previous logged connectivity history and future connectivity using geo-based methods to make predictions \cite{gtube}. Most HAS players uses weighted average of past download time/rates in order to estimate download rate of available bandwidth \cite[p.~317-326]{qualbranch}. With these HAS predictions, a stream quality fitting the user’s network quality can be buffered.\cite{gtube}
+Mobile users streaming media sometimes suffers from playback interruption when faced with a bad wireless connection. HTTP-adaptive streaming seeks to resolve this by dynamically changing the bitrate and therefore quality of the stream to make do with the connection that is available to the user. To ensure smooth transitions between these quality swaps HAS also tries to predict the swaps in advance using various methods depending on the HAS framework. There are many algorithms for these predictions, but a brief example would be to use previous logged connectivity history and future connectivity using geo-based methods to make predictions \cite{gtube}. Most HAS players uses weighted average of past download time/rates in order to estimate download rate of available bandwidth \cite{qualbranch}. With these HAS predictions, a stream quality fitting the user’s network quality can be buffered.\cite{gtube}
 
-With HAS-adaptive streaming it is needed for us to prefetch data from several close-by (if not all, depending on number of streamers) streams and build up a small enough buffer that makes switching between different streams seamless. By looking at how HAS is used when implementing an interactive branched video we can say that parallel TCP connections is a must in-order to achieve this with a cost of wasting bandwidth and lower playback quality. This depends mainly on the number of videos that needs to be prefetched. Most HAS video players has a cap on the buffer size in order to avoid wasting bandwidth. As described in the paper \textit{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming} they use a customized HAS player that solves the problem of trade-off between quality and number of chunks downloaded. The playback chunks are stored in the playback buffer while the prefetched chunks are stored in a browser cache thus allowing those chunks to be retrieved quickly. This ensures that no playback interruption occurs for the user. The way they download the chunks are done in a round-robin way to ensure that a buffer workahead is built up enough for seamless playback in parallel TCP downloading. \cite[p.~317-326]{qualbranch} 
+With HAS-adaptive streaming it is needed for us to prefetch data from several close-by (if not all, depending on number of streamers) streams and build up a small enough buffer that makes switching between different streams seamless. By looking at how HAS is used when implementing an interactive branched video we can say that parallel TCP connections is a must in-order to achieve this with a cost of wasting bandwidth and lower playback quality. This depends mainly on the number of videos that needs to be prefetched. Most HAS video players has a cap on the buffer size in order to avoid wasting bandwidth. As described in the paper \textit{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming} they use a customized HAS player that solves the problem of trade-off between quality and number of chunks downloaded. The playback chunks are stored in the playback buffer while the prefetched chunks are stored in a browser cache thus allowing those chunks to be retrieved quickly. This ensures that no playback interruption occurs for the user. The way they download the chunks are done in a round-robin way to ensure that a buffer workahead is built up enough for seamless playback in parallel TCP downloading. \cite{qualbranch} 
 
-In \textit{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video} they use this technique of storing prefetched chunks in a playback buffer. Prefetching for different branches to allow seamless switching between videos, using the notion of multi-path nonlinear videos to stitch together videos using a novel buffer management and prefetching policy. This prefetching decreases the time it takes to switch between branches considerably and is something we will take advantage of since the code we use from \cite[p.~317-326]{qualbranch} are based on a similar policy \cite[p.~591-596]{hasmultipath}. Most of these works are mostly focused on branching videos which is simliar but not entierly simliar to what we will be doing. We will contribute more to the possibility of prefetching several videos parallel and then be able to switch to them on demand. \cite[p.~317-326]{qualbranch} \cite[p.~591-596]{hasmultipath}
+Downloading chunks in a round-robin way is how chunks will be downloaded in our media player. This way will be used together with the idea of prefetching in the downtime of a HAS-player. Most HAS-players has some kind of buffer treshold $T_{max}$ where downloading is interrupted when reached and will resume only when the minimum buffer $T_{min}$ is reached. This kind of behaviour can be called an \textit{on-off behaviour} which can lead to poor performance under conditions with competing traffic. This kind of behaviour is common in several HAS-players like Netflix and Microsoft Smooth Streaming, for example \cite{bandawarePrefetch}. In the paper \textit{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance} they provide policies and ideas that reduce the start-up time of videos by an order of magnitude and ensures the highest possible playback quality to be viewed. A way of improved channel utilization that allows for instantaneous playback of prefetched videos. They provide an HAS solution which we will take advantage of together with prefecthing nearby streams in a round-robin way. The solution allows for prefetching and buffer management in such a way that videos can be downloaded parallel and switched to instantaneous without interrupting the user experience. By using a novel system to utilize the unused bandwidth during off periods this allows for videos to simultaneously be prefetched while maintaining a fair bandwidth share. It also increases the playback quality in which a video is downloaded \cite{bandawarePrefetch}. This idea will be discussed further in section 2.2 when we describe our idea of downloading streams.
 
-Figure 1 and figure 2 illustrate an example of a stream consisting of chunks being played, how these chunks are prefetched and stored and a swap between two streams.
+In \textit{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video} they use this technique of storing prefetched chunks in a playback buffer. Prefetching for different branches to allow seamless switching between videos, using the notion of multi-path nonlinear videos to stitch together videos using a novel buffer management and prefetching policy. This prefetching decreases the time it takes to switch between branches considerably and is something we will take advantage of since the code we use from \cite{qualbranch} are based on a similar policy \cite{hasmultipath}. Most of these works are mostly focused on branching videos which is simliar but not entierly simliar to what we will be doing. We will contribute more to the possibility of prefetching several videos parallel and then be able to switch to them on demand. \cite{qualbranch, hasmultipath}
+
+Figure \ref{fig:1} and figure \ref{fig:2} illustrate an example of a stream consisting of chunks being played, how these chunks are prefetched and stored and a swap between two streams.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.3]{HAS1.png}
 \caption{HAS Parallell Stream Buffer 1}
+\label{fig:1}
 \end{center}
 \end{figure}
 
@@ -77,11 +80,11 @@ Figure 1 and figure 2 illustrate an example of a stream consisting of chunks bei
 \begin{center}
 \includegraphics[scale=0.3]{HAS2.png}
 \caption{HAS Parallell Stream Buffer 2}
+\label{fig:2}
 \end{center}
 \end{figure}
 
-
-There can occur several problems in HAS players \cite[p.~317-326]{qualbranch}. The paper \textit{Confused, timid, and unstable: Picking a video streaming rate is hard} they show that when a competing TCP flow starts a so called “downward spiral effect” occurs and the downgrade in throughput and playback rate becomes severe\cite{streamrate}. This is caused by a timeout in the TCP congestion window, high packet loss in competing flows and when a client has a lower throughput the playback rate is lower due to smaller buffer segments which makes a video flow more susceptible to perceiving lower throughput and thus creating a spiral. A possible solution is to have larger segment size and by having an algorithm which is less conservative, meaning that requesting a video at lower rate than is perceived \cite{streamrate}. This is something that we can keep in mind since quality can decrease drastically when having several videos buffering in parallel, though we will not have to buffer a full video at the same time but only bit sized ones while the main stream is being watched.
+There can occur several problems in HAS players \cite{qualbranch}. The paper \textit{Confused, timid, and unstable: Picking a video streaming rate is hard} they show that when a competing TCP flow starts a so called “downward spiral effect” occurs and the downgrade in throughput and playback rate becomes severe\cite{streamrate}. This is caused by a timeout in the TCP congestion window, high packet loss in competing flows and when a client has a lower throughput the playback rate is lower due to smaller buffer segments which makes a video flow more susceptible to perceiving lower throughput and thus creating a spiral. A possible solution is to have larger segment size and by having an algorithm which is less conservative, meaning that requesting a video at lower rate than is perceived \cite{streamrate}. This is something that we can keep in mind since quality can decrease drastically when having several videos buffering in parallel, though we will not have to buffer a full video at the same time but only chunks of a video while the main stream is being watched.
 
 To display the stream in our application we will be using a media player called Strobe Media Playback (SMP), created with the Open Source Media Framework (OSMF) by Adobe Systems. The OSMF itself is build upon Adobe Flash Player, while becoming more outdated by day and discontinued by some, it is widely used for media and other graphic applications and suffices to use for the proof-of-concept of our application. In practice this means that the video player is created using the tools that OSMF provides, compiled into a runnable flash file bytecode and run by Adobe Flash Player. 
 OSMF supports a number of important features that will be used within our interface. Most importantly it enables the use of HAS with its HTTP streaming support and progressive downloading. It also enables the player to seamlessly switch between several media elements by using a composition of “nested serial elements”, which will be prominently used within our application.\cite{osmf}
@@ -89,33 +92,40 @@ OSMF supports a number of important features that will be used within our interf
 \subsection{Method and materiel}
 To advance in this project we will mainly be programming, designing and developing the application. The programming language of choice will be Java Action Script and the IDE Flash Builder, which is very similar to the IDE Eclipse. The functionality of the interface to be developed is multiple. We want the interface to accept incoming video streams tagged with a location and cardinal direction from expected sources. The video streams will have to be tagged with these geographical datas somehow, which is not a common included feature with most video recording softwares. Developing a separate recording application to create these kind of video streams, for the sake of this project, might be outside of our goal of limitations for this project. If it is, we will prove the functionality of our interface with fabricated video geo-tags. These streams will then be made to work with a custom OSMF player. We will create a user interface with these streams as inputs so multiple video streams are shown to the user for the choosing. When one of these streams are being played the user should then be able to swap to another stream using the applications interface. 
 Under-the-hood features will include HAS to ensure a smooth playback of the streams, both for buffering a single stream but also for prefetching and buffering a fraction of the other streams to ensure uninterrupted playback during stream swaps. 
-To help us focus on the main problem of developing this interface, we are being provided with some existing code by our supervisors. This includes a working SMP player created with a modified version of OSMF. We will also use code for an existing HAS-interface using prefetching. \cite[p.~317-326]{qualbranch}
+To help us focus on the main problem of developing this interface, we are being provided with some existing code by our supervisors. This includes a working SMP player created with a modified version of OSMF. We will also use code off an existing HAS-interface that is using prefetching \cite{qualbranch}.
+
+As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. In \textit{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance} they mention a policy called \textit{best-effort}, that we will use, in which chunks are only downloaded after the buffer size has reached $T_{max}$ and will start prefetch chunks from several other videos. These chunks are only going to download as long as the time it takes to download them doesn't go below $T_{min}$ of the currently streamed video. The policy adapts to available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is a needed and important functionality in  scenarios with many different streams \cite{bandawarePrefetch}. In Figure X an idea of this can be seen. Other nearby streaming videos will only be downloaded ones $T_{max}$ is reached. A nearby video will be prefetched only in few chunks and the videos are downloaded in a round-robin way. Video 2 followed by 3 and so on. Ones the $T_{min}$ is reached the main video is resumed downloading. The idea that would be best but will not be implemented is what video should be prefetched first or if that could be chosen. That maybe prefetching far away videos are better because they are more likely to be switched to. An interesting idea but not considered here for our proof-of-concept.
+
 During the project we will receive constructive feedback about our work to help us with our process and provide us with other point of views. For any obstacles, expected and unexpected, we will read up on relevant theories that might help us.
 
-When we implement our geo-based media player we need the GPS coordinates and compass direction of the streamer. Figure 3 shows the layout for how our new operation for our geo-based streaming interface will look like. The layout will display a view of every stream and the possible “Point of interest”, like a concert or the center of any larger event and this will have its own geographical position. The view will also display the north, west, east and south cardinal directions to know the direction of the every stream relative to those. The angle $\theta$ in Figure 3 can be calculated by taking the magnitude heading from a recording client. This will give us the direction relative to the north cardinal direction.
+When we implement our geo-based media player we need the GPS coordinates and compass direction of the streamer. Figure \ref{fig:3} shows the layout for how our new operation for our geo-based streaming interface will look like. The layout will display a view of every stream and the possible “Point of interest”, like a concert or the center of any larger event and this will have its own geographical position. The view will also display the north, west, east and south cardinal directions to know the direction of the every stream relative to those. The angle $\theta$ in Figure 3 can be calculated by taking the magnitude heading from a recording client. This will give us the direction relative to the north cardinal direction.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=0.51]{teomet.png}
 	\caption{Concept interface of GPS \& Direction selection map}
+	\label{fig:3}
 \end{center}
 \end{figure}
 
 
-The default SMP player that we will use and modify can be seen in Figure 4. We will be adding a button that allows us to open a “map” that is similar to Figure 3. There we will be able to choose which stream we want to watch by clicking on it. The stream will immediately play thanks to HAS functionality and if we want to switch to another the process can be repeated and another stream can be chosen. This player is by default set to play a stream of video located at a server supporting HTTP-streaming. For testing purposes at the least, we have created a WAMP server to enable video streaming playback with the used video player. Since we will be using a similar OSMF player that were used in \textit{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video} the quality of our prefetched chunks will be adaptive to the available bandwidth \cite[s.~591-596]{hasmultipath}.
+The default SMP player that we will use and modify can be seen in Figure \ref{fig:4}. We will be adding a button that allows us to open a “map” that is similar to Figure \ref{fig:3}. There we will be able to choose which stream we want to watch by clicking on it. The stream will immediately play thanks to HAS functionality and if we want to switch to another the process can be repeated and another stream can be chosen. This player is by default set to play a stream of video located at a server supporting HTTP-streaming. For testing purposes at the least, we have created a WAMP server to enable video streaming playback with the used video player. Since we will be using a similar OSMF player that were used in \textit{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video} the quality of our prefetched chunks will be adaptive to the available bandwidth \cite{hasmultipath}.
 
 \begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=0.5]{Media_player.png}
 	\caption{Strobe Media Player}
+	\label{fig:4}
 \end{center}
 \end{figure}
 
 \clearpage
 
+\section{Result}
+
 \section{Discussion}
 
-\subsection{Result}
+\section{Related Work}
 
 \section{Conclusion}
 
@@ -138,8 +148,7 @@ Mahanti, and Nahid Shahmehri,
 Branched Video using HTTP-based Adaptive Streaming}.
   \newline
   Proc. ACM 
-International Conference on Multimedia (ACM Multimedia) (Orlando, FL, Nov. 
-2014)
+International Conference on Multimedia (ACM Multimedia), Orlando, FL, Nov. 2014, pp. 317--326
 
 \bibitem{osmf}
   Greg Hamer,
@@ -163,7 +172,17 @@ Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}.
   \newline
   Proc. ACM 
 Proc. ACM SIGCOMM Workshop on Future Human-Centric Multimedia Networking 
-(FhMN)) (Hong Kong, Aug. 2013)
+(FhMN), Hong Kong, Aug. 2013, pp. 53--58
+
+\bibitem{bandawarePrefetch}
+Vengatanathan Krishnamoorthi, Niklas Carlsson, Derek Eager, Anirban 
+Mahanti, and Nahid Shahmehri,
+	\emph{Bandwidth-aware Prefetching for Proactive 
+Multi-video Preloading and Improved HAS Performance}.
+	\newline
+	Proc. ACM 
+International Conference on Multimedia (ACM Multimedia), Brisbane, 
+Australia, Oct. 2015.
 
 
 %\bibitem{randall2008}
