@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.4)  1 APR 2016 02:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  1 APR 2016 18:10
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -478,6 +478,13 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\afterpage
+.sty"
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks38
+\AP@partial=\box30
+\AP@footins=\box31
+)
 
 LaTeX Warning: Unused global option(s):
     [9pt,a4paper].
@@ -485,124 +492,155 @@ LaTeX Warning: Unused global option(s):
 ("TDDD82 Geo-based mediaplayer.aux")
 \openout1 = `"TDDD82 Geo-based mediaplayer.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
 .mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
 \scratchdimen=\dimen124
-\scratchbox=\box30
+\scratchbox=\box32
 \nofMPsegments=\count111
 \nofMParguments=\count112
-\everyMPshowfont=\toks38
+\everyMPshowfont=\toks39
 \MPscratchCnt=\count113
 \MPscratchDim=\dimen125
 \MPnumerator=\count114
 \makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks39
+\everyMPtoPDFconversion=\toks40
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 29.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
 
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 29.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 30.
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
+Overfull \hbox (14.7743pt too wide) in paragraph at lines 42--44
+\T1/aer/m/n/9 ter-ac-tive video stream-ing, Ge-o-graph-i-cal based stream-ing (
+GBS),
+ []
+
 [1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<HAS1.png, id=10, 803.0pt x 602.25pt>
+<HAS1.png, id=11, 803.0pt x 602.25pt>
 File: HAS1.png Graphic file (type png)
  <use HAS1.png>
-Package pdftex.def Info: HAS1.png used on input line 73.
+Package pdftex.def Info: HAS1.png used on input line 75.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 73--74
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 75--76
  [] 
  []
 
-<HAS2.png, id=12, 803.0pt x 602.25pt>
+<HAS2.png, id=13, 803.0pt x 602.25pt>
 File: HAS2.png Graphic file (type png)
  <use HAS2.png>
-Package pdftex.def Info: HAS2.png used on input line 81.
+Package pdftex.def Info: HAS2.png used on input line 83.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 81--82
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 83--84
  [] 
  []
 
-[2 <./HAS1.png> <./HAS2.png>] <teomet.png, id=22, 469.755pt x 441.14813pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Underfull \vbox (badness 1939) has occurred while \output is active []
+
+
+<prefetch.png, id=20, 498.36188pt x 437.38406pt>
+File: prefetch.png Graphic file (type png)
+ <use prefetch.png>
+Package pdftex.def Info: prefetch.png used on input line 101.
+(pdftex.def)             Requested size: 249.18033pt x 218.69148pt.
+
+Overfull \hbox (9.18033pt too wide) in paragraph at lines 101--102
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./HAS1.png> <./HAS2.png>] <teomet.png, id=27, 469.755pt x 441.14813pt>
 File: teomet.png Graphic file (type png)
 
 <use teomet.png>
-Package pdftex.def Info: teomet.png used on input line 105.
-(pdftex.def)             Requested size: 239.57188pt x 224.98256pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-<Media_player.png, id=26, 484.81125pt x 362.85562pt>
+Package pdftex.def Info: teomet.png used on input line 114.
+(pdftex.def)             Requested size: 234.87692pt x 220.57352pt.
+ <Media_player.png, id=28, 484.81125pt x 362.85562pt>
 File: Media_player.png Graphic file (type png)
- <use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 116.
+
+<use Media_player.png>
+Package pdftex.def Info: Media_player.png used on input line 125.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 116--117
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 125--126
  [] 
  []
 
-[4
 
- <./teomet.png> <./Media_player.png>] [5
+Overfull \hbox (3.13028pt too wide) in paragraph at lines 135--136
+\T1/aer/m/n/9 video qual-ity by ob-serv-ing and con-trol-ling the play-back buf
+fer
+ []
+
+
+Overfull \hbox (2.07744pt too wide) in paragraph at lines 135--136
+\T1/aer/m/n/9 than look-ing at the net-work ca-pac-ity. Pro-vid-ing an alogrith
+m
+ []
+
+[4 <./prefetch.png> <./teomet.png> <./Media_player.png>] [5
+
+] [6
 
 
 ]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 154--160
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 169--175
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
-[6
+[7
 
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
- 3199 strings out of 493634
- 39483 string characters out of 3134016
- 108318 words of memory out of 3000000
- 6507 multiletter control sequences out of 15000+200000
- 48558 words of font info for 70 fonts, out of 3000000 for 9000
+ 3231 strings out of 493634
+ 40071 string characters out of 3134015
+ 108720 words of memory out of 3000000
+ 6531 multiletter control sequences out of 15000+200000
+ 50711 words of font info for 73 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,28p,1751b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,28p,1758b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jonathan/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonathan/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
@@ -610,15 +648,16 @@ Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
 /Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmmi9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/User
-s/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pf
-b><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
-mb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (6 pages, 555270 bytes).
+/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Jonathan/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users
+/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt
+9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
+etic/uhvb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/urw/times/utmb8a.pfb>
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 585132 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
