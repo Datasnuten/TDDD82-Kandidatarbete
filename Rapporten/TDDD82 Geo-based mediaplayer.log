@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  1 APR 2016 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.4)  1 APR 2016 21:15
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -621,21 +621,18 @@ m
 
 [4 <./prefetch.png> <./teomet.png> <./Media_player.png>] [5
 
-] [6
-
-
 ]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 169--175
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 168--174
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
-[7
+[6
 
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
  3231 strings out of 493634
- 40071 string characters out of 3134015
+ 40071 string characters out of 3134016
  108720 words of memory out of 3000000
  6531 multiletter control sequences out of 15000+200000
  50711 words of font info for 73 fonts, out of 3000000 for 9000
@@ -655,9 +652,9 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users
 9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
 etic/uhvb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 585132 bytes).
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (6 pages, 584545 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
