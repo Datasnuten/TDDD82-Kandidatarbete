@@ -12,6 +12,7 @@ package org.osmf.player.chrome.widgets
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	import flash.utils.flash_proxy;
+	import flash.utils.Dictionary;
 	
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.logging.Log;
@@ -28,6 +29,15 @@ package org.osmf.player.chrome.widgets
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
 		public var object:int;
+		
+		private var dict:Dictionary = new Dictionary();
+		
+		//Exempel: Lägga till geomapObject i mappen med nyckeln befintlig variabel x2
+		//dict.x2 = geomapObject;
+		
+		//Exempel: Lägga till geomapObject i mappen med nyckeln icke-befintlig sträng 1234
+		//dict["1234"] = geomapObject2;
+		
 		
 		private var array:Array;
 		/*private var aList:ArrayList;*/
@@ -56,6 +66,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function drawPointOfInterest():void
 		{
+			
 			var xAdjust:int = 30;
 			var yAdjust:int = -100;
 			var string:String = "Point Of Interest";
@@ -88,7 +99,7 @@ package org.osmf.player.chrome.widgets
 			geomapObject2.setDirection(270);
 			geomapObject3 = new GeoMapObject(this,x2,120+y2, assetManager);
 			geomapObject3.setDirection(0);
-			
+			dict.
 			/*array.push(geomapObject);
 			array.push(geomapObject2);
 			array.push(geomapObject3);*/
