@@ -15,6 +15,15 @@ package org.osmf.player.chrome.widgets
 	
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.media.MediaFactory;
+	import org.osmf.media.MediaPlayer;
+	import org.osmf.containers.MediaContainer;
+	import org.osmf.media.DefaultMediaFactory;
+	import org.osmf.media.URLResource;
+	import org.osmf.media.MediaElement;
+	import org.osmf.media.PluginInfoResource;
+	import org.osmf.media.MediaResourceBase;
+	import org.osmf.events.MediaFactoryEvent;
 
 
 	public class GeoMapObject extends Widget
@@ -102,6 +111,7 @@ package org.osmf.player.chrome.widgets
 					}
 				}
 			updateFace(selected);
+			playURL();
 			highlighted = true;
 
 			}else{
@@ -215,6 +225,40 @@ package org.osmf.player.chrome.widgets
 		
 		private function playURL():void
 		{
+			// This is a normal video player setup.
+			var mediaFactory:MediaFactory = new DefaultMediaFactory();
+			var mediaPlayer:MediaPlayer = new MediaPlayer();
+			var mediaContainer:MediaContainer = new MediaContainer();
+			var resource:URLResource = new URLResource("rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
+			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
+			mediaContainer.addMediaElement(mediaElement);
+			this.addChild(mediaContainer);
+			
+			// Load the plugin statically
+			//var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
+			
+			// You can load it as a dynamic plugin as well
+			 var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");
+			
+			// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
+			pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
+			pluginResource.addMetadataValue("MediaContainer", mediaContainer);
+			
+			// Once the plugin is loaded, play the media.
+			// The event handler is not needed if you use the statically linked plugin,
+			// but is here in case you load the plugin dynamically.
+			// For readability, we don’t provide error handling here, but you should.
+			mediaFactory.addEventListener(
+				MediaFactoryEvent.PLUGIN_LOAD,
+				function(event:MediaFactoryEvent):void
+				{
+					// Now let's play the video - mediaPlayer has autoPlay set to true by default,
+					// so the playback starts as soon as the media is ready to be played.
+					mediaPlayer.media = mediaElement;
+				});
+			
+			// Load the plugin.
+			mediaFactory.loadPlugin(pluginResource);
 			//var advertisementPluginInfo:AdvertisementPluginInfo = new AdvertisementPluginInfo();
 		}
 		
