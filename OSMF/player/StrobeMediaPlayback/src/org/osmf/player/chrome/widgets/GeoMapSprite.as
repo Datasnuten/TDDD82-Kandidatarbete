@@ -22,15 +22,17 @@ package org.osmf.player.chrome.widgets
 
 	public class GeoMapSprite extends Sprite
 	{
-		private var geomapObject:GeoMapObject,geomapObject2:GeoMapObject,geomapObject3:GeoMapObject;
+		private var geomapObject:GeoMapObject;
+		private var incrementer:int = 0;
 		private var x2:int;
 		private var y2:int;
 		private var Mapradius:int;
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
 		public var object:int;
+		private var text:TextField;
 		
-		private var dict:Dictionary = new Dictionary();
+		private var dict:Object = new Object();
 		
 		//Exempel: Lägga till geomapObject i mappen med nyckeln befintlig variabel x2
 		//dict.x2 = geomapObject;
@@ -57,10 +59,10 @@ package org.osmf.player.chrome.widgets
 			graphics.drawCircle(x1,y1,Mapradius);
 			graphics.endFill();
 			
-			addEventListener(MouseEvent.CLICK, onMouseClick);
+			//addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
-			createObjects();
+			tempCallCreateObjects();
 		}
 		
 		
@@ -72,7 +74,7 @@ package org.osmf.player.chrome.widgets
 			var string:String = "Point Of Interest";
 			var poiRadius:int = 40;
 			var pointOfInterest:Sprite = new Sprite();
-			var text:TextField = new TextField();
+			text = new TextField();
 			text.backgroundColor = 0xff0000;
 			text.text = string;
 			text.wordWrap = true;
@@ -90,39 +92,40 @@ package org.osmf.player.chrome.widgets
 			addChild(pointOfInterest);
 		}
 		
-		private function createObjects():void
+		private function tempCallCreateObjects():void {
+			createObjects(-100,0,70,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
+			//dict[0].setDefault();
+			createObjects(80,-80,270,"hej");
+			createObjects(0,120,0,"hej");
+		}
+		
+		private function createObjects(x:int, y:int, angle:int, url:String):void
 		{	
-			geomapObject = new GeoMapObject(this,x2-100,y2,assetManager);
-			geomapObject.setDirection(70);
-			geomapObject.setURL("http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
-			geomapObject2 = new GeoMapObject(this,x2+80,-80+y2,assetManager);
-			geomapObject2.setDirection(270);
-			geomapObject2.setURL("http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
-			geomapObject3 = new GeoMapObject(this,x2,120+y2, assetManager);
-			geomapObject3.setDirection(0);
-			geomapObject3.setURL("http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
+			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager);
+			geomapObject.setDirection(angle);
+			geomapObject.setURL(url);
 			
 			addChild(geomapObject);
-			addChild(geomapObject2);
-			addChild(geomapObject3);
+			//geomapObject.setDefault();
 			
-			geomapObject.setDefault();
+			dict[incrementer] = geomapObject;
+			incrementer = incrementer+1;
 		}
 	
 		public function onMouseClick(event:MouseEvent):void
 		{
-			geomapObject.onMouseClick(event);
-			geomapObject2.onMouseClick(event);
-			geomapObject3.onMouseClick(event);
-			
+			for each(var obj:* in dict) {
+				obj.onMouseClick(event,dict);
+			}
 		}
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-			geomapObject.onMouseMove(event);
-			geomapObject2.onMouseMove(event);
-			geomapObject3.onMouseMove(event);
+			Mouse.cursor = flash.ui.MouseCursor.BUTTON;			
+			for each(var obj:* in dict) {
+				obj.onMouseMove(event);
+			}
+			//text.text = dict.hasOwnProperty("0").toString();
 		}
 		
 	}
