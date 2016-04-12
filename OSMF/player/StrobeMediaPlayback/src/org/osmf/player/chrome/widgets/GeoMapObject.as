@@ -7,19 +7,12 @@
 package org.osmf.player.chrome.widgets
 {
 	import flash.display.DisplayObject;
-	import flash.display.Sprite;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
-	import org.osmf.layout.HorizontalAlign;
-	import org.osmf.layout.LayoutMode;
-	import org.osmf.layout.VerticalAlign;
-	import org.osmf.metadata.Metadata;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
-	import org.osmf.player.chrome.hint.OwnWidgetHint;
 
 
 	public class GeoMapObject extends Widget
@@ -30,8 +23,8 @@ package org.osmf.player.chrome.widgets
 		private var yCoordinate:int;
 		private var direction:Number = 0;
 		
-		private var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
-		private var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
+		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
+		protected var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
 		
 		protected var normal:DisplayObject;
 		protected var selected:DisplayObject;
@@ -43,8 +36,7 @@ package org.osmf.player.chrome.widgets
 		private var holdingOver:Boolean = false;
 		
 		private var context:GeoMapSprite;
-		
-		private var video:Metadata;
+		private var url:String;
 		
 		
 		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager)
@@ -181,16 +173,6 @@ package org.osmf.player.chrome.widgets
 			updateFace(normal);
 		}
 		
-		public function setVideo(video:Metadata):void
-		{
-			this.video = video;
-		}
-		
-		public function get getVideo():Metadata
-		{
-			return video;
-		}
-		
 		public function get getIfHoldingOver():Boolean
 		{
 			return holdingOver;
@@ -199,6 +181,22 @@ package org.osmf.player.chrome.widgets
 		public function get getState():Boolean
 		{
 			return state;
+		}
+		
+		public function setURL(url:String):void
+		{
+			this.url = url;
+		}
+		
+		private function playURL():void
+		{
+			var advertisementPluginInfo:AdvertisementPluginInfo = new AdvertisementPluginInfo();
+		}
+		
+		public function setDefault():void
+		{
+			state = !state;
+			updateFace(selected);
 		}
 	}
 }

@@ -11,8 +11,8 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextField;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
-	import flash.utils.flash_proxy;
 	import flash.utils.Dictionary;
+	import flash.utils.flash_proxy;
 	
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.logging.Log;
@@ -92,33 +92,25 @@ package org.osmf.player.chrome.widgets
 		
 		private function createObjects():void
 		{	
-			/*array = new Array.<GeoMapObject>;*/
 			geomapObject = new GeoMapObject(this,x2-100,y2,assetManager);
 			geomapObject.setDirection(70);
+			geomapObject.setURL("http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
 			geomapObject2 = new GeoMapObject(this,x2+80,-80+y2,assetManager);
 			geomapObject2.setDirection(270);
+			geomapObject2.setURL("http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
 			geomapObject3 = new GeoMapObject(this,x2,120+y2, assetManager);
 			geomapObject3.setDirection(0);
-			dict.
-			/*array.push(geomapObject);
-			array.push(geomapObject2);
-			array.push(geomapObject3);*/
+			geomapObject3.setURL("http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			
 			addChild(geomapObject);
 			addChild(geomapObject2);
 			addChild(geomapObject3);
+			
+			geomapObject.setDefault();
 		}
-		
+	
 		public function onMouseClick(event:MouseEvent):void
 		{
-			/*for(var i:int = 0;i<array.length;i++){
-				if(array[i].indexOf(geomapObject).getState != true && array[i].indexOf(geomapObject).getIfHoldingOver == true){
-					//Do nothing
-				}
-				else if(array[i].getState != true){
-					array[i].resetFace;
-				}
-			}*/
 			geomapObject.onMouseClick(event);
 			geomapObject2.onMouseClick(event);
 			geomapObject3.onMouseClick(event);
