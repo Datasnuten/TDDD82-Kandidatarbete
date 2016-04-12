@@ -14,44 +14,19 @@
             
             var pqs = new ParsedQueryString();
             var parameterNames = pqs.params(false);
-            
-			
-			/*var parameters = {
+            var parameters = {
                 src: "http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv",
                 autoPlay: "false",
                 verbose: true,
                 controlBarAutoHide: "false",
                 controlBarPosition: "bottom",
                 poster: "images/poster.png"
-            };*/
-			
-			//ADDED Project group 9
-			 var parameters =
-			 {
-				 src: "http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv",	   		 			
-			 
-				 // Load the Ad Plug-in
-				plugin_ads: "AdvertisementPlugin.swf",
-				autoPlay: "false",
-                verbose: true,
-                controlBarAutoHide: "false",
-                controlBarPosition: "bottom",
-				poster: "images/testbild.jpg",
-			 
-				 // Configure the Ad Plug-in
-				 ads_preroll: "http://example.com/example.flv",
-				 ads_postroll: "http://example.com/example.flv",
-				 ads_midroll: "http://example.com/example.flv",
-				 ads_midrollTime: 20,
-				 ads_overlay: "http://example.com/example.flv",
-				 ads_overlayTime: 25
-			 };
-			 
+            };
             
             for (var i = 0; i < parameterNames.length; i++) {
                 var parameterName = parameterNames[i];
                 parameters[parameterName] = pqs.param(parameterName) ||
-                parameters[parameterName];		
+                parameters[parameterName];
             }
             
        	    var wmodeValue = "direct";
@@ -66,7 +41,7 @@
             }
             
             // Embed the player SWF:	            
-            /*swfobject.embedSWF(
+            swfobject.embedSWF(
 				"StrobeMediaPlayback.swf"
 				, "StrobeMediaPlayback"
 				, 640
@@ -81,19 +56,7 @@
 				, {
 	                name: "StrobeMediaPlayback"
 	            }
-			);*/
-			
-			//ADDED project group 9
-			 swfobject.embedSWF
-			 (  "StrobeMediaPlayback.swf",
-				 "StrobeMediaPlayback",
-				 640, 480,
-				 "10.1.0",
-				 "expressInstall.swf",
-				 parameters,
-				 { allowFullScreen: "true", wmode: "direct" },
-				 { name: "StrobeMediaPlayback" }
-			 );
+			);
             
             /* Uncomment this code to be notified of playback errors in JavaScript:
             

@@ -35,14 +35,15 @@ package org.osmf.player.chrome.widgets
 		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
 		protected var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
 		
-		protected var normal:DisplayObject;
-		protected var selected:DisplayObject;
-		protected var currentFace:DisplayObject;
+		public var normal:DisplayObject;
+		public var selected:DisplayObject;
+		public var currentFace:DisplayObject;
+		public var highlighted:Boolean;
 		
 		protected var mouseOver:Boolean;
 		
-		private var state:Boolean = false;
-		private var holdingOver:Boolean = false;
+		public var state:Boolean = false;
+		public var holdingOver:Boolean = false;
 		
 		private var context:GeoMapSprite;
 		private var url:String;
@@ -65,13 +66,13 @@ package org.osmf.player.chrome.widgets
 			selected.x = this.positionX;
 			selected.y = this.positionY;
 			
-			addEventListener(MouseEvent.CLICK, onMouseClick);
+			//addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			updateFace(normal);
 		}
 		
-		private function updateFace(face:DisplayObject):void
+		public function updateFace(face:DisplayObject):void
 		{
 			if (currentFace != face)
 			{
@@ -84,7 +85,7 @@ package org.osmf.player.chrome.widgets
 				
 				if (currentFace != null)
 				{
-					addChildAt(currentFace, 0);
+					addChildAt(currentFace, 1);
 					
 					measure();
 					width = currentFace.width;
@@ -93,16 +94,29 @@ package org.osmf.player.chrome.widgets
 			}
 		}
 		
-		public function onMouseClick(event:MouseEvent):void
+		public function onMouseClick(event:MouseEvent, dict:Object):void
 		{
 			if(holdingOver){
-			state = !state;
+				state = !state;
 			if(state){
+				for each(var obj:* in dict) {
+					if (obj.highlighted == true && obj != this) {
+						obj.updateFace(obj.normal);
+						obj.state = !obj.state;
+					}
+				}
 			updateFace(selected);
+<<<<<<< HEAD
 			playURL();
+=======
+			highlighted = true;
+
+>>>>>>> 738649ad4e416b8825f63a28fcad41ff559714c5
 			}else{
 				updateFace(normal);
+				highlighted = false;
 			}
+			
 			}
 		}
 		
@@ -200,6 +214,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function playURL():void
 		{
+<<<<<<< HEAD
 			// This is a normal video player setup.
 			var mediaFactory:MediaFactory = new DefaultMediaFactory();
 			var mediaPlayer:MediaPlayer = new MediaPlayer();
@@ -234,6 +249,9 @@ package org.osmf.player.chrome.widgets
 			
 			// Load the plugin.
 			mediaFactory.loadPlugin(pluginResource);
+=======
+			//var advertisementPluginInfo:AdvertisementPluginInfo = new AdvertisementPluginInfo();
+>>>>>>> 738649ad4e416b8825f63a28fcad41ff559714c5
 		}
 		
 		public function setDefault():void
