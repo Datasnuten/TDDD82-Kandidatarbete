@@ -94,7 +94,6 @@ package org.osmf.player.chrome.widgets
 		
 		private function tempCallCreateObjects():void {
 			createObjects(-100,0,70,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
-			//dict[0].setDefault();
 			createObjects(80,-80,270,"hej");
 			createObjects(0,120,0,"hej");
 		}
@@ -106,7 +105,6 @@ package org.osmf.player.chrome.widgets
 			geomapObject.setURL(url);
 			
 			addChild(geomapObject);
-			//geomapObject.setDefault();
 			
 			dict[incrementer] = geomapObject;
 			incrementer = incrementer+1;
@@ -125,7 +123,6 @@ package org.osmf.player.chrome.widgets
 			for each(var obj:* in dict) {
 				obj.onMouseMove(event);
 			}
-			//text.text = dict.hasOwnProperty("0").toString();
 		}
 		
 	}

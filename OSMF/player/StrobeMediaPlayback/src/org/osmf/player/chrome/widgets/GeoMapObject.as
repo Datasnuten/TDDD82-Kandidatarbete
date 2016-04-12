@@ -102,16 +102,13 @@ package org.osmf.player.chrome.widgets
 				for each(var obj:* in dict) {
 					if (obj.highlighted == true && obj != this) {
 						obj.updateFace(obj.normal);
-						obj.state = !obj.state;
+						obj.state = false;
 					}
 				}
 			updateFace(selected);
-<<<<<<< HEAD
 			playURL();
-=======
 			highlighted = true;
 
->>>>>>> 738649ad4e416b8825f63a28fcad41ff559714c5
 			}else{
 				updateFace(normal);
 				highlighted = false;
@@ -214,7 +211,6 @@ package org.osmf.player.chrome.widgets
 		
 		private function playURL():void
 		{
-<<<<<<< HEAD
 			// This is a normal video player setup.
 			var mediaFactory:MediaFactory = new DefaultMediaFactory();
 			var mediaPlayer:MediaPlayer = new MediaPlayer();
@@ -249,9 +245,7 @@ package org.osmf.player.chrome.widgets
 			
 			// Load the plugin.
 			mediaFactory.loadPlugin(pluginResource);
-=======
 			//var advertisementPluginInfo:AdvertisementPluginInfo = new AdvertisementPluginInfo();
->>>>>>> 738649ad4e416b8825f63a28fcad41ff559714c5
 		}
 		
 		public function setDefault():void
