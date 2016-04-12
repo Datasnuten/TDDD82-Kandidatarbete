@@ -171,7 +171,10 @@ package org.osmf.advertisementplugin
 		{
 			// Set up the ad 
 			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));	
-			
+			CONFIG:LOGGING
+			{
+				logger.debug("ad manager");
+			}
 			// Set the layout metadata, if present				
 			if (layoutInfo != null)
 			{

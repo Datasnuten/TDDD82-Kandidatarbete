@@ -1,0 +1,6 @@
+https://blogs.adobe.com/osmf/tag/strobe-media-playback
+
+Look in the strobmediaplayback.html (OSMF\player\StrobeMediaPlayback\bin) for implementing the plug-in
+
+The code for contacting the plug-in is done in the geomapobject and adding the URL video to the mediaplayer
+is done in the advertisement plug-in.
