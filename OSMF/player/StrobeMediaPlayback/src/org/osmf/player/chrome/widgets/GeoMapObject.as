@@ -234,7 +234,6 @@ package org.osmf.player.chrome.widgets
 			mediaContainer.addMediaElement(mediaElement);
 			this.addChild(mediaContainer);
 			
-			context.setText("moj");
 			
 			// Load the plugin statically
 			//var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
@@ -267,7 +266,9 @@ package org.osmf.player.chrome.widgets
 		public function setDefault():void
 		{
 			state = !state;
+			highlighted = true;
 			updateFace(selected);
+			playURL();
 		}
 	}
 }

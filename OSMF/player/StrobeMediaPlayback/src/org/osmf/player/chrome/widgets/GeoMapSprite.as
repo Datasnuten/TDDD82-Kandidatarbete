@@ -30,9 +30,9 @@ package org.osmf.player.chrome.widgets
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
 		public var object:int;
-		private var text:TextField;
 		
 		private var dict:Object = new Object();
+		private var text:TextField;
 		
 		//Exempel: Lägga till geomapObject i mappen med nyckeln befintlig variabel x2
 		//dict.x2 = geomapObject;
@@ -50,6 +50,7 @@ package org.osmf.player.chrome.widgets
 			this.assetManager = assetManager;
 			
 			drawPointOfInterest();
+			//drawCardinalDirections("N",0,y2);
 			
 			graphics.clear();
 			graphics.beginFill(0xffffff,1);
@@ -89,23 +90,26 @@ package org.osmf.player.chrome.widgets
 			addChild(pointOfInterest);
 		}
 		
+		private function drawCardinalDirections(string:String, xAdjust:int,yAdjust:int):void
+		{
+			var text:TextField = new TextField();
+			text.backgroundColor = 0xffffff;
+			text.text = string;
+			text.wordWrap = true;
+			text.multiline = true;
+			text.scaleX = 0.8;
+			
+			text.y = y2+yAdjust;
+			text.x = x2+xAdjust;
+			
+			addChild(text);
+		}
+		
 		private function tempCallCreateObjects():void {
-<<<<<<< HEAD
 			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
-			createObjects(0,120,0,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
-=======
-<<<<<<< HEAD
-			createObjects(-100,0,20,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
-			//dict[0].setDefault();
-			createObjects(80,-80,350,"hej");
-=======
-			createObjects(-100,0,70,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
-			createObjects(80,-80,270,"hej");
->>>>>>> origin/master
-			createObjects(0,120,0,"hej");
-			createObjects(0,50,180,"hej");
->>>>>>> a37c726d0390d064b908da2755b27f621dae87e5
+			createObjects(0,120,30,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
+			dict[0].setDefault();
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void

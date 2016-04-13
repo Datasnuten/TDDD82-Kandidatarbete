@@ -20,6 +20,7 @@
 package org.osmf.player.chrome.widgets
 {
 	import flash.events.Event;
+	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	
 	import org.osmf.player.chrome.assets.AssetIDs;
@@ -27,8 +28,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.traits.PlayState;
 	import org.osmf.traits.PlayTrait;
 	import org.osmf.traits.SeekTrait;
-	//################################# Added! ################################
-	import flash.events.KeyboardEvent;
+	
 	
 	public class PlayButton extends PlayableButton
 	{
