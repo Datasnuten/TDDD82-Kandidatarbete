@@ -38,7 +38,12 @@ package org.osmf.advertisementplugin
 	import org.osmf.events.TimelineMetadataEvent;
 	import org.osmf.layout.LayoutMetadata;
 	import org.osmf.layout.ScaleMode;
-	import org.osmf.media.*;
+	import org.osmf.media.MediaElement;
+	import org.osmf.media.MediaFactory;
+	import org.osmf.media.MediaPlayer;
+	import org.osmf.media.MediaResourceBase;
+	import org.osmf.media.PluginInfo;
+	import org.osmf.media.URLResource;
 	import org.osmf.metadata.TimelineMarker;
 	import org.osmf.metadata.TimelineMetadata;
 	import org.osmf.traits.PlayState;
@@ -69,6 +74,7 @@ package org.osmf.advertisementplugin
 			mediaPlayer = resource.getMetadataValue("MediaPlayer") as MediaPlayer;
 			mediaContainer = resource.getMetadataValue("MediaContainer") as MediaContainer;
 			mediaFactory = resource.getMetadataValue(PluginInfo.PLUGIN_MEDIAFACTORY_NAMESPACE) as MediaFactory;
+
 						
 			prerollURL = resource.getMetadataValue("preroll") as String;
 			postrollURL = resource.getMetadataValue("postroll") as String;

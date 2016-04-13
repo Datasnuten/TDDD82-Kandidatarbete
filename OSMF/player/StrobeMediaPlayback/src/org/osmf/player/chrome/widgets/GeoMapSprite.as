@@ -41,9 +41,6 @@ package org.osmf.player.chrome.widgets
 		//dict["1234"] = geomapObject2;
 		
 		
-		private var array:Array;
-		/*private var aList:ArrayList;*/
-		
 		public function GeoMapSprite(x1:int,y1:int,Mapradius:int, assetManager:AssetsManager) 
 		{
 			super();
@@ -93,9 +90,9 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		private function tempCallCreateObjects():void {
-			createObjects(-100,0,70,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
-			createObjects(80,-80,270,"hej");
-			createObjects(0,120,0,"hej");
+			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
+			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
+			createObjects(0,120,0,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void

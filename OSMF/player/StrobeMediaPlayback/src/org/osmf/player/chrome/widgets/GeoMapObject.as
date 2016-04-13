@@ -11,17 +11,17 @@ package org.osmf.player.chrome.widgets
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
-	import org.osmf.player.chrome.assets.AssetIDs;
-	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.containers.MediaContainer;
+	import org.osmf.events.MediaFactoryEvent;
+	import org.osmf.media.DefaultMediaFactory;
+	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
-	import org.osmf.containers.MediaContainer;
-	import org.osmf.media.DefaultMediaFactory;
-	import org.osmf.media.URLResource;
-	import org.osmf.media.MediaElement;
-	import org.osmf.media.PluginInfoResource;
 	import org.osmf.media.MediaResourceBase;
-	import org.osmf.events.MediaFactoryEvent;
+	import org.osmf.media.PluginInfoResource;
+	import org.osmf.media.URLResource;
+	import org.osmf.player.chrome.assets.AssetIDs;
+	import org.osmf.player.chrome.assets.AssetsManager;
 
 
 	public class GeoMapObject extends Widget
@@ -215,20 +215,23 @@ package org.osmf.player.chrome.widgets
 			var mediaFactory:MediaFactory = new DefaultMediaFactory();
 			var mediaPlayer:MediaPlayer = new MediaPlayer();
 			var mediaContainer:MediaContainer = new MediaContainer();
-			var resource:URLResource = new URLResource("rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
+			var resource:URLResource = new URLResource(url);
 			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 			mediaContainer.addMediaElement(mediaElement);
 			this.addChild(mediaContainer);
+			
+			context.setText("moj");
 			
 			// Load the plugin statically
 			//var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
 			
 			// You can load it as a dynamic plugin as well
-			 var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");
+			//Insert the path of where the Advertisementplugin.swf is located
+			 var pluginResource:MediaResourceBase = new URLResource("file:///C:/TDDD82-Kandidatarbete/OSMF/player/StrobeMediaPlayback/bin/Advertisementplugin.swf");
 			
-			// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
-			pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
-			pluginResource.addMetadataValue("MediaContainer", mediaContainer);
+			 // Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
+			 pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
+			 pluginResource.addMetadataValue("MediaContainer", mediaContainer);
 			
 			// Once the plugin is loaded, play the media.
 			// The event handler is not needed if you use the statically linked plugin,
@@ -245,7 +248,6 @@ package org.osmf.player.chrome.widgets
 			
 			// Load the plugin.
 			mediaFactory.loadPlugin(pluginResource);
-			//var advertisementPluginInfo:AdvertisementPluginInfo = new AdvertisementPluginInfo();
 		}
 		
 		public function setDefault():void
