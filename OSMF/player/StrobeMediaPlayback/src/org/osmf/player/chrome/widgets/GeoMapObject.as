@@ -10,6 +10,8 @@ package org.osmf.player.chrome.widgets
 	import flash.events.MouseEvent;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
+	import flash.geom.Matrix;
+	import flash.geom.Rectangle;
 	
 	import org.osmf.containers.MediaContainer;
 	import org.osmf.events.MediaFactoryEvent;
@@ -60,11 +62,14 @@ package org.osmf.player.chrome.widgets
 			normal = assetManager.getDisplayObject(normalFace);
 			selected = assetManager.getDisplayObject(selectedFace);
 			
+			
 			normal.x = this.positionX;
 			normal.y = this.positionY;
 			
 			selected.x = this.positionX;
 			selected.y = this.positionY;
+			
+			
 			
 			//addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
@@ -119,7 +124,7 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseY < positionY+selected.height && mouseY > positionY-selected.height && mouseX < positionX+selected.width && mouseX > positionX-selected.width){
+			if(mouseY < positionY+selected.height && mouseY > positionY && mouseX < positionX+selected.width && mouseX > positionX){
 				Mouse.cursor = flash.ui.MouseCursor.ARROW;
 				holdingOver = true;
 			}else{
@@ -151,8 +156,17 @@ package org.osmf.player.chrome.widgets
 		public function setDirection(direction:int):void
 		{
 			this.direction = direction;
-			normal.rotation = direction;
-			selected.rotation = direction;
+			var matrix:Matrix = normal.transform.matrix;
+			var rect:Rectangle = normal.getBounds(normal.parent);
+			
+			matrix.translate(-(rect.left + (rect.width / 2)), -(rect.top + (rect.height / 2)));
+			matrix.rotate((direction / 180) * Math.PI);
+			matrix.translate(rect.left + (rect.width / 2), rect.top + (rect.height / 2));
+			normal.transform.matrix = matrix;
+			selected.transform.matrix = matrix;
+			
+			normal.rotation = Math.round(normal.rotation);
+			selected.rotation = Math.round(selected.rotation);
 		}
 		
 		public function get getDirection():Number
@@ -172,7 +186,7 @@ package org.osmf.player.chrome.widgets
 			return positionX;
 		}
 		
-		public function setPositioY(positionY:int):void
+		public function setPositionY(positionY:int):void
 		{
 			this.positionY = positionY;
 			normal.y = positionY;

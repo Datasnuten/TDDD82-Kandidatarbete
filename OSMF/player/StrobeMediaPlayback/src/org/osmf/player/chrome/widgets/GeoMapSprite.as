@@ -90,9 +90,22 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		private function tempCallCreateObjects():void {
+<<<<<<< HEAD
 			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
 			createObjects(0,120,0,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
+=======
+<<<<<<< HEAD
+			createObjects(-100,0,20,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
+			//dict[0].setDefault();
+			createObjects(80,-80,350,"hej");
+=======
+			createObjects(-100,0,70,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/dynamic_Streaming.f4m");
+			createObjects(80,-80,270,"hej");
+>>>>>>> origin/master
+			createObjects(0,120,0,"hej");
+			createObjects(0,50,180,"hej");
+>>>>>>> a37c726d0390d064b908da2755b27f621dae87e5
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void
