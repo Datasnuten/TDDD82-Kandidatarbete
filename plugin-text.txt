@@ -15,16 +15,6 @@
             var pqs = new ParsedQueryString();
             var parameterNames = pqs.params(false);
 			
-			
-            /*var parameters = {
-                src: "http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv",
-                autoPlay: "false",
-                verbose: true,
-                controlBarAutoHide: "false",
-                controlBarPosition: "bottom",
-                poster: "images/poster.png"
-            };*/
-			
 			//ADDED Project group 9
 			var parameters =
 			 {
@@ -40,10 +30,10 @@
 				 // Configure the Ad Plug-in
 				 ads_preroll: "http://example.com/example.flv",
 				 ads_postroll: "http://example.com/example.flv",
-				 ads_midroll: "http://example.com/example.flv",
+				 ads_midroll: "rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v",
 				 ads_midrollTime: 20,
-				/* ads_overlay: "http://example.com/example.flv",
-				 ads_overlayTime: 25*/
+				 ads_overlay: "http://example.com/example.flv",
+				 ads_overlayTime: 25
 			 };
 			 
             
@@ -63,25 +53,7 @@
             	}	            	
             	delete parameters.wmode;
             }
-            
-            // Embed the player SWF:	            
-            /*swfobject.embedSWF(
-				"StrobeMediaPlayback.swf"
-				, "StrobeMediaPlayback"
-				, 640
-				, 480
-				, "10.1.0"
-				, "expressInstall.swf"
-				, parameters
-				, {
-	                allowFullScreen: "true",
-	                wmode: wmodeValue
-	            }
-				, {
-	                name: "StrobeMediaPlayback"
-	            }
-			);*/
-			
+          
 			//ADDED Project group 9
 			swfobject.embedSWF
 			 (  "StrobeMediaPlayback.swf",
