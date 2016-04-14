@@ -62,7 +62,7 @@
 				 "10.1.0",
 				 "expressInstall.swf",
 				 parameters,
-				 { allowFullScreen: "true", wmode: "direct" },
+				 { allowFullScreen: "true", wmode: "direct",allowscriptaccess ="true"},
 				 { name: "StrobeMediaPlayback" }
 			 );
             

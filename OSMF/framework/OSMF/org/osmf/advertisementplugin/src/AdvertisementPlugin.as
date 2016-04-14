@@ -20,7 +20,7 @@
  *  
  *****************************************************/
 
-package
+package org.osmf.advertisementplugin.src
 {
 	import flash.display.Sprite;
 	
@@ -29,7 +29,7 @@ package
 	import org.osmf.media.MediaFactoryItem;
 	import org.osmf.media.MediaResourceBase;
 	import org.osmf.media.PluginInfo;
-	import org.osmf.advertisementplugin.AdvertisementPluginInfo;
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	
 	/**
 	 * Entry class for the Ad Plugin insertions.

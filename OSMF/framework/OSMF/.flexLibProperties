@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="1">
   <includeClasses>
+    <classEntry path="org.osmf.advertisementplugin.src.AdvertisementPlugin"/>
+    <classEntry path="org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo"/>
     <classEntry path="org.osmf.containers.HTMLMediaContainer"/>
     <classEntry path="org.osmf.containers.IMediaContainer"/>
     <classEntry path="org.osmf.containers.MediaContainer"/>
@@ -247,6 +249,7 @@
     <classEntry path="org.osmf.net.dvr.DVRUtils"/>
     <classEntry path="org.osmf.net.dvr.TestableResponder"/>
     <classEntry path="org.osmf.net.httpstreaming.DefaultHTTPStreamingSwitchManager"/>
+    <classEntry path="org.osmf.net.httpstreaming.HTTPDownloadManager"/>
     <classEntry path="org.osmf.net.httpstreaming.HTTPNetStream"/>
     <classEntry path="org.osmf.net.httpstreaming.HTTPStreamDownloader"/>
     <classEntry path="org.osmf.net.httpstreaming.HTTPStreamHandlerQoSInfo"/>
@@ -360,7 +363,6 @@
     <classEntry path="org.osmf.utils.TimeUtil"/>
     <classEntry path="org.osmf.utils.URL"/>
     <classEntry path="org.osmf.utils.Version"/>
-    <classEntry path="org.osmf.net.httpstreaming.HTTPDownloadManager"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

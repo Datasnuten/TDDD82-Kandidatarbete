@@ -20,10 +20,12 @@
  *  
  *****************************************************/
 
-package org.osmf.advertisementplugin
+package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 {
 	import flash.events.Event;
 	import flash.external.ExternalInterface;
+	import flash.system.Security;
+	import flash.system.SecurityDomain;
 	import flash.utils.Dictionary;
 	
 	import org.osmf.containers.MediaContainer;
@@ -54,9 +56,11 @@ package org.osmf.advertisementplugin
 	 */
 	public class AdvertisementPluginInfo extends PluginInfo
 	{
+		
 		public function AdvertisementPluginInfo()
 		{
 			super();
+
 			// Register the external interface callback functions which we'll use in our interactive demo.			
 			if (ExternalInterface.available)
 			{
