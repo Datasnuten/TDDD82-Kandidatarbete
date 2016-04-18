@@ -234,6 +234,8 @@ package org.osmf.net.httpstreaming
 		
 		private var lineBreakOS:String;
 		
+		public var prevMediaPlayer:MediaPlayer;
+		
 		CONFIG::LOGGING
 		{
 			private var numBytes:Number = 0;
