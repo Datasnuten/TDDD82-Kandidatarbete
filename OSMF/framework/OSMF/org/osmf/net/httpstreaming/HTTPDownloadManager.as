@@ -23,14 +23,17 @@ package org.osmf.net.httpstreaming
 	import flash.net.URLRequest;
 	import flash.net.URLStream;
 	import flash.net.URLVariables;
+	import flash.system.Capabilities;
 	import flash.utils.Dictionary;
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
+	
 	import mx.charts.AreaChart;
 	import mx.collections.ArrayCollection;
 	import mx.collections.ICollectionView;
 	import mx.core.INavigatorContent;
-	import mx.messaging.channels.StreamingAMFChannel;	
+	import mx.messaging.channels.StreamingAMFChannel;
+	
 	import org.osmf.events.HTTPStreamingEvent;
 	import org.osmf.events.MediaPlayerCapabilityChangeEvent;
 	import org.osmf.events.SeekEvent;
@@ -229,6 +232,8 @@ package org.osmf.net.httpstreaming
 		public var sizearray_850:Array = new Array;
 		public var sizearray_1300:Array = new Array;
 		
+		private var lineBreakOS:String;
+		
 		CONFIG::LOGGING
 		{
 			private var numBytes:Number = 0;
@@ -260,6 +265,12 @@ package org.osmf.net.httpstreaming
 		
 		public function HTTPDownloadManager()
 		{
+			if (Capabilities.os.search("Mac") == 0) {
+				lineBreakOS = "\n";
+			} else {
+				lineBreakOS = "\r\n";
+			}
+			
 			//			This is the text file from which we are reading the video structure. Should be placed in StrobeMediaPlayback\bin. File to be placed on the server for real environment.
 			request = new URLRequest("test.txt");		
 			loader = new URLLoader();
@@ -270,6 +281,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader");
 				trace("Some error occured: " + error.message);
 			}
 			
@@ -283,6 +295,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader1");
 				trace("Some error occured: " + error.message);
 			}
 			//			
@@ -308,6 +321,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader2");
 				trace("Some error occured: " + error.message);
 			}
 			//			Old file from which video structure was read. 
@@ -320,6 +334,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader3");
 				trace("Some error occured: " + error.message);
 			}
 			//			This text file configures max connections in parallel, alpha value for rate estimate, sets the download policy and buffer size
@@ -332,6 +347,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader4");
 				trace("Some error occured: " + error.message);
 			}
 			//			This text file automates user choice
@@ -344,6 +360,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("loader5");
 				trace("Some error occured: " + error.message);
 			}
 		}
@@ -356,9 +373,9 @@ package org.osmf.net.httpstreaming
 			var loader:URLLoader = URLLoader(event.target);
 			fileContent3 = loader.data;
 			var startTree:Number = fileContent3.indexOf("begin ");
-			var endTree:Number = fileContent3.indexOf("end\r\n", startTree);
+			var endTree:Number = fileContent3.indexOf("end" + lineBreakOS, startTree);
 			var tempStr:String = fileContent3.substring(startTree+6, endTree);
-			split = tempStr.split("\r\n");
+			split = tempStr.split(lineBreakOS);
 			logger.debug("path file "+ split);
 			//			REMOVE THIS BIT FOR NO PREFETCHING
 			if(split[0]==""){
@@ -380,7 +397,7 @@ package org.osmf.net.httpstreaming
 			var loader:URLLoader = URLLoader(event.target);
 			fileContent5 = loader.data;
 			logger.debug("Automator data "+ fileContent5);
-			var tempStr:Array = fileContent5.split("\r\n");
+			var tempStr:Array = fileContent5.split(lineBreakOS);
 			for(var i:uint=0;i<tempStr.length;i++){
 				var temp:Array=tempStr[i].split(" ");
 				jumpTime.push(temp[0]);
@@ -394,7 +411,7 @@ package org.osmf.net.httpstreaming
 			var loader:URLLoader = URLLoader(event.target);
 			fileContent4 = loader.data;
 			logger.debug("Input file3 "+ fileContent4);
-			var tempStr:Array = fileContent4.split("\r\n");
+			var tempStr:Array = fileContent4.split(lineBreakOS);
 			var start1:Number = tempStr[0].indexOf(":");
 			var start2:Number = tempStr[1].indexOf(":");
 			var start3:Number = tempStr[2].indexOf(":");
@@ -948,13 +965,14 @@ package org.osmf.net.httpstreaming
 		// Parses the text file downloaded in the constructor
 		private function processFile(event:Event):void
 		{
+			
 			var loader:URLLoader = URLLoader(event.target);
 			fileContent = loader.data;
-			var tempStr:String = fileContent.substr(0, fileContent.indexOf("\r\n"));
+			var tempStr:String = fileContent.substr(0, fileContent.indexOf(lineBreakOS));
 			var start:Number = fileContent.indexOf("length:");
-			tempStr = fileContent.substring((start + 8), fileContent.indexOf("\r\n", start));
+			tempStr = fileContent.substring((start + 8), fileContent.indexOf(lineBreakOS, start));
 			var nums:Array = new Array;
-			nums = tempStr.split(" ");			
+			nums = tempStr.split(" ");
 			for(var numNums:uint = 1; numNums < nums.length; numNums++)
 			{
 				branchLengths.push(nums[numNums]);
@@ -975,12 +993,12 @@ package org.osmf.net.httpstreaming
 				concat1 = "";
 			}
 			var startTree:Number = fileContent.indexOf("begin ");
-			var endTree:Number = fileContent.indexOf("end\r\n", startTree);		
+			var endTree:Number = fileContent.indexOf("end" + lineBreakOS, startTree);		
 			var dec:Number = 0;
 			var dec1:Number = 0;
 			tempStr = fileContent.substring(startTree+6, endTree);
 			var split:Array = new Array;
-			split = tempStr.split("\r\n");			
+			split = tempStr.split(lineBreakOS);			
 			var pathsofar:String = "";
 			var branchPars:Array = new Array;
 			for(var treeNum:uint=0; treeNum < split.length; treeNum++)
@@ -1129,7 +1147,7 @@ package org.osmf.net.httpstreaming
 			tempStr = fileContent.substr(fileContent.indexOf("r:"));
 			while(offset < tempStr.length)
 			{
-				var num:Number = tempStr.substr(offset).indexOf("\r\n");
+				var num:Number = tempStr.substr(offset).indexOf(lineBreakOS);
 				var msgStr:String = tempStr.substring(offset, offset + num);
 				offset += msgStr.length + 3;
 				message = msgStr.substring((msgStr.indexOf("r:") + 2), msgStr.indexOf("::"));
@@ -1259,6 +1277,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
+				trace("dummy");
 				trace("Some error occured: " + error.message);
 			}
 		}
