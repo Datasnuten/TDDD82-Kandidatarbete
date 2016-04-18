@@ -21,10 +21,11 @@
 *****************************************************/
 package org.osmf.media
 {
-	import __AS3__.vec.Vector;
-	
 	import flash.events.EventDispatcher;
+	import flash.external.ExternalInterface;
 	import flash.utils.Dictionary;
+	
+	import __AS3__.vec.Vector;
 	
 	import org.osmf.elements.ProxyElement;
 	import org.osmf.events.MediaFactoryEvent;
@@ -366,7 +367,6 @@ package org.osmf.media
 						)
 					);
 			}
-			
 			return mediaElement;
 		}
 		

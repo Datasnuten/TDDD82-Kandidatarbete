@@ -70,6 +70,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				ExternalInterface.addCallback("displayNonLinearAd", displayNonLinearAd);
 				ExternalInterface.addCallback("displayLinearAd", displayLinearAd);
 			}
+			fileDown = HTTPDownloadManager.getInstance(); //#### ADDED #### This isn't a very good idea, look at the cleanliness on the ctr...
 		}
 		
 		/**
@@ -92,7 +93,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			// Expose so that we can disable the seek WORKAROUND for http://bugs.adobe.com/jira/browse/ST-397 
 			// GPU Decoding issue on stagevideo: Win7, Flash Player version WIN 10,2,152,26 (debug)
 			seekWorkaround = resource.getMetadataValue("seekWorkaround") != "false";
-						
+			
 			if (prerollURL)
 			{
 				// NOTE: For progressive video the pause will not take effect immediately after playback has started.
@@ -177,12 +178,16 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		 */ 
 		private function displayAd(url:String, 
 								   pauseMainMediaWhilePlayingAd:Boolean = true, 
-								   resumePlaybackAfterAd:Boolean = true, 
+								   resumePlaybackAfterAd:Boolean = false, 
 								   preBufferAd:Boolean = true,
 								   layoutInfo:Object = null):void
 		{
 			// Set up the ad 
-			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));	
+			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));
+			CONFIG::LOGGING
+				{
+					logger.debug("ad manager");
+				}
 			
 			// Set the layout metadata, if present				
 			if (layoutInfo != null)
@@ -209,7 +214,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			// whenever the volume or mute values change in the video player.
 			adPlayers[adMediaPlayer] = true;
 			adPlayerCount++;
-					
+			
 			adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);			
 			
 			if (preBufferAd)
@@ -221,7 +226,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				{
 					if (event.buffering == false)
 					{
-						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);						
+						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);	
 						playAd();
 					}
 				}		
@@ -246,6 +251,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// TODO: We assume that playback pauses immediately,
 					// but this is not the case for all types of content.
 					// The linear ads should be inserted only after the player state becomes 'paused'.
+					
+					if(fileDown.prevMediaPlayer != null){
+						fileDown.prevMediaPlayer.pause();
+					}
+					
 					mediaPlayer.pause();		
 					
 					// If we are playing a linear ad, we need to remove it from the media container.
@@ -271,6 +281,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				// Add the ad to the container
 				mediaContainer.addMediaElement(adMediaElement);
+				fileDown.prevMediaPlayer = adMediaPlayer;
 			}
 			
 			function onAdComplete(event:Event):void
@@ -303,7 +314,9 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					}
 					
 					// Resume playback
-					mediaPlayer.play();				
+					mediaPlayer.play();
+					//fileDown.willplayAD = false;
+					//fileDown.advert = false;
 				}				
 			}
 		}
@@ -359,6 +372,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				mediaPlayer.removeEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 				
 				displayLinearAd(midrollURL);
+				//fileDown.currentStream = 1;
+				//knownTime = fileDown.getTimetoSeek();
+				//fileDown.switchInitiated(knownTime);
+				//fileDown.positions.shift();
+				//fileDown.positions.push(0);
 			}	
 		}	
 			
@@ -385,11 +403,15 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		private var prerollURL:String;
 		private var postrollURL:String;
 		private var midrollURL:String;
+		private var newmidrollURL:String;
+		
 		private var midrollTime:int;
+		private var knownTime:Number=0;
 		
 		private var overlayURL:String;
 		private var overlayTime:int;
 		private var seekWorkaround:Boolean = true;
 		private static const logger:org.osmf.logging.Logger = org.osmf.logging.Log.getLogger("org.osmf.AdvertisementPluginInfo");
+		private var fileDown:HTTPDownloadManager = null;
 	}
 }

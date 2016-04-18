@@ -23,6 +23,8 @@
 *****************************************************/
 package org.osmf.media
 {
+	import flash.external.ExternalInterface;
+
 	/**
 	 * URLResource is a media resource that has a URL. It serves as an input
 	 * object for MediaElements that can process and present media represented

@@ -1207,8 +1207,7 @@ package
 		private var mediaPlayerJSBridge:JavaScriptBridge = null;
 
 		private var mainContainer:StrobeMediaContainer;
-		public static var mediaContainer:MediaContainer = new MediaContainer();
-		//private var mediaContainer:MediaContainer = new MediaContainer();
+		private var mediaContainer:MediaContainer = new MediaContainer();
 		
 		private var controlBarContainer:MediaContainer;
 		private var loginWindowContainer:MediaContainer;

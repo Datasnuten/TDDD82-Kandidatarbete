@@ -15,6 +15,8 @@ This is done in a roundrobin way, look at the code we got from Venget. This is d
 
 For using Advertisementplugin we need to make it static public to the all projects by allowing it in properties for the OSMF.
 To be allowed to do an externalInterface callback (to avoid "Security Error # 2060") we need to add the filepath security trust in the flash player. (both for the SWF.file and the webserver that is used)
+Adress for the flash: https://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html
+
 We need to have videos on the server and the SWF files also and add them to the adobe flash player allow filepath.
 We also need to add the bin directory from the SMP and OSMF in the adobe flash player.
 Recommended (from Vengeth) to use Adobe flash media server which is a free server with 6 month trial.

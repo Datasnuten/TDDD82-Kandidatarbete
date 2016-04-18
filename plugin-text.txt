@@ -14,11 +14,16 @@
             
             var pqs = new ParsedQueryString();
             var parameterNames = pqs.params(false);
+			var url;
 			
 			//ADDED Project group 9
+			function changeMidrollURL(value) {
+				url = value;
+			}
+
 			var parameters =
 			 {
-				 src: "http://localhost/videos/final_0.25.f4v",	   		 			
+				 src: "http://localhost/videos/final_0.5.f4v",	   		 			
 			 
 				 // Load the Ad Plug-in
 				plugin_ads: "AdvertisementPlugin.swf",
@@ -30,7 +35,7 @@
 				 // Configure the Ad Plug-in
 				 ads_preroll: "http://example.com/example.flv",
 				 ads_postroll: "http://example.com/example.flv",
-				 ads_midroll: "rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v",
+				 ads_midroll: url,
 				 ads_midrollTime: 20,
 				 ads_overlay: "http://example.com/example.flv",
 				 ads_overlayTime: 25
@@ -85,6 +90,7 @@
         </style>
     </head>
     <body>
+	 <param name="allowScriptAccess" value="sameDomain" />
         <table width="100%" border="0" cellspacing="5">
             <tr>
                 <td width="43">

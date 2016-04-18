@@ -42,7 +42,6 @@ package org.osmf.player.chrome.widgets
 			super.configure(xml, assetManager);
 			
 			geomapWidget = new GeoMapWidget();
-			
 			geomapWidget.configure(xml, assetManager);
 			geomapWidget.layoutMetadata.layoutMode = LayoutMode.VERTICAL;
 			geomapWidget.layoutMetadata.width = layoutMetadata.width;

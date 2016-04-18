@@ -8,6 +8,7 @@ package org.osmf.player.chrome.widgets
 {
 	import flash.display.DisplayObject;
 	import flash.events.MouseEvent;
+	import flash.external.ExternalInterface;
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
 	import flash.sampler.NewObjectSample;
@@ -111,18 +112,16 @@ package org.osmf.player.chrome.widgets
 					if (obj.highlighted == true && obj != this) {
 						obj.updateFace(obj.normal);
 						obj.state = false;
-						//temporär
-						obj.stopURL();
+						obj.removeURL();
 					}
 				}
 			updateFace(selected);
-			playURL();
+			loadURL();
 			highlighted = true;
 
 			}else{
-				//temporär
-				stopURL();
 				updateFace(normal);
+				removeURL();
 				highlighted = false;
 			}
 			
@@ -230,27 +229,45 @@ package org.osmf.player.chrome.widgets
 			this.url = url;
 		}
 		
-		private function playURL():void
+		private function loadURL():void
 		{
+			ExternalInterface.call("changeMidrollURL",url);
+			
+			var mediaFactory:MediaFactory = new DefaultMediaFactory();
+			var mediaPlayer:MediaPlayer = new MediaPlayer();
+			var mediaContainer:MediaContainer = new MediaContainer();
 			var resource:URLResource = new URLResource(url);
 			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 			mediaContainer.addMediaElement(mediaElement);
+			addChild(mediaContainer);
+			
+			// Load the plugin statically
 			var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
 			
-			StrobeMediaPlayback.mediaContainer = mediaContainer;
-			
+			// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
 			pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
 			pluginResource.addMetadataValue("MediaContainer", mediaContainer);
 			
-			//mediaPlayer.media = mediaElement;
+			// Configure the plugin with the ad information
+			// The following configuration instructs the plugin to play a mid-roll ad after 20 seconds
+			pluginResource.addMetadataValue("midroll", url);
+			pluginResource.addMetadataValue("midrollTime", 10);
 			
-			//mediaFactory.loadPlugin(pluginResource);
-		}
-		
-		//temporär 
-		public function stopURL():void
-		{
-			mediaPlayer.media = null;
+			// Once the plugin is loaded, play the media.
+			// The event handler is not needed if you use the statically linked plugin,
+			// but is here in case you load the plugin dynamically.
+			// For readability, we don’t provide error handling here, but you should.
+			mediaFactory.addEventListener(
+				MediaFactoryEvent.PLUGIN_LOAD,
+				function(event:MediaFactoryEvent):void
+				{
+					// Now let's play the video - mediaPlayer has autoPlay set to true by default,
+					// so the playback starts as soon as the media is ready to be played.
+					mediaPlayer.media = mediaElement;
+				});
+			
+			// Load the plugin.
+			mediaFactory.loadPlugin(pluginResource);
 		}
 		
 		public function setDefault():void
@@ -258,10 +275,14 @@ package org.osmf.player.chrome.widgets
 			state = !state;
 			highlighted = true;
 			updateFace(selected);
-			playURL();
+			loadURL();
 		}
 		
-		private var advPlugin:AdvertisementPluginInfo = new AdvertisementPluginInfo();
+		public function removeURL():void
+		{
+			mediaPlayer.media = null;
+		}
+		
 		private var mediaFactory:MediaFactory = new DefaultMediaFactory();
 		private var mediaPlayer:MediaPlayer = new MediaPlayer();
 		private var mediaContainer:MediaContainer = new MediaContainer();
