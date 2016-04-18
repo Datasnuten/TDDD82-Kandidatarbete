@@ -10,6 +10,7 @@ package org.osmf.player.chrome.widgets
 	import flash.events.MouseEvent;
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
+	import flash.sampler.NewObjectSample;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
@@ -25,6 +26,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.media.URLResource;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.player.containers.StrobeMediaContainer;
 
 
 	public class GeoMapObject extends Widget
@@ -109,6 +111,8 @@ package org.osmf.player.chrome.widgets
 					if (obj.highlighted == true && obj != this) {
 						obj.updateFace(obj.normal);
 						obj.state = false;
+						//temporär
+						obj.stopURL();
 					}
 				}
 			updateFace(selected);
@@ -116,6 +120,8 @@ package org.osmf.player.chrome.widgets
 			highlighted = true;
 
 			}else{
+				//temporär
+				stopURL();
 				updateFace(normal);
 				highlighted = false;
 			}
@@ -226,46 +232,25 @@ package org.osmf.player.chrome.widgets
 		
 		private function playURL():void
 		{
-			
-			var advPlugin:AdvertisementPluginInfo = new AdvertisementPluginInfo();
-			// This is a normal video player setup.
-			/*var mediaFactory:MediaFactory = new DefaultMediaFactory();
-			var mediaPlayer:MediaPlayer = new MediaPlayer();
-			var mediaContainer:MediaContainer = new MediaContainer();
 			var resource:URLResource = new URLResource(url);
 			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 			mediaContainer.addMediaElement(mediaElement);
-			
-			
-			// Load the plugin statically
 			var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
-			*/
 			
-			// You can load it as a dynamic plugin as well
-			//Insert the path of where the Advertisementplugin.swf is located
-			// var pluginResource:MediaResourceBase = new URLResource("file:///C:/TDDD82-Kandidatarbete/OSMF/player/StrobeMediaPlayback/bin/Advertisementplugin.swf");
+			StrobeMediaPlayback.mediaContainer = mediaContainer;
 			
-			 // Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
-			/* pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
-			 pluginResource.addMetadataValue("MediaContainer", mediaContainer);*/
+			pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
+			pluginResource.addMetadataValue("MediaContainer", mediaContainer);
 			
-			// Once the plugin is loaded, play the media.
-			// The event handler is not needed if you use the statically linked plugin,
-			// but is here in case you load the plugin dynamically.
-			// For readability, we don’t provide error handling here, but you should.
-			/*mediaFactory.addEventListener(
-				MediaFactoryEvent.PLUGIN_LOAD,
-				function(event:MediaFactoryEvent):void
-				{
-					// Now let's play the video - mediaPlayer has autoPlay set to true by default,
-					// so the playback starts as soon as the media is ready to be played.
-					mediaPlayer.media = mediaElement;
-				});
-			*/
-			//advPlugin.initializePlugin(pluginResource);
+			//mediaPlayer.media = mediaElement;
 			
-			// Load the plugin.
 			//mediaFactory.loadPlugin(pluginResource);
+		}
+		
+		//temporär 
+		public function stopURL():void
+		{
+			mediaPlayer.media = null;
 		}
 		
 		public function setDefault():void
@@ -273,11 +258,15 @@ package org.osmf.player.chrome.widgets
 			state = !state;
 			highlighted = true;
 			updateFace(selected);
-			//playURL();
+			playURL();
 		}
+		
+		private var advPlugin:AdvertisementPluginInfo = new AdvertisementPluginInfo();
+		private var mediaFactory:MediaFactory = new DefaultMediaFactory();
+		private var mediaPlayer:MediaPlayer = new MediaPlayer();
+		private var mediaContainer:MediaContainer = new MediaContainer();
 	}
 }
-
 
 
 

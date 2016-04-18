@@ -18,10 +18,10 @@
 			//ADDED Project group 9
 			var parameters =
 			 {
-				 src: "rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v",	   		 			
+				 src: "http://localhost/videos/final_0.25.f4v",	   		 			
 			 
 				 // Load the Ad Plug-in
-				 plugin_ads: "AdvertisementPlugin.swf",
+				plugin_ads: "AdvertisementPlugin.swf",
 				autoPlay: "false",
 				verbose: true,
 				controlBarAutoHide: "false",
@@ -35,6 +35,7 @@
 				 ads_overlay: "http://example.com/example.flv",
 				 ads_overlayTime: 25
 			 };
+			 
 			 
             
             for (var i = 0; i < parameterNames.length; i++) {
@@ -62,7 +63,7 @@
 				 "10.1.0",
 				 "expressInstall.swf",
 				 parameters,
-				 { allowFullScreen: "true", wmode: "direct",allowscriptaccess ="true"},
+				 { allowFullScreen: "true", wmode: "direct"},
 				 { name: "StrobeMediaPlayback" }
 			 );
             
@@ -126,7 +127,8 @@
                             "http://mediapm.edgesuite.net/osmf/content/test/train_1500.mp3", 
                             "http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv", 
                             "rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v", 
-                            "http://drmtest.adobe.com/content/identity.f4v", 
+                            "http://drmtest.adobe.com/content/identity.f4v",
+							"http://localhost/videos/final_0.5.f4v", 
                             "images/vegetation.jpg", 
                             "playlists/playlist.m3u"];
                             

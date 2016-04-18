@@ -40,6 +40,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import org.osmf.events.TimelineMetadataEvent;
 	import org.osmf.layout.LayoutMetadata;
 	import org.osmf.layout.ScaleMode;
+	import org.osmf.logging.Log;
+	import org.osmf.logging.Logger;
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
@@ -48,6 +50,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import org.osmf.media.URLResource;
 	import org.osmf.metadata.TimelineMarker;
 	import org.osmf.metadata.TimelineMetadata;
+	import org.osmf.net.httpstreaming.HTTPDownloadManager;
 	import org.osmf.traits.PlayState;
 	import org.osmf.utils.OSMFSettings;
 
@@ -66,7 +69,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			{
 				ExternalInterface.addCallback("displayNonLinearAd", displayNonLinearAd);
 				ExternalInterface.addCallback("displayLinearAd", displayLinearAd);
-			}		
+			}
 		}
 		
 		/**
@@ -78,12 +81,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			mediaPlayer = resource.getMetadataValue("MediaPlayer") as MediaPlayer;
 			mediaContainer = resource.getMetadataValue("MediaContainer") as MediaContainer;
 			mediaFactory = resource.getMetadataValue(PluginInfo.PLUGIN_MEDIAFACTORY_NAMESPACE) as MediaFactory;
-
 						
 			prerollURL = resource.getMetadataValue("preroll") as String;
 			postrollURL = resource.getMetadataValue("postroll") as String;
 			midrollURL = resource.getMetadataValue("midroll") as String;		
-			midrollTime = int(resource.getMetadataValue("midrollTime"));		
+			midrollTime = int(resource.getMetadataValue("midrollTime"));
 			overlayURL = resource.getMetadataValue("overlay") as String;
 			overlayTime = int(resource.getMetadataValue("overlayTime"));
 						
@@ -388,5 +390,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		private var overlayURL:String;
 		private var overlayTime:int;
 		private var seekWorkaround:Boolean = true;
+		private static const logger:org.osmf.logging.Logger = org.osmf.logging.Log.getLogger("org.osmf.AdvertisementPluginInfo");
 	}
 }
