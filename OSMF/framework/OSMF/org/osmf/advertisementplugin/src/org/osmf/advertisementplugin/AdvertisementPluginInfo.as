@@ -123,7 +123,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			if (midrollURL && midrollTime > 0)
 			{
-				trace("midrollURL: " + midrollURL);
+				trace("midrollURL: " + midrollURL + ", time: " + midrollTime);
 				mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 			}
 			

@@ -40,9 +40,6 @@ package org.osmf.player.chrome.widgets
 		{
 			super.configure(xml, assetManager);
 			
-			while(StrobeMediaPlayback.geomapWidget == null) {
-				
-			}
 			StrobeMediaPlayback.geomapWidget.configure(xml, assetManager);
 			StrobeMediaPlayback.geomapWidget.layoutMetadata.layoutMode = LayoutMode.VERTICAL;
 			StrobeMediaPlayback.geomapWidget.layoutMetadata.width = layoutMetadata.width;
