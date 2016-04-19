@@ -59,6 +59,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	 */
 	public class AdvertisementPluginInfo extends PluginInfo
 	{
+		private static var instance:AdvertisementPluginInfo;
 		
 		public function AdvertisementPluginInfo()
 		{
@@ -73,11 +74,20 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			fileDown = HTTPDownloadManager.getInstance(); //#### ADDED #### This isn't a very good idea, look at the cleanliness on the ctr...
 		}
 		
+		public static function getInstance():AdvertisementPluginInfo
+		{
+			if(instance == null){
+				instance = new AdvertisementPluginInfo();
+			}
+			return instance;
+		}
+		
 		/**
 		 * Initialize the plugin.
 		 */ 
 		override public function initializePlugin(resource:MediaResourceBase):void
 		{
+			trace("initialize the Plugin");
 			// Read the plugin configuration. Use string literals for simplicity/readability reasons.
 			mediaPlayer = resource.getMetadataValue("MediaPlayer") as MediaPlayer;
 			mediaContainer = resource.getMetadataValue("MediaContainer") as MediaContainer;
@@ -113,6 +123,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			if (midrollURL && midrollTime > 0)
 			{
+				trace("midrollURL: " + midrollURL);
 				mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 			}
 			
@@ -125,6 +136,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			mediaPlayer.addEventListener(AudioEvent.MUTED_CHANGE, function(event:Event):void {
 				for (var adPlayer:* in adPlayers)
 				{
+					trace("propagate the mute "+ mediaPlayer.muted);
 					adPlayer.muted = mediaPlayer.muted;
 				}
 			});
@@ -132,6 +144,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			mediaPlayer.addEventListener(AudioEvent.VOLUME_CHANGE, function(event:Event):void {
 				for (var adPlayer:* in adPlayers)
 				{
+					trace("propagate the volume " + mediaPlayer.volume);
 					adPlayer.volume = mediaPlayer.volume;
 				}
 			});
@@ -150,6 +163,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		*/
 		public function displayLinearAd(url:String, resumePlaybackAfterAd:Boolean = true):void
 		{
+			trace("DisplayLinearAd");
 			displayAd(url, true, resumePlaybackAfterAd, true, null);
 		}
 		
@@ -162,6 +176,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		 */ 
 		public function displayNonLinearAd(url:String, layoutInfo:Object):void
 		{
+			trace("DisplayNonLinearAd");
 			displayAd(url, false, false, true, layoutInfo);
 		}	
 		
@@ -182,6 +197,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 								   preBufferAd:Boolean = true,
 								   layoutInfo:Object = null):void
 		{
+			trace("DisplayAd" + ": "+ url);
 			// Set up the ad 
 			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));
 			CONFIG::LOGGING
@@ -192,6 +208,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			// Set the layout metadata, if present				
 			if (layoutInfo != null)
 			{
+				trace("Set Layout Metadata");
 				var layoutMetadata:LayoutMetadata = new LayoutMetadata();
 				for (var key:String in layoutInfo)
 				{
@@ -206,7 +223,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				adMediaElement.metadata.addValue(LayoutMetadata.LAYOUT_NAMESPACE, layoutMetadata);	
 			}			
-			
 			var adMediaPlayer:MediaPlayer =  new MediaPlayer();		
 			adMediaPlayer.media = adMediaElement;
 			
@@ -219,6 +235,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			if (preBufferAd)
 			{
+				trace("Is preBuffering the ad");
 				// Wait until the ad fills the buffer and is ready to be played.
 				adMediaPlayer.muted = true;
 				adMediaPlayer.addEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);
@@ -227,12 +244,14 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					if (event.buffering == false)
 					{
 						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);	
+						trace("PlayAD");
 						playAd();
 					}
 				}		
 			}
 			else
 			{
+				trace("else: PlayAD");
 				playAd();
 			}
 			
@@ -244,6 +263,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				if (pauseMainMediaWhilePlayingAd)
 				{
+					trace("Pause Main Media!");
 					// Indicates to the player that we currently are playing an ad,
 					// so the player can adjust its UI.
 					mediaPlayer.media.metadata.addValue("Advertisement", url);
@@ -261,6 +281,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// If we are playing a linear ad, we need to remove it from the media container.
 					if (mediaContainer.containsMediaElement(mediaPlayer.media))
 					{
+						trace("remove linear ad from media container");
 						mediaContainer.removeMediaElement(mediaPlayer.media);
 					}
 					else
@@ -280,12 +301,14 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}
 				
 				// Add the ad to the container
+				trace("Add the ad to the container");
 				mediaContainer.addMediaElement(adMediaElement);
 				fileDown.prevMediaPlayer = adMediaPlayer;
 			}
 			
 			function onAdComplete(event:Event):void
 			{
+				trace("onAdComple");
 				var adMediaPlayer:MediaPlayer = event.target as MediaPlayer;
 				adMediaPlayer.removeEventListener(TimeEvent.COMPLETE, onAdComplete);
 				
@@ -310,9 +333,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// WORKAROUND: http://bugs.adobe.com/jira/browse/ST-397 - GPU Decoding issue on stagevideo: Win7, Flash Player version WIN 10,2,152,26 (debug)
 					if (seekWorkaround && mediaPlayer.canSeek)
 					{
+						trace("seek currentTime");
 						mediaPlayer.seek(mediaPlayer.currentTime);
 					}
 					
+					trace("Resume playback");
 					// Resume playback
 					mediaPlayer.play();
 					//fileDown.willplayAD = false;
@@ -369,6 +394,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		{	
 			if (mediaPlayer.currentTime > midrollTime)
 			{	
+				trace("mid-roll ad");
 				mediaPlayer.removeEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 				
 				displayLinearAd(midrollURL);

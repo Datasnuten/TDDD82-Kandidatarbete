@@ -39,9 +39,8 @@ package org.osmf.net.httpstreaming
 	import org.osmf.events.SeekEvent;
 	import org.osmf.events.TimeEvent;
 	import org.osmf.logging.Logger;
-	import org.osmf.media.*;
+	import org.osmf.media.MediaPlayer;
 	import org.osmf.media.MediaResourceBase;
-	import org.osmf.net.httpstreaming.*;
 	import org.osmf.net.httpstreaming.DefaultHTTPStreamingSwitchManager;
 	import org.osmf.net.httpstreaming.HTTPNetStream;
 	import org.osmf.net.httpstreaming.HTTPStreamDownloader;
@@ -234,6 +233,8 @@ package org.osmf.net.httpstreaming
 		
 		private var lineBreakOS:String;
 		
+		public var prevMediaPlayer:MediaPlayer;
+		
 		CONFIG::LOGGING
 		{
 			private var numBytes:Number = 0;
@@ -282,7 +283,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			
 			//			This text file configures the prefetch mode. Used in the FhMN 2013 paper, not used in the MM 2014 paper.
@@ -296,7 +297,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader1");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			//			
 			var myTimer1:Timer = new Timer(50, 0); // 50ms timer, checks current playpoint and initiates seek if necessary
@@ -322,7 +323,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader2");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			//			Old file from which video structure was read. 
 			request3 = new URLRequest("pathfile.txt");
@@ -335,7 +336,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader3");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			//			This text file configures max connections in parallel, alpha value for rate estimate, sets the download policy and buffer size
 			request4 = new URLRequest("workahead.txt");
@@ -348,7 +349,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader4");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			//			This text file automates user choice
 			request5 = new URLRequest("automator.txt");		
@@ -361,7 +362,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader5");
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 		}
 		
@@ -487,7 +488,7 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
-				trace("Some error occured: " + error.message);
+				//trace("Some error occured: " + error.message);
 			}
 			
 			if (branchNum != 0 && jump_array[branchNum-1] != null && checkavail(playerpath) == true){
@@ -1277,8 +1278,8 @@ package org.osmf.net.httpstreaming
 			}
 			catch(error:Error)
 			{
-				trace("dummy");
-				trace("Some error occured: " + error.message);
+				//trace("dummy");
+				//trace("Some error occured: " + error.message);
 			}
 		}
 		
@@ -1828,6 +1829,73 @@ package org.osmf.net.httpstreaming
 						}
 						break;
 					}
+				/*case "roundrobin_bundle":
+					Buffer = choseBuffer(currentStream);
+					if(Buffer < workahead){
+						setState("donwload");
+						logger.debug("BUFFER SIZE IS " + Buffer + " " + currentStream + " " + BufferStatus + " RRB");
+						break;
+					}else{
+						if(donwloadBlocker == false){
+							prefdownloadedlist=chosedonwloadlist(prefetchStream);
+							off_duration=((Buffer-workahead));
+							if(parallel_pending==true && ttd((missed_quality[0]*1.5))<off_duration && parallelpipe_on==false){
+								for(var adm:uint=0;adm<missed_fragments.length;adm++){
+									var adw:uint=missed_fragments.splice(adm,1);
+									var adc:Number=missed_quality.splice(adm,1);
+									var ads:Number=missed_stream.splice(adm,1);
+									{
+										parallel_pipe(adw,adc,ads,"prefetch_missed");
+									}
+									if(admissed_fragments.length==0){
+										parallel_pending=false;
+									}
+								}
+							}
+							else if(parallel_pending==false){
+								var actualstream:int=0;
+								if(prefetchStream>6){
+									prefetchStream=0;
+								}
+								var qchoice:Number = 0;
+								if(prefetchStream == currentStream){
+									prefetchStream++;
+									lastFrag++;
+								}
+								if(prefetchStream!=currentStream){
+									qchoice=chosequality(avg,fragment);
+								}
+								
+								if((ttd((qchoice*1.5))<off.duration)){
+									if(to_downloadlist.indexOf(lastFrag)<0){
+										to_downloadlist.push(lastFrag);
+									}
+									else if(to_downloadlist.indexOf(lastFrag)>0{
+										to_downloadlist.push(todownloadlist[to_downloadlist.length-1]+1);
+									}
+										parallel_pipe(to_downloadlist.splice([to_downloadlist.length-1],[to_downloadlist.length]),qchoice,prefetchStream,"prefetch_regular_a");
+										prefetchStream++;
+										if(currentStream==prefetchStream){
+											lastFrag++;
+										}
+								}
+								else{
+									setState("download");
+									logger.debug("RRB1");
+									break;
+								}if(Buffer<workahead){
+									//setCprime("le_tmin_bundle");
+									setState("download");
+									logger.debug("BUFFER SIZE IS "+Buffer+" "+currentStream+" "+BufferStatus+" RRB");
+									break;
+								}
+							}
+							break;
+						}
+						break;
+					}
+					*/
+					
 				case "wait":
 //					set ON state if buffer is smaller than DesiredMin
 					if(Buffer < DesiredMin){
