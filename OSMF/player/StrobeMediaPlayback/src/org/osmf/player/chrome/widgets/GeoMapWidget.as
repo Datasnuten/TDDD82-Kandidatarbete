@@ -60,13 +60,7 @@ package org.osmf.player.chrome.widgets
 			geomapSprite.onMouseClick(event);
 		}
 		
-/*		private function onMouseOver(event:MouseEvent):void
-		{
-			event.stopPropagation();
-			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-		}
-		
-*/		public function onMouseMove(event:MouseEvent):void
+		public function onMouseMove(event:MouseEvent):void
 		{
 			geomapSprite.onMouseMove(event);
 		}

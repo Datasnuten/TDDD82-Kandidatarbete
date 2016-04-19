@@ -86,7 +86,7 @@ package org.osmf.player.chrome.widgets
 			this.mediaPlayer = mediaPlayer;
 			
 			//addEventListener(MouseEvent.CLICK, onMouseClick);
-			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			//addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			updateFace(normal);
 		}
@@ -122,7 +122,6 @@ package org.osmf.player.chrome.widgets
 					if (obj.highlighted == true && obj != this) {
 						obj.updateFace(obj.normal);
 						obj.state = false;
-						obj.removeURL();
 					}
 				}
 			updateFace(selected);
@@ -131,7 +130,6 @@ package org.osmf.player.chrome.widgets
 
 			}else{
 				updateFace(normal);
-				removeURL();
 				highlighted = false;
 			}
 			
@@ -239,14 +237,13 @@ package org.osmf.player.chrome.widgets
 			this.url = url;
 		}
 		
-		private function loadURL():void
+		private  function loadURL():void
 		{
 			ExternalInterface.call("changeMidrollURL",url);
 			
 			var resource:URLResource = new URLResource(url);
 			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
-			mediaContainer.addMediaElement(mediaElement);
-			smp.addChild(mediaContainer);
+			smp.mediaContainer.addMediaElement(mediaElement);
 			
 			// Load the plugin statically
 			var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
@@ -259,42 +256,29 @@ package org.osmf.player.chrome.widgets
 			pluginResource.addMetadataValue("MediaContainer", smp.mediaContainer);
 			
 			// Configure the plugin with the ad information
-			// The following configuration instructs the plugin to play a mid-roll ad after 20 seconds
+			// The following configuration instructs the plugin to play a mid-roll ad after 1 seconds
 			pluginResource.addMetadataValue("midroll", url);
-			pluginResource.addMetadataValue("midrollTime", 10);
+			pluginResource.addMetadataValue("midrollTime", 1);
 			
+			smp.removePoster();
 			
 			// Once the plugin is loaded, play the media.
 			// The event handler is not needed if you use the statically linked plugin,
 			// but is here in case you load the plugin dynamically.
 			// For readability, we don’t provide error handling here, but you should.
-			mediaFactory.addEventListener(
+		/*	mediaFactory.addEventListener(
 				MediaFactoryEvent.PLUGIN_LOAD,
 				function(event:MediaFactoryEvent):void
 				{
 					// Now let's play the video - mediaPlayer has autoPlay set to true by default,
 					// so the playback starts as soon as the media is ready to be played.
 					smp.media = mediaElement;
-				});
+				});*/
 			
 			// Load the plugin.
 			mediaFactory.loadPlugin(pluginResource);
 			
 		}
-		
-		public function setDefault():void
-		{
-			state = !state;
-			highlighted = true;
-			updateFace(selected);
-			//loadURL();
-		}
-		
-		public function removeURL():void
-		{
-			//advPlugin.mediaPlayer.media = null;
-		}
-		
 	}
 }
 

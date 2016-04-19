@@ -35,6 +35,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import org.osmf.events.BufferEvent;
 	import org.osmf.events.ContainerChangeEvent;
 	import org.osmf.events.DisplayObjectEvent;
+	import org.osmf.events.MediaPlayerStateChangeEvent;
 	import org.osmf.events.PlayEvent;
 	import org.osmf.events.TimeEvent;
 	import org.osmf.events.TimelineMetadataEvent;
@@ -45,6 +46,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
+	import org.osmf.media.MediaPlayerState;
 	import org.osmf.media.MediaResourceBase;
 	import org.osmf.media.PluginInfo;
 	import org.osmf.media.URLResource;
@@ -60,6 +62,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	public class AdvertisementPluginInfo extends PluginInfo
 	{
 		private static var instance:AdvertisementPluginInfo;
+		private var adMediaPlayer:MediaPlayer;
 		
 		public function AdvertisementPluginInfo()
 		{
@@ -124,7 +127,12 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			if (midrollURL && midrollTime > 0)
 			{
 				trace("midrollURL: " + midrollURL + ", time: " + midrollTime);
-				mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
+				
+				//##### ADDED Project Group 9 #####
+				mediaPlayer.removeEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
+				displayLinearAd(midrollURL);
+				
+				//mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 			}
 			
 			if (overlayURL && overlayTime > 0)
@@ -161,7 +169,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		* @param url - the path to the ad media to be displayed.
 		* @resumePlaybackAfterAd - indicates if the playback of the main media should resume after the playback of the ad.
 		*/
-		public function displayLinearAd(url:String, resumePlaybackAfterAd:Boolean = true):void
+		public function displayLinearAd(url:String, resumePlaybackAfterAd:Boolean = false):void
 		{
 			trace("DisplayLinearAd");
 			displayAd(url, true, resumePlaybackAfterAd, true, null);
@@ -223,7 +231,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				adMediaElement.metadata.addValue(LayoutMetadata.LAYOUT_NAMESPACE, layoutMetadata);	
 			}			
-			var adMediaPlayer:MediaPlayer =  new MediaPlayer();		
+			adMediaPlayer =  new MediaPlayer();		
 			adMediaPlayer.media = adMediaElement;
 			
 			// Save the reference to the ad player, so that we can adjust the volume/mute of all the ads
@@ -231,7 +239,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adPlayers[adMediaPlayer] = true;
 			adPlayerCount++;
 			
-			adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);			
+			adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
+			
+			//###### ADDED Project Group 9 ######
+			//adMediaPlayer.addEventListener(MediaPlayerStateChangeEvent.MEDIA_PLAYER_STATE_CHANGE, onAdStateChange);
 			
 			if (preBufferAd)
 			{
@@ -261,7 +272,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				adMediaPlayer.volume = mediaPlayer.volume;
 				adMediaPlayer.muted = mediaPlayer.muted;
 				
-				if (pauseMainMediaWhilePlayingAd)
+			if (pauseMainMediaWhilePlayingAd)
 				{
 					trace("Pause Main Media!");
 					// Indicates to the player that we currently are playing an ad,
@@ -281,7 +292,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// If we are playing a linear ad, we need to remove it from the media container.
 					if (mediaContainer.containsMediaElement(mediaPlayer.media))
 					{
-						trace("remove linear ad from media container");
+						trace("remove main video from media container");
 						mediaContainer.removeMediaElement(mediaPlayer.media);
 					}
 					else
@@ -314,12 +325,13 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				// Romove the ad from the media container
 				mediaContainer.removeMediaElement(adMediaPlayer.media);
-				
+
 				// Remove the saved references
 				adPlayerCount--;
 				delete adPlayers[adMediaPlayer];					
 				
-				if (pauseMainMediaWhilePlayingAd)
+				//##### ADDED && !resumePlayBackAfterAd ## Project Group 9 #####
+				if (pauseMainMediaWhilePlayingAd && !resumePlaybackAfterAd)
 				{					
 					// Remove the metadata that indicates that we are playing a linear ad. 
 					mediaPlayer.media.metadata.removeValue("Advertisement");
@@ -345,6 +357,15 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}				
 			}
 		}
+		
+	/*	function onAdStateChange(event:PlayEvent):void
+		{
+			if(adMediaPlayer.playing){
+				adMediaPlayer.pause();
+			}else{
+				adMediaPlayer.play();
+			}
+		}*/
 		
 		// Non-linear ad insertion
 		
@@ -399,13 +420,13 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				
 				displayLinearAd(midrollURL);
 				//fileDown.currentStream = 1;
-				//knownTime = fileDown.getTimetoSeek();
+				 //knownTime = fileDown.getTimetoSeek();
 				//fileDown.switchInitiated(knownTime);
 				//fileDown.positions.shift();
 				//fileDown.positions.push(0);
 			}	
 		}	
-			
+		
 		/**
 		 * Display the post-roll ad.
 		 */ 
