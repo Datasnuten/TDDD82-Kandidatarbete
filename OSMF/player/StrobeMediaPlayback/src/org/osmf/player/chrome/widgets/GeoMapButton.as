@@ -19,7 +19,6 @@ package org.osmf.player.chrome.widgets
 	public class GeoMapButton extends ButtonWidget
 	{
 		private var state:Boolean = false;
-		private var geomapWidget:GeoMapWidget;
 		
 		public function GeoMapButton()
 		{
@@ -41,10 +40,12 @@ package org.osmf.player.chrome.widgets
 		{
 			super.configure(xml, assetManager);
 			
-			geomapWidget = new GeoMapWidget();
-			geomapWidget.configure(xml, assetManager);
-			geomapWidget.layoutMetadata.layoutMode = LayoutMode.VERTICAL;
-			geomapWidget.layoutMetadata.width = layoutMetadata.width;
+			while(StrobeMediaPlayback.geomapWidget == null) {
+				
+			}
+			StrobeMediaPlayback.geomapWidget.configure(xml, assetManager);
+			StrobeMediaPlayback.geomapWidget.layoutMetadata.layoutMode = LayoutMode.VERTICAL;
+			StrobeMediaPlayback.geomapWidget.layoutMetadata.width = layoutMetadata.width;
 		}
 		
 		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
@@ -61,9 +62,9 @@ package org.osmf.player.chrome.widgets
 			{
 				state = !state;
 				OwnWidgetHint.getInstance(this).horizontalAlign = HorizontalAlign.CENTER;
-			if(geomapWidget)
+			if(StrobeMediaPlayback.geomapWidget)
 			{
-				OwnWidgetHint.getInstance(this).widget = geomapWidget;
+				OwnWidgetHint.getInstance(this).widget = StrobeMediaPlayback.geomapWidget;
 			}
 			if(state){
 				setFace(down);
@@ -74,7 +75,7 @@ package org.osmf.player.chrome.widgets
 			}
 			}
 			else{
-				if(geomapWidget) geomapWidget.dispatchEvent(event);
+				if(StrobeMediaPlayback.geomapWidget) StrobeMediaPlayback.geomapWidget.dispatchEvent(event);
 			}
 			
 		}
@@ -104,7 +105,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function onMouseMove(event:MouseEvent):void
 		{
-			geomapWidget.onMouseMove(event);
+			StrobeMediaPlayback.geomapWidget.onMouseMove(event);
 		}
 		
 	}

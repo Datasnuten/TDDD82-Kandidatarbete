@@ -30,6 +30,7 @@ package org.osmf.player.chrome.widgets
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
 		public var object:int;
+		public var smp:StrobeMediaPlayback;
 		
 		private var dict:Object = new Object();
 		private var text:TextField;
@@ -41,13 +42,14 @@ package org.osmf.player.chrome.widgets
 		//dict["1234"] = geomapObject2;
 		
 		
-		public function GeoMapSprite(x1:int,y1:int,Mapradius:int, assetManager:AssetsManager) 
+		public function GeoMapSprite(x1:int,y1:int,Mapradius:int, assetManager:AssetsManager, smp:StrobeMediaPlayback) 
 		{
 			super();
 			this.x2 = x1;
 			this.y2 = y1;
 			this.Mapradius = Mapradius;
 			this.assetManager = assetManager;
+			this.smp = smp;
 			
 			drawPointOfInterest();
 			//drawCardinalDirections("N",0,y2);
@@ -114,7 +116,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void
 		{	
-			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager);
+			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager, smp);
 			geomapObject.setDirection(angle);
 			geomapObject.setURL(url);
 			
