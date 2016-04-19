@@ -27,13 +27,15 @@ package org.osmf.player.chrome.widgets
 		private var geomapFace:DisplayObject;
 		private var geomapSprite:GeoMapSprite;
 		private var geomapRadius:int = 180;
+		public var smp:StrobeMediaPlayback;
 		
 		
-		public function GeoMapWidget()
+		public function GeoMapWidget(smp:StrobeMediaPlayback)
 		{
 			super();
 			mouseEnabled = true;
 			
+			this.smp = smp;
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
@@ -46,7 +48,7 @@ package org.osmf.player.chrome.widgets
 		{
 			super.configure(xml, assetManager);	
 			
-			geomapSprite = new GeoMapSprite(2*geomapRadius,geomapRadius-geomapRadius/5,geomapRadius, assetManager);
+			geomapSprite = new GeoMapSprite(2*geomapRadius,geomapRadius-geomapRadius/5,geomapRadius, assetManager, smp);
 			
 			geomapSprite.mouseEnabled = true;
 			addChild(geomapSprite);

@@ -36,6 +36,7 @@ package
 	import flash.events.UncaughtErrorEvent;
 	import flash.external.ExternalInterface;
 	import flash.net.drm.DRMManager;
+	import flash.sampler.NewObjectSample;
 	import flash.system.Capabilities;
 	import flash.ui.Mouse;
 	import flash.utils.Timer;
@@ -66,6 +67,7 @@ package
 	import org.osmf.player.chrome.configuration.ConfigurationUtils;
 	import org.osmf.player.chrome.events.WidgetEvent;
 	import org.osmf.player.chrome.widgets.BufferingOverlay;
+	import org.osmf.player.chrome.widgets.GeoMapWidget;
 	import org.osmf.player.chrome.widgets.MultiJumpButton;
 	import org.osmf.player.chrome.widgets.PlayButtonOverlay;
 	import org.osmf.player.chrome.widgets.VideoInfoOverlay;
@@ -94,7 +96,9 @@ package
 	import org.osmf.traits.PlayState;
 	import org.osmf.traits.PlayTrait;
 	import org.osmf.utils.OSMFSettings;
-	import org.osmf.utils.OSMFStrings;		// ADDED ##################################
+	import org.osmf.utils.OSMFStrings;
+
+		// ADDED ##################################
 	
 	CONFIG::LOGGING
 	{
@@ -115,7 +119,9 @@ package
 		// These should be accessible from the preloader for the performance measurement to work.
 		public var configuration:PlayerConfiguration;
 		public var player:StrobeMediaPlayer;		
-		public var factory:StrobeMediaFactory;		
+		public var factory:StrobeMediaFactory;
+		
+		public static var geomapWidget:GeoMapWidget = null;
 		
 		public function StrobeMediaPlayback()
 		{			
@@ -141,6 +147,8 @@ package
 				logger = Log.getLogger("StrobeMediaPlayback") as StrobeLogger;
 			}
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyTest);
+			
+			geomapWidget = new GeoMapWidget(this);
 		}
 		
 		//##### ADDED #####
@@ -193,7 +201,9 @@ package
 		 */ 
 		public function initialize(parameters:Object, stage:Stage, loaderInfo:LoaderInfo, pluginHostWhitelist:Array):void
 		{
-					
+			
+			
+			
 			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
 			// Keep a reference to the stage (when a preloader is used, the
@@ -666,7 +676,7 @@ package
 			}
 		}
 		
-		private function set media(value:MediaElement):void
+		public function set media(value:MediaElement):void
 		{
 			if (alert && mediaContainer.containsMediaElement(alert))
 			{				
@@ -1207,7 +1217,7 @@ package
 		private var mediaPlayerJSBridge:JavaScriptBridge = null;
 
 		private var mainContainer:StrobeMediaContainer;
-		private var mediaContainer:MediaContainer = new MediaContainer();
+		public var mediaContainer:MediaContainer = new MediaContainer();
 		
 		private var controlBarContainer:MediaContainer;
 		private var loginWindowContainer:MediaContainer;
