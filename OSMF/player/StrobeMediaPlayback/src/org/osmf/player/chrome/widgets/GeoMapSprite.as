@@ -14,9 +14,18 @@ package org.osmf.player.chrome.widgets
 	import flash.utils.Dictionary;
 	import flash.utils.flash_proxy;
 	
+	import org.osmf.containers.MediaContainer;
+	import org.osmf.events.MediaFactoryEvent;
 	import org.osmf.layout.LayoutMode;
 	import org.osmf.logging.Log;
+	import org.osmf.media.DefaultMediaFactory;
+	import org.osmf.media.MediaElement;
+	import org.osmf.media.MediaFactory;
+	import org.osmf.media.MediaPlayer;
+	import org.osmf.media.MediaResourceBase;
 	import org.osmf.player.chrome.assets.AssetsManager;
+	import org.osmf.media.URLResource;
+
 	
 	
 
@@ -34,6 +43,11 @@ package org.osmf.player.chrome.widgets
 		
 		private var dict:Object = new Object();
 		private var text:TextField;
+		
+		// This is a normal video player setup.
+		public var mediaFactory:MediaFactory = new DefaultMediaFactory();
+		public var mediaPlayer:MediaPlayer = new MediaPlayer();
+		public var mediaContainer:MediaContainer = new MediaContainer();
 		
 		//Exempel: Lägga till geomapObject i mappen med nyckeln befintlig variabel x2
 		//dict.x2 = geomapObject;
@@ -63,6 +77,7 @@ package org.osmf.player.chrome.widgets
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			tempCallCreateObjects();
+			
 		}
 		
 		
@@ -116,7 +131,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void
 		{	
-			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager, smp);
+			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager, smp, mediaContainer, mediaFactory, mediaPlayer);
 			geomapObject.setDirection(angle);
 			geomapObject.setURL(url);
 			
