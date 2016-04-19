@@ -57,9 +57,12 @@ package org.osmf.player.chrome.widgets
 		private var url:String;
 		
 		public var smp:StrobeMediaPlayback
+		public var mediaContainer:MediaContainer;
+		public var mediaFactory:MediaFactory;
+		public var mediaPlayer:MediaPlayer;
 		
 		
-		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager,smp:StrobeMediaPlayback)
+		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager,smp:StrobeMediaPlayback,mediaContainer:MediaContainer,mediaFactory:MediaFactory,mediaPlayer:MediaPlayer)
 		{
 			super();
 				
@@ -78,6 +81,9 @@ package org.osmf.player.chrome.widgets
 			selected.y = this.positionY;
 			
 			this.smp = smp;
+			this.mediaContainer = mediaContainer;
+			this.mediaFactory = mediaFactory;
+			this.mediaPlayer = mediaPlayer;
 			
 			//addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
@@ -237,10 +243,6 @@ package org.osmf.player.chrome.widgets
 		{
 			ExternalInterface.call("changeMidrollURL",url);
 			
-			// This is a normal video player setup.
-			var mediaFactory:MediaFactory = new DefaultMediaFactory();
-			var mediaPlayer:MediaPlayer = new MediaPlayer();
-			var mediaContainer:MediaContainer = new MediaContainer();
 			var resource:URLResource = new URLResource(url);
 			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 			mediaContainer.addMediaElement(mediaElement);
@@ -253,8 +255,8 @@ package org.osmf.player.chrome.widgets
 			// var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");
 			
 			// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
-			pluginResource.addMetadataValue("MediaPlayer", mediaPlayer);
-			pluginResource.addMetadataValue("MediaContainer", mediaContainer);
+			pluginResource.addMetadataValue("MediaPlayer", smp.player);
+			pluginResource.addMetadataValue("MediaContainer", smp.mediaContainer);
 			
 			// Configure the plugin with the ad information
 			// The following configuration instructs the plugin to play a mid-roll ad after 20 seconds
@@ -285,7 +287,7 @@ package org.osmf.player.chrome.widgets
 			state = !state;
 			highlighted = true;
 			updateFace(selected);
-			loadURL();
+			//loadURL();
 		}
 		
 		public function removeURL():void
