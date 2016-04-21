@@ -107,7 +107,7 @@ package org.osmf.player.chrome
 			multijumpButton.layoutMetadata.width = 16;
 			leftControls.addChildWidget(multijumpButton);
 			
-			//Map-Gps-Direction button (Project Group 9) ADDED#############################
+			//########## Map-Gps-Direction button (Project Group 9) ADDED#############################
 			var mapgpsdirectionButton:GeoMapButton = new GeoMapButton();
 			mapgpsdirectionButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE
 			mapgpsdirectionButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;

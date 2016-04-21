@@ -37,6 +37,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import org.osmf.events.DisplayObjectEvent;
 	import org.osmf.events.MediaPlayerStateChangeEvent;
 	import org.osmf.events.PlayEvent;
+	import org.osmf.events.SeekEvent;
 	import org.osmf.events.TimeEvent;
 	import org.osmf.events.TimelineMetadataEvent;
 	import org.osmf.layout.LayoutMetadata;
@@ -60,9 +61,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	 * The AdvertisementPluginInfo class provides the reference implementation for ad insertions.
 	 */
 	public class AdvertisementPluginInfo extends PluginInfo
-	{
-		private static var instance:AdvertisementPluginInfo;
-		private var adMediaPlayer:MediaPlayer;
+	{	
+		//private var adMediaPlayer:MediaPlayer;
+		//##### ADDED PROJECT GROUP 9
+		private static var adMediaPlayer:MediaPlayer;
 		
 		public function AdvertisementPluginInfo()
 		{
@@ -77,12 +79,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			fileDown = HTTPDownloadManager.getInstance(); //#### ADDED #### This isn't a very good idea, look at the cleanliness on the ctr...
 		}
 		
-		public static function getInstance():AdvertisementPluginInfo
+		//##### ADDED PROJECT GROUP 9 ####
+		public static function getMediaPlayer():MediaPlayer
 		{
-			if(instance == null){
-				instance = new AdvertisementPluginInfo();
-			}
-			return instance;
+			return adMediaPlayer;
 		}
 		
 		/**
@@ -230,9 +230,17 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}
 				
 				adMediaElement.metadata.addValue(LayoutMetadata.LAYOUT_NAMESPACE, layoutMetadata);	
-			}			
-			adMediaPlayer =  new MediaPlayer();		
+			}
+			
+			
+			//######## ADDED PROJECT GROUP 9
+			if(adMediaPlayer != null){
+				knownTime = adMediaPlayer.currentTime;
+			}
+			trace("Create new MediaPlayer");
+			adMediaPlayer =  new MediaPlayer();	
 			adMediaPlayer.media = adMediaElement;
+			
 			
 			// Save the reference to the ad player, so that we can adjust the volume/mute of all the ads
 			// whenever the volume or mute values change in the video player.
@@ -240,9 +248,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adPlayerCount++;
 			
 			adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
-			
-			//###### ADDED Project Group 9 ######
-			//adMediaPlayer.addEventListener(MediaPlayerStateChangeEvent.MEDIA_PLAYER_STATE_CHANGE, onAdStateChange);
+		
 			
 			if (preBufferAd)
 			{
@@ -255,6 +261,12 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					if (event.buffering == false)
 					{
 						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);	
+						//knownTime = fileDown.getTimetoSeek();
+						
+						//##### ADDED PROJECT GROUP 9 #####
+						if(adMediaPlayer.canSeekTo(knownTime)){
+							adMediaPlayer.seek(knownTime);
+						}
 						trace("PlayAD");
 						playAd();
 					}
@@ -287,6 +299,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						fileDown.prevMediaPlayer.pause();
 					}
 					
+					//##### CHANGED BY PROJECT GROUP 9 ###
 					mediaPlayer.pause();		
 					
 					// If we are playing a linear ad, we need to remove it from the media container.
@@ -358,14 +371,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			}
 		}
 		
-	/*	function onAdStateChange(event:PlayEvent):void
+		//####### ADDED PROJECT GROUP 9
+		function onAdStateChange(event:PlayEvent):void
 		{
-			if(adMediaPlayer.playing){
-				adMediaPlayer.pause();
-			}else{
-				adMediaPlayer.play();
-			}
-		}*/
+			adMediaPlayer.pause();
+		}
 		
 		// Non-linear ad insertion
 		
@@ -419,6 +429,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				mediaPlayer.removeEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 				
 				displayLinearAd(midrollURL);
+				fileDown.gettime();
 				//fileDown.currentStream = 1;
 				 //knownTime = fileDown.getTimetoSeek();
 				//fileDown.switchInitiated(knownTime);

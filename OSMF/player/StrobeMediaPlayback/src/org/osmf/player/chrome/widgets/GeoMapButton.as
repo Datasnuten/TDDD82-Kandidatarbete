@@ -47,6 +47,10 @@ package org.osmf.player.chrome.widgets
 		
 		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
 		{
+			if(currentFace==down){
+				state=!state
+				setFace(up);
+			}
 			OwnWidgetHint.getInstance(this).hide();
 			measure();
 			super.layout(Math.max(measuredWidth, availableWidth), Math.max(measuredHeight, availableHeight));

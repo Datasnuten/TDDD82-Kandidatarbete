@@ -22,6 +22,7 @@ package org.osmf.player.chrome.widgets
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.traits.MediaTraitType;
 	import org.osmf.traits.PlayState;
@@ -48,6 +49,10 @@ package org.osmf.player.chrome.widgets
 			var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			if ( playable.canPause)
 			{
+				//#### ADDED PROJECT GROUP 9
+				if(AdvertisementPluginInfo.getMediaPlayer() != null){
+				AdvertisementPluginInfo.getMediaPlayer().pause();
+				}
 				playable.pause();
 			/*	var seektrait:SeekTrait = media.getTrait(MediaTraitType.SEEK) as SeekTrait;
 				if(seektrait)
@@ -69,7 +74,7 @@ package org.osmf.player.chrome.widgets
 			visible = (playable && playable.playState == PlayState.PLAYING) 
 			if (media && media.metadata)
 			{
-				visible ||= media.metadata.getValue("Advertisement") != null;
+				//visible ||= media.metadata.getValue("Advertisement") != null;
 			}	
 		}
 	}

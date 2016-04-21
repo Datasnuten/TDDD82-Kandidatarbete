@@ -1224,7 +1224,7 @@ package
 		private var _media:MediaElement;
 		
 		private var volumeBar:VolumeBarElement;
-		private var controlBar:ControlBarElement;
+		public var controlBar:ControlBarElement;
 		private var alert:AlertDialogElement;
 		private var loginWindow:AuthenticationDialogElement;
 		private var posterImage:ImageElement;

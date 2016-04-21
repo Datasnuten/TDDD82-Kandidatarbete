@@ -19,6 +19,8 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.containers.MediaContainer;
 	import org.osmf.events.MediaFactoryEvent;
+	import org.osmf.layout.HorizontalAlign;
+	import org.osmf.layout.VerticalAlign;
 	import org.osmf.media.DefaultMediaFactory;
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
@@ -26,6 +28,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.media.MediaResourceBase;
 	import org.osmf.media.PluginInfoResource;
 	import org.osmf.media.URLResource;
+	import org.osmf.player.chrome.ChromeProvider;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.player.containers.StrobeMediaContainer;

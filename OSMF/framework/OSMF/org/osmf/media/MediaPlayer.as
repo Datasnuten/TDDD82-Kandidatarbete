@@ -332,7 +332,6 @@ package org.osmf.media
 					media.addEventListener(MediaElementEvent.TRAIT_ADD, onTraitAdd);					
 					media.addEventListener(MediaElementEvent.TRAIT_REMOVE, onTraitRemove);
 					media.addEventListener(MediaErrorEvent.MEDIA_ERROR, onMediaError);					
-
 					// If the media cannnot be loaded, then the MediaPlayer's state
 					// should represent the media as already ready.
 					if (media.hasTrait(MediaTraitType.LOAD) == false)
@@ -342,6 +341,7 @@ package org.osmf.media
 
 					for each (traitType  in media.traitTypes)
 					{
+						trace("updateTraitListener");
 						updateTraitListeners(traitType, true);
 					}
 				}

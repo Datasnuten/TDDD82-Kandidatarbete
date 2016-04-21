@@ -172,7 +172,7 @@ package org.osmf.player.chrome
 			addEmbeddedSymbol(AssetIDs.JUMP_BUTTON_0, ASSET_play_normal);
 			
 			//###############################################################
-			//Project Group 9
+			//ADDED by Project Group 9
 			//###############################################################
 			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_DOWN, ASSET_geoikonSelected);
 			addEmbeddedSymbol(AssetIDs.MAP_GPS_DIRECTION_BUTTON_NORMAL, ASSET_geoikon);
