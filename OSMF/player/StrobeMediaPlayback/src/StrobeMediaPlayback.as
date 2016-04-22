@@ -121,6 +121,7 @@ package
 		public var player:StrobeMediaPlayer;		
 		public var factory:StrobeMediaFactory;
 		
+		//#### ADDED BY PROJECT GROUP 9 ##########
 		public static var geomapWidget:GeoMapWidget = null;
 		
 		public function StrobeMediaPlayback()
@@ -201,9 +202,6 @@ package
 		 */ 
 		public function initialize(parameters:Object, stage:Stage, loaderInfo:LoaderInfo, pluginHostWhitelist:Array):void
 		{
-			
-			
-			
 			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
 			// Keep a reference to the stage (when a preloader is used, the
@@ -256,7 +254,8 @@ package
 			
 			player = injector.getInstance(MediaPlayer);
 			
-			player.addEventListener(TimeEvent.COMPLETE, onComplete);
+			//#### COMMENTED OUT BY PROJECT GROUP 9 ####
+			//player.addEventListener(TimeEvent.COMPLETE, onComplete);
 			player.addEventListener(MediaErrorEvent.MEDIA_ERROR, onMediaError);
 			
 			// Add DRM error handler
@@ -1219,7 +1218,7 @@ package
 		private var mainContainer:StrobeMediaContainer;
 		public var mediaContainer:MediaContainer = new MediaContainer();
 		
-		private var controlBarContainer:MediaContainer;
+		public var controlBarContainer:MediaContainer;
 		private var loginWindowContainer:MediaContainer;
 		private var _media:MediaElement;
 		

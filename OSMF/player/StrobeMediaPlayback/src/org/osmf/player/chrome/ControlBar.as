@@ -30,8 +30,8 @@ package org.osmf.player.chrome
 	import org.osmf.player.chrome.widgets.AutoHideWidget;
 	import org.osmf.player.chrome.widgets.FullScreenEnterButton;
 	import org.osmf.player.chrome.widgets.FullScreenLeaveButton;
-	import org.osmf.player.chrome.widgets.JumpButton;
 	import org.osmf.player.chrome.widgets.GeoMapButton;
+	import org.osmf.player.chrome.widgets.JumpButton;
 	import org.osmf.player.chrome.widgets.MultiJumpButton;
 	import org.osmf.player.chrome.widgets.MuteButton;
 	import org.osmf.player.chrome.widgets.PauseButton;

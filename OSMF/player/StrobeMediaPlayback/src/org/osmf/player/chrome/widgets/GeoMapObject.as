@@ -29,9 +29,11 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.media.PluginInfoResource;
 	import org.osmf.media.URLResource;
 	import org.osmf.player.chrome.ChromeProvider;
+	import org.osmf.player.chrome.ControlBar;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.player.containers.StrobeMediaContainer;
+	import org.osmf.player.elements.ControlBarElement;
 	import org.osmf.player.media.StrobeMediaPlayer;
 
 
@@ -65,6 +67,11 @@ package org.osmf.player.chrome.widgets
 		public var mediaPlayer:MediaPlayer;
 		
 		
+		/**
+		 * Creates a DisplayObject in form of an arrow pointing in a specific direction.
+		 * 
+		 * Give this object an URL in-order to display it in the MediaContainer.
+		 */
 		public function GeoMapObject(context:GeoMapSprite,positionX:int,positionY:int,assetManager:AssetsManager,smp:StrobeMediaPlayback,mediaContainer:MediaContainer,mediaFactory:MediaFactory,mediaPlayer:MediaPlayer)
 		{
 			super();
@@ -88,13 +95,13 @@ package org.osmf.player.chrome.widgets
 			this.mediaFactory = mediaFactory;
 			this.mediaPlayer = mediaPlayer;
 			
-			//addEventListener(MouseEvent.CLICK, onMouseClick);
-			//addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			addEventListener(MouseEvent.CLICK, onMouseClick);
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
 			updateFace(normal);
 		}
 		
-		public function updateFace(face:DisplayObject):void
+		private function updateFace(face:DisplayObject):void
 		{
 			if (currentFace != face)
 			{
@@ -142,7 +149,7 @@ package org.osmf.player.chrome.widgets
 		public function onMouseMove(event:MouseEvent):void
 		{
 			if(mouseY < positionY+selected.height && mouseY > positionY && mouseX < positionX+selected.width && mouseX > positionX){
-				Mouse.cursor = flash.ui.MouseCursor.ARROW;
+				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 				holdingOver = true;
 			}else{
 				holdingOver = false;
@@ -150,26 +157,54 @@ package org.osmf.player.chrome.widgets
 			
 		}
 		
-		
+		/**
+		 * Sets the x-coordinate of the GeoMapObject relative to real life.
+		 * 
+		 * NOTE!
+		 * This is not the position of the GeoMapObject, it's only an coordinate.
+		 */
 		public function setXcoordinate(xCoordinate:int):void
 		{
 			this.xCoordinate = xCoordinate;
 		}
 		
+		/**
+		 * Gets the x-coordinate of the GeoMapObject relative to real life.
+		 * 
+		 * NOTE!
+		 * This is not the position of the GeoMapObject, it's only an coordinate.
+		 */
 		public function get getXcoordinate():int
 		{
 			return xCoordinate;
 		}
+		
+		/**
+		 * Sets the y-coordinate of the GeoMapObject relative to real life.
+		 * 
+		 * NOTE!
+		 * This is not the position of the GeoMapObject, it's only an coordinate.
+		 */
 		public function setYcoordinate(yCoordinate:int):void
 		{
 			this.yCoordinate = yCoordinate;
 		}
 		
+		/**
+		 * Gets the y-coordinate of the GeoMapObject relative to real life.
+		 * 
+		 * NOTE!
+		 * This is not the position of the GeoMapObject, it's only an coordinate.
+		 */
 		public function get getYcoordinate():int
 		{
 			return yCoordinate;
 		}
 		
+		/**
+		 * Sets the direction in which the GeoMapObject should be facing.
+		 * If this is not set the GeoMapObject will point upwards as default.
+		 */
 		public function setDirection(direction:int):void
 		{
 			this.direction = direction;
@@ -191,6 +226,9 @@ package org.osmf.player.chrome.widgets
 			return direction;
 		}
 		
+		/**
+		 * Sets the x-position of the GeoMapObject.
+		 */
 		public function setPositionX(positionX:int):void
 		{
 			this.positionX = positionX;
@@ -198,11 +236,17 @@ package org.osmf.player.chrome.widgets
 			selected.x = positionX;
 		}
 		
+		/**
+		 * Returns an Integer of the position in x-axis of the GeoMapObject. 
+		 */
 		public function get getPositionX():int
 		{
 			return positionX;
 		}
 		
+		/**
+		 * Sets the y-position of the GeoMapObject.
+		 */
 		public function setPositionY(positionY:int):void
 		{
 			this.positionY = positionY;
@@ -210,77 +254,111 @@ package org.osmf.player.chrome.widgets
 			selected.y = positionY;
 		}
 		
+		/**
+		 * Returns an Integer of the position in y-axis of the GeoMapObject. 
+		 */
 		public function get getPositionY():int
 		{
 			return positionY;
 		}
 		
+		/**
+		 * Returns current face of the DisplayObject.
+		 */
 		public function get getCurrentFace():DisplayObject
 		{
 			return currentFace;
 		}
 		
+		/**
+		 * Resets the face to normal (non-selected) face.
+		 */
 		public function resetFace():void
 		{
 			updateFace(normal);
 		}
 		
+		/**
+		 * Returns true if holding the mouse over the object.
+		 */
 		public function get getIfHoldingOver():Boolean
 		{
 			return holdingOver;
 		}
 		
+		/**
+		 * Gets the state in which the GeoMapObject is in.
+		 * Returns true if the object can be selected, false if it is already selected.
+		 */
 		public function get getState():Boolean
 		{
 			return state;
 		}
 		
+		/**
+		 * Sets the URL to the GeoMapObject.
+		 * This URL will be displayed in the MediaContainer.
+		 * 
+		 * @param url The url that will be displayed when clicking the GeoMapObject.
+		 */
 		public function setURL(url:String):void
 		{
 			this.url = url;
 		}
 		
+		/**
+		 * Sets the object to default selected and loads the URL to the MediaContainer.
+		 */
+		public function setDefault():void
+		{
+			updateFace(selected);
+			state = !state;
+			highlighted = true;
+			loadURL();
+		}
+		
 		private  function loadURL():void
 		{
-			ExternalInterface.call("changeMidrollURL",url);
+			if(url != null){
+				ExternalInterface.call("changeMidrollURL",url);
+				
+				var resource:URLResource = new URLResource(url);
+				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
+				//smp.mediaContainer.addMediaElement(mediaElement);
+				
+				// Load the plugin statically
+				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);
+				
+				// You can load it as a dynamic plugin as well
+				// var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");
+				
+				// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
+				pluginResource.addMetadataValue("MediaPlayer", smp.player);
+				pluginResource.addMetadataValue("MediaContainer", smp.mediaContainer);
+				
+				// Configure the plugin with the ad information
+				// The following configuration instructs the plugin to play a mid-roll ad after 1 seconds
+				pluginResource.addMetadataValue("midroll", url);
+				pluginResource.addMetadataValue("midrollTime", 1);
+				
+				// Once the plugin is loaded, play the media.
+				// The event handler is not needed if you use the statically linked plugin,
+				// but is here in case you load the plugin dynamically.
+				// For readability, we don’t provide error handling here, but you should.
+				/*mediaFactory.addEventListener(
+					MediaFactoryEvent.PLUGIN_LOAD,
+					function(event:MediaFactoryEvent):void
+					{
+						// Now let's play the video - mediaPlayer has autoPlay set to true by default,
+						// so the playback starts as soon as the media is ready to be played.
+						smp.media = mediaElement;
+					});*/
+				
+				// Load the plugin.
+				mediaFactory.loadPlugin(pluginResource);
+				super.media = mediaElement;
 			
-			var resource:URLResource = new URLResource(url);
-			var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
-			smp.mediaContainer.addMediaElement(mediaElement);
-			
-			// Load the plugin statically
-			var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
-			
-			// You can load it as a dynamic plugin as well
-			// var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");
-			
-			// Pass the references to the MediaPlayer and the MediaContainer instances to the plug-in.
-			pluginResource.addMetadataValue("MediaPlayer", smp.player);
-			pluginResource.addMetadataValue("MediaContainer", smp.mediaContainer);
-			
-			// Configure the plugin with the ad information
-			// The following configuration instructs the plugin to play a mid-roll ad after 1 seconds
-			pluginResource.addMetadataValue("midroll", url);
-			pluginResource.addMetadataValue("midrollTime", 1);
-			
-			smp.removePoster();
-			
-			// Once the plugin is loaded, play the media.
-			// The event handler is not needed if you use the statically linked plugin,
-			// but is here in case you load the plugin dynamically.
-			// For readability, we don’t provide error handling here, but you should.
-		/*	mediaFactory.addEventListener(
-				MediaFactoryEvent.PLUGIN_LOAD,
-				function(event:MediaFactoryEvent):void
-				{
-					// Now let's play the video - mediaPlayer has autoPlay set to true by default,
-					// so the playback starts as soon as the media is ready to be played.
-					smp.media = mediaElement;
-				});*/
-			
-			// Load the plugin.
-			mediaFactory.loadPlugin(pluginResource);
-			
+			}
 		}
 	}
 }

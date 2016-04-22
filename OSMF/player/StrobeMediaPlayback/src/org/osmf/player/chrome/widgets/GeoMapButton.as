@@ -19,7 +19,7 @@ package org.osmf.player.chrome.widgets
 	public class GeoMapButton extends ButtonWidget
 	{
 		private var state:Boolean = false;
-		
+
 		public function GeoMapButton()
 		{
 			super();
@@ -34,6 +34,7 @@ package org.osmf.player.chrome.widgets
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			
 		}
 		
 		override public function configure(xml:XML, assetManager:AssetsManager):void
@@ -43,6 +44,7 @@ package org.osmf.player.chrome.widgets
 			StrobeMediaPlayback.geomapWidget.configure(xml, assetManager);
 			StrobeMediaPlayback.geomapWidget.layoutMetadata.layoutMode = LayoutMode.VERTICAL;
 			StrobeMediaPlayback.geomapWidget.layoutMetadata.width = layoutMetadata.width;
+			StrobeMediaPlayback.geomapWidget.layoutMetadata.height = layoutMetadata.height;
 		}
 		
 		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
@@ -83,21 +85,16 @@ package org.osmf.player.chrome.widgets
 		
 		override protected function onMouseOver(event:MouseEvent):void
 		{
-			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
-			{
-			Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-			}
-
 			if(!state){
-			setFace(over);
+				setFace(over);
 			}
 			mouseOver = true;
 		}
 		override protected function onMouseOut(event:MouseEvent):void
 		{	
 			if(!state){
-			setFace(up);
-			OwnWidgetHint.getInstance(this).hide();
+				setFace(up);
+				OwnWidgetHint.getInstance(this).hide();
 			}
 			Mouse.cursor = flash.ui.MouseCursor.ARROW;
 			mouseOver = false;
@@ -106,6 +103,12 @@ package org.osmf.player.chrome.widgets
 		
 		private function onMouseMove(event:MouseEvent):void
 		{
+			if (event.localY >= 0 && (event.localY <= height || isNaN(height)))
+			{
+				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
+			}else{
+				Mouse.cursor = flash.ui.MouseCursor.ARROW;
+			}
 			StrobeMediaPlayback.geomapWidget.onMouseMove(event);
 		}
 		

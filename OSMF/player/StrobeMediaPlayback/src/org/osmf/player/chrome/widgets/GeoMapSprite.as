@@ -6,9 +6,11 @@
 
 package org.osmf.player.chrome.widgets
 {
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	import flash.utils.Dictionary;
@@ -23,8 +25,8 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
 	import org.osmf.media.MediaResourceBase;
-	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.media.URLResource;
+	import org.osmf.player.chrome.assets.AssetsManager;
 
 	
 	
@@ -43,6 +45,7 @@ package org.osmf.player.chrome.widgets
 		
 		private var dict:Object = new Object();
 		private var text:TextField;
+		private var cDTextSize:int = 20;
 		
 		// This is a normal video player setup.
 		public var mediaFactory:MediaFactory = new DefaultMediaFactory();
@@ -65,12 +68,23 @@ package org.osmf.player.chrome.widgets
 			this.assetManager = assetManager;
 			this.smp = smp;
 			
-			drawPointOfInterest();
-			//drawCardinalDirections("N",0,y2);
+			//If you draw something on the bottom the y-axis needs to be updated with half of that length otherwise the UI will be moved upwards
+			this.y2 = y2 + (Mapradius-cDTextSize)/2;
+			
+			//Same thing when moving the x-axis to the right-hand side but with 1/4 of that length
+			this.x2 = x2 + (Mapradius-cDTextSize/2)/4;
+				
+			drawCardinalDirections("S",0,Mapradius-cDTextSize);
+			drawCardinalDirections("E",Mapradius-cDTextSize/2,0);
+			
+			drawPointOfInterest(30,-100);
+			
+			drawCardinalDirections("N",0,-Mapradius+cDTextSize/2);
+			drawCardinalDirections("W",-Mapradius+cDTextSize/2,0);
 			
 			graphics.clear();
 			graphics.beginFill(0xffffff,1);
-			graphics.drawCircle(x1,y1,Mapradius);
+			graphics.drawCircle(x2,y2,Mapradius);
 			graphics.endFill();
 			
 			//addEventListener(MouseEvent.CLICK, onMouseClick);
@@ -81,16 +95,12 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		
-		private function drawPointOfInterest():void
+		private function drawPointOfInterest(xAdjust:int,yAdjust:int):void
 		{
-			
-			var xAdjust:int = 30;
-			var yAdjust:int = -100;
 			var string:String = "Point Of Interest";
 			var poiRadius:int = 40;
 			var pointOfInterest:Sprite = new Sprite();
 			text = new TextField();
-			text.backgroundColor = 0xff0000;
 			text.text = string;
 			text.wordWrap = true;
 			text.multiline = true;
@@ -109,15 +119,19 @@ package org.osmf.player.chrome.widgets
 		
 		private function drawCardinalDirections(string:String, xAdjust:int,yAdjust:int):void
 		{
+			var textFormat:TextFormat = new TextFormat();
+			textFormat.size = cDTextSize;
+			textFormat.bold = true;
+			
 			var text:TextField = new TextField();
-			text.backgroundColor = 0xffffff;
+			text.defaultTextFormat = textFormat;
 			text.text = string;
 			text.wordWrap = true;
 			text.multiline = true;
-			text.scaleX = 0.8;
 			
-			text.y = y2+yAdjust;
-			text.x = x2+xAdjust;
+			
+			text.y = y2+yAdjust-cDTextSize/2;
+			text.x = x2+xAdjust-cDTextSize/2;
 			
 			addChild(text);
 		}
@@ -126,6 +140,8 @@ package org.osmf.player.chrome.widgets
 			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
 			createObjects(0,120,30,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
+			createObjects(-10,0,40,"http://localhost/videos/final_0.5.f4v");
+			dict[0].setDefault();
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void
@@ -149,7 +165,6 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			Mouse.cursor = flash.ui.MouseCursor.BUTTON;			
 			for each(var obj:* in dict) {
 				obj.onMouseMove(event);
 			}

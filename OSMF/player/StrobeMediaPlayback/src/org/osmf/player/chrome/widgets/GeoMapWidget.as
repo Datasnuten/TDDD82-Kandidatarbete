@@ -19,6 +19,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
 	import org.osmf.player.chrome.events.ScrubberEvent;
+	import org.osmf.player.chrome.hint.OwnWidgetHint;
 	import org.osmf.traits.AudioTrait;
 	import org.osmf.traits.MediaTraitType;
 
@@ -26,7 +27,7 @@ package org.osmf.player.chrome.widgets
 	{
 		private var geomapFace:DisplayObject;
 		private var geomapSprite:GeoMapSprite;
-		private var geomapRadius:int = 180;
+		private var geomapRadius:int = 190;
 		public var smp:StrobeMediaPlayback;
 		
 		
@@ -39,9 +40,14 @@ package org.osmf.player.chrome.widgets
 			layoutMetadata.layoutMode = LayoutMode.HORIZONTAL;
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
-			/*addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);*/
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
+		}
+		
+		override public function layout(availableWidth:Number, availableHeight:Number, deep:Boolean=true):void
+		{
+			measure();
+			super.layout(Math.max(measuredWidth, availableWidth), Math.max(measuredHeight, availableHeight));
 		}
 		
 		override public function configure(xml:XML, assetManager:AssetsManager):void
