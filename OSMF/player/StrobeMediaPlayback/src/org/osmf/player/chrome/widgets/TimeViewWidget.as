@@ -47,6 +47,8 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.traits.MediaTraitType;
 	import org.osmf.traits.SeekTrait;
 	import org.osmf.traits.TimeTrait;
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
+
 
 	/**
 	 * TimeViewWidget displays the current time and the total duration of the media.
@@ -71,7 +73,7 @@ package org.osmf.player.chrome.widgets
 		{
 			var timeTrait:TimeTrait;
 			timeTrait = media.getTrait(MediaTraitType.TIME) as TimeTrait;			
-			updateValues(timeTrait.currentTime, timeTrait.duration, live);
+			updateValues(AdvertisementPluginInfo.getMediaPlayer().currentTime, AdvertisementPluginInfo.getMediaPlayer().duration, live);
 		}
 		
 		/**
