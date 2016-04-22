@@ -93,6 +93,9 @@ package org.osmf.player.chrome
 			pauseButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
 			leftControls.addChildWidget(pauseButton);
 			
+			playButton.passReference(pauseButton);
+			pauseButton.passReference(playButton);
+			
 			//jump button ADDED#########################################################
 			var jumpButton:JumpButton = new JumpButton();
 			jumpButton.layoutMetadata.verticalAlign = VerticalAlign.MIDDLE

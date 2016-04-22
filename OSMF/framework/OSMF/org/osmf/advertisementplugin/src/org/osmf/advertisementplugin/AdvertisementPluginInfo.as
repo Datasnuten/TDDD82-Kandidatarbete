@@ -107,7 +107,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			{
 				// TODO: Prebuffer the preroll before the playback completes.
 				// The current implementation will likely change in future.
-				mediaPlayer.addEventListener(TimeEvent.COMPLETE, onComplete);
+				//mediaPlayer.addEventListener(TimeEvent.COMPLETE, onComplete);
 			}			
 			
 			if (midrollURL && midrollTime > 0)
@@ -229,12 +229,13 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adMediaPlayer =  new MediaPlayer();	
 			adMediaPlayer.media = adMediaElement;
 			
+			
 			// Save the reference to the ad player, so that we can adjust the volume/mute of all the ads
 			// whenever the volume or mute values change in the video player.
 			adPlayers[adMediaPlayer] = true;
 			adPlayerCount++;
 			
-			adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
+			//adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
 		
 			
 			if (preBufferAd)
@@ -358,7 +359,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					trace("Resume playback");
 					// Resume playback
 					mediaPlayer.play();
-				}				
+				}
 			}
 		}
 	
@@ -431,7 +432,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			mediaPlayer.removeEventListener(TimeEvent.COMPLETE, onComplete);
 			
 			// Resume the playback after the ad only if loop is set to true
-			displayLinearAd(postrollURL, mediaPlayer.loop);
+			//displayLinearAd(postrollURL, mediaPlayer.loop);
 		}
 		
 		//##### ADDED BY PROJECT GROUP 9 ####

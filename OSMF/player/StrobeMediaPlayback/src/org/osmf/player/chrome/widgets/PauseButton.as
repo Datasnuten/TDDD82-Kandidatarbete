@@ -31,6 +31,8 @@ package org.osmf.player.chrome.widgets
 	
 	public class PauseButton extends PlayableButton
 	{
+		
+		public var playButton:PlayButton;
 
 		public function PauseButton()
 		{
@@ -53,7 +55,9 @@ package org.osmf.player.chrome.widgets
 				if(AdvertisementPluginInfo.getMediaPlayer() != null){
 				AdvertisementPluginInfo.getMediaPlayer().pause();
 				}
-				playable.pause();
+				visible = false;
+				playButton.visible = true;
+				//playable.pause();
 			/*	var seektrait:SeekTrait = media.getTrait(MediaTraitType.SEEK) as SeekTrait;
 				if(seektrait)
 				{
@@ -76,6 +80,10 @@ package org.osmf.player.chrome.widgets
 			{
 				//visible ||= media.metadata.getValue("Advertisement") != null;
 			}	
+		}
+		
+		public function passReference(playButton:PlayButton):void {
+			this.playButton = playButton;
 		}
 	}
 }

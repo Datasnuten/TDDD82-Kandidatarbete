@@ -571,6 +571,7 @@ package
 			}
 			
 			media = factory.createMediaElement(resource);
+			
 			if (_media == null)
 			{
 				var mediaError:MediaError
@@ -625,7 +626,7 @@ package
 				}
 				processedMedia.metadata.addValue(MEDIA_PLAYER, player);
 			}	
-
+			
 			return processedMedia;
 		}
 		
@@ -703,7 +704,9 @@ package
 				if (_media)
 				{										
 					// Add the media to the media container:
+					
 					mediaContainer.addMediaElement(_media);
+					
 					
 					// Forward a reference to controlBar:
 					if (controlBar != null)

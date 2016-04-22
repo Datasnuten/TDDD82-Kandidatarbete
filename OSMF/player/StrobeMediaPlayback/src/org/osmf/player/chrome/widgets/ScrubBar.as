@@ -323,7 +323,7 @@ package org.osmf.player.chrome.widgets
 			if (event.traitType == MediaTraitType.PLAY)
 			{
 				// Prepare for getting the player to the Live content directly (UX rule)
-				var playTrait:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 				if (playTrait.playState != PlayState.PLAYING)
 				{
 					started = false;
@@ -524,8 +524,6 @@ package org.osmf.player.chrome.widgets
 						/ duration
 						||	scrubberStart; // Default value if calc. returns NaN.
 					
-					trace("position: " + position.toString());
-					trace("duration: " + duration.toString());
 					scrubber.x = Math.min(scrubberEnd, Math.max(scrubberStart, scrubberX));
 
 					
@@ -556,10 +554,12 @@ package org.osmf.player.chrome.widgets
 				return;
 			}
 			var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;
-			var seekTrait:SeekTrait = media ? media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
-			var playTrait:PlayTrait = media ? media.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
+			var seekTrait:SeekTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
+			var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
 			if (timeTrait && seekTrait)
 			{
+				
+				trace("hej");
 				if (dvrTrait && dvrTrait.isRecording && relativePositition > scrubBarDVRLiveTrack.x)
 				{
 					goToLive();
@@ -632,7 +632,7 @@ package org.osmf.player.chrome.widgets
 		private function onScrubberStart(event:ScrubberEvent):void
 		{
 			onScrubberOver(null);
-			var playTrait:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+			var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			if (playTrait)
 			{
 				preScrubPlayState = playTrait.playState;
@@ -649,25 +649,26 @@ package org.osmf.player.chrome.widgets
 		{
 			onScrubberOut(null);
 			seekToX(scrubber.x);
-			if (preScrubPlayState)
-			{
-				var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
-				if (playable)
-				{
-					if (playable.playState != preScrubPlayState)
-					{
-						switch (preScrubPlayState)
-						{
-							case PlayState.STOPPED:
-								playable.stop();
-								break;
-							case PlayState.PLAYING:
-								playable.play();
-								break;
-						}
-					}
-				}
-			}
+			//if (preScrubPlayState)
+			//{
+				//var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				//if (playable)
+				//{
+					//if (playable.playState != preScrubPlayState)
+					//{
+						//switch (preScrubPlayState)
+						//{
+							//case PlayState.STOPPED:
+								//playable.stop();
+								//break;
+							//case PlayState.PLAYING:
+								//playable.play();
+								//break;
+						//}
+					//}
+				//}
+			//}
+			AdvertisementPluginInfo.getMediaPlayer().pause();
 			
 			scrubBarPlayedTrackSeeking.visible = false;
 		}
