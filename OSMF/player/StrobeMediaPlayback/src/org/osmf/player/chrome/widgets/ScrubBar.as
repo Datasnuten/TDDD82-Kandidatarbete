@@ -31,6 +31,7 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextFormatAlign;
 	import flash.utils.Timer;
 	
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.events.MediaElementEvent;
 	import org.osmf.events.MetadataEvent;
 	import org.osmf.events.PlayEvent;
@@ -499,18 +500,19 @@ package org.osmf.player.chrome.widgets
 		
 		private function updateScrubberPosition(event:Event = null):void
 		{
-			var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;			
+			var timeTrait:TimeTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.TIME) as TimeTrait : null;			
 			if (timeTrait != null && timeTrait.duration)
 			{
-				var loadTrait:LoadTrait = media ? media.getTrait(MediaTraitType.LOAD) as LoadTrait : null;
-				var seekTrait:SeekTrait = media ? media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
-				var duration:Number = timeTrait.duration;
+				var loadTrait:LoadTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.LOAD) as LoadTrait : null;
+				var seekTrait:SeekTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
+				var duration:Number = AdvertisementPluginInfo.getMediaPlayer().duration;
 			
-				var position:Number = isNaN(seekToTime) ? timeTrait.currentTime : seekToTime;
+				var position:Number = isNaN(seekToTime) ? AdvertisementPluginInfo.getMediaPlayer().currentTime : seekToTime;
 				if (dvrTrait && live) 
 				{
 					// Since we play the live content the scrubber position is fixed.
 					scrubber.x = scrubBarDVRLiveTrack.x - scrubber.width / 2.0 + scrubBarLiveTrackWidth / 2.0;
+
 				}
 				else
 				{				
@@ -522,7 +524,11 @@ package org.osmf.player.chrome.widgets
 						/ duration
 						||	scrubberStart; // Default value if calc. returns NaN.
 					
+					trace("position: " + position.toString());
+					trace("duration: " + duration.toString());
 					scrubber.x = Math.min(scrubberEnd, Math.max(scrubberStart, scrubberX));
+
+					
 					if (loadTrait)
 					{
 						scrubBarLoadedTrack.width 
@@ -569,10 +575,10 @@ package org.osmf.player.chrome.widgets
 					}
 					else
 					{
-						var time:Number = timeTrait.duration * ((relativePositition - scrubberStart) / (scrubberEnd - scrubberStart));
+						var time:Number = AdvertisementPluginInfo.getMediaPlayer().duration * ((relativePositition - scrubberStart) / (scrubberEnd - scrubberStart));
 					}
 					
-					if (seekTrait.canSeekTo(time)) 
+					if (AdvertisementPluginInfo.getMediaPlayer().canSeekTo(time)) 
 					{
 						if (playTrait && playTrait.playState == PlayState.STOPPED)
 						{
@@ -586,11 +592,11 @@ package org.osmf.player.chrome.widgets
 							}
 						}
 						seekTrait.addEventListener(SeekEvent.SEEKING_CHANGE, onSeekingChange);
-						seekToTime = time;
-						seekTrait.seek(time);
+						//seekToTime = time;
+						AdvertisementPluginInfo.getMediaPlayer().seek(time);
 						scrubber.x = Math.max(scrubberStart, scrubberStart + relativePositition);
 						highlight.x = (scrubber.x+scrubber.width/2)-(highlight.width/2);
-						scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = scrubber.x + (scrubber.width/2);
+						scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = scrubber.x + (scrubber.width/2) - 50;
 					}
 				}
 			}
@@ -720,7 +726,7 @@ package org.osmf.player.chrome.widgets
 				var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;
 				if (timeTrait)
 				{
-					var time:Number = timeTrait.duration * ((mouseX - scrubber.width / 2.0 - scrubberStart) / (scrubberEnd - scrubberStart));
+					var time:Number = AdvertisementPluginInfo.getMediaPlayer().duration * ((mouseX - scrubber.width / 2.0 - scrubberStart) / (scrubberEnd - scrubberStart));
 					
 					var dvrLive:Boolean = dvrTrait && dvrTrait.isRecording && mouseX > scrubBarDVRLiveTrack.x;
 					var currentTimeString:String = FormatUtils.formatTimeStatus(time, timeTrait.duration)[0];
