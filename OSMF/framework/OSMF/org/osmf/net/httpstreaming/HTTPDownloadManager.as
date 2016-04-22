@@ -13,42 +13,22 @@ package org.osmf.net.httpstreaming
 {
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
-	import flash.events.IEventDispatcher;
-	import flash.events.NetStatusEvent;
 	import flash.events.TimerEvent;
-	import flash.net.FileReference;
-	import flash.net.NetConnection;
-	import flash.net.NetStream;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.net.URLStream;
-	import flash.net.URLVariables;
 	import flash.system.Capabilities;
 	import flash.utils.Dictionary;
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	
-	import mx.charts.AreaChart;
-	import mx.collections.ArrayCollection;
-	import mx.collections.ICollectionView;
-	import mx.core.INavigatorContent;
-	import mx.messaging.channels.StreamingAMFChannel;
 	
 	import org.osmf.events.HTTPStreamingEvent;
-	import org.osmf.events.MediaPlayerCapabilityChangeEvent;
-	import org.osmf.events.SeekEvent;
-	import org.osmf.events.TimeEvent;
 	import org.osmf.logging.Logger;
 	import org.osmf.media.MediaPlayer;
-	import org.osmf.media.MediaResourceBase;
 	import org.osmf.net.httpstreaming.DefaultHTTPStreamingSwitchManager;
 	import org.osmf.net.httpstreaming.HTTPNetStream;
 	import org.osmf.net.httpstreaming.HTTPStreamDownloader;
-	import org.osmf.net.httpstreaming.HTTPStreamSource;
-	import org.osmf.net.httpstreaming.HTTPStreamingNetLoader;
-	import org.osmf.net.qos.QoSInfo;
-	import org.osmf.traits.SeekTrait;
-	import org.osmf.utils.OSMFSettings;
 	
 	[Event(name="downloadComplete", type="org.osmf.events.HTTPStreamingEvent")]
 	[Event(name="DVRStreamInfo", type="org.osmf.events.DVRStreamInfoEvent")]	

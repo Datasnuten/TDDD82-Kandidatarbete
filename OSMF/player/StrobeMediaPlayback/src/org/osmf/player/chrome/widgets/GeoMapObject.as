@@ -325,6 +325,7 @@ package org.osmf.player.chrome.widgets
 				var resource:URLResource = new URLResource(url);
 				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 				//smp.mediaContainer.addMediaElement(mediaElement);
+				super.media = mediaElement;
 				
 				// Load the plugin statically
 				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);
@@ -341,22 +342,8 @@ package org.osmf.player.chrome.widgets
 				pluginResource.addMetadataValue("midroll", url);
 				pluginResource.addMetadataValue("midrollTime", 1);
 				
-				// Once the plugin is loaded, play the media.
-				// The event handler is not needed if you use the statically linked plugin,
-				// but is here in case you load the plugin dynamically.
-				// For readability, we don’t provide error handling here, but you should.
-				/*mediaFactory.addEventListener(
-					MediaFactoryEvent.PLUGIN_LOAD,
-					function(event:MediaFactoryEvent):void
-					{
-						// Now let's play the video - mediaPlayer has autoPlay set to true by default,
-						// so the playback starts as soon as the media is ready to be played.
-						smp.media = mediaElement;
-					});*/
-				
 				// Load the plugin.
 				mediaFactory.loadPlugin(pluginResource);
-				super.media = mediaElement;
 			
 			}
 		}

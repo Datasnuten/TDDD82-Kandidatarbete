@@ -140,8 +140,8 @@ package org.osmf.player.chrome.widgets
 			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
 			createObjects(0,120,30,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
-			createObjects(-10,0,40,"http://localhost/videos/final_0.5.f4v");
-			dict[0].setDefault();
+			createObjects(-10,0,40,"http://localhost/videos/example.f4v");
+			//dict[0].setDefault();
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void

@@ -220,7 +220,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			//######## ADDED PROJECT GROUP 9
 			if(adMediaPlayer != null){
-				knownTime = adMediaPlayer.currentTime;
 				adMediaPlaying = adMediaPlayer.playing;
 			}else{
 				adMediaPlaying = mediaPlayer.playing;
@@ -236,7 +235,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adPlayerCount++;
 			
 			//adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 			
 			if (preBufferAd)
 			{
@@ -244,15 +246,23 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				// Wait until the ad fills the buffer and is ready to be played.
 				adMediaPlayer.muted = true;
 				adMediaPlayer.addEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);
+				
 				function onBufferingChange(event:BufferEvent):void
 				{
 					if (event.buffering == false)
 					{
 						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);	
-						//knownTime = fileDown.getTimetoSeek();
+						//##### ADDED PROJECT GROUP 9 #####
+						logger.debug("known time "+knownTime);
+						if(fileDown.prevMediaPlayer != null){
+							knownTime = fileDown.prevMediaPlayer.currentTime;
+						}else{
+							knownTime = mediaPlayer.currentTime;
+						}
 						
 						//##### ADDED PROJECT GROUP 9 #####
 						if(adMediaPlayer.canSeekTo(knownTime)){
+							trace("KnownTime " + knownTime);
 							adMediaPlayer.seek(knownTime);
 						}
 						trace("PlayAD");
@@ -283,12 +293,13 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// but this is not the case for all types of content.
 					// The linear ads should be inserted only after the player state becomes 'paused'.
 					
+					//##### ADDED BY PROJECT GROUP 9 #####
 					if(fileDown.prevMediaPlayer != null){
 						fileDown.prevMediaPlayer.pause();
 					}
 					
 					//##### CHANGED BY PROJECT GROUP 9 ###
-					//mediaPlayer.pause();
+					mediaPlayer.pause();
 					
 					// If we are playing a linear ad, we need to remove it from the media container.
 					if (mediaContainer.containsMediaElement(mediaPlayer.media))
@@ -310,6 +321,13 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 							}
 						}
 					}					
+				}
+				
+				//######### ADDED PROJECT GROUP 9
+				if(fileDown.prevMediaPlayer != null){
+					mediaContainer.removeMediaElement(fileDown.prevMediaPlayer.media);
+					adPlayerCount--;
+					delete adPlayers[fileDown.prevMediaPlayer];		
 				}
 				
 				// Add the ad to the container
@@ -362,7 +380,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}
 			}
 		}
-	
+		
 		// Non-linear ad insertion
 		
 		/**
