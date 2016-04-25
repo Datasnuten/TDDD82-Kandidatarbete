@@ -235,10 +235,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adPlayerCount++;
 			
 			//adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/master
 			
 			if (preBufferAd)
 			{

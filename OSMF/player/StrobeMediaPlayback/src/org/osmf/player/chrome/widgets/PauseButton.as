@@ -53,21 +53,18 @@ package org.osmf.player.chrome.widgets
 			{
 				//#### ADDED PROJECT GROUP 9
 				if(AdvertisementPluginInfo.getMediaPlayer() != null){
-				AdvertisementPluginInfo.getMediaPlayer().pause();
+					AdvertisementPluginInfo.getMediaPlayer().pause();
 				}
 				visible = false;
 				playButton.visible = true;
 				//playable.pause();
-			/*	var seektrait:SeekTrait = media.getTrait(MediaTraitType.SEEK) as SeekTrait;
-				if(seektrait)
-				{
-					if(seektrait.canSeekTo(18))
-						seektrait.seek(18); // ### Added just to see if we can get a "SEEK" going somehow, this would be A LOT better if keyboard input though, or its' own button at least.
-				}
-				*/
 			}
 			else
 			{
+				//#### ADDED PROJECT GROUP 9
+				if(AdvertisementPluginInfo.getMediaPlayer() != null){
+					AdvertisementPluginInfo.getMediaPlayer().stop();
+				}
 				playable.stop();
 			}
 			event.stopImmediatePropagation();
@@ -82,6 +79,7 @@ package org.osmf.player.chrome.widgets
 			}	
 		}
 		
+		//######## ADDED PROJECT GROUP 9
 		public function passReference(playButton:PlayButton):void {
 			this.playButton = playButton;
 		}

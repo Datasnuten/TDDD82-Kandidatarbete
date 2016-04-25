@@ -559,7 +559,6 @@ package org.osmf.player.chrome.widgets
 			if (timeTrait && seekTrait)
 			{
 				
-				trace("hej");
 				if (dvrTrait && dvrTrait.isRecording && relativePositition > scrubBarDVRLiveTrack.x)
 				{
 					goToLive();

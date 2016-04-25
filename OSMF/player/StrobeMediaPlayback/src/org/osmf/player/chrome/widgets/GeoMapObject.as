@@ -320,12 +320,8 @@ package org.osmf.player.chrome.widgets
 		private  function loadURL():void
 		{
 			if(url != null){
-				ExternalInterface.call("changeMidrollURL",url);
-				
 				var resource:URLResource = new URLResource(url);
 				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
-				//smp.mediaContainer.addMediaElement(mediaElement);
-				super.media = mediaElement;
 				
 				// Load the plugin statically
 				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);
@@ -341,6 +337,8 @@ package org.osmf.player.chrome.widgets
 				// The following configuration instructs the plugin to play a mid-roll ad after 1 seconds
 				pluginResource.addMetadataValue("midroll", url);
 				pluginResource.addMetadataValue("midrollTime", 1);
+				
+				smp.removePoster();
 				
 				// Load the plugin.
 				mediaFactory.loadPlugin(pluginResource);

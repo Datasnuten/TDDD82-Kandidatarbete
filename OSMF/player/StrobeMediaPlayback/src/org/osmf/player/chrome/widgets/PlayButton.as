@@ -44,7 +44,6 @@ package org.osmf.player.chrome.widgets
 			upFace = AssetIDs.PLAY_BUTTON_NORMAL
 			downFace = AssetIDs.PLAY_BUTTON_DOWN;
 			overFace = AssetIDs.PLAY_BUTTON_OVER;
-	//		addEventListener(KeyboardEvent.KEY_DOWN, myKeyDown);
 		}
 	
 		// Overrides
@@ -76,6 +75,7 @@ package org.osmf.player.chrome.widgets
 			}
 		}
 		
+		//######## ADDED PROJECT GROUP 9
 		public function passReference(pButton:PauseButton):void {
 			this.pButton = pButton;
 		}
