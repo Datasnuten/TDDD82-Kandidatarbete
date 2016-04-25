@@ -320,7 +320,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					}					
 				}
 				
-				//######### ADDED PROJECT GROUP 9
+				//######### ADDED PROJECT GROUP 9 ###############
 				if(fileDown.prevMediaPlayer != null){
 					mediaContainer.removeMediaElement(fileDown.prevMediaPlayer.media);
 					adPlayerCount--;
@@ -332,7 +332,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				mediaContainer.addMediaElement(adMediaElement);
 				fileDown.prevMediaPlayer = adMediaPlayer;
 				
-				//######### ADDED PROJECT GROUP 9
+				//######### ADDED PROJECT GROUP 9 ###############
 				if(adMediaPlaying){
 					adMediaPlayer.play();
 				}else{

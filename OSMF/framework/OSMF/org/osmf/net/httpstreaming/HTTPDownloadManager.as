@@ -86,6 +86,7 @@ package org.osmf.net.httpstreaming
 		private var parallelpipeexc_on:Boolean = false;
 		private var parallelpipe_on_alt:Boolean = false;
 		private var parallelpipe_on_alt1:Boolean = false;
+		
 		static private var instance:HTTPDownloadManager = null;
 		private var dloadTimerbegin1:Number = 0;
 		private var dloadTimerend1:Number = 0;
@@ -135,6 +136,7 @@ package org.osmf.net.httpstreaming
 		private var loader4:URLLoader;
 		private var loader5:URLLoader;
 		private var streamingEvent:HTTPStreamingEvent;
+		
 		private static const logger:org.osmf.logging.Logger = org.osmf.logging.Log.getLogger("org.osmf.net.httpstreaming.HTTPDownloadManager");
 		private var fileContent:String;
 		private var fileContent1:String;
@@ -167,6 +169,7 @@ package org.osmf.net.httpstreaming
 		private var lastChecked:Number = 0;
 		private var currentFrag:Number = -1;
 		private var netStream:HTTPNetStream = null;
+		
 		private static var Downloader:HTTPStreamDownloader = new HTTPStreamDownloader();
 		private var checkCounter:int = 0;
 		private var jumpCount:int = 0;
@@ -187,6 +190,7 @@ package org.osmf.net.httpstreaming
 		private var prevFrag:String = "";
 		public var landNumber:uint = 0;
 		public var jump_array:Array = new Array;
+		
 		private static var netStream1:HTTPNetStream;
 		private var qualityinbytes:uint = 0;
 		private var exportbranchNum:int = 0;
@@ -1290,14 +1294,14 @@ package org.osmf.net.httpstreaming
 					rate = 1.3;
 				var strReq2:HTTPStreamRequest = new HTTPStreamRequest(HTTPStreamRequestKind.DOWNLOAD, "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
 				var urlReq2:URLStream = new URLStream();
-				prefestF1 = (frag);
-				prefestQ1 = (rate*1000);
+				//prefestF1 = (frag);
+				//prefestQ1 = (rate*1000);
 				fragmentQ[frag] =(rate*1000); 
 				urlReq2.addEventListener(Event.COMPLETE, onCompleteEst);
 				urlReq2.load(strReq2.urlRequest);  
 				dloadTimerbeginest = gettime();
 				parallelpipe_on = true;
-				fragments[prefestF1] = urlReq2;
+				//fragments[prefestF1] = urlReq2;
 			}
 			else (parallel_pipe_alt(frag,rate));
 		}
@@ -1425,7 +1429,7 @@ package org.osmf.net.httpstreaming
 			return index;
 		}
 		
-		private function calculateBranchfrags(decpoint:int):void
+	/*	private function calculateBranchfrags(decpoint:int):void
 		{
 			branchArray=new Array;
 			for(var i:uint=0;i<all_jump_paths.length;i++){
@@ -1439,7 +1443,7 @@ package org.osmf.net.httpstreaming
 						branchArray.push(temp[temp.length-1]);					
 				}			
 			}	
-		}
+		}*/
 		
 //		Calculate completion times based on current bandwidth
 		public function calcexpectedcompletion_alt(size:uint,esti:Number,frag_num:uint):Number
@@ -1618,8 +1622,9 @@ package org.osmf.net.httpstreaming
 //		Also regulates ON and OFF states based on buffer occupancy
 		public function checkandschedule(avg:Number, max:int):void
 		{		
-			next_dec=calculate_decisionpoint(netStream1.time);
-			calculateBranchfrags(next_dec);
+			trace("checkandschedule");
+			//next_dec=calculate_decisionpoint(netStream1.time);
+			//calculateBranchfrags(next_dec);
 			calculateparams();
 			switch(BufferStatus){
 				case "download":			
@@ -1957,7 +1962,8 @@ package org.osmf.net.httpstreaming
 			return findMin(holding);
 		}
 		
-		public function calculate_decisionpoint(time:Number):int
+		//##### COMMENTED OUT PROJECT GROUP 9 #####
+		/*public function calculate_decisionpoint(time:Number):int
 		{
 			netStream1.setpath(time);
 			var match_array:Array = new Array;
@@ -1979,7 +1985,7 @@ package org.osmf.net.httpstreaming
 				var branchpoint:int=find_dec(final_array);
 			}			
 			return branchpoint;
-		}
+		}*/
 		
 		private function find_dec(array:Array):int
 		{

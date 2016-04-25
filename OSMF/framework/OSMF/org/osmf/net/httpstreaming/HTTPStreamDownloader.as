@@ -186,6 +186,7 @@ package org.osmf.net.httpstreaming
 		public function open(request:URLRequest, dispatcher:IEventDispatcher, timeout:Number,id:uint):void
 		{				
 			var lengthOfReq:uint = request.url.length;
+			trace("HTTPStreamDownloader");
 			while(!isNaN(Number(request.url.charAt(lengthOfReq))))
 			{
 				if(isNaN(Number(request.url.charAt(lengthOfReq))))
@@ -206,7 +207,11 @@ package org.osmf.net.httpstreaming
 				filedown.frag_deadline=Deadline;
 				catchvar++;
 			}
-			next_dec = filedown.calculate_decisionpoint(Time);
+			
+			//####### COMMENTED OUT PROJECT GROUP 9 ###### 
+			//next_dec = filedown.calculate_decisionpoint(Time);
+			
+			//Dead code
 			var time_left:Number = calculateTimetoDec(Time,next_dec,fragCount);
 			
 			{

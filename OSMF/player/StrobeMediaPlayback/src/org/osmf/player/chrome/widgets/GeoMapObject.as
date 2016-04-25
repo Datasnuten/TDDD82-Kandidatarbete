@@ -12,7 +12,6 @@ package org.osmf.player.chrome.widgets
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
 	import flash.net.NetConnection;
-	import flash.sampler.NewObjectSample;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.ui.Mouse;
@@ -21,10 +20,6 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.advertisementplugin.src.AdvertisementPlugin;
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.containers.MediaContainer;
-	import org.osmf.events.MediaFactoryEvent;
-	import org.osmf.layout.HorizontalAlign;
-	import org.osmf.layout.VerticalAlign;
-	import org.osmf.media.DefaultMediaFactory;
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
@@ -36,24 +31,16 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.net.httpstreaming.HTTPNetStream;
 	import org.osmf.net.httpstreaming.HTTPStreamingFactory;
 	import org.osmf.net.httpstreaming.f4f.HTTPStreamingF4FFactory;
-	import org.osmf.player.chrome.ChromeProvider;
-	import org.osmf.player.chrome.ControlBar;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
-	import org.osmf.player.containers.StrobeMediaContainer;
-	import org.osmf.player.elements.ControlBarElement;
-	import org.osmf.player.media.StrobeMediaPlayer;
-	import org.osmf.traits.LoadTrait;
-	import org.osmf.traits.LoaderBase;
-	import org.osmf.traits.MediaTraitType;
 
 
 	public class GeoMapObject extends Widget
 	{
 		private var positionX:int;
 		private var positionY:int;
-		private var xCoordinate:int;
-		private var yCoordinate:int;
+		private var xCoordinate:Number;
+		private var yCoordinate:Number;
 		private var direction:Number = 0;
 		private var text:TextField;
 		
@@ -166,18 +153,18 @@ package org.osmf.player.chrome.widgets
 				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 				holdingOver = true;
 				
-				this.graphics.lineStyle(1,0x000000);
-				this.graphics.beginFill(0xffffff,1);
-				this.graphics.drawRect(this.getPositionX+25,this.getPositionY-25,70,36);
-				this.graphics.endFill();
-				
-				text.text = "x Position: " + getXcoordinate + "\n" + "y Position: " + getYcoordinate + "\n" + "Angle: " + getDirection;
+				text.text = "x-Coordinate: " + getXcoordinate + "\n" + "y-Coordinate: " + getYcoordinate + "\n" + "Angle: " + getDirection;
 				text.wordWrap = true;
-				text.multiline = true;
-				text.scaleX = 0.8;
+				text.scaleX = 1.1;
 				
 				text.x = this.getPositionX+25;
 				text.y = this.getPositionY-25;
+				
+				this.graphics.lineStyle(1,0x000000);
+				this.graphics.beginFill(0xffffff,1);
+				this.graphics.drawRect(this.getPositionX+25,this.getPositionY-25,text.width,text.height/2);
+				this.graphics.endFill();
+				
 				this.addChild(text);
 				
 				
@@ -187,7 +174,6 @@ package org.osmf.player.chrome.widgets
 				this.graphics.clear();
 				if (text) {
 					text.text = " ";
-					trace("bleae");
 				}
 			}	
 		}
@@ -198,7 +184,7 @@ package org.osmf.player.chrome.widgets
 		 * NOTE!
 		 * This is not the position of the GeoMapObject, it's only an coordinate.
 		 */
-		public function setXcoordinate(xCoordinate:int):void
+		public function setXcoordinate(xCoordinate:Number):void
 		{
 			this.xCoordinate = xCoordinate;
 		}
@@ -209,7 +195,7 @@ package org.osmf.player.chrome.widgets
 		 * NOTE!
 		 * This is not the position of the GeoMapObject, it's only an coordinate.
 		 */
-		public function get getXcoordinate():int
+		public function get getXcoordinate():Number
 		{
 			return xCoordinate;
 		}
@@ -220,7 +206,7 @@ package org.osmf.player.chrome.widgets
 		 * NOTE!
 		 * This is not the position of the GeoMapObject, it's only an coordinate.
 		 */
-		public function setYcoordinate(yCoordinate:int):void
+		public function setYcoordinate(yCoordinate:Number):void
 		{
 			this.yCoordinate = yCoordinate;
 		}
@@ -231,7 +217,7 @@ package org.osmf.player.chrome.widgets
 		 * NOTE!
 		 * This is not the position of the GeoMapObject, it's only an coordinate.
 		 */
-		public function get getYcoordinate():int
+		public function get getYcoordinate():Number
 		{
 			return yCoordinate;
 		}
@@ -378,8 +364,6 @@ package org.osmf.player.chrome.widgets
 				
 				// Load the plugin.
 				mediaFactory.loadPlugin(pluginResource);
-				smp.removePoster();
-			
 			}
 		}
 		

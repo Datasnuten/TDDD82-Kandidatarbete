@@ -622,7 +622,8 @@ package
 					{
 						configuration.endOfVideoOverlay = configuration.poster;
 					}
-					processPoster(configuration.poster);
+					//###### COMMENTED OUT BY PROJECT GROUP 9 #####
+					//processPoster(configuration.poster);
 				}
 				processedMedia.metadata.addValue(MEDIA_PLAYER, player);
 			}	
@@ -1145,7 +1146,8 @@ package
 				&&	player.playing == false
 			)
 			{
-				processPoster(configuration.endOfVideoOverlay);
+				//###### COMMENTED OUT BY PROJECT GROUP 9 ########
+				//processPoster(configuration.endOfVideoOverlay);
 			}	
 		}
 		
@@ -1229,7 +1231,11 @@ package
 		public var controlBar:ControlBarElement;
 		private var alert:AlertDialogElement;
 		private var loginWindow:AuthenticationDialogElement;
-		private var posterImage:ImageElement;
+		
+		//#### ADDED PROJECT GROUP 9 ####
+		public var posterImage:ImageElement;
+		//private var posterImage:ImageElement;
+		
 		private var playOverlay:PlayButtonOverlay;
 		private var bufferingOverlay:BufferingOverlay;
 		

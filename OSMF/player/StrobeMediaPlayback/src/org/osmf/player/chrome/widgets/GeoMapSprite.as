@@ -92,6 +92,10 @@ package org.osmf.player.chrome.widgets
 			
 			tempCallCreateObjects();
 			
+			setCoordinates(0,45.32,12.45);
+			setCoordinates(1,44.10,20.23);
+			setCoordinates(2,56.07,64.91);
+			setCoordinates(3,44.56,39.01);
 		}
 		
 		
@@ -155,7 +159,13 @@ package org.osmf.player.chrome.widgets
 			dict[incrementer] = geomapObject;
 			incrementer = incrementer+1;
 		}
-	
+		
+		private function setCoordinates(value:int,xCoordinate:Number,yCoordinate:Number):void
+		{
+			dict[value].setXcoordinate(xCoordinate);
+			dict[value].setYcoordinate(yCoordinate);
+		}
+		
 		public function onMouseClick(event:MouseEvent):void
 		{
 			for each(var obj:* in dict) {

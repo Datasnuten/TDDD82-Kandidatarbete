@@ -57,7 +57,7 @@ package org.osmf.player.chrome.widgets
 			
 			//##### ADDED PROJECT GROUP 9
 			if(AdvertisementPluginInfo.getMediaPlayer() != null){
-			AdvertisementPluginInfo.getMediaPlayer().play();
+				AdvertisementPluginInfo.getMediaPlayer().play();
 			}
 			visible = false;
 			pauseButton.visible = true;
