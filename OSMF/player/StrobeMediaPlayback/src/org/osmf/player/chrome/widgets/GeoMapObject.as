@@ -12,6 +12,8 @@ package org.osmf.player.chrome.widgets
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
 	import flash.sampler.NewObjectSample;
+	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
@@ -44,6 +46,7 @@ package org.osmf.player.chrome.widgets
 		private var xCoordinate:int;
 		private var yCoordinate:int;
 		private var direction:Number = 0;
+		private var text:TextField;
 		
 		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
 		protected var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
@@ -83,6 +86,7 @@ package org.osmf.player.chrome.widgets
 			normal = assetManager.getDisplayObject(normalFace);
 			selected = assetManager.getDisplayObject(selectedFace);
 			
+			text = new TextField();
 			
 			normal.x = this.positionX;
 			normal.y = this.positionY;
@@ -94,6 +98,7 @@ package org.osmf.player.chrome.widgets
 			this.mediaContainer = mediaContainer;
 			this.mediaFactory = mediaFactory;
 			this.mediaPlayer = mediaPlayer;
+			
 			
 			addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
@@ -151,10 +156,31 @@ package org.osmf.player.chrome.widgets
 			if(mouseY < positionY+selected.height && mouseY > positionY && mouseX < positionX+selected.width && mouseX > positionX){
 				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 				holdingOver = true;
+				
+				this.graphics.lineStyle(1,0x000000);
+				this.graphics.beginFill(0xffffff,1);
+				this.graphics.drawRect(this.getPositionX+25,this.getPositionY-25,70,36);
+				this.graphics.endFill();
+				
+				text.text = "x Position: " + getXcoordinate + "\n" + "y Position: " + getYcoordinate + "\n" + "Angle: " + getDirection;
+				text.wordWrap = true;
+				text.multiline = true;
+				text.scaleX = 0.8;
+				
+				text.x = this.getPositionX+25;
+				text.y = this.getPositionY-25;
+				this.addChild(text);
+				
+				
+				
 			}else{
 				holdingOver = false;
-			}
-			
+				this.graphics.clear();
+				if (text) {
+					text.text = " ";
+					trace("bleae");
+				}
+			}	
 		}
 		
 		/**
