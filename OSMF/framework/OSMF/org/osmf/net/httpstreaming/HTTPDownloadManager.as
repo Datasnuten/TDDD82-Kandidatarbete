@@ -246,13 +246,15 @@ package org.osmf.net.httpstreaming
 		
 		public function HTTPDownloadManager()
 		{
+			
+			//##### ADDED BY PROJECT GROUP 9
 			if (Capabilities.os.search("Mac") == 0) {
 				lineBreakOS = "\n";
 			} else {
 				lineBreakOS = "\r\n";
 			}
 			
-			//			This is the text file from which we are reading the video structure. Should be placed in StrobeMediaPlayback\bin. File to be placed on the server for real environment.
+			//This is the text file from which we are reading the video structure. Should be placed in StrobeMediaPlayback\bin. File to be placed on the server for real environment.
 			request = new URLRequest("test.txt");		
 			loader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, processFile);
@@ -263,10 +265,10 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
 			
-			//			This text file configures the prefetch mode. Used in the FhMN 2013 paper, not used in the MM 2014 paper.
+			//This text file configures the prefetch mode. Used in the FhMN 2013 paper, not used in the MM 2014 paper.
 			request1 = new URLRequest("input.txt");
 			loader1 = new URLLoader();
 			loader1.addEventListener(Event.COMPLETE, processInputFile);
@@ -277,7 +279,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader1");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
 			//			
 			var myTimer1:Timer = new Timer(50, 0); // 50ms timer, checks current playpoint and initiates seek if necessary
@@ -292,7 +294,8 @@ package org.osmf.net.httpstreaming
 			var myTimer2:Timer = new Timer(1000, 0); // 1s timer, used for logging purposes
 			myTimer2.addEventListener(TimerEvent.TIMER, displaytime);
 			myTimer2.start();
-			//			This text file configures the prefetch mode. Used in the FhMN 2013 paper, not used in the MMSYS 2014 paper.			
+			
+			//This text file configures the prefetch mode. Used in the FhMN 2013 paper, not used in the MMSYS 2014 paper.			
 			request2 = new URLRequest("input1.txt");
 			loader2 = new URLLoader();
 			loader2.addEventListener(Event.COMPLETE, processInputFile1);
@@ -303,7 +306,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader2");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
 			//			Old file from which video structure was read. 
 			request3 = new URLRequest("pathfile.txt");
@@ -316,9 +319,10 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader3");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
-			//			This text file configures max connections in parallel, alpha value for rate estimate, sets the download policy and buffer size
+			
+			//This text file configures max connections in parallel, alpha value for rate estimate, sets the download policy and buffer size
 			request4 = new URLRequest("workahead.txt");
 			loader4 = new URLLoader();
 			loader4.addEventListener(Event.COMPLETE, processInputFile2);
@@ -329,7 +333,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader4");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
 			//			This text file automates user choice
 			request5 = new URLRequest("automator.txt");		
@@ -342,7 +346,7 @@ package org.osmf.net.httpstreaming
 			catch(error:Error)
 			{
 				trace("loader5");
-				//trace("Some error occured: " + error.message);
+				trace("Some error occured: " + error.message);
 			}
 		}
 		
@@ -1142,6 +1146,7 @@ package org.osmf.net.httpstreaming
 //		Handles prefetching and fragment downloading..copies of parallel_pipe use different instances of URLStream to download in parallel.
 		public function parallel_pipe_alt(frag:uint,rate:Number):void
 		{
+			trace("parallel_pipe_alt");
 			if(parallelpipe_on_alt == false && downloadedlist[frag]==null){
 				numberinParallel++;
 				downloadedlist[frag]=frag;
@@ -1169,6 +1174,7 @@ package org.osmf.net.httpstreaming
 		
 		public function parallel_pipe_alt1(frag:uint,rate:Number):void
 		{
+			trace("parallel_pipe_alt1");
 			if(parallelpipe_on_alt1 == false && downloadedlist[frag]==null){
 				numberinParallel++;
 				downloadedlist[frag]=frag;
@@ -1197,6 +1203,7 @@ package org.osmf.net.httpstreaming
 		
 		public function parallel_pipe_exc(frag:uint,rate:Number):void
 		{
+			trace("parallel_pipe_exc");
 			if(parallelpipeexc_on == false && downloadedlist[frag]==null){
 				parallelpipeexc_on = true;
 				numberinParallel++;
@@ -1246,20 +1253,25 @@ package org.osmf.net.httpstreaming
 		
 		private function dummy(event:TimerEvent):void
 		{
+			//trace("netStream1.time: " + netStream1.time);
+			//trace("estimate: " + estimate);
 			try
 			{
+				
 				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false && parallelpipeexc_on == false && netStream1.time>2 && estimate != 0 && seeking==false){
 					if(global_avg!=0){
+						trace("checkandschedule(global_avg,maxinParallel)");
 						checkandschedule(global_avg,maxinParallel);
 					}else{
+						trace("checkandschedule(estimate,maxinParallel)");
 						checkandschedule(estimate,maxinParallel);
 					}
 				}
 			}
 			catch(error:Error)
 			{
-				//trace("dummy");
-				//trace("Some error occured: " + error.message);
+				trace("dummy");
+				trace("Some error occured: " + error.message);
 			}
 		}
 		

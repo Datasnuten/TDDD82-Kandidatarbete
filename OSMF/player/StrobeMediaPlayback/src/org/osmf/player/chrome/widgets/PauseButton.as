@@ -27,7 +27,6 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.traits.MediaTraitType;
 	import org.osmf.traits.PlayState;
 	import org.osmf.traits.PlayTrait;
-	import org.osmf.traits.SeekTrait;
 	
 	public class PauseButton extends PlayableButton
 	{

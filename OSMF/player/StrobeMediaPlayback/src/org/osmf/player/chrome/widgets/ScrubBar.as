@@ -540,6 +540,8 @@ package org.osmf.player.chrome.widgets
 				
 				highlight.x = (scrubber.x+scrubber.width/2)-(highlight.width/2);
 				scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = Math.max(0, scrubber.x+(scrubber.width/2));
+				scrubber.enabled = true;
+				scrubber.visible = true;
 			}
 			else
 			{

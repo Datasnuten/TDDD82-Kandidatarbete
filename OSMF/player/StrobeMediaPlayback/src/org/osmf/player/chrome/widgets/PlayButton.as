@@ -35,7 +35,7 @@ package org.osmf.player.chrome.widgets
 	public class PlayButton extends PlayableButton
 	{
 		
-		public var pButton:PauseButton;
+		public var pauseButton:PauseButton;
 
 		public function PlayButton()
 		{
@@ -60,7 +60,7 @@ package org.osmf.player.chrome.widgets
 			AdvertisementPluginInfo.getMediaPlayer().play();
 			}
 			visible = false;
-			pButton.visible = true;
+			pauseButton.visible = true;
 			
 			event.stopImmediatePropagation();
 		}
@@ -77,7 +77,7 @@ package org.osmf.player.chrome.widgets
 		
 		//######## ADDED PROJECT GROUP 9
 		public function passReference(pButton:PauseButton):void {
-			this.pButton = pButton;
+			this.pauseButton = pButton;
 		}
 	}
 }
