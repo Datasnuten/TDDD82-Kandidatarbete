@@ -11,6 +11,7 @@ package org.osmf.player.chrome.widgets
 	import flash.external.ExternalInterface;
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
+	import flash.net.NetConnection;
 	import flash.sampler.NewObjectSample;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
@@ -28,6 +29,11 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.media.MediaResourceBase;
 	import org.osmf.media.PluginInfoResource;
 	import org.osmf.media.URLResource;
+	import org.osmf.net.NetClient;
+	import org.osmf.net.httpstreaming.HTTPDownloadManager;
+	import org.osmf.net.httpstreaming.HTTPNetStream;
+	import org.osmf.net.httpstreaming.HTTPStreamingFactory;
+	import org.osmf.net.httpstreaming.f4f.HTTPStreamingF4FFactory;
 	import org.osmf.player.chrome.ChromeProvider;
 	import org.osmf.player.chrome.ControlBar;
 	import org.osmf.player.chrome.assets.AssetIDs;
@@ -35,6 +41,9 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.player.containers.StrobeMediaContainer;
 	import org.osmf.player.elements.ControlBarElement;
 	import org.osmf.player.media.StrobeMediaPlayer;
+	import org.osmf.traits.LoadTrait;
+	import org.osmf.traits.LoaderBase;
+	import org.osmf.traits.MediaTraitType;
 
 
 	public class GeoMapObject extends Widget
@@ -322,6 +331,7 @@ package org.osmf.player.chrome.widgets
 			if(url != null){
 				var resource:URLResource = new URLResource(url);
 				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
+				media = mediaElement;
 				
 				// Load the plugin statically
 				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);
@@ -338,12 +348,23 @@ package org.osmf.player.chrome.widgets
 				pluginResource.addMetadataValue("midroll", url);
 				pluginResource.addMetadataValue("midrollTime", 1);
 				
-				smp.removePoster();
+				netStreamLoad(resource);
 				
 				// Load the plugin.
 				mediaFactory.loadPlugin(pluginResource);
+				smp.removePoster();
 			
 			}
+		}
+		
+		private function netStreamLoad(resource:URLResource):void
+		{
+			var connection:NetConnection = new NetConnection();
+			connection.client = new NetClient();
+			connection.connect(null);
+			var factory:HTTPStreamingFactory = new HTTPStreamingF4FFactory();
+			var httpNetStream:HTTPNetStream = new HTTPNetStream(connection, factory, resource);
+			HTTPDownloadManager.passNetstream(httpNetStream);
 		}
 	}
 }

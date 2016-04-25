@@ -234,6 +234,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			adPlayers[adMediaPlayer] = true;
 			adPlayerCount++;
 			
+			//###### COMMENTED OUT PROJECT GROUP 9 ##########
 			//adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
 			
 			if (preBufferAd)
@@ -339,9 +340,9 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}
 			}
 			
-			function onAdComplete(event:Event):void
+			/*function onAdComplete(event:Event):void
 			{
-				trace("onAdComple");
+				trace("onAdComplete");
 				var adMediaPlayer:MediaPlayer = event.target as MediaPlayer;
 				adMediaPlayer.removeEventListener(TimeEvent.COMPLETE, onAdComplete);
 				
@@ -374,7 +375,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// Resume playback
 					mediaPlayer.play();
 				}
-			}
+			}*/
 		}
 		
 		// Non-linear ad insertion
