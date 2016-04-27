@@ -414,7 +414,7 @@ package org.osmf.net.httpstreaming
 			mode= tempStr[3].substring((start4+2));
 			buf_min = tempStr[4].substring((start5+2));
 			buf_margin= tempStr[5].substring((start6+2));
-			URL=tempStr[6].substring((start7+2));
+			//URL=tempStr[6].substring((start7+2));
 		}
 		
 		private function processInputFile(event:Event):void
