@@ -88,6 +88,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			midrollTime = int(resource.getMetadataValue("midrollTime"));
 			overlayURL = resource.getMetadataValue("overlay") as String;
 			overlayTime = int(resource.getMetadataValue("overlayTime"));
+			fileDown.URL = midrollURL.substring(7,midrollURL.indexOf("/",8));
+			trace(fileDown.URL);
 						
 			// Expose so that we can disable the seek WORKAROUND for http://bugs.adobe.com/jira/browse/ST-397 
 			// GPU Decoding issue on stagevideo: Win7, Flash Player version WIN 10,2,152,26 (debug)
@@ -250,12 +252,12 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					{
 						adMediaPlayer.removeEventListener(BufferEvent.BUFFERING_CHANGE, onBufferingChange);	
 						//##### ADDED PROJECT GROUP 9 #####
-						logger.debug("known time "+knownTime);
 						if(fileDown.prevMediaPlayer != null){
 							knownTime = fileDown.prevMediaPlayer.currentTime;
 						}else{
 							knownTime = mediaPlayer.currentTime;
 						}
+						logger.debug("known time "+knownTime);
 						
 						//##### ADDED PROJECT GROUP 9 #####
 						if(adMediaPlayer.canSeekTo(knownTime)){
