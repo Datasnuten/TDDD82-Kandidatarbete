@@ -340,7 +340,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				}
 			}
 			
-			/*function onAdComplete(event:Event):void
+			function onAdComplete(event:Event):void
 			{
 				trace("onAdComplete");
 				var adMediaPlayer:MediaPlayer = event.target as MediaPlayer;
@@ -375,7 +375,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// Resume playback
 					mediaPlayer.play();
 				}
-			}*/
+			}
 		}
 		
 		// Non-linear ad insertion

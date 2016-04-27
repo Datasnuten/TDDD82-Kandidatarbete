@@ -177,6 +177,7 @@ package org.osmf.net.httpstreaming
 		 */
 		override public function play(...args):void 
 		{			
+			trace("Play HTTPNetStream");
 			processPlayParameters(args);
 			CONFIG::LOGGING
 			{

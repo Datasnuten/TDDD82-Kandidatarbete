@@ -251,7 +251,7 @@ package org.osmf.net.httpstreaming
 		public function HTTPDownloadManager()
 		{
 			
-			//##### ADDED BY PROJECT GROUP 9
+			//####### ADDED BY PROJECT GROUP 9 ########
 			if (Capabilities.os.search("Mac") == 0) {
 				lineBreakOS = "\n";
 			} else {
@@ -359,6 +359,7 @@ package org.osmf.net.httpstreaming
 		
 		private function processpathFile(event:Event):void
 		{
+			trace("processpathFile");
 			var loader:URLLoader = URLLoader(event.target);
 			fileContent3 = loader.data;
 			var startTree:Number = fileContent3.indexOf("begin ");
@@ -1148,7 +1149,8 @@ package org.osmf.net.httpstreaming
 		}
 		
 //		Handles prefetching and fragment downloading..copies of parallel_pipe use different instances of URLStream to download in parallel.
-		public function parallel_pipe_alt(frag:uint,rate:Number):void
+		//##### COMMENTED OUT BY PROJECT GROUP 9 ######
+		/*public function parallel_pipe_alt(frag:uint,rate:Number):void
 		{
 			trace("parallel_pipe_alt");
 			if(parallelpipe_on_alt == false && downloadedlist[frag]==null){
@@ -1174,9 +1176,9 @@ package org.osmf.net.httpstreaming
 				fragments[prefestF1_alt] = urlReq2;
 			}
 			else (parallel_pipe_alt1(frag,rate));
-		}
-		
-		public function parallel_pipe_alt1(frag:uint,rate:Number):void
+		}*/
+		//######## COMMENTED OUT BY PROJECT GROUP 9 ##########
+		/*public function parallel_pipe_alt1(frag:uint,rate:Number):void
 		{
 			trace("parallel_pipe_alt1");
 			if(parallelpipe_on_alt1 == false && downloadedlist[frag]==null){
@@ -1203,9 +1205,10 @@ package org.osmf.net.httpstreaming
 			}else{
 				parallel_pipe_exc(frag,rate);
 			}
-		}
+		}*/
 		
-		public function parallel_pipe_exc(frag:uint,rate:Number):void
+		//###### COMMENTED OUT BY PROJECT GROUP 9 #########
+		/*public function parallel_pipe_exc(frag:uint,rate:Number):void
 		{
 			trace("parallel_pipe_exc");
 			if(parallelpipeexc_on == false && downloadedlist[frag]==null){
@@ -1236,7 +1239,7 @@ package org.osmf.net.httpstreaming
 				missed_quality.push(rate);
 				parallel_pending=true;
 			}
-		}
+		}*/
 		
 		public function onCompleteEst_exc(event:Event):void
 		{
@@ -1257,12 +1260,20 @@ package org.osmf.net.httpstreaming
 		
 		private function dummy(event:TimerEvent):void
 		{
-			//trace("netStream1.time: " + netStream1.time);
-			//trace("estimate: " + estimate);
+			trace("parallelpipe_on_alt (false): " + parallelpipe_on_alt);
+			trace("parallelpipe_on_alt1 (false): " + parallelpipe_on_alt1);
+			trace("parallelpipe_on (false): " + parallelpipe_on);
+			trace("parallelpipeexc_on (false): " + parallelpipeexc_on);
+			trace("netStream1.time (2>): " + netStream1.time);
+			estimate = 500;
+			trace("estimate (!=0): " + estimate);
+			trace("seeking (false): " + seeking);
+			trace("global_avg (!=0): " + global_avg);
 			try
 			{
-				
-				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false && parallelpipeexc_on == false && netStream1.time>2 && estimate != 0 && seeking==false){
+				estimate=500;
+				//##### COMMENTED OUT "&& netStream1.time>2 && estimate != 0"  BY PROJECT GROUP 9 #####
+				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false /*&& parallelpipeexc_on == false && netStream1.time>2*/ && estimate != 0 && seeking==false){
 					if(global_avg!=0){
 						trace("checkandschedule(global_avg,maxinParallel)");
 						checkandschedule(global_avg,maxinParallel);
@@ -1303,7 +1314,8 @@ package org.osmf.net.httpstreaming
 				parallelpipe_on = true;
 				//fragments[prefestF1] = urlReq2;
 			}
-			else (parallel_pipe_alt(frag,rate));
+			//##### COMMENTED OUT BY PROJECT GROUP 9 #####
+			/*else (parallel_pipe_alt(frag,rate));*/
 		}
 		
 		

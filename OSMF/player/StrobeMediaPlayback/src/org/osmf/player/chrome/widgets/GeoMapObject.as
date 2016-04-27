@@ -335,6 +335,7 @@ package org.osmf.player.chrome.widgets
 			updateFace(selected);
 			state = !state;
 			highlighted = true;
+			smp.player.volume = 50;
 			loadURL();
 		}
 		

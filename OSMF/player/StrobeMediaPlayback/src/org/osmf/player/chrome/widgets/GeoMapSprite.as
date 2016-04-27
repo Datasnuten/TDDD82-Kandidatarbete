@@ -71,9 +71,10 @@ package org.osmf.player.chrome.widgets
 			//If you draw something on the bottom the y-axis needs to be updated with half of that length otherwise the UI will be moved upwards
 			this.y2 = y2 + (Mapradius-cDTextSize)/2;
 			
-			//Same thing when moving the x-axis to the right-hand side but with 1/4 of that length
+			//Similiar thing will happen when moving the x-axis to the right-hand side but with 1/4 of that length
 			this.x2 = x2 + (Mapradius-cDTextSize/2)/4;
-				
+			
+			//These two Cardinal directions are the one that causes the UI to move
 			drawCardinalDirections("S",0,Mapradius-cDTextSize);
 			drawCardinalDirections("E",Mapradius-cDTextSize/2,0);
 			
@@ -83,6 +84,7 @@ package org.osmf.player.chrome.widgets
 			drawCardinalDirections("W",-Mapradius+cDTextSize/2,0);
 			
 			graphics.clear();
+			graphics.lineStyle(1,0x000000);
 			graphics.beginFill(0xffffff,1);
 			graphics.drawCircle(x2,y2,Mapradius);
 			graphics.endFill();
@@ -141,10 +143,10 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		private function tempCallCreateObjects():void {
-			createObjects(-100,0,70,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
-			createObjects(80,-80,270,"http://mediapm.edgesuite.net/osmf/content/test/manifest-files/progressive.f4m");
-			createObjects(0,120,30,"rtmp://cp67126.edgefcs.net/ondemand/mp4:mediapm/osmf/content/test/sample1_700kbps.f4v");
-			createObjects(-10,0,40,"http://localhost/videos/test.flv");
+			createObjects(-100,0,70,"http://localhost/vod/example.f4v");
+			createObjects(80,-80,270,"http://localhost/vod/sample2_1000kbps.f4v");
+			createObjects(0,120,30,"http://localhost/vod/sample1_150kbps.f4v");
+			createObjects(-10,0,40,"http://localhost/vod/test.flv");
 			dict[0].setDefault();
 		}
 		
