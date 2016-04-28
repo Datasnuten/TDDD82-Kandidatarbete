@@ -155,7 +155,11 @@ package org.osmf.player.chrome.widgets
 			//createObjects(80,-80,270,"http://130.236.206.130/vod/sample2_1000kbps.f4v");
 			//createObjects(0,120,30,"http://130.236.206.130/vod/sample1_150kbps.f4v");
 			//createObjects(-10,0,40,"http://130.236.206.130/vod/test.flv");
-			geomapDict[1].setDefault();
+			
+			//If you set a geomapObject as default then you need to change the playTrait in the scrubBar as well 
+			//inorder to be able to interact with the scrubBar for the video.
+			//See onMediaElementTraitAdd in scrubBar.
+			//geomapDict[1].setDefault();
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void

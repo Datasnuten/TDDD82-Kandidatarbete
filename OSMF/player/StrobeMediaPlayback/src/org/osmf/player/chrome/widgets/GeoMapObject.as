@@ -336,6 +336,9 @@ package org.osmf.player.chrome.widgets
 		
 		/**
 		 * Sets the object to default selected and loads the URL to the MediaContainer.
+		 * 
+		 * In-order to be able to interact with the scrubBar you need to change the playTrait in scrubBar.
+		 * See onMediaElementTraitAdd in scrubBar.
 		 */
 		public function setDefault():void
 		{
