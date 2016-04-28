@@ -54,10 +54,11 @@ package org.osmf.player.chrome.widgets
 		{
 			var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			
-			
 			//##### ADDED PROJECT GROUP 9
-			if(AdvertisementPluginInfo.getMediaPlayer() != null){
+			if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
 				AdvertisementPluginInfo.getMediaPlayer().play();
+			}else{
+				playable.play();
 			}
 			visible = false;
 			pauseButton.visible = true;
@@ -71,11 +72,12 @@ package org.osmf.player.chrome.widgets
 			
 			if (media && media.metadata)
 			{
+				//##### COMMENTED OUT BY PROJECT GROUP 9 #####
 				//visible &&= media.metadata.getValue("Advertisement") == null;
 			}
 		}
 		
-		//######## ADDED PROJECT GROUP 9
+		//######## ADDED PROJECT GROUP 9 #############
 		public function passReference(pButton:PauseButton):void {
 			this.pauseButton = pButton;
 		}

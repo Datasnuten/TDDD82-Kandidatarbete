@@ -4,4 +4,4 @@ alpha: 0.4
 mode: q_enhance
 min: 80
 margin: 4
-url: enter.serverip.address.here/enter_video_path/
+url: localhost/vod/

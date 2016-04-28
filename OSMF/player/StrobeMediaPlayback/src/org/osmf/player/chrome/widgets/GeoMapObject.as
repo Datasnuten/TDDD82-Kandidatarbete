@@ -20,6 +20,8 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.advertisementplugin.src.AdvertisementPlugin;
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.containers.MediaContainer;
+	import org.osmf.elements.SWFLoader;
+	import org.osmf.events.LoaderEvent;
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;
@@ -242,6 +244,11 @@ package org.osmf.player.chrome.widgets
 			selected.rotation = Math.round(selected.rotation);
 		}
 		
+		/**
+		 * Gets the direction in which the GeoMapObject is pointing.
+		 * 
+		 * Returns the angle of the GeoMapObject.
+		 */
 		public function get getDirection():Number
 		{
 			return direction;
@@ -335,7 +342,6 @@ package org.osmf.player.chrome.widgets
 			updateFace(selected);
 			state = !state;
 			highlighted = true;
-			smp.player.volume = 50;
 			loadURL();
 		}
 		
@@ -357,9 +363,7 @@ package org.osmf.player.chrome.widgets
 				pluginResource.addMetadataValue("MediaContainer", smp.mediaContainer);
 				
 				// Configure the plugin with the ad information
-				// The following configuration instructs the plugin to play a mid-roll ad after 1 seconds
 				pluginResource.addMetadataValue("midroll", url);
-				pluginResource.addMetadataValue("midrollTime", 1);
 				
 				netStreamLoad(resource);
 				
