@@ -47,26 +47,30 @@ package org.osmf.player.chrome.widgets
 		
 		override protected function onMouseClick(event:MouseEvent):void
 		{
-			var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+			//#### ADDED PROJECT GROUP 9 #####
+			var playable:PlayTrait
+			if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
+				playable = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+			}else{
+				playable = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+			}
+			
 			if ( playable.canPause)
 			{
-				//#### ADDED PROJECT GROUP 9 #####
-				if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
-					AdvertisementPluginInfo.getMediaPlayer().pause();
-				}else{
-					playable.pause();
-				}
+				playable.pause();
 				visible = false;
 				playButton.visible = true;
 			}
 			else
 			{
-				//#### ADDED PROJECT GROUP 9 #####
-				if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
-					AdvertisementPluginInfo.getMediaPlayer().stop();
-				}else{
-					playable.stop();
-				}
+				playable.stop();
+				/*if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
+					if(AdvertisementPluginInfo.getMediaPlayer().playing){
+						trace("DFSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+						visible = true;
+						playButton.visible = false;
+					}
+				}*/
 			}
 			event.stopImmediatePropagation();
 		}
@@ -76,6 +80,7 @@ package org.osmf.player.chrome.widgets
 			visible = (playable && playable.playState == PlayState.PLAYING) 
 			if (media && media.metadata)
 			{
+				//######## COMMENTED OUT BY PROJECT GROUP 9 #######
 				//visible ||= media.metadata.getValue("Advertisement") != null;
 			}	
 		}

@@ -52,14 +52,15 @@ package org.osmf.player.chrome.widgets
 		
 		override protected function onMouseClick(event:MouseEvent):void
 		{
-			var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
-			
-			//##### ADDED PROJECT GROUP 9
+			//##### ADDED PROJECT GROUP 9 ######
+			var playable:PlayTrait;
 			if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
-				AdvertisementPluginInfo.getMediaPlayer().play();
+				playable = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			}else{
-				playable.play();
+				playable = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			}
+			
+			playable.play();
 			visible = false;
 			pauseButton.visible = true;
 			
