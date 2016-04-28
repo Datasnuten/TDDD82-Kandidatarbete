@@ -27,8 +27,12 @@ package org.osmf.player.chrome.widgets
 	{
 		private var geomapFace:DisplayObject;
 		private var geomapSprite:GeoMapSprite;
+		private var geomapXpos:int = 405;
+		private var geomapYPos:int = 140;
 		private var geomapRadius:int = 190;
 		public var smp:StrobeMediaPlayback;
+		
+		//
 		
 		
 		public function GeoMapWidget(smp:StrobeMediaPlayback)
@@ -54,10 +58,33 @@ package org.osmf.player.chrome.widgets
 		{
 			super.configure(xml, assetManager);	
 			
-			geomapSprite = new GeoMapSprite(2*geomapRadius,geomapRadius-geomapRadius/5,geomapRadius, assetManager, smp);
+			geomapSprite = new GeoMapSprite(geomapXpos,geomapYPos,geomapRadius, assetManager, smp);
 			
 			geomapSprite.mouseEnabled = true;
 			addChild(geomapSprite);
+		}
+		
+		public function fullscreenMode(isFullscreen:Boolean):void {
+			if(isFullscreen) {
+				geomapSprite.width = 700
+				geomapSprite.height = 700;
+				//scale kan (bör) även användas för att ändra storlek
+				//stage x=680 y=480 xdelta=275 ydelta=340
+				//mac fullscreen x=1440 y=900 => delta(minus/ta bort) x=1160 y=950 
+				trace(geomapSprite.scaleX);
+				trace(geomapSprite.scaleY);
+				if (stage) {
+					geomapSprite.x = stage.fullScreenWidth - 1160;
+					geomapSprite.y = stage.fullScreenHeight - 950;
+				}
+				
+			} else {
+				geomapSprite.scaleX = 1;
+				geomapSprite.scaleY = 1;
+				geomapSprite.x = 0;
+				geomapSprite.y = 0;
+			}
+			geomapSprite.rescaleArrows(isFullscreen);
 		}
 		
 		private function onMouseClick(event:MouseEvent):void
