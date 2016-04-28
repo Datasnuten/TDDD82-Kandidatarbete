@@ -1260,20 +1260,17 @@ package org.osmf.net.httpstreaming
 		
 		private function dummy(event:TimerEvent):void
 		{
-			trace("parallelpipe_on_alt (false): " + parallelpipe_on_alt);
-			trace("parallelpipe_on_alt1 (false): " + parallelpipe_on_alt1);
-			trace("parallelpipe_on (false): " + parallelpipe_on);
-			trace("parallelpipeexc_on (false): " + parallelpipeexc_on);
-			trace("netStream1.time (2>): " + netStream1.time);
-			estimate = 500;
-			trace("estimate (!=0): " + estimate);
-			trace("seeking (false): " + seeking);
-			trace("global_avg (!=0): " + global_avg);
+			/*trace("parallelpipe_on (false): " + parallelpipe_on);*/
+			//netStream1.seek(prevMediaPlayer.currentTime);
+			//##### Hard coded BY PROJECT GROUP 9 #############
+			if(estimate == 0){
+				estimate = 1300;
+			}
+			
 			try
 			{
-				estimate=500;
 				//##### COMMENTED OUT "&& netStream1.time>2 && estimate != 0"  BY PROJECT GROUP 9 #####
-				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false /*&& parallelpipeexc_on == false && netStream1.time>2*/ && estimate != 0 && seeking==false){
+				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false && parallelpipeexc_on == false && netStream1.time>2 && estimate != 0 && seeking==false){
 					if(global_avg!=0){
 						trace("checkandschedule(global_avg,maxinParallel)");
 						checkandschedule(global_avg,maxinParallel);
@@ -1303,16 +1300,19 @@ package org.osmf.net.httpstreaming
 					rate = 0.85;
 				if(rate == 1300)
 					rate = 1.3;
+				
+				//COMMENTED OUT "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag)
 				var strReq2:HTTPStreamRequest = new HTTPStreamRequest(HTTPStreamRequestKind.DOWNLOAD, "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
+				trace("http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
 				var urlReq2:URLStream = new URLStream();
-				//prefestF1 = (frag);
-				//prefestQ1 = (rate*1000);
+				prefestF1 = (frag);
+				prefestQ1 = (rate*1000);
 				fragmentQ[frag] =(rate*1000); 
 				urlReq2.addEventListener(Event.COMPLETE, onCompleteEst);
 				urlReq2.load(strReq2.urlRequest);  
 				dloadTimerbeginest = gettime();
 				parallelpipe_on = true;
-				//fragments[prefestF1] = urlReq2;
+				fragments[prefestF1] = urlReq2;
 			}
 			//##### COMMENTED OUT BY PROJECT GROUP 9 #####
 			/*else (parallel_pipe_alt(frag,rate));*/
@@ -1441,6 +1441,7 @@ package org.osmf.net.httpstreaming
 			return index;
 		}
 		
+		//######### COMMENTED OUT BY PROJECT GROUP 9 ############
 	/*	private function calculateBranchfrags(decpoint:int):void
 		{
 			branchArray=new Array;
@@ -1534,7 +1535,7 @@ package org.osmf.net.httpstreaming
 		{
 			for(var i:uint=length1;i<length2;i++){
 				if(array[i]==250){
-					//					trace("ok")
+					//trace("ok")
 				}else{
 					return false;
 				}
@@ -1997,7 +1998,7 @@ package org.osmf.net.httpstreaming
 				var branchpoint:int=find_dec(final_array);
 			}			
 			return branchpoint;
-		}*/
+		}
 		
 		private function find_dec(array:Array):int
 		{
@@ -2013,7 +2014,7 @@ package org.osmf.net.httpstreaming
 					min=Number(holding[i]);
 			}
 			return min;
-		}
+		}*/
 		
 		private function findMin(array:Array):Number {
 			var min:int= array[0];

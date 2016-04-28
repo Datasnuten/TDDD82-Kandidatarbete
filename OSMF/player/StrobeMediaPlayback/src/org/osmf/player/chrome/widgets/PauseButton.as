@@ -50,21 +50,23 @@ package org.osmf.player.chrome.widgets
 			var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			if ( playable.canPause)
 			{
-				//#### ADDED PROJECT GROUP 9
-				if(AdvertisementPluginInfo.getMediaPlayer() != null){
+				//#### ADDED PROJECT GROUP 9 #####
+				if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
 					AdvertisementPluginInfo.getMediaPlayer().pause();
+				}else{
+					playable.pause();
 				}
 				visible = false;
 				playButton.visible = true;
-				//playable.pause();
 			}
 			else
 			{
-				//#### ADDED PROJECT GROUP 9
-				if(AdvertisementPluginInfo.getMediaPlayer() != null){
+				//#### ADDED PROJECT GROUP 9 #####
+				if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
 					AdvertisementPluginInfo.getMediaPlayer().stop();
+				}else{
+					playable.stop();
 				}
-				playable.stop();
 			}
 			event.stopImmediatePropagation();
 		}
@@ -78,7 +80,7 @@ package org.osmf.player.chrome.widgets
 			}	
 		}
 		
-		//######## ADDED PROJECT GROUP 9
+		//######## ADDED PROJECT GROUP 9 ###############
 		public function passReference(playButton:PlayButton):void {
 			this.playButton = playButton;
 		}

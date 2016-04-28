@@ -1,1 +1,0 @@
-run this code in the cmd as adminstrator on windows 10: iisreset /stop

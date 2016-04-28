@@ -23,8 +23,10 @@
 package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 {
 	import flash.events.Event;
+	import flash.events.TimerEvent;
 	import flash.external.ExternalInterface;
 	import flash.utils.Dictionary;
+	import flash.utils.Timer;
 	
 	import org.osmf.containers.MediaContainer;
 	import org.osmf.events.AudioEvent;
@@ -48,7 +50,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	 */
 	public class AdvertisementPluginInfo extends PluginInfo
 	{	
-		//##### CHANGED PROJECT GROUP 9 ####
+		//##### CHANGED BY PROJECT GROUP 9 ####
 		private static var adMediaPlayer:MediaPlayer;
 		//private var adMediaPlayer:MediaPlayer;
 		
@@ -65,7 +67,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			fileDown = HTTPDownloadManager.getInstance(); //#### ADDED #### This isn't a very good idea, look at the cleanliness on the ctr...
 		}
 		
-		//##### ADDED PROJECT GROUP 9 ####
+		//##### ADDED BY PROJECT GROUP 9 ####
 		public static function getMediaPlayer():MediaPlayer
 		{
 			return adMediaPlayer;
@@ -107,17 +109,20 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			{
 				// TODO: Prebuffer the preroll before the playback completes.
 				// The current implementation will likely change in future.
-				//mediaPlayer.addEventListener(TimeEvent.COMPLETE, onComplete);
+				mediaPlayer.addEventListener(TimeEvent.COMPLETE, onComplete);
 			}			
 			
-			if (midrollURL && midrollTime > 0)
+			//##### COMMENTED OUT BY PROJECT GROUP 9 ######
+			/*if (midrollURL && midrollTime > 0)
 			{
-				trace("midrollURL: " + midrollURL + ", time: " + midrollTime);
-				
-				//##### ADDED Project Group 9 #####
+				mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
+			}*/
+			
+			//##### ADDED Project Group 9 #####
+			if(midrollURL)
+			{
+				trace("midrollURL: " + midrollURL);
 				displayLinearAd(midrollURL);
-				
-				//mediaPlayer.addEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 			}
 			
 			if (overlayURL && overlayTime > 0)
@@ -186,11 +191,11 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		 */ 
 		private function displayAd(url:String, 
 								   pauseMainMediaWhilePlayingAd:Boolean = true, 
+								   /*resumePlayBackAfterAd:Boolean = true,*/
 								   resumePlaybackAfterAd:Boolean = false, 
 								   preBufferAd:Boolean = true,
 								   layoutInfo:Object = null):void
 		{
-			trace("DisplayAd" + ": "+ url);
 			// Set up the ad 
 			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));
 			CONFIG::LOGGING
@@ -201,7 +206,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			// Set the layout metadata, if present				
 			if (layoutInfo != null)
 			{
-				trace("Set Layout Metadata");
 				var layoutMetadata:LayoutMetadata = new LayoutMetadata();
 				for (var key:String in layoutInfo)
 				{
@@ -220,6 +224,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			//######## ADDED PROJECT GROUP 9
 			if(adMediaPlayer != null){
+				fileDown.prevMediaPlayer = adMediaPlayer;
 				adMediaPlaying = adMediaPlayer.playing;
 			}else{
 				adMediaPlaying = mediaPlayer.playing;
@@ -258,10 +263,24 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						}
 						
 						//##### ADDED PROJECT GROUP 9 #####
-						if(adMediaPlayer.canSeekTo(knownTime)){
-							trace("KnownTime " + knownTime);
-							adMediaPlayer.seek(knownTime);
+						var checkIfSeekAvailableTimer:Timer = new Timer(50, 0); //checks every 50 ms if seek is available
+						checkIfSeekAvailableTimer.addEventListener(TimerEvent.TIMER, checkIfseekAvailable);
+						checkIfSeekAvailableTimer.start();
+						var hasSeeked:Boolean = false;
+						function checkIfseekAvailable():void
+						{
+							
+							if(adMediaPlayer.canSeekTo(knownTime) && !hasSeeked){
+								trace("KnownTime " + knownTime);
+								adMediaPlayer.seek(knownTime);
+								hasSeeked = true;
+							}
+							if(hasSeeked || adMediaPlayer.duration < knownTime){
+								checkIfSeekAvailableTimer.stop();
+								checkIfSeekAvailableTimer.removeEventListener(TimerEvent.TIMER, checkIfseekAvailable);
+							}
 						}
+						
 						trace("PlayAD");
 						playAd();
 					}
@@ -295,7 +314,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						fileDown.prevMediaPlayer.pause();
 					}
 					
-					//##### CHANGED BY PROJECT GROUP 9 ###
 					mediaPlayer.pause();
 					
 					// If we are playing a linear ad, we need to remove it from the media container.
@@ -330,7 +348,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				// Add the ad to the container
 				trace("Add the ad to the container");
 				mediaContainer.addMediaElement(adMediaElement);
-				fileDown.prevMediaPlayer = adMediaPlayer;
 				
 				//######### ADDED PROJECT GROUP 9 ###############
 				if(adMediaPlaying){
@@ -342,7 +359,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			function onAdComplete(event:Event):void
 			{
-				trace("onAdComplete");
 				var adMediaPlayer:MediaPlayer = event.target as MediaPlayer;
 				adMediaPlayer.removeEventListener(TimeEvent.COMPLETE, onAdComplete);
 				
@@ -367,11 +383,9 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 					// WORKAROUND: http://bugs.adobe.com/jira/browse/ST-397 - GPU Decoding issue on stagevideo: Win7, Flash Player version WIN 10,2,152,26 (debug)
 					if (seekWorkaround && mediaPlayer.canSeek)
 					{
-						trace("seek currentTime");
 						mediaPlayer.seek(mediaPlayer.currentTime);
 					}
 					
-					trace("Resume playback");
 					// Resume playback
 					mediaPlayer.play();
 				}

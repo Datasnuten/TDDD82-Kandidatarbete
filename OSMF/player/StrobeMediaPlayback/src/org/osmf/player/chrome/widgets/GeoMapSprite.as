@@ -143,10 +143,10 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		private function tempCallCreateObjects():void {
-			createObjects(-100,0,70,"http://localhost/vod/example.f4v");
-			createObjects(80,-80,270,"http://localhost/vod/sample2_1000kbps.f4v");
-			createObjects(0,120,30,"http://localhost/vod/sample1_150kbps.f4v");
-			createObjects(-10,0,40,"http://localhost/vod/test.flv");
+			createObjects(-100,0,70,"http://localhost/vod/final_0.85.f4v");
+			createObjects(80,-80,270,"http://localhost/vod/test.flv");
+			createObjects(0,120,30,"http://localhost/vod/final_0.25.f4v");
+			createObjects(-10,0,40,"http://localhost/vod/final_0.5.f4v");
 			dict[0].setDefault();
 		}
 		

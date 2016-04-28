@@ -93,6 +93,7 @@ package org.osmf.player.chrome
 			pauseButton.layoutMetadata.horizontalAlign = HorizontalAlign.LEFT;
 			leftControls.addChildWidget(pauseButton);
 			
+			//###### ADDED PROJECT GROUP 9 #####
 			playButton.passReference(pauseButton);
 			pauseButton.passReference(playButton);
 			

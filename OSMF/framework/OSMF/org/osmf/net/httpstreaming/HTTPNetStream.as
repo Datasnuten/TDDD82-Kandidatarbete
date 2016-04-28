@@ -31,6 +31,7 @@ package org.osmf.net.httpstreaming
 	import flash.utils.ByteArray;
 	import flash.utils.Timer;
 	
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.events.DVRStreamInfoEvent;
 	import org.osmf.events.HTTPStreamingEvent;
 	import org.osmf.events.QoSInfoEvent;
@@ -335,12 +336,18 @@ package org.osmf.net.httpstreaming
 		{
 			if(_seekTime >= 0 && _initialTime >= 0)
 			{
+				
 				_lastValidTimeTime = (super.time + _seekTime) - _initialTime; 
 				//  we remember what we say when time is valid, and just spit that back out any time we don't have valid data. This is probably the right answer.
 				//  the only thing we could do better is also run a timer to ask ourselves what it is whenever it might be valid and save that, just in case the
 				//  user doesn't ask... but it turns out most consumers poll this all the time in order to update playback position displays
 			}
-			return _lastValidTimeTime;
+			//###### ADDED PROJECT GROUP 9 #######
+			if(_lastValidTimeTime==0){
+				return AdvertisementPluginInfo.getMediaPlayer().currentTime;
+			}else{
+				return _lastValidTimeTime;
+			}
 		}
 		
 		/**
