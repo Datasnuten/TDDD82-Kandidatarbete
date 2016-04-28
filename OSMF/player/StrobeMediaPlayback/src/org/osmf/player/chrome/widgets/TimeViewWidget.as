@@ -28,6 +28,7 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextFormatAlign;
 	import flash.utils.Timer;
 	
+	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.events.MediaElementEvent;
 	import org.osmf.events.MetadataEvent;
 	import org.osmf.events.SeekEvent;
@@ -47,7 +48,6 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.traits.MediaTraitType;
 	import org.osmf.traits.SeekTrait;
 	import org.osmf.traits.TimeTrait;
-	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 
 
 	/**
@@ -72,8 +72,13 @@ package org.osmf.player.chrome.widgets
 		internal function updateNow():void
 		{
 			var timeTrait:TimeTrait;
-			timeTrait = media.getTrait(MediaTraitType.TIME) as TimeTrait;			
-			updateValues(AdvertisementPluginInfo.getMediaPlayer().currentTime, AdvertisementPluginInfo.getMediaPlayer().duration, live);
+			timeTrait = media.getTrait(MediaTraitType.TIME) as TimeTrait;
+			
+			if(media.metadata.getValue("Advertisement") != null){
+				updateValues(AdvertisementPluginInfo.getMediaPlayer().currentTime, AdvertisementPluginInfo.getMediaPlayer().duration, live);
+			}else{
+				updateValues(timeTrait.currentTime, timeTrait.duration, live);
+			}
 		}
 		
 		/**
@@ -269,6 +274,6 @@ package org.osmf.player.chrome.widgets
 				updateValues(event.time, timeTrait.duration, live);
 				timer.start();
 			}
-		}	
+		}
 	}
 }

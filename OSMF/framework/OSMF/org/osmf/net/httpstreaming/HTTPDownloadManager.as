@@ -1301,7 +1301,6 @@ package org.osmf.net.httpstreaming
 				if(rate == 1300)
 					rate = 1.3;
 				
-				//COMMENTED OUT "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag)
 				var strReq2:HTTPStreamRequest = new HTTPStreamRequest(HTTPStreamRequestKind.DOWNLOAD, "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
 				trace("http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
 				var urlReq2:URLStream = new URLStream();

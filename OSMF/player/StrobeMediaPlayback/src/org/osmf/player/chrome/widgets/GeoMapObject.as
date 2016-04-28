@@ -350,7 +350,6 @@ package org.osmf.player.chrome.widgets
 			if(url != null){
 				var resource:URLResource = new URLResource(url);
 				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
-				media = mediaElement;
 				
 				// Load the plugin statically
 				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);

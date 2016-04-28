@@ -31,7 +31,10 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextFormatAlign;
 	import flash.utils.Timer;
 	
+	import org.osmf.advertisementplugin.src.AdvertisementPlugin;
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
+	import org.osmf.containers.MediaContainer;
+	import org.osmf.elements.f4mClasses.Media;
 	import org.osmf.events.MediaElementEvent;
 	import org.osmf.events.MetadataEvent;
 	import org.osmf.events.PlayEvent;
@@ -39,6 +42,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.layout.LayoutTargetSprite;
 	import org.osmf.layout.VerticalAlign;
 	import org.osmf.media.MediaElement;
+	import org.osmf.media.MediaPlayer;
 	import org.osmf.metadata.Metadata;
 	import org.osmf.net.NetStreamLoadTrait;
 	import org.osmf.net.StreamType;
@@ -323,7 +327,10 @@ package org.osmf.player.chrome.widgets
 			if (event.traitType == MediaTraitType.PLAY)
 			{
 				// Prepare for getting the player to the Live content directly (UX rule)
+				
+				//Change the media to main media or Advertisementplugin depending on which you want to play
 				var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+
 				if (playTrait.playState != PlayState.PLAYING)
 				{
 					started = false;
@@ -500,14 +507,14 @@ package org.osmf.player.chrome.widgets
 		
 		private function updateScrubberPosition(event:Event = null):void
 		{
-			var timeTrait:TimeTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.TIME) as TimeTrait : null;			
+			var timeTrait:TimeTrait = advMedia ? advMedia.getTrait(MediaTraitType.TIME) as TimeTrait : null;			
 			if (timeTrait != null && timeTrait.duration)
 			{
-				var loadTrait:LoadTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.LOAD) as LoadTrait : null;
-				var seekTrait:SeekTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
-				var duration:Number = AdvertisementPluginInfo.getMediaPlayer().duration;
+				var loadTrait:LoadTrait = advMedia ? advMedia.getTrait(MediaTraitType.LOAD) as LoadTrait : null;
+				var seekTrait:SeekTrait = advMedia ? advMedia.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
+				var duration:Number = timeTrait.duration;
 			
-				var position:Number = isNaN(seekToTime) ? AdvertisementPluginInfo.getMediaPlayer().currentTime : seekToTime;
+				var position:Number = isNaN(seekToTime) ? timeTrait.currentTime : seekToTime;
 				if (dvrTrait && live) 
 				{
 					// Since we play the live content the scrubber position is fixed.
@@ -542,8 +549,10 @@ package org.osmf.player.chrome.widgets
 				scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = Math.max(0, scrubber.x+(scrubber.width/2));
 				
 				//##### ADDED PROJECT GROUP 9 ##########
-				scrubber.enabled = true;
-				scrubber.visible = true;
+				if(media.metadata.getValue("Advertisement") != null){
+					scrubber.enabled = true;
+					scrubber.visible = true;
+				}
 			}
 			else
 			{
@@ -557,9 +566,9 @@ package org.osmf.player.chrome.widgets
 			{
 				return;
 			}
-			var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;
-			var seekTrait:SeekTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
-			var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media ? AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
+			var timeTrait:TimeTrait = advMedia ? advMedia.getTrait(MediaTraitType.TIME) as TimeTrait : null;
+			var seekTrait:SeekTrait = advMedia ? advMedia.getTrait(MediaTraitType.SEEK) as SeekTrait : null;
+			var playTrait:PlayTrait = advMedia ? advMedia.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
 			if (timeTrait && seekTrait)
 			{
 				
@@ -578,10 +587,10 @@ package org.osmf.player.chrome.widgets
 					}
 					else
 					{
-						var time:Number = AdvertisementPluginInfo.getMediaPlayer().duration * ((relativePositition - scrubberStart) / (scrubberEnd - scrubberStart));
+						var time:Number = timeTrait.duration * ((relativePositition - scrubberStart) / (scrubberEnd - scrubberStart));;
 					}
 					
-					if (AdvertisementPluginInfo.getMediaPlayer().canSeekTo(time)) 
+					if (seekTrait.canSeekTo(time)) 
 					{
 						if (playTrait && playTrait.playState == PlayState.STOPPED)
 						{
@@ -595,11 +604,11 @@ package org.osmf.player.chrome.widgets
 							}
 						}
 						seekTrait.addEventListener(SeekEvent.SEEKING_CHANGE, onSeekingChange);
-						//seekToTime = time;
-						AdvertisementPluginInfo.getMediaPlayer().seek(time);
+						seekToTime = time;
+						seekTrait.seek(time);
 						scrubber.x = Math.max(scrubberStart, scrubberStart + relativePositition);
-						highlight.x = (scrubber.x+scrubber.width/2)-(highlight.width/2);
-						scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = scrubber.x + (scrubber.width/2) - 50;
+						highlight.x = (scrubber.x+scrubber.width/2)-(highlight.width/2);				
+						scrubBarPlayedTrackSeeking.width = scrubBarPlayedTrack.width = scrubber.x + (scrubber.width/2);
 					}
 				}
 			}
@@ -635,7 +644,7 @@ package org.osmf.player.chrome.widgets
 		private function onScrubberStart(event:ScrubberEvent):void
 		{
 			onScrubberOver(null);
-			var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+			var playTrait:PlayTrait = advMedia.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			if (playTrait)
 			{
 				preScrubPlayState = playTrait.playState;
@@ -652,26 +661,28 @@ package org.osmf.player.chrome.widgets
 		{
 			onScrubberOut(null);
 			seekToX(scrubber.x);
-			//if (preScrubPlayState)
-			//{
-				//var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
-				//if (playable)
-				//{
-					//if (playable.playState != preScrubPlayState)
-					//{
-						//switch (preScrubPlayState)
-						//{
-							//case PlayState.STOPPED:
-								//playable.stop();
-								//break;
-							//case PlayState.PLAYING:
-								//playable.play();
-								//break;
-						//}
-					//}
-				//}
-			//}
-			AdvertisementPluginInfo.getMediaPlayer().pause();
+			if (preScrubPlayState && media.metadata.getValue("Advertisement") == null)
+			{
+				var playable:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				if (playable)
+				{
+					if (playable.playState != preScrubPlayState)
+					{
+						switch (preScrubPlayState)
+						{
+							case PlayState.STOPPED:
+								playable.stop();
+								break;
+							case PlayState.PLAYING:
+								playable.play();
+								break;
+						}
+					}
+				}
+			}
+			if(media.metadata.getValue("Advertisement") != null){
+				advMediaPlayer.pause();
+			}
 			
 			scrubBarPlayedTrackSeeking.visible = false;
 		}
@@ -727,11 +738,10 @@ package org.osmf.player.chrome.widgets
 			}
 			if (scrubBarClickArea.mouseX >= 0.0 && scrubBarClickArea.mouseX <= scrubBarClickArea.width)
 			{
-				var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;
+				var timeTrait:TimeTrait = advMedia ? advMedia.getTrait(MediaTraitType.TIME) as TimeTrait : null;
 				if (timeTrait)
 				{
-					var time:Number = AdvertisementPluginInfo.getMediaPlayer().duration * ((mouseX - scrubber.width / 2.0 - scrubberStart) / (scrubberEnd - scrubberStart));
-					
+					var time:Number = timeTrait.duration * ((mouseX - scrubber.width / 2.0 - scrubberStart) / (scrubberEnd - scrubberStart));
 					var dvrLive:Boolean = dvrTrait && dvrTrait.isRecording && mouseX > scrubBarDVRLiveTrack.x;
 					var currentTimeString:String = FormatUtils.formatTimeStatus(time, timeTrait.duration)[0];
 					
@@ -842,6 +852,27 @@ package org.osmf.player.chrome.widgets
 		override public function get height():Number{
 			return scrubBarTrack ? scrubBarTrack.height : super.height; 
 		}
+		
+		//###### ADDED BY PROJECT GROUP 9 ##########
+		private function get advMediaPlayer():MediaPlayer
+		{
+			if(media.metadata.getValue("Advertisement") != null){
+				return AdvertisementPluginInfo.getMediaPlayer();
+			}else{
+				return mediaPlayer;
+			}
+		}
+		
+		//###### ADDED BY PROJECT GROUP 9 ##########
+		private function get advMedia():MediaElement
+		{
+			if(media.metadata.getValue("Advertisement") != null){
+				return AdvertisementPluginInfo.getMediaPlayer().media;
+			}else{
+				return media;
+			}
+		}
+		
 		
 		private var _live:Boolean = false;
 		private var highlight:ButtonHighlight;
