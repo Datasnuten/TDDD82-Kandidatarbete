@@ -962,7 +962,8 @@ package
 		private function onFullScreen(event:FullScreenEvent=null):void
 		{				
 			if (_stage.displayState == StageDisplayState.NORMAL) 
-			{		
+			{
+				trace("här blir det liten skärm");
 				if (controlBar)
 				{										
 					// Set the autoHide property to the value set by the user.
@@ -988,6 +989,10 @@ package
 						controlBar.autoHide = false;
 					}
 				}
+				
+				//####ADDED Project 9#####
+				geomapWidget.fullscreenMode(false);
+				
 				Mouse.show();
 				
 				if (configuration.controlBarType == ControlBarType.SMARTPHONE) {
@@ -1001,6 +1006,7 @@ package
 			}
 			else if (_stage.displayState == StageDisplayState.FULL_SCREEN)
 			{	
+				trace("här blir det storskärm");
 				if (controlBar)
 				{
 					if (configuration.controlBarType == ControlBarType.DESKTOP) {
@@ -1024,6 +1030,9 @@ package
 						controlBar.visible = true;
 					}
 				}
+				
+				//####ADDED Project 9#####
+				geomapWidget.fullscreenMode(true);
 				
 				// NOTE: Exploration code - exploring some issues arround full screen and stage video
 				if (!(OSMFSettings.enableStageVideo && OSMFSettings.supportsStageVideo)
