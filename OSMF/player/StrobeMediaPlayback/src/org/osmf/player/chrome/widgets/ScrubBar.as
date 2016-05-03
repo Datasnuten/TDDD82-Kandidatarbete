@@ -328,10 +328,13 @@ package org.osmf.player.chrome.widgets
 			{
 				// Prepare for getting the player to the Live content directly (UX rule)
 				
-				//####### COMMENT BY PROJECT GROUP 9 ############
-				//Change the media to main media if you don't have a default geomapobject.
-				//If you have a default then use AdvertisementPluginInfo.getMediaPlayer().media instead.
-				var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				//######### ADDED BY PROJECT GROUP 9 ############
+				var playTrait:PlayTrait;
+				if(AdvertisementPluginInfo.getMediaPlayer() != null){
+					playTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				}else{
+					playTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				}
 
 				if (playTrait.playState != PlayState.PLAYING)
 				{
@@ -404,7 +407,7 @@ package org.osmf.player.chrome.widgets
 			{
 				started = true;
 				updateState();
-				var playTrait:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				var playTrait:PlayTrait = advMedia.getTrait(MediaTraitType.PLAY) as PlayTrait;
 				if (playTrait)
 				{
 					playTrait.removeEventListener(PlayEvent.PLAY_STATE_CHANGE, onFirstPlayStateChange);
@@ -467,8 +470,8 @@ package org.osmf.player.chrome.widgets
 		
 		private function updateState():void
 		{
-			visible = media != null;
-			enabled = media ? media.hasTrait(MediaTraitType.SEEK) : false;
+			visible = advMedia != null;
+			enabled = advMedia ? advMedia.hasTrait(MediaTraitType.SEEK) : false;
 		
 			if (streamType == StreamType.LIVE || !started)
 			{
@@ -476,12 +479,12 @@ package org.osmf.player.chrome.widgets
 			}
 			else
 			{							
-				scrubBarLoadedTrack.visible = media ? media.hasTrait(MediaTraitType.LOAD) : false;
-				scrubBarLoadedTrackEnd.visible = media ? media.hasTrait(MediaTraitType.LOAD) : false;
-				scrubBarPlayedTrack.visible = media ? media.hasTrait(MediaTraitType.PLAY) : false;
+				scrubBarLoadedTrack.visible = advMedia ? advMedia.hasTrait(MediaTraitType.LOAD) : false;
+				scrubBarLoadedTrackEnd.visible = advMedia ? advMedia.hasTrait(MediaTraitType.LOAD) : false;
+				scrubBarPlayedTrack.visible = advMedia ? advMedia.hasTrait(MediaTraitType.PLAY) : false;
 				if (scrubber)
 				{
-					scrubber.enabled = media ? media.hasTrait(MediaTraitType.SEEK) : false;
+					scrubber.enabled = advMedia ? advMedia.hasTrait(MediaTraitType.SEEK) : false;
 					scrubber.visible = true;
 				}	
 			}
@@ -490,7 +493,7 @@ package org.osmf.player.chrome.widgets
 		
 		private function updateTimerState():void
 		{
-			var timeTrait:TimeTrait = media ? media.getTrait(MediaTraitType.TIME) as TimeTrait : null;
+			var timeTrait:TimeTrait = advMedia ? advMedia.getTrait(MediaTraitType.TIME) as TimeTrait : null;
 			if (timeTrait == null)
 			{
 				currentPositionTimer.stop();
@@ -499,7 +502,7 @@ package org.osmf.player.chrome.widgets
 			}
 			else
 			{ 
-				var playTrait:PlayTrait = media ? media.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
+				var playTrait:PlayTrait = advMedia ? advMedia.getTrait(MediaTraitType.PLAY) as PlayTrait : null;
 				if (playTrait && !currentPositionTimer.running)
 				{
 					currentPositionTimer.start();
@@ -868,11 +871,12 @@ package org.osmf.player.chrome.widgets
 		//###### ADDED BY PROJECT GROUP 9 ##########
 		private function get advMedia():MediaElement
 		{
-			if(media.metadata.getValue("Advertisement") != null){
-				return AdvertisementPluginInfo.getMediaPlayer().media;
-			}else{
-				return media;
+			if(media){
+				if(media.metadata.getValue("Advertisement") != null){
+					return AdvertisementPluginInfo.getMediaPlayer().media;
+				}
 			}
+			return media;
 		}
 		
 		

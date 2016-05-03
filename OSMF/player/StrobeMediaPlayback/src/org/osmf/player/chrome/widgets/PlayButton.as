@@ -52,7 +52,7 @@ package org.osmf.player.chrome.widgets
 		
 		override protected function onMouseClick(event:MouseEvent):void
 		{
-			//##### ADDED PROJECT GROUP 9 ######
+			//##### ADDED BY PROJECT GROUP 9 ######
 			var playable:PlayTrait;
 			if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
 				playable = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
@@ -61,21 +61,26 @@ package org.osmf.player.chrome.widgets
 			}
 			
 			playable.play();
+			
+			//###### ADDED BY PROJECT GROUP 9 ###########
 			visible = false;
 			pauseButton.visible = true;
 			
 			event.stopImmediatePropagation();
 		}
 		
+		
 		override protected function visibilityDeterminingEventHandler(event:Event = null):void
 		{
-			visible = playable && playable.playState != PlayState.PLAYING;
-			
-			if (media && media.metadata)
-			{
-				//##### COMMENTED OUT BY PROJECT GROUP 9 #####
-				//visible &&= media.metadata.getValue("Advertisement") == null;
+			//######## ADDED IF BY PROJECT GROUP 9 #######
+			if(media.metadata.getValue("Advertisement") == null){
+				visible = playable && playable.playState != PlayState.PLAYING;
 			}
+			//##### COMMENTED OUT BY PROJECT GROUP 9 #####
+			/*if (media && media.metadata)
+			{
+				visible &&= media.metadata.getValue("Advertisement") == null;
+			}*/
 		}
 		
 		//######## ADDED PROJECT GROUP 9 #############

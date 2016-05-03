@@ -50,39 +50,40 @@ package org.osmf.player.chrome.widgets
 			//#### ADDED PROJECT GROUP 9 #####
 			var playable:PlayTrait
 			if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
+				trace(playable != null);
 				playable = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			}else{
 				playable = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 			}
 			
-			if ( playable.canPause)
+			if (playable.canPause)
 			{
 				playable.pause();
+				
+				//###### ADDED BY PROJECT GROUP 9 ###########
 				visible = false;
 				playButton.visible = true;
 			}
 			else
 			{
 				playable.stop();
-				/*if(AdvertisementPluginInfo.getMediaPlayer() != null && media.metadata.getValue("Advertisement") != null){
-					if(AdvertisementPluginInfo.getMediaPlayer().playing){
-						trace("DFSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-						visible = true;
-						playButton.visible = false;
-					}
-				}*/
 			}
 			event.stopImmediatePropagation();
 		}
 		
+		
 		override protected function visibilityDeterminingEventHandler(event:Event = null):void
 		{
-			visible = (playable && playable.playState == PlayState.PLAYING) 
-			if (media && media.metadata)
+			//######## ADDED IF BY PROJECT GROUP 9 #######
+			if(media.metadata.getValue("Advertisement") == null){
+				visible = (playable && playable.playState == PlayState.PLAYING);
+			}
+				
+			//######## COMMENTED OUT BY PROJECT GROUP 9 #######
+			/*if (media && media.metadata)
 			{
-				//######## COMMENTED OUT BY PROJECT GROUP 9 #######
-				//visible ||= media.metadata.getValue("Advertisement") != null;
-			}	
+				visible ||= media.metadata.getValue("Advertisement") != null;
+			}	*/
 		}
 		
 		//######## ADDED PROJECT GROUP 9 ###############

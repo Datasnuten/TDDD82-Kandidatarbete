@@ -443,12 +443,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				mediaPlayer.removeEventListener(TimeEvent.CURRENT_TIME_CHANGE, onMidrollCurrentTimeChange);
 				
 				displayLinearAd(midrollURL);
-				//fileDown.gettime();
-				//fileDown.currentStream = 1;
-				 //knownTime = fileDown.getTimetoSeek();
-				//fileDown.switchInitiated(knownTime);
-				//fileDown.positions.shift();
-				//fileDown.positions.push(0);
 			}	
 		}	
 		

@@ -149,6 +149,7 @@ package
 			}
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyTest);
 			
+			//######## ADDED BY PROJECT GROUP 9 #####
 			geomapWidget = new GeoMapWidget(this);
 		}
 		
@@ -990,7 +991,7 @@ package
 					}
 				}
 				
-				//####ADDED Project 9#####
+				//#### ADDED BY PROJECT 9 #####
 				geomapWidget.fullscreenMode(false);
 				
 				Mouse.show();
@@ -1155,8 +1156,7 @@ package
 				&&	player.playing == false
 			)
 			{
-				//###### COMMENTED OUT BY PROJECT GROUP 9 ########
-				//processPoster(configuration.endOfVideoOverlay);
+				processPoster(configuration.endOfVideoOverlay);
 			}	
 		}
 		
@@ -1241,9 +1241,7 @@ package
 		private var alert:AlertDialogElement;
 		private var loginWindow:AuthenticationDialogElement;
 		
-		//#### ADDED PROJECT GROUP 9 ####
-		public var posterImage:ImageElement;
-		//private var posterImage:ImageElement;
+		private var posterImage:ImageElement;
 		
 		private var playOverlay:PlayButtonOverlay;
 		private var bufferingOverlay:BufferingOverlay;
