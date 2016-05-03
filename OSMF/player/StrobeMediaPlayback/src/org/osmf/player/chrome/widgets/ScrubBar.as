@@ -330,8 +330,8 @@ package org.osmf.player.chrome.widgets
 				
 				//####### COMMENT BY PROJECT GROUP 9 ############
 				//Change the media to main media if you don't have a default geomapobject.
-				//If you have a default then use Advertisementplugin.getMediaPlayer().media instead.
-				var playTrait:PlayTrait = media.getTrait(MediaTraitType.PLAY) as PlayTrait;
+				//If you have a default then use AdvertisementPluginInfo.getMediaPlayer().media instead.
+				var playTrait:PlayTrait = AdvertisementPluginInfo.getMediaPlayer().media.getTrait(MediaTraitType.PLAY) as PlayTrait;
 
 				if (playTrait.playState != PlayState.PLAYING)
 				{

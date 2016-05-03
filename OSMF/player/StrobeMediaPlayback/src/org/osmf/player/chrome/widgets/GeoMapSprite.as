@@ -40,6 +40,7 @@ package org.osmf.player.chrome.widgets
 		private var Mapradius:int;
 		private var assetManager:AssetsManager;
 		private var pointOfInterest:Sprite;
+		
 		public var object:int;
 		public var smp:StrobeMediaPlayback;
 		
@@ -148,10 +149,10 @@ package org.osmf.player.chrome.widgets
 		//	-130<=Y<=110	(mindre värden höjer objektet, större värden sänker objektet)
 		
 		private function tempCallCreateObjects():void {
-			createObjects(110,110,125,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
+			createObjects(-Mapradius/2-15,-Mapradius/2-15,125,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
 			createObjects(80,-80,270,"http://localhost/vod/sample2_1000kbps.f4v");
-			createObjects(0,120,30,"http://localhost/vod/final_0.5.f4v");
-			createObjects(-10,0,40,"http://localhost/vod/test.flv")
+			/*createObjects(0,120,30,"http://localhost/vod/final_0.5.f4v");
+			createObjects(-10,0,40,"http://localhost/vod/test.flv")*/
 			//createObjects(80,-80,270,"http://130.236.206.130/vod/sample2_1000kbps.f4v");
 			//createObjects(0,120,30,"http://130.236.206.130/vod/sample1_150kbps.f4v");
 			//createObjects(-10,0,40,"http://130.236.206.130/vod/test.flv");
@@ -159,12 +160,12 @@ package org.osmf.player.chrome.widgets
 			//If you set a geomapObject as default then you need to change the playTrait in the scrubBar as well 
 			//inorder to be able to interact with the scrubBar for the video.
 			//See onMediaElementTraitAdd in scrubBar.
-			//geomapDict[1].setDefault();
+			geomapDict[1].setDefault();
 		}
 		
 		private function createObjects(x:int, y:int, angle:int, url:String):void
 		{	
-			geomapObject = new GeoMapObject(this,x2+x,y2+y,assetManager, smp, mediaContainer, mediaFactory, mediaPlayer);
+			geomapObject = new GeoMapObject(this,x2,y2,assetManager, smp, mediaContainer, mediaFactory, mediaPlayer);
 			geomapObject.setDirection(angle);
 			geomapObject.setURL(url);
 			
@@ -172,6 +173,7 @@ package org.osmf.player.chrome.widgets
 			
 			geomapDict[incrementer] = geomapObject;
 			incrementer = incrementer+1;
+			calculatePositionAlgorithm();
 		}
 		
 		private function setCoordinates(value:int,xCoordinate:Number,yCoordinate:Number):void
@@ -214,13 +216,52 @@ package org.osmf.player.chrome.widgets
 				obj.onMouseMove(event);
 			}
 			if (stage) {
-				text.text = event.localX.toString() + "\n" + event.localY.toString() + "\n" + mouseX.toString() + "\n" + mouseY.toString();
+				//text.text = event.localX.toString() + "\n" + event.localY.toString() + "\n" + mouseX.toString() + "\n" + mouseY.toString();
 			}
 		}
 		
+		//Calculates the position of each geomapObject
 		private function calculatePositionAlgorithm():void
 		{
-			
+			var i:int = 0;
+			var j:int = 0;
+			var valueX:int = 20;
+			var valueY:int = 20;
+			if(incrementer>1){
+				for each(var obj:* in geomapDict){
+					i = 0;
+					for each(var obj:* in geomapDict){
+						if(i != j){
+							if (geomapDict[i].getXcoordinate > geomapDict[j].getXcoordinate){
+								geomapDict[i].setPositionX = geomapDict[i].getPositionX + valueX;
+							}else{
+								geomapDict[i].setPositionX = geomapDict[i].getPositionX - valueX;
+							}
+							
+							if (geomapDict[i].getYcoordinate > geomapDict[j].getYcoordinate){
+								geomapDict[i].setPositionY = geomapDict[i].getPositionY - valueY;
+							}else{
+								geomapDict[i].setPositionY = geomapDict[i].getPositionY + valueY;
+							}
+							
+							//Checks if the new position is outside the map and adjust it if happens
+							if(geomapDict[i].getPositionX > x2+Mapradius/2+15){
+								geomapDict[i].setPositionX = x2+Mapradius/2+15;
+							}else if(geomapDict[i].getPositionX < x2-Mapradius/2-15){
+								geomapDict[i].setPositionX = x2-Mapradius/2-15;
+							}
+							
+							if(geomapDict[i].getPositionY > y2+Mapradius/2+15){
+								geomapDict[i].setPositionY = y2+Mapradius/2+15;
+							}else if(geomapDict[i].getPositionY < y2-Mapradius/2-15){
+								geomapDict[i].setPositionY = y2-Mapradius/2-15;
+							}
+						}
+						i++;
+					}
+					j++;
+				}
+			}
 		}
 		
 	}

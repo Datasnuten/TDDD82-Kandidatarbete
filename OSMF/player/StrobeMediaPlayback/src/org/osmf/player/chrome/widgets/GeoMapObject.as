@@ -97,7 +97,7 @@ package org.osmf.player.chrome.widgets
 			this.mediaFactory = mediaFactory;
 			this.mediaPlayer = mediaPlayer;
 			
-			
+			//trace("height: "+normal.height + ", width: " + normal.width);
 			addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			
@@ -151,7 +151,7 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseY < positionY+selected.height && mouseY > positionY && mouseX < positionX+selected.width && mouseX > positionX){
+			if(mouseY < this.positionY+selected.height && mouseY > this.positionY && mouseX < this.positionX+selected.width && mouseX > this.positionX){
 				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 				holdingOver = true;
 				
@@ -257,11 +257,11 @@ package org.osmf.player.chrome.widgets
 		/**
 		 * Sets the x-position of the GeoMapObject.
 		 */
-		public function setPositionX(positionX:int):void
+		public function set setPositionX(positionX:int):void
 		{
 			this.positionX = positionX;
-			normal.x = positionX;
-			selected.x = positionX;
+			normal.x = this.positionX;
+			selected.x = this.positionX;
 		}
 		
 		/**
@@ -269,17 +269,17 @@ package org.osmf.player.chrome.widgets
 		 */
 		public function get getPositionX():int
 		{
-			return positionX;
+			return this.positionX;
 		}
 		
 		/**
 		 * Sets the y-position of the GeoMapObject.
 		 */
-		public function setPositionY(positionY:int):void
+		public function set setPositionY(positionY:int):void
 		{
 			this.positionY = positionY;
-			normal.y = positionY;
-			selected.y = positionY;
+			normal.y = this.positionY;
+			selected.y = this.positionY;
 		}
 		
 		/**
@@ -287,7 +287,7 @@ package org.osmf.player.chrome.widgets
 		 */
 		public function get getPositionY():int
 		{
-			return positionY;
+			return this.positionY;
 		}
 		
 		/**
