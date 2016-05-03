@@ -67,12 +67,12 @@ package org.osmf.player.chrome.widgets
 				holdingOverText.wordWrap = true;
 				holdingOverText.scaleX = 1.4;
 				
-				holdingOverText.x = this.getPositionX+25;
-				holdingOverText.y = this.getPositionY-25;
+				holdingOverText.x = this.getPositionX+radius+5;
+				holdingOverText.y = this.getPositionY-radius;
 				
 				textBox.graphics.lineStyle(1,0x000000);
 				textBox.graphics.beginFill(0xffffff,1);
-				textBox.graphics.drawRect(this.getPositionX+25,this.getPositionY-25,holdingOverText.width,holdingOverText.height/2);
+				textBox.graphics.drawRect(this.getPositionX+radius+5,this.getPositionY-radius,holdingOverText.width,holdingOverText.height/2);
 				textBox.graphics.endFill();
 				
 				textBox.addChild(holdingOverText);
@@ -97,17 +97,6 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		/**
-		 * Sets the x-coordinate of the PointOfInterest relative to real life.
-		 * 
-		 * NOTE!
-		 * This is not the position of the PointOfInterest, it's only an coordinate.
-		 */
-		public function setXcoordinate(xCoordinate:Number):void
-		{
-			this.xCoordinate = xCoordinate;
-		}
-		
-		/**
 		 * Gets the x-coordinate of PointOfInterest relative to real life.
 		 * 
 		 * NOTE!
@@ -116,17 +105,6 @@ package org.osmf.player.chrome.widgets
 		public function get getXcoordinate():Number
 		{
 			return xCoordinate;
-		}
-		
-		/**
-		 * Sets the y-coordinate of PointOfInterest relative to real life.
-		 * 
-		 * NOTE!
-		 * This is not the position of the PointOfInterest, it's only an coordinate.
-		 */
-		public function setYcoordinate(yCoordinate:Number):void
-		{
-			this.yCoordinate = yCoordinate;
 		}
 		
 		/**

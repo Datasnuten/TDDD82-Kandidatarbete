@@ -71,8 +71,8 @@ package org.osmf.player.chrome.widgets
 				//scale kan (bör) även användas för att ändra storlek
 				//stage x=680 y=480 xdelta=275 ydelta=340
 				//mac fullscreen x=1440 y=900 => delta(minus/ta bort) x=1160 y=950 
-				trace(geomapSprite.scaleX);
-				trace(geomapSprite.scaleY);
+				/*trace(geomapSprite.scaleX);
+				trace(geomapSprite.scaleY);*/
 				if (stage) {
 					geomapSprite.x = stage.fullScreenWidth - 1160;
 					geomapSprite.y = stage.fullScreenHeight - 950;
