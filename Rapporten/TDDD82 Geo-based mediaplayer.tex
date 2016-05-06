@@ -98,7 +98,7 @@ OSMF supports a number of important features that will be used within our interf
 
 \section{System Design}
 
-To advance in this project we will mainly be programming, designing and developing the application. The programming language of choice will be Java Action Script and the IDE Flash Builder, which is very similar to the IDE Eclipse. The functionality of the interface to be developed is multiple. We want the interface to accept incoming video streams tagged with a location and cardinal direction from expected sources. The video streams will have to be tagged with these geographical datas somehow, which is not a common included feature with most video recording softwares. Developing a separate recording application to create these kind of video streams, for the sake of this project, might be outside of our goal of limitations for this project. If it is, we will prove the functionality of our interface with fabricated video geo-tags. These streams will then be made to work with a custom OSMF player.  Under-the-hood features will include HAS to ensure a smooth playback of the streams, both for buffering a single stream but also for prefetching and buffering a fraction of the other streams to ensure uninterrupted playback during stream swaps. To help us focus on the main problem of developing this interface, we are being provided with some existing code by our supervisors. This includes a working SMP player created with a modified version of OSMF with code from an existing HAS-interface using prefetching \cite{qualbranch}.
+To advance in this project we will mainly be programming, designing and developing the application. The programming language of choice will be Java Action Script and the IDE Flash Builder, which is very similar to the IDE Eclipse. The functionality of the interface to be developed is multiple. We want the interface to accept incoming video streams tagged with a location and cardinal direction from expected sources. The video streams will have to be tagged with these geographical datas somehow, which is not a common included feature with most video recording softwares. Developing a separate recording application to create these kind of video streams, for the sake of this project, might be outside of our goal of limitations for this project. If it is, we will prove the functionality of our interface with fabricated video geo-tags. These streams will then be made to work with the custom OSMF player.  Under-the-hood features will include HAS to ensure a smooth playback of the streams, both for buffering a single stream but also for prefetching and buffering a fraction of the other streams to ensure uninterrupted playback during stream swaps. To help us focus on the main problem of developing this interface, we are being provided with some existing code by our supervisors. This includes a working SMP player created with a modified version of OSMF with code from an existing HAS-interface using prefetching \cite{qualbranch}.
 
 \subsection{Interface design}
 The main part of this project is to expand upon the existing user interface (UI) of the default SMP player, as seen in Figure \ref{fig:mediaplayer}, and create a new section of it where we can implement the new desired functionality of this project. 
@@ -130,6 +130,11 @@ As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin w
 
 The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we'll be using the Adobe Media Server for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used in Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth. \cite{hasmultipath}.
 
+\subsection{Relative placement of Geographical Points [PH]}
+The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to eachother on the interface's geographical map. To accomplish this automatic placement and scaling we developed an algorithm to calculate where the points should be drawn to keep their relative positions between eachother, so the graphical points accurately represents the real life locations of the recordings.
+
+XXXXXXX SKRIV HUR JONATHANS ALGORITM FUNGERAR XXXXXXX
+
 \begin{figure}[t!]
 \begin{center}
 	\includegraphics[scale=0.5]{Media_player.png}
@@ -140,7 +145,9 @@ The SMP player is by default set to play a stream of video located at a server s
 
 \section{Validated Result}
 
+
 \section{Discussion}
+Här prata om vilka svårigheter vi haft, vilka ändringar i planen vi gjorde från början till slutet, vad vi kompromissat med. Även att vi sket i prefetching/överlämnade det jobbet till Vengeth?
 
 \section{Conclusion}
 
