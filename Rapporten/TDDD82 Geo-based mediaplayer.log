@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  6 MAY 2016 14:32
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  6 MAY 2016 14:55
->>>>>>> 00b75b4d6a2caa3a1ce2a759445df2f51a6d1161
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  6 MAY 2016 17:06
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -617,84 +613,59 @@ Package pdftex.def Info: teomet.png used on input line 124.
 (pdftex.def)             Requested size: 234.87692pt x 220.57352pt.
 
 Overfull \hbox (1.61797pt too wide) in paragraph at lines 133--133
-[]\secfnt Relative place-ment of Ge-o-graph-i-cal Points
+[]\secfnt Relative place-ment of Ge-o-graph-i-cal Points 
  []
 
-[5 <./HAS2.png>]
-Overfull \hbox (32.8539pt too wide) in paragraph at lines 136--137
-[]\T1/aer/m/n/9 XXXXXXX SKRIV HUR JONATHANS AL-GO-RITM FUNGERAR
- []
-
-<Media_player.png, id=34, 484.81125pt x 362.85562pt>
+[5 <./HAS2.png>] [6 <./prefetch.png> <./teomet.png>]
+<Media_player.png, id=41, 484.81125pt x 362.85562pt>
 File: Media_player.png Graphic file (type png)
  <use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 147.
+Package pdftex.def Info: Media_player.png used on input line 173.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 147--148
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 173--174
  [] 
- []
-
-[6 <./prefetch.png> <./teomet.png> <./Media_player.png>]
-<<<<<<< HEAD
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 181--187
-=======
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 188--194
->>>>>>> 00b75b4d6a2caa3a1ce2a759445df2f51a6d1161
-\T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
 [7
 
+ <./Media_player.png>]
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 214--220
+\T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
+ []
+
+[8
+
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 3231 strings out of 493634
- 40071 string characters out of 3134015
+ 3232 strings out of 493634
+ 40078 string characters out of 3134015
  109720 words of memory out of 3000000
  6531 multiletter control sequences out of 15000+200000
- 50711 words of font info for 73 fonts, out of 3000000 for 9000
+ 51847 words of font info for 74 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,28p,1631b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,28p,1631b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jonathan/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonathan/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:
-/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Jonathan/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users
-/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt
-9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
-etic/uhvb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 587431 bytes).
-=======
- 3568 strings out of 493117
- 44956 string characters out of 6135433
- 118690 words of memory out of 5000000
- 6916 multiletter control sequences out of 15000+600000
- 50711 words of font info for 73 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,8n,28p,1629b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fon
-ts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-t9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 585957 bytes).
->>>>>>> 00b75b4d6a2caa3a1ce2a759445df2f51a6d1161
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pf
+b><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jonathan/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Jonathan
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/
+Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonathan/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (8 pages, 624157 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

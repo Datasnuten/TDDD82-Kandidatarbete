@@ -130,10 +130,36 @@ As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin w
 
 The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we'll be using the Adobe Media Server for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used in Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth. \cite{hasmultipath}.
 
-\subsection{Relative placement of Geographical Points [PH]}
+\subsection{Relative placement of Geographical Points}
 The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to each other on the interface's geographical map. To accomplish this automatic placement and scaling we developed an algorithm to calculate where the points should be drawn to keep their relative positions between each other, so the graphical points accurately represents the real life locations of the recordings.
 
-XXXXXXX SKRIV HUR JONATHANS ALGORITM FUNGERAR XXXXXXX
+\subsubsection{Geographical Position algorithm}
+The way the algorithm works is that every streamer and point of interest is an object in a list. Every object starts with having it's position in the middle of the so called geomap, a view similar to the interface in \ref{fig:gpsinterface}. What the algorithm does is that it goes through each and every object in the list and checks it's coordinates relative to the other ones. How this works is that the objects checks the distance between each other object by calculating the difference between the real-life coordinates of each one and gets a relative distance between each other. This is effectively done by using Pythagoras theorem like this:
+
+\begin{align*}
+x &= (longitude2-longitude1)*40000  \\
+ &\phantom{b=\,} *cos((latitude1+latitude2 * \pi/360)/360) \nonumber \\
+y &= (latitude1-latitude2)*40000/360 \\
+z &= \sqrt{x^2+y^2}
+\end{align*}
+
+where x and y are the difference between two objects longitude and latitude values translated to x- and y-coordinates to fit our geomap as it represents a view on a flat plane. If we had used latitude and longitude as x and y values instead then the positions wouldn't translate as well to our view because they translate to the earth's spherical plane and as result the relative distance between each object would be weird. The view wouldn't give a good accurate picture of reality.
+
+With x,y and z can the relative move distance be calculated. The distance in which an object will move relative to another one.
+
+\begin{align*}
+\label{eq:2}
+valueX = moveDistance*|\frac{x}{z}| \\
+valueY = moveDistance*|\frac{y}{z}|
+\end{align*}
+
+ValueX and ValueY are the distance in which an object will move in x-axis and y-axis respectively and moveDistance is a constant value which represents how much an object should move, this is set as the radius of the geomap to help with scalability. The reason that we take the absolute vale of x/y divided by z is because of how the checking of where an object should move is done. When we have our scaling value the algorithm will check how to move the object relative to real-life. A check to see if the object in real-life is more to the west, north, south or east in-order to know the direction for moving the object in x-axis and y-axis on our flat plane.
+
+For scalability of our algorithm the value of moveDistance will be changed accordingly to the number of objects to place. This is done by dividing the moveDistance to number of users. The reason for this is because every object will move relative to every object in the list thus the distance one object has to move will be moveDistance times the number of objects. Another reason for doing this scalability is to ensure that an object won't be placed outside the geomap, however if that would happen then there is another algorithm which will check if an object is outside the map and adjust it accordingly.
+
+
+\subsubsection{Limitations and Accuracy}
+Här beskriver vi de begränsningar och problem som algorithm har och kan få. Vad som fungerar bra och dåligt samt den precision på positionering och relativitet. Hur bra positionering ser ut och hur problemet nog kan uppstå samt komma med potentiella förslag på hur det kan tänkas fixas om det skulle arbetas vidare på.
 
 \subsection{Technical details}
 Här skriver vi vad vi gjort i koden för att få allt att fungera. Att vi använt Advertisement plugin för att få saker att funka, och att vi dragit om lite kablar så att advertisementplugin ska fungera med flera videos och att det ska kunna gå att pausa och byta tid i filmerna (vilket inte gick innan ty advertisementplugin är gjort för opausbara reklamer).
