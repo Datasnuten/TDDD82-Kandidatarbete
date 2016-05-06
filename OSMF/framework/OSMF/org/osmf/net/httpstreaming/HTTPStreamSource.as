@@ -380,6 +380,7 @@ package org.osmf.net.httpstreaming
 		 */
 		protected function doSomeProcessingAndGetBytes():ByteArray
 		{
+			trace("HTTPStreamSource, doSomeProcessingAndGetBytes");
 			var bytes:ByteArray = null;
 			var input:IDataInput = null;
 			var date:Date;

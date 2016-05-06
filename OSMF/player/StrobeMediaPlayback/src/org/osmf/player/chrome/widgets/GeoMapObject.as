@@ -151,13 +151,15 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseY < this.positionY+selected.height && mouseY > this.positionY && mouseX < this.positionX+selected.width && mouseX > this.positionX){
-				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
-				holdingOver = true;
+			if(mouseY < this.getPositionY+selected.height && mouseY > this.getPositionY-selected.height && 
+				mouseX < this.getPositionX+selected.width && mouseX > this.getPositionX-selected.width ){
 				
-				text.text = "x-Coordinate: " + getXcoordinate + "\n" + "y-Coordinate: " + getYcoordinate + "\n" + "Angle: " + getDirection;
+				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
+				
+				holdingOver = true;
+				text.text = "x-Coordinate: " + getXcoordinate.toFixed(6) + "\n" + "y-Coordinate: " + getYcoordinate.toFixed(6) + "\n" + "Angle: " + getDirection;
 				text.wordWrap = true;
-				text.scaleX = 1.1;
+				text.scaleX = 1.4;
 				
 				text.x = this.getPositionX+25;
 				text.y = this.getPositionY-25;
@@ -169,7 +171,7 @@ package org.osmf.player.chrome.widgets
 				
 				this.addChild(text);
 				
-				
+				this.parent.addChild(this);
 				
 			}else{
 				holdingOver = false;
@@ -231,8 +233,8 @@ package org.osmf.player.chrome.widgets
 		public function setDirection(direction:int):void
 		{
 			this.direction = direction;
-			var matrix:Matrix = normal.transform.matrix;
-			var rect:Rectangle = normal.getBounds(normal.parent);
+			var matrix:Matrix = selected.transform.matrix;
+			var rect:Rectangle = selected.getBounds(selected.parent);
 			
 			matrix.translate(-(rect.left + (rect.width / 2)), -(rect.top + (rect.height / 2)));
 			matrix.rotate((direction / 180) * Math.PI);
@@ -242,6 +244,7 @@ package org.osmf.player.chrome.widgets
 			
 			normal.rotation = Math.round(normal.rotation);
 			selected.rotation = Math.round(selected.rotation);
+			
 		}
 		
 		/**

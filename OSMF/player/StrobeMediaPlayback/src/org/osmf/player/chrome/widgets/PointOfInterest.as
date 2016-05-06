@@ -9,6 +9,7 @@ package org.osmf.player.chrome.widgets
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
@@ -17,7 +18,7 @@ package org.osmf.player.chrome.widgets
 		private var xCoordinate:Number;
 		private var yCoordinate:Number;
 		
-		private var radius:Number=38;
+		private var _radius:Number;
 		private var yPosition:int;
 		private var xPosition:int;
 		
@@ -25,14 +26,19 @@ package org.osmf.player.chrome.widgets
 		private var text:TextField;
 		private var textBox:Sprite;
 		
-		public function PointOfInterest(xCoordinate:Number,yCoordinate:Number,xPosition:int,yPosition:int)
+		public function PointOfInterest(xCoordinate:Number,yCoordinate:Number,xPosition:int,yPosition:int,radius:int)
 		{
 			this.xCoordinate = xCoordinate;
 			this.yCoordinate = yCoordinate;
 			this.xPosition = xPosition;
 			this.yPosition = yPosition;
+			this._radius = radius;
+			
+			var textFormat:TextFormat = new TextFormat();
+			textFormat.bold = true;
 			
 			text = new TextField();
+			text.defaultTextFormat = textFormat;
 			text.wordWrap = true;
 			text.multiline = true;
 			text.scaleX = 0.8;
@@ -42,42 +48,44 @@ package org.osmf.player.chrome.widgets
 			holdingOverText = new TextField();
 			textBox = new Sprite();
 			
-			drawPointOfInterest(xPosition,yPosition,radius);
+			drawPointOfInterest(xPosition,yPosition,_radius);
 		}
 		
 		/**
-		 * Draw PointOfIntreset as a circle
+		 * Draw PointOfIntreset as a circle.
 		 */
-		public function drawPointOfInterest(x:int,y:int,radius:Number):void
+		private function drawPointOfInterest(x:int,y:int,radius:Number):void
 		{
+			this._radius = radius;
 			graphics.clear();
 			graphics.beginFill(0x0040ff,1);
 			graphics.drawCircle(x,y,radius);
 			graphics.endFill();
 			
-			text.y = y-radius/2;
-			text.x = x-4*radius/7;
+			text.y = y-4*radius/7;
+			text.x = x-5*radius/7;
 			addChild(text);
 		}
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseY < this.getPositionY+radius && mouseY > this.getPositionY-radius && mouseX < this.getPositionX+radius && mouseX > this.getPositionX-radius){
-				holdingOverText.text = "x-Coordinate: " + getXcoordinate + "\n" + "y-Coordinate: " + getYcoordinate;
+			if(mouseY < this.getPositionY+_radius && mouseY > this.getPositionY-_radius && mouseX < this.getPositionX+_radius && mouseX > this.getPositionX-_radius){
+				holdingOverText.text = "x-Coordinate: " + getXcoordinate.toFixed(6) + "\n" + "y-Coordinate: " + getYcoordinate.toFixed(6);
 				holdingOverText.wordWrap = true;
 				holdingOverText.scaleX = 1.4;
 				
-				holdingOverText.x = this.getPositionX+radius+5;
-				holdingOverText.y = this.getPositionY-radius;
+				holdingOverText.x = this.getPositionX+_radius+5;
+				holdingOverText.y = this.getPositionY-_radius;
 				
 				textBox.graphics.lineStyle(1,0x000000);
 				textBox.graphics.beginFill(0xffffff,1);
-				textBox.graphics.drawRect(this.getPositionX+radius+5,this.getPositionY-radius,holdingOverText.width,holdingOverText.height/2);
+				textBox.graphics.drawRect(this.getPositionX+_radius+5,this.getPositionY-_radius,holdingOverText.width,holdingOverText.height/2);
 				textBox.graphics.endFill();
 				
 				textBox.addChild(holdingOverText);
 				
 				this.addChild(textBox);
+				this.parent.addChild(this);
 				
 			}else{
 				textBox.graphics.clear();
@@ -87,9 +95,14 @@ package org.osmf.player.chrome.widgets
 			}	
 		}
 		
-		
 		/**
-		 * Sets the text to be displayed for PointOfInterest
+		 * Returns the displayed text for PointOfInterest.
+		 */
+		public function get getText():String{
+			return text.text;
+		}
+		/**
+		 * Sets the text to be displayed for PointOfInterest.
 		 */
 		public function set TextToSee(string:String):void
 		{
@@ -124,6 +137,7 @@ package org.osmf.player.chrome.widgets
 		public function set setPositionX(xPosition:int):void
 		{
 			this.xPosition = xPosition;
+			drawPointOfInterest(getPositionX,getPositionY,_radius);
 		}
 		
 		/**
@@ -140,6 +154,7 @@ package org.osmf.player.chrome.widgets
 		public function set setPositionY(yPosition:int):void
 		{
 			this.yPosition = yPosition;
+			drawPointOfInterest(getPositionX,getPositionY,_radius);
 		}
 		
 		/**
@@ -148,6 +163,14 @@ package org.osmf.player.chrome.widgets
 		public function get getPositionY():int
 		{
 			return this.yPosition;
+		}
+		
+		/**
+		 * Gets the radius of PointOfInterest.
+		 */
+		public function get radius():Number
+		{
+			return this._radius; 
 		}
 	}
 }

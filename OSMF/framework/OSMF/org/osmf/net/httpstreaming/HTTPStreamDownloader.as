@@ -272,8 +272,6 @@ package org.osmf.net.httpstreaming
 							_request.url = ("http://"+filedown.URL+"final_"+0.5+"Seg1-Frag"+fragCount);
 							filedown.downloader_rate=0.5;
 						}
-					}								
-					if(estimate != 0 || fragrate !=0 || sizeArray[fragCount]!=0){
 						_request = check_if_paralleled(fragCount,_request,fragrate); 
 						filedown.downloader_rate=hold;
 					}

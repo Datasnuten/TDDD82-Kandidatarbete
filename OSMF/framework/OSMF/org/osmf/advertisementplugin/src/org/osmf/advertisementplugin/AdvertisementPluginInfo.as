@@ -270,7 +270,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						function checkIfseekAvailable():void
 						{
 							if(adMediaPlayer.canSeekTo(knownTime) && !hasSeeked){
-								trace("KnownTime " + knownTime);
 								adMediaPlayer.seek(knownTime);
 								hasSeeked = true;
 							}

@@ -1260,8 +1260,8 @@ package org.osmf.net.httpstreaming
 		
 		private function dummy(event:TimerEvent):void
 		{
-			/*trace("parallelpipe_on (false): " + parallelpipe_on);*/
 			//netStream1.seek(prevMediaPlayer.currentTime);
+			
 			//##### Hard coded BY PROJECT GROUP 9 #############
 			if(estimate == 0){
 				estimate = 1300;
@@ -1269,7 +1269,6 @@ package org.osmf.net.httpstreaming
 			
 			try
 			{
-				//##### COMMENTED OUT "&& netStream1.time>2 && estimate != 0"  BY PROJECT GROUP 9 #####
 				if(parallelpipe_on_alt == false && parallelpipe_on_alt1 == false && parallelpipe_on == false && parallelpipeexc_on == false && netStream1.time>2 && estimate != 0 && seeking==false){
 					if(global_avg!=0){
 						trace("checkandschedule(global_avg,maxinParallel)");
@@ -1300,9 +1299,8 @@ package org.osmf.net.httpstreaming
 					rate = 0.85;
 				if(rate == 1300)
 					rate = 1.3;
-				
 				var strReq2:HTTPStreamRequest = new HTTPStreamRequest(HTTPStreamRequestKind.DOWNLOAD, "http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
-				trace("http://"+URL+"final_"+rate+"Seg1-Frag" + (frag));
+				//trace("http://"+URL+"final_1.3"/*+rate*/+"Seg1-Frag" + (frag));
 				var urlReq2:URLStream = new URLStream();
 				prefestF1 = (frag);
 				prefestQ1 = (rate*1000);
@@ -1316,8 +1314,6 @@ package org.osmf.net.httpstreaming
 			//##### COMMENTED OUT BY PROJECT GROUP 9 #####
 			/*else (parallel_pipe_alt(frag,rate));*/
 		}
-		
-		
 		
 		public function calculate_avg(est:Number):void
 		{

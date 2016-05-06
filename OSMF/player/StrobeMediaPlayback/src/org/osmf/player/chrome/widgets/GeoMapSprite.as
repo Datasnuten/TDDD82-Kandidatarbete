@@ -39,14 +39,19 @@ package org.osmf.player.chrome.widgets
 		private var y2:int;
 		private var Mapradius:int;
 		private var assetManager:AssetsManager;
-		private var pointOfInterest:Sprite;
+		private var pointOfInterest:PointOfInterest;
 		
 		public var object:int;
 		public var smp:StrobeMediaPlayback;
 		
 		private var geomapDict:Object = new Object();
-		private var text:TextField;
+		private var objectDict:Object = new Object();
 		private var cDTextSize:int = 20;
+		
+		private var poiRadius:int=32;
+		private var moveDistance:int;
+		
+		private var pointOfInterestCreated:Boolean = false;
 		
 		// This is a normal video player setup.
 		public var mediaFactory:MediaFactory = new DefaultMediaFactory();
@@ -69,6 +74,8 @@ package org.osmf.player.chrome.widgets
 			this.assetManager = assetManager;
 			this.smp = smp;
 			
+			this.moveDistance = Mapradius;
+			
 			//If you draw something on the bottom the y-axis needs to be updated with half of that length otherwise the UI will be moved upwards
 			this.y2 = y2 + (Mapradius-cDTextSize)/2;
 			
@@ -79,8 +86,6 @@ package org.osmf.player.chrome.widgets
 			drawCardinalDirections("S",3,Mapradius-cDTextSize);
 			drawCardinalDirections("E",Mapradius-cDTextSize/2,0);
 			
-			drawPointOfInterest(30,-100);
-			
 			drawCardinalDirections("N",3,-Mapradius+cDTextSize/2);
 			drawCardinalDirections("W",-Mapradius+cDTextSize/2,0);
 			
@@ -90,38 +95,7 @@ package org.osmf.player.chrome.widgets
 			graphics.drawCircle(x2,y2,Mapradius);
 			graphics.endFill();
 			
-			//addEventListener(MouseEvent.CLICK, onMouseClick);
-			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			
-			tempCallCreateObjects();
-			
-			setCoordinates(0,45.32,12.45);
-			setCoordinates(1,44.10,20.23);
-			setCoordinates(2,56.07,64.91);
-			setCoordinates(3,44.56,39.01);
-		}
-		
-		
-		private function drawPointOfInterest(xAdjust:int,yAdjust:int):void
-		{
-			var string:String = "Point Of Interest";
-			var poiRadius:int = 40;
-			var pointOfInterest:Sprite = new Sprite();
-			text = new TextField();
-			text.text = string;
-			text.wordWrap = true;
-			text.multiline = true;
-			text.scaleX = 0.8;
-				
-			text.y = y2-poiRadius/2+yAdjust;
-			text.x = x2-4*poiRadius/7+xAdjust;
-			
-			pointOfInterest.graphics.clear();
-			pointOfInterest.graphics.beginFill(0x0040ff,1);
-			pointOfInterest.graphics.drawCircle(x2+xAdjust,y2+yAdjust,poiRadius);
-			pointOfInterest.graphics.endFill();
-			pointOfInterest.addChild(text);
-			addChild(pointOfInterest);
+			createObjects();		
 		}
 		
 		private function drawCardinalDirections(string:String, xAdjust:int,yAdjust:int):void
@@ -148,42 +122,65 @@ package org.osmf.player.chrome.widgets
 		//  -125<=X<=110	(mindre värden flyttar objektet till vänster, större till höger)
 		//	-130<=Y<=110	(mindre värden höjer objektet, större värden sänker objektet)
 		
-		private function tempCallCreateObjects():void {
-			createObjects(-Mapradius/2-15,-Mapradius/2-15,125,"http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv");
-			createObjects(80,-80,270,"http://localhost/vod/sample2_1000kbps.f4v");
-			/*createObjects(0,120,30,"http://localhost/vod/final_0.5.f4v");
-			createObjects(-10,0,40,"http://localhost/vod/test.flv")*/
-			//createObjects(80,-80,270,"http://130.236.206.130/vod/sample2_1000kbps.f4v");
-			//createObjects(0,120,30,"http://130.236.206.130/vod/sample1_150kbps.f4v");
-			//createObjects(-10,0,40,"http://130.236.206.130/vod/test.flv");
+		protected function createObjects():void {
+			createGeoMapObjects(58.398283,15.576520,224,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.398292,15.576195,100,"http://localhost/vod/Video_2.flv");
+			createGeoMapObjects(58.398278,15.576431,230,"http://localhost/vod/Video_3.flv");
+			createGeoMapObjects(58.398133,15.576231,0,"http://localhost/vod/Video_4.flv");
+			createGeoMapObjects(58.398324,15.576318,210,"http://localhost/vod/Video_5.flv");
 			
-			//If you set a geomapObject as default then you need to change the playTrait in the scrubBar as well 
-			//inorder to be able to interact with the scrubBar for the video.
-			//See onMediaElementTraitAdd in scrubBar.
-			geomapDict[1].setDefault();
+			createPointOfInterest(58.398227,15.576212);
+			
+			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
+			createGeoMapObjects(58.572434, 15.795149,0,"http://localhost/vod/Video_3.flv");
+			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
+			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");
+			
+			createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
+			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");*/
+			
+			createPointOfInterest(58.572177, 15.793485);
+			
+			calculatePositionAlgorithm();
+			
+			if(geomapDict[0]){
+				geomapDict[0].setDefault();
+			}
 		}
 		
-		private function createObjects(x:int, y:int, angle:int, url:String):void
+		protected function createGeoMapObjects(latitude:Number,longitude:Number,angle:int, url:String):void
 		{	
 			geomapObject = new GeoMapObject(this,x2,y2,assetManager, smp, mediaContainer, mediaFactory, mediaPlayer);
 			geomapObject.setDirection(angle);
 			geomapObject.setURL(url);
 			
+			geomapObject.setYcoordinate(latitude);
+			geomapObject.setXcoordinate(longitude);
+			
 			addChild(geomapObject);
 			
 			geomapDict[incrementer] = geomapObject;
+			objectDict[incrementer] = geomapObject;
 			incrementer = incrementer+1;
-			calculatePositionAlgorithm();
 		}
 		
-		private function setCoordinates(value:int,xCoordinate:Number,yCoordinate:Number):void
+		//Can only create one point of interest
+		private function createPointOfInterest(latitude:Number,longitude:Number):void
 		{
-			if (geomapDict[value]) {
-				geomapDict[value].setXcoordinate(xCoordinate);
-				geomapDict[value].setYcoordinate(yCoordinate);
-			}
+			pointOfInterest = new PointOfInterest(longitude,latitude,x2,y2,poiRadius);
+			addChild(pointOfInterest);
+			
+			objectDict[incrementer] = pointOfInterest;
+			incrementer = incrementer+1;
+			
+			pointOfInterestCreated = true;
 		}
 		
+		/**
+		 * Checks if fullscreen or not and rescale the GeoMapObjects accordingly.
+		 */
 		public function rescaleArrows(sizeDown:Boolean):void {
 			if(sizeDown) {
 				for each(var obj:* in geomapDict) {
@@ -212,58 +209,109 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			for each(var obj:* in geomapDict) {
+			for each(var obj:* in objectDict) {
 				obj.onMouseMove(event);
 			}
 			if (stage) {
-				//text.text = event.localX.toString() + "\n" + event.localY.toString() + "\n" + mouseX.toString() + "\n" + mouseY.toString();
+				//pointOfInterest.TextToSee =/* "Event.localX: "+event.localX.toString() + "\n Event.localY: " + event.localY.toString() + */"MouseX: " + mouseX.toString() + "\n MouseY: " + mouseY.toString();
 			}
 		}
 		
 		//Calculates the position of each geomapObject
-		private function calculatePositionAlgorithm():void
+		protected function calculatePositionAlgorithm():void
 		{
 			var i:int = 0;
 			var j:int = 0;
-			var valueX:int = 20;
-			var valueY:int = 20;
+			var adjuster:int = 0;
+			var moveDistance:int = this.moveDistance;
+			
+			//Scales the distance in which the objects are moving.
 			if(incrementer>1){
-				for each(var obj:* in geomapDict){
-					i = 0;
-					for each(var obj:* in geomapDict){
+				moveDistance = this.moveDistance/(incrementer);
+			}
+			
+			var valueX:int = moveDistance;
+			var valueY:int = moveDistance;
+			
+			var x:Number=0;
+			var y:Number=0;
+			var z:Number=0;
+			
+			//Checks if there is more than one object
+			if(incrementer>1){
+				for each(var obj:* in objectDict){
+					j = 0;
+					for each(var obj2:* in objectDict){
 						if(i != j){
-							if (geomapDict[i].getXcoordinate > geomapDict[j].getXcoordinate){
-								geomapDict[i].setPositionX = geomapDict[i].getPositionX + valueX;
+							
+							x = (objectDict[j].getXcoordinate-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+objectDict[j].getYcoordinate)*Math.PI/360)/360;   
+							y = (objectDict[i].getYcoordinate-objectDict[j].getYcoordinate)*40000/360;
+							z = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+							
+							/*trace("x: "+x+", y: "+y+", z: "+z);
+							trace(Math.pow(x,2)/Math.pow(z,2));
+							trace(Math.pow(y,2)/Math.pow(z,2));*/
+							valueX = moveDistance*(Math.abs(x/z));
+							valueY = moveDistance*(Math.abs(y/z));
+							
+							if(valueX==0){
+								valueX = moveDistance;
+							}
+							
+							if(valueY==0){
+								valueY = moveDistance;
+							}
+							
+							if (objectDict[i].getXcoordinate > objectDict[j].getXcoordinate){
+								objectDict[i].setPositionX = objectDict[i].getPositionX + valueX;
 							}else{
-								geomapDict[i].setPositionX = geomapDict[i].getPositionX - valueX;
+								objectDict[i].setPositionX = objectDict[i].getPositionX - valueX;
 							}
 							
-							if (geomapDict[i].getYcoordinate > geomapDict[j].getYcoordinate){
-								geomapDict[i].setPositionY = geomapDict[i].getPositionY - valueY;
+							if (objectDict[i].getYcoordinate > objectDict[j].getYcoordinate){
+								objectDict[i].setPositionY = objectDict[i].getPositionY - valueY;
 							}else{
-								geomapDict[i].setPositionY = geomapDict[i].getPositionY + valueY;
-							}
-							
-							//Checks if the new position is outside the map and adjust it if happens
-							if(geomapDict[i].getPositionX > x2+Mapradius/2+15){
-								geomapDict[i].setPositionX = x2+Mapradius/2+15;
-							}else if(geomapDict[i].getPositionX < x2-Mapradius/2-15){
-								geomapDict[i].setPositionX = x2-Mapradius/2-15;
-							}
-							
-							if(geomapDict[i].getPositionY > y2+Mapradius/2+15){
-								geomapDict[i].setPositionY = y2+Mapradius/2+15;
-							}else if(geomapDict[i].getPositionY < y2-Mapradius/2-15){
-								geomapDict[i].setPositionY = y2-Mapradius/2-15;
+								objectDict[i].setPositionY = objectDict[i].getPositionY + valueY;
 							}
 						}
-						i++;
+						j++;
 					}
-					j++;
+					i++;
 				}
+				checkIfOutsideMap();
 			}
 		}
 		
+		//Checks if the objects are outside the map and adjust them if it so happens
+		protected function checkIfOutsideMap():void
+		{
+			var i:int=0;
+			for each(var obj:* in objectDict){
+				var x:Number = objectDict[i].getPositionX-x2;
+				var y:Number = objectDict[i].getPositionY-y2;
+				var z:Number = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+				
+				if(z > Mapradius-36){
+					var extra:Number=36;
+					if(z >Mapradius){
+						extra = 52;
+					}
+					var value:Number = z-Mapradius+extra; 
+					if(x<0){
+						objectDict[i].setPositionX = objectDict[i].getPositionX+((Math.pow(x,2)/Math.pow(z,2)))*value+((Math.pow(x,2)/Math.pow(z,2))*extra/2);         
+					}else{
+						objectDict[i].setPositionX = objectDict[i].getPositionX-((Math.pow(x,2)/Math.pow(z,2)))*value-((Math.pow(x,2)/Math.pow(z,2))*extra/2);
+					}
+					
+					if(y<0){
+						objectDict[i].setPositionY = objectDict[i].getPositionY+((Math.pow(y,2)/Math.pow(z,2))*value)+((Math.pow(y,2)/Math.pow(z,2))*extra/2);
+					}else{
+						objectDict[i].setPositionY = objectDict[i].getPositionY-((Math.pow(y,2)/Math.pow(z,2))*value)-((Math.pow(y,2)/Math.pow(z,2))*extra/2);
+					}
+				}
+				i++;
+			}
+		}
 	}
 }
 
