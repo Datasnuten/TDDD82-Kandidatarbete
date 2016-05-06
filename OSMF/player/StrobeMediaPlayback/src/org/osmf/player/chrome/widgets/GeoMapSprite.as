@@ -35,6 +35,7 @@ package org.osmf.player.chrome.widgets
 	{
 		private var geomapObject:GeoMapObject;
 		private var incrementer:int = 0;
+		private var numberOfPoi:int = 0;
 		private var x2:int;
 		private var y2:int;
 		private var Mapradius:int;
@@ -46,12 +47,12 @@ package org.osmf.player.chrome.widgets
 		
 		private var geomapDict:Object = new Object();
 		private var objectDict:Object = new Object();
+		private var pointOfInterestDict:Object = new Object();
+		
 		private var cDTextSize:int = 20;
 		
 		private var poiRadius:int=32;
 		private var moveDistance:int;
-		
-		private var pointOfInterestCreated:Boolean = false;
 		
 		// This is a normal video player setup.
 		public var mediaFactory:MediaFactory = new DefaultMediaFactory();
@@ -139,9 +140,9 @@ package org.osmf.player.chrome.widgets
 			
 			createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
-			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");*/
+			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
 			
-			createPointOfInterest(58.572177, 15.793485);
+			createPointOfInterest(58.572177, 15.793485);*/
 			
 			calculatePositionAlgorithm();
 			
@@ -173,15 +174,17 @@ package org.osmf.player.chrome.widgets
 			addChild(pointOfInterest);
 			
 			objectDict[incrementer] = pointOfInterest;
+			pointOfInterestDict[numberOfPoi] = pointOfInterest;
 			incrementer = incrementer+1;
-			
-			pointOfInterestCreated = true;
+			numberOfPoi++;
 		}
 		
 		/**
 		 * Checks if fullscreen or not and rescale the GeoMapObjects accordingly.
 		 */
 		public function rescaleArrows(sizeDown:Boolean):void {
+			var geoPos:int=0;
+			var poiPos:int=0;
 			if(sizeDown) {
 				for each(var obj:* in geomapDict) {
 					obj.normal.scaleX = 0.75;
@@ -190,12 +193,22 @@ package org.osmf.player.chrome.widgets
 					obj.selected.scaleY = 0.75;
 
 				}
+				
+				for each(var obj2:* in pointOfInterestDict){
+					pointOfInterestDict[poiPos].scaleSize = 0.75;
+					poiPos++;
+				}
 			} else {
-				for each(var obj2:* in geomapDict) {
-					obj2.normal.scaleX = 1;
-					obj2.normal.scaleY = 1;
-					obj2.selected.scaleX = 1;
-					obj2.selected.scaleY = 1;
+				for each(var obj3:* in geomapDict) {
+					obj3.normal.scaleX = 1;
+					obj3.normal.scaleY = 1;
+					obj3.selected.scaleX = 1;
+					obj3.selected.scaleY = 1;
+				}
+				
+				for each(var obj4:* in pointOfInterestDict){
+					pointOfInterestDict[poiPos].scaleSize = 1;
+					poiPos++;
 				}
 			}
 		}

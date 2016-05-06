@@ -8,6 +8,7 @@ package org.osmf.player.chrome.widgets
 {
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
+	import flash.display.Stage;
 	import flash.events.MouseEvent;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
@@ -64,19 +65,16 @@ package org.osmf.player.chrome.widgets
 			addChild(geomapSprite);
 		}
 		
-		public function fullscreenMode(isFullscreen:Boolean):void {
+		public function fullscreenMode(isFullscreen:Boolean,stageWidth:int,stageHeight:int):void {
+			
 			if(isFullscreen) {
 				geomapSprite.width = 700
 				geomapSprite.height = 700;
 				//scale kan (bör) även användas för att ändra storlek
 				//stage x=680 y=480 xdelta=275 ydelta=340
 				//mac fullscreen x=1440 y=900 => delta(minus/ta bort) x=1160 y=950 
-				/*trace(geomapSprite.scaleX);
-				trace(geomapSprite.scaleY);*/
-				if (stage) {
-					geomapSprite.x = stage.fullScreenWidth - 1160;
-					geomapSprite.y = stage.fullScreenHeight - 950;
-				}
+				geomapSprite.x = stageWidth - 1160;
+				geomapSprite.y = stageHeight - 950;
 				
 			} else {
 				geomapSprite.scaleX = 1;

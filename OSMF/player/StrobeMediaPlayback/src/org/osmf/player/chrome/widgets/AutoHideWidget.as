@@ -72,11 +72,18 @@ package org.osmf.player.chrome.widgets
 		
 		// Overrides
 		//
-		
-		//*******************Changed to always show Control bar
 		override public function set visible(value:Boolean):void
 		{
-			super.visible = true;
+			//##### ADDED IF BY PROJECT GROUP 9 #####
+			if(media){
+				if(media.metadata.getValue("Advertisement") == null){
+					super.visible = value;
+				}else{
+					super.visible = true;
+				}
+			}else{
+				super.visible = value;
+			}
 						
 			startWatchingMouseMoves();				
 		}
@@ -163,7 +170,10 @@ package org.osmf.player.chrome.widgets
 				visible = false;
 				if (stage && stage.displayState != StageDisplayState.NORMAL) 
 				{
-					Mouse.hide();
+					//####### ADDED IF BY PROJECT GROUP 9 ##########
+					if(media.metadata.getValue("Advertisement") == null){
+						Mouse.hide();
+					}
 				}
 			}
 		}	

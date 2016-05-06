@@ -8,20 +8,15 @@ package org.osmf.player.chrome.widgets
 {
 	import flash.display.DisplayObject;
 	import flash.events.MouseEvent;
-	import flash.external.ExternalInterface;
 	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
 	import flash.net.NetConnection;
 	import flash.text.TextField;
-	import flash.text.TextFormat;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	
-	import org.osmf.advertisementplugin.src.AdvertisementPlugin;
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.containers.MediaContainer;
-	import org.osmf.elements.SWFLoader;
-	import org.osmf.events.LoaderEvent;
 	import org.osmf.media.MediaElement;
 	import org.osmf.media.MediaFactory;
 	import org.osmf.media.MediaPlayer;

@@ -992,7 +992,7 @@ package
 				}
 				
 				//#### ADDED BY PROJECT 9 #####
-				geomapWidget.fullscreenMode(false);
+				geomapWidget.fullscreenMode(false,0,0);
 				
 				Mouse.show();
 				
@@ -1032,8 +1032,8 @@ package
 					}
 				}
 				
-				//####ADDED Project 9#####
-				geomapWidget.fullscreenMode(true);
+				//####ADDED Project 9 #####
+				geomapWidget.fullscreenMode(true,_stage.fullScreenWidth,_stage.fullScreenHeight);
 				
 				// NOTE: Exploration code - exploring some issues arround full screen and stage video
 				if (!(OSMFSettings.enableStageVideo && OSMFSettings.supportsStageVideo)
