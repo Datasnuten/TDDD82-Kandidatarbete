@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  6 MAY 2016 13:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  6 MAY 2016 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,15 +614,15 @@ Overfull \hbox (32.8539pt too wide) in paragraph at lines 136--137
 <Media_player.png, id=35, 484.81125pt x 362.85562pt>
 File: Media_player.png Graphic file (type png)
  <use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 140.
+Package pdftex.def Info: Media_player.png used on input line 147.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 140--141
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 147--148
  [] 
  []
 
 [6 <./prefetch.png> <./teomet.png> <./Media_player.png>]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 178--184
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 188--194
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
@@ -649,7 +649,7 @@ m/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 585085 bytes).
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 585957 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
