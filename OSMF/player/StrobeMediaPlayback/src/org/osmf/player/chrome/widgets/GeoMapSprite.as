@@ -132,17 +132,17 @@ package org.osmf.player.chrome.widgets
 			
 			createPointOfInterest(58.398227,15.576212);
 			
-			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572434, 15.795149,0,"http://localhost/vod/Video_3.flv");
 			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
 			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");
 			
-			createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
+		/*	createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
-			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
+			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");*/
 			
-			createPointOfInterest(58.572177, 15.793485);*/
+			createPointOfInterest(58.572177, 15.793485);
 			
 			calculatePositionAlgorithm();
 			
@@ -182,7 +182,7 @@ package org.osmf.player.chrome.widgets
 		/**
 		 * Checks if fullscreen or not and rescale the GeoMapObjects accordingly.
 		 */
-		public function rescaleArrows(sizeDown:Boolean):void {
+		public function rescaleObjects(sizeDown:Boolean):void {
 			var geoPos:int=0;
 			var poiPos:int=0;
 			if(sizeDown) {
@@ -257,8 +257,15 @@ package org.osmf.player.chrome.widgets
 					for each(var obj2:* in objectDict){
 						if(i != j){
 							
-							x = (objectDict[j].getXcoordinate-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+objectDict[j].getYcoordinate)*Math.PI/360)/360;   
-							y = (objectDict[i].getYcoordinate-objectDict[j].getYcoordinate)*40000/360;
+							//Checks if there is more than 10 objects and then changes the way x and are measured 
+							//to make relativity better for more objects.
+							if(incrementer < 11){
+								x = (objectDict[j].getXcoordinate-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+objectDict[j].getYcoordinate)*Math.PI/360)/360;   
+								y = (objectDict[i].getYcoordinate-objectDict[j].getYcoordinate)*40000/360;
+							}else{
+								x = objectDict[i].getXcoordinate-objectDict[j].getXcoordinate;
+								y = objectDict[i].getYcoordinate-objectDict[j].getYcoordinate;
+							}
 							z = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
 							
 							/*trace("x: "+x+", y: "+y+", z: "+z);

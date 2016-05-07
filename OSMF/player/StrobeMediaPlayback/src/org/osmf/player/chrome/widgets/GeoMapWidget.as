@@ -82,7 +82,7 @@ package org.osmf.player.chrome.widgets
 				geomapSprite.x = 0;
 				geomapSprite.y = 0;
 			}
-			geomapSprite.rescaleArrows(isFullscreen);
+			geomapSprite.rescaleObjects(isFullscreen);
 		}
 		
 		private function onMouseClick(event:MouseEvent):void
