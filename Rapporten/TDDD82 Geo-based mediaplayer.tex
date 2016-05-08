@@ -70,8 +70,7 @@ Downloading chunks in a round-robin way is how chunks will be downloaded in our 
 There can occur several problems in HAS players \cite{qualbranch}. Huang et al. \cite{streamrate} show that when a competing TCP flow starts a so called “downward spiral effect” occurs and the downgrade in throughput and playback rate becomes severe. This is caused by a timeout in the TCP congestion window, high packet loss in competing flows and when a client has a lower throughput the playback rate is lower due to smaller buffer segments which makes a video flow more susceptible to perceiving lower throughput and thus creating a spiral. A possible solution is to have larger segment size and by having an algorithm which is less conservative, meaning that requesting a video at lower rate than is perceived. This is something that we can keep in mind since quality can decrease drastically when having several videos buffering in parallel, though we will not have to buffer a full video at the same time but only chunks of a video while the main stream is being watched.
 
 \subsection{Non-linear Streaming and Multipath}
-Krishnamoorthi et al. \cite{hasmultipath} use this technique of storing prefetched chunks in a playback buffer simliar to [6]. Prefetching for different branches to allow seamless switching between videos, using the notion of multi-path nonlinear videos to stitch together videos using a novel buffer management and prefetching policy. This prefetching decreases the time it takes to switch between branches considerably and is something we will take advantage of since the code we use from \cite{qualbranch} are based on a similar policy \cite{hasmultipath}. If we look at \textit{Scalable On-Demand Streaming of 
-Nonlinear Media} they describe how choosing a correct branching point sufficiently ahead of time with an accuracy of 75 \% greatly reduces bandwidth requirements. Requesting nonlinear video content where chunks are downloaded parallel without causing jitter. This is something which is really important and efficient for users that would like the ability to switch between different videos on-demand. Selecting what type of chunks should be downloaded is hard to accomplish, atleast on a broader context when considering watching TV stream during TV broadcasting \cite{scalableOnDemand}.  Most of these works are mostly focused on branching videos which is simliar but not entierly simliar to what we will be doing \cite{qualbranch, hasmultipath,scalableOnDemand}. We will contribute more to the possibility of prefetching several videos parallel and then be able to switch to any of  them on-demand. However the ideas used when handling branching videos is something that will be used in our mediaplayer.
+Krishnamoorthi et al. \cite{hasmultipath} use this technique of storing prefetched chunks in a playback buffer simliar to [6]. Prefetching for different branches to allow seamless switching between videos, using the notion of multi-path nonlinear videos to stitch together videos using a novel buffer management and prefetching policy. This prefetching decreases the time it takes to switch between branches considerably and is something we will take advantage of since the code we use from \cite{qualbranch} are based on a similar policy \cite{hasmultipath}. If we look at what Zhao et al. \cite{scalableOnDemand} wrote they describe how choosing a correct branching point sufficiently ahead of time with an accuracy of 75 \% greatly reduces bandwidth requirements. Requesting nonlinear video content where chunks are downloaded parallel without causing jitter. This is something which is really important and efficient for users that would like the ability to switch between different videos on-demand. Selecting what type of chunks should be downloaded is hard to accomplish, atleast on a broader context when considering watching TV stream during TV broadcasting \cite{scalableOnDemand}.  Most of these works are mostly focused on branching videos which is simliar but not entierly simliar to what we will be doing \cite{qualbranch, hasmultipath,scalableOnDemand}. We will contribute more to the possibility of prefetching several videos parallel and then be able to switch to any of  them on-demand. However the ideas used when handling branching videos is something that will be used in our mediaplayer.
 
 Figure \ref{fig:HAS1} and \ref{fig:HAS2} illustrate an example of a stream consisting of chunks being played, how these chunks are prefetched and stored and a swap between two streams.
 
@@ -107,7 +106,7 @@ In practice we decided to go with adding an additional button to the control bar
 
 The layout will also display a view of every stream and an optional “Point of interest” with its own geographical position. This point of interest is the center of all the different video streams and can be anything from a concert to some other large event. The added geographical view will also display the north, west, east and south cardinal directions to know the angle of the every stream relative to them. The angle $\theta$ in Figure \ref{fig:gpsinterface} can be calculated by taking the magnitude heading from a recording client. This will give us the direction relative to the north cardinal direction.
 
-\subsection{Multipath???}
+\subsection{Multipath}
 
 As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. Krishnamoorthi et al. \cite{bandawarePrefetch} mention a policy called \textit{best-effort} that we will use, in which chunks are only downloaded after the buffer size has reached $T_{max}$ and will start to prefetch chunks from several other videos. These chunks are only going to download as long as the time it takes to download them doesn't go below $T_{min}$ of the currently streamed video. The policy adapts to available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is a needed and important functionality in  scenarios with many different streams \cite{bandawarePrefetch}. In Figure \ref{fig:prefetch} an idea of this can be seen. Other nearby streaming videos will only be downloaded ones $T_{max}$ is reached. A nearby video will be prefetched only in few chunks and the videos are downloaded in a round-robin way. Alternative video 1 followed by 2 and so on. Ones the $T_{min}$ is reached the main video is resumed downloading. The idea that would be best but will not be implemented is what video should be prefetched first or if that could be chosen. Prefetching distant videos may be better because they are probably more likely to be switched to. An interesting idea but not considered here for our proof-of-concept.
 
@@ -130,6 +129,14 @@ As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin w
 
 The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we'll be using the Adobe Media Server for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used in Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth. \cite{hasmultipath}.
 
+\begin{figure}[t!]
+\begin{center}
+	\includegraphics[scale=0.5]{Media_player.png}
+	\caption{Strobe Media Player}
+	\label{fig:mediaplayer}
+\end{center}
+\end{figure}
+
 \subsection{Relative placement of Geographical Points}
 The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to each other on the interface's geographical map. To accomplish this automatic placement and scaling we developed an algorithm to calculate where the points should be drawn to keep their relative positions between each other, so the graphical points accurately represents the real life locations of the recordings.
 
@@ -143,7 +150,7 @@ y &= (latitude1-latitude2)*40000/360 \\
 z &= \sqrt{x^2+y^2}
 \end{align*}
 
-where x and y are the difference between two objects longitude and latitude values translated to x- and y-coordinates to fit our geomap as it represents a view on a flat plane. If we had used latitude and longitude as x and y values instead then the positions wouldn't translate as well to our view because they translate to the earth's spherical plane and as result the relative distance between each object would be weird. The view wouldn't give a good accurate picture of reality.
+In the equation above x and y are the difference between two objects longitude and latitude values translated to x- and y-coordinates to fit our geomap as it represents a view on a flat plane. If we had used latitude and longitude as x and y values instead then the positions wouldn't translate as well to our view because they translate to the earth's spherical plane and as result the relative distance between each object would be weird. The view wouldn't give a good accurate picture of reality.
 
 With x,y and z can the relative move distance be calculated. The distance in which an object will move relative to another one.
 
@@ -157,24 +164,59 @@ ValueX and ValueY are the distance in which an object will move in x-axis and y-
 
 For scalability of our algorithm the value of moveDistance will be changed accordingly to the number of objects to place. This is done by dividing the moveDistance to number of users. The reason for this is because every object will move relative to every object in the list thus the distance one object has to move will be moveDistance times the number of objects. Another reason for doing this scalability is to ensure that an object won't be placed outside the geomap, however if that would happen then there is another algorithm which will check if an object is outside the map and adjust it accordingly.
 
-
 \subsubsection{Limitations and Accuracy}
-Här beskriver vi de begränsningar och problem som algorithm har och kan få. Vad som fungerar bra och dåligt samt den precision på positionering och relativitet. Hur bra positionering ser ut och hur problemet nog kan uppstå samt komma med potentiella förslag på hur det kan tänkas fixas om det skulle arbetas vidare på.
+The geographical position algorithm places every object relatively good compared to reality but it is not perfect and there is room for improvements. The accuracy of the algorithm is generally good for the most cases but sometimes the relativity can seem a bit of and values aren't placed in the right place so to say. However the object is not placed in a completely wrong place and is more that the objects x- and/or y-coordinate is wrong relative to another object. Now this may be the case because we translate from latitude and longitude coordinates but if do the same positions but if we try with fewer objects then we can see how the position should be for the view in a flat plane.
+
+When testing some cases it shows that when values the number of objects exceeds 10 then a few objects are placed in relatively different way compared to when the objects are fewer than 10. We are not entirely sure why but since our algorithm uses very simple equations and ideas then accuracy may decrease for many values because of our way of scaling the distance to move. The scaling distance may get so small that when rounding up to an integer the value will be of bay a small margin. This is the case when the few objects are placed relatively wrong, even though it seems wrong the margin of error is not big. Every cases tested shows that the margin in which the placement seem off is by a very small position in x-axis and y-axis. This will be shown in \textit{Section 4}.
+
+For now the algorithm will utilize a countermeasure, which also can cause the relativity to seem off but it seems relatively better. This countermeasure is that the way x-coordinates and y-coordinates is calculated in another way.
+
+\begin{align*}
+x &= longitude1-longitude2  \\
+y &= latitude1-latitude2 \\
+\end{align*}
+
+The equation above is simpler and doesn't translate longitude and latitude to x- and y-coordinates so there is room for improvement but for many objects that isn't as big of an issue. When the number of objects are many then there isn't as much of and issue since every object will move so little compared to one another that how much they move in x- and y-axis isn't as important. 
+
+(Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
 
 \subsection{Technical details}
 Här skriver vi vad vi gjort i koden för att få allt att fungera. Att vi använt Advertisement plugin för att få saker att funka, och att vi dragit om lite kablar så att advertisementplugin ska fungera med flera videos och att det ska kunna gå att pausa och byta tid i filmerna (vilket inte gick innan ty advertisementplugin är gjort för opausbara reklamer).
+
+To be able to accomplish switching between videos and getting a functional UI there are a lot of technical details to be explained in-order to get a full understanding of how the code works. Since we used the code from Krishnamoorthi et al.\cite{qualbranch} there is first a lot to understand before even starting doing anything. The problems we had and complications we encountered will be explained in the discussion while the focus here will be on \textbf{our} code and implementations. 
+
+Our progressing can be divided into different sections which will be explained in a general detail:
+
+\begin{enumerate}
+\item Making a button to open the view.
+
+\item Making a view appear with point of interest and cardinal directions.
+
+\item Making clickable geo-map objects appear.
+
+\item Connecting each geo-map object to a video and be able to play it through a class called AdvertisementPluginInfo.
+
+\item Making the geo-map videos interactable.
+
+\item Attempting to make the geo-map switching seamless.
+
+\item (Adjustments and improvements of the code.)
+\end{enumerate}
+
+The details of the code and implementation will not be explained line by line but will give more a general idea of what was done.
+
+The first step was to make an interactive button which we open our view with. For this we had to create three different assets for how the button should look like, which we created in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons where then added to a SWC (ShockWave Component) file which stores the assets. The assets was then handed an assets id and name so they could be retrieved. A class for the button was created that was added to the control bar. The button extended ButtonWidget where we could add the assets to a face which allowed us to switch between the different assets when changing face. 
+
+The second step was to make a view appear that is represented as circle to better fit with how geo-map objects will be placed. For this a widget and sprite class was created. The geo-map widget class handles size of the clickable layout, creation of the geo-map view and handling of fullscreen. The geo-map view is placed in the middle of the stage for the player and when fullscreen is initiated everything will be scaled such that relativity is kept. In the geo-map sprite class the position algorithm, creation of every object and cardinal direction is handled.
+
+In third step...
+
+
 
 \subsection{Server and video application}
 Här skriver vi hur vi praktiskt tillämpat adobe flash-servern och hur den hänger ihop med Apache-servern.
 Även hur spelaren och mediaservern bara accepterar .f4v-filer och att vi konverterat våra egna filmer till det formatet.
 
-\begin{figure}[t!]
-\begin{center}
-	\includegraphics[scale=0.5]{Media_player.png}
-	\caption{Strobe Media Player}
-	\label{fig:mediaplayer}
-\end{center}
-\end{figure}
 
 \section{Validated Result}
 Testfall

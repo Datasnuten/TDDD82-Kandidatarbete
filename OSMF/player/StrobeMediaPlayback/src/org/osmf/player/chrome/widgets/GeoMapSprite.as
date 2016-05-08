@@ -132,17 +132,17 @@ package org.osmf.player.chrome.widgets
 			
 			createPointOfInterest(58.398227,15.576212);
 			
-			createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
+			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572434, 15.795149,0,"http://localhost/vod/Video_3.flv");
 			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
 			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");
 			
-		/*	createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
-			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");*/
+			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
 			
-			createPointOfInterest(58.572177, 15.793485);
+			createPointOfInterest(58.572177, 15.793485);*/
 			
 			calculatePositionAlgorithm();
 			
@@ -160,6 +160,7 @@ package org.osmf.player.chrome.widgets
 			geomapObject.setYcoordinate(latitude);
 			geomapObject.setXcoordinate(longitude);
 			
+			geomapObject.mouseEnabled = true;
 			addChild(geomapObject);
 			
 			geomapDict[incrementer] = geomapObject;

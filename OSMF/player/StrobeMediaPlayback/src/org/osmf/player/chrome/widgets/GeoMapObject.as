@@ -38,7 +38,7 @@ package org.osmf.player.chrome.widgets
 		private var positionY:int;
 		private var xCoordinate:Number;
 		private var yCoordinate:Number;
-		private var direction:Number = 0;
+		private var direction:int = 0;
 		private var text:TextField;
 		
 		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
@@ -239,7 +239,6 @@ package org.osmf.player.chrome.widgets
 			
 			normal.rotation = Math.round(normal.rotation);
 			selected.rotation = Math.round(selected.rotation);
-			
 		}
 		
 		/**
@@ -247,7 +246,7 @@ package org.osmf.player.chrome.widgets
 		 * 
 		 * Returns the angle of the GeoMapObject.
 		 */
-		public function get getDirection():Number
+		public function get getDirection():int
 		{
 			return direction;
 		}

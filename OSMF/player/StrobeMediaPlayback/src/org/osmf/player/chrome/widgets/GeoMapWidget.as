@@ -7,22 +7,10 @@
 package org.osmf.player.chrome.widgets
 {
 	import flash.display.DisplayObject;
-	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.events.MouseEvent;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.utils.flash_proxy;
 	
-	import org.osmf.events.AudioEvent;
 	import org.osmf.layout.LayoutMode;
-	import org.osmf.media.MediaElement;
-	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
-	import org.osmf.player.chrome.events.ScrubberEvent;
-	import org.osmf.player.chrome.hint.OwnWidgetHint;
-	import org.osmf.traits.AudioTrait;
-	import org.osmf.traits.MediaTraitType;
 
 	public class GeoMapWidget extends Widget
 	{
@@ -32,9 +20,6 @@ package org.osmf.player.chrome.widgets
 		private var geomapYPos:int = 140;
 		private var geomapRadius:int = 190;
 		public var smp:StrobeMediaPlayback;
-		
-		//
-		
 		
 		public function GeoMapWidget(smp:StrobeMediaPlayback)
 		{
