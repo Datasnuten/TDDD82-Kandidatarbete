@@ -41,7 +41,7 @@ Being able to interact with a video stream can be both fun and educational howev
 \end{abstract}
 
 \begin{keywords}
-HTTP Adaptive Streaming (HAS), OSMF video player, Interactive video streaming, Geographical based streaming (GBS), Seamless playback
+HTTP Adaptive Streaming (HAS), OSMF video player, Interactive video streaming, Geographical based streaming (GBS)
 \end{keywords}
 
 \section{Introduction} 
@@ -153,7 +153,6 @@ z &= \sqrt{x^2+y^2}
 
 The equations above show the equireqtangular approximation formula. It's a simple method of calculating the distance between two geographical points on the surface of a spherical area \cite[s.~5]{equi}. In the formula we approximate the earth's circumference as 40000 km. X and y are the difference between two objects' longitude and latitude values translated to x- and y-coordinates to fit our geographical map as it represents a view on a flat plane. If we had used latitude and longitude as plain x and y values instead the positions wouldn't have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances. For smaller distances used however, as in our project, equireqtangular projection suffices.
 
-%%move distance?
 With x,y and z can the relative "move distance" be calculated. This move distance is a fixed distance in which an object will move relative to another one in the geographical map, depending on the number of objects to be drawn.
 
 \begin{align*}
@@ -198,9 +197,10 @@ Our progressing can be divided into different sections which will be explained i
 
 \item Making the geo-map videos interactable.
 
-\item Attempting to make the geo-map switching seamless.
+\item (Attempting to make the geo-map switching seamless.)
+This will be added to result/discussion instead.
 
-\item (Adjustments and improvements of the code.)
+\item Adjustments and improvements of the code and implementation of a position algorithm. 
 \end{enumerate}
 
 The details of the code and implementation will not be explained line by line but will give more a general idea and overview of what was done.
@@ -213,7 +213,9 @@ In the third step we created a new class called \textit{GeoMapObject} which will
 
 When getting to the fourth step the technicalities became a bit more complicated and here is when the servers are used and getting the videos to play was about to happen. The server will be explained more later and also the difficulties and problems that occurred. For this step each video in the geo-map objects needed to be played and therefore a class called   \textit{AdvertisementPluginInfo} which is a class used for playing videos in the beginning, middle or end of a video. In this project a modified function of playing the video in the middle was used and made it so that instead of waiting for the video to change the switch and loading of the video would happen directly when the object is clicked on. To get this to work the class needed to first stop the main video and signal that another video is playing. For this the main media player from the Strobe media playback needed to be fetched and sent in to the \textit{AdvertisementPluginInfo} class. This was solved by creating the geo-map button in the SMP class and then sending in an instance which was forwarded to the geo-map objects. This way the media container and media player that the SMP played mainly could be stopped and removed. When this was done the \textit{AdvertisementPluginInfo} class could change between the different videos as they were an advertisement, this meant that only playing the video was possible but not interacting with it.
 
-Step five, which was about getting the interaction for the video to work, is the most difficult task of them all. 
+Step five, which was about getting the interaction for the video to work, was the most difficult task of them all. Since the video was played as an advertisement some things needed to be changed. The main thing here is that the media that is still recognized is the main media from the Strobe Media Playback while the geo-map video was only an advertisement on top of it. What was then done is that the advertisement media was added to all the controls that was used. In other words , instead of playing, pausing, interacting with the scrub bar for the main video a check is done for the controls. What this check does is that it checks if an "advertisement" is played and if it is then the controls will be changed to be on the advertisements player.
+
+In the last step adjustments and improvements was done to the code and also the inclusion of the position algorithm. Here the code was adjusted and improved to make it such that the implementations that was done wouldn't crash anything else. Here the \textit{PointOfInterest} class was implemented to better fit the algorithm. Since the algorithm uses a list of all geo-map objects there was need for \textit{PointOfInterest} to be an object that uses similar functions to the ones in the geo-map object class. 
 
 
 
@@ -230,10 +232,25 @@ Testfall:
 Vi ställer oss utomhus på ett område i campus (utanför korallen/blå havet?) och filmar på 3-4+ ställen med lagom stort avstånd mellan varandra, med varierande riktningar. Gärna att vi filmar på en och samma punkt där det rör sig folk, samtidigt med olika kameror så att vi ser samma sak från olika håll. Vi antecknar koordinater för varje punkt vi filmar och väderriktningen.
 När det är avklarat så antecknar vi i rapporten de koordinater vi använt (på något sätt, i text eller i någon bild) och markerar ut koordinaterna i både Google Maps och vår karta, vilket demonstrerar att den relativa utplaceringsalgoritmen fungerar. Sen visar vi i rapporten två bilder där Media Playern står på samma tidsförlopp och visar samma (gärna rörande föremål/person) från två olika håll, vilket demonstrerar att vi kan byta videoströmmar för att få se samma sak från två olika ställen.
 
+Vi kunde bara filma med två kamror samtidigt så vi har tre st set av filmer som körs samtidigt.
+
 Mätningar:
 Tid det tar att byta film och så?
 
 (Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
+
+\begin{figure}[t!]
+\begin{center}
+	\includegraphics[scale=0.5]{Google_Maps.png}
+	\caption{Google Maps view of Streaming locations}
+	\label{fig:googlemaps}
+\end{center}
+\end{figure}
+
+
+\subsection{Position Algorithm}
+
+\subsection{Geo-based Streaming}
 
 
 \section{Discussion}
