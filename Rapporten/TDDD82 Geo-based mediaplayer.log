@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  10 MAY 2016 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  10 MAY 2016 14:26
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -629,18 +629,23 @@ tes
  []
 
 [5]
-Overfull \hbox (193.12222pt too wide) in paragraph at lines 225--225
-[][]$\OML/cmm/m/it/9 https \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 ==www:macromedia:co
-m=support=documentation=en=flashplayer=help=settings[]anager\OT1/cmr/m/n/9 04\O
-ML/cmm/m/it/9 :html$| 
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+[][]\T1/aer/m/n/9 Global Se-cu-rity Set-tings panel:
  []
 
-[6]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 263--269
+
+Overfull \hbox (1.87062pt too wide) in paragraph at lines 224--224
+\T1/aer/m/n/9 https://www.macromedia.com/support/documentation/en/ 
+ []
+
+[6] [7
+
+]
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 264--270
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
-[7
+[8
 
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
@@ -669,9 +674,9 @@ fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/L
 ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonathan/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 632861 bytes).
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (8 pages, 633261 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
