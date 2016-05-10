@@ -124,13 +124,14 @@ package org.osmf.player.chrome.widgets
 		//	-130<=Y<=110	(mindre värden höjer objektet, större värden sänker objektet)
 		
 		protected function createObjects():void {
-			createGeoMapObjects(58.398283,15.576520,224,"http://localhost/vod/Video_1.flv");
-			createGeoMapObjects(58.398292,15.576195,100,"http://localhost/vod/Video_2.flv");
-			createGeoMapObjects(58.398278,15.576431,230,"http://localhost/vod/Video_3.flv");
-			createGeoMapObjects(58.398133,15.576231,0,"http://localhost/vod/Video_4.flv");
-			createGeoMapObjects(58.398324,15.576318,210,"http://localhost/vod/Video_5.flv");
+			createGeoMapObjects(58.400992, 15.577557,180,"http://localhost/vod/Video_1.flv");
+			createGeoMapObjects(58.401020, 15.577354,135,"http://localhost/vod/Video_2.flv");
+			createGeoMapObjects(58.400676, 15.577424,45,"http://localhost/vod/Video_3.flv");
+			createGeoMapObjects(58.400727, 15.577550,0,"http://localhost/vod/Video_4.flv");
+			createGeoMapObjects(58.400863, 15.577821,270,"http://localhost/vod/Video_5.flv");
+			createGeoMapObjects(58.400605, 15.577439,35,"http://localhost/vod/Video_5.flv");
 			
-			createPointOfInterest(58.398227,15.576212);
+			createPointOfInterest(58.400843, 15.577512);
 			
 			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
