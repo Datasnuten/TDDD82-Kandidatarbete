@@ -124,12 +124,12 @@ package org.osmf.player.chrome.widgets
 		//	-130<=Y<=110	(mindre värden höjer objektet, större värden sänker objektet)
 		
 		protected function createObjects():void {
-			createGeoMapObjects(58.400992, 15.577557,180,"http://localhost/vod/Video_1.flv");
-			createGeoMapObjects(58.401020, 15.577354,135,"http://localhost/vod/Video_2.flv");
-			createGeoMapObjects(58.400676, 15.577424,45,"http://localhost/vod/Video_3.flv");
-			createGeoMapObjects(58.400727, 15.577550,0,"http://localhost/vod/Video_4.flv");
-			createGeoMapObjects(58.400863, 15.577821,270,"http://localhost/vod/Video_5.flv");
-			createGeoMapObjects(58.400605, 15.577439,35,"http://localhost/vod/Video_5.flv");
+			createGeoMapObjects(58.400992, 15.577557,180,"http://130.236.206.86/vod/A1.flv");
+			createGeoMapObjects(58.401020, 15.577354,135,"http://130.236.206.86/vod/A2.flv");
+			createGeoMapObjects(58.400676, 15.577424,45,"http://130.236.206.86/vod/A3.flv");
+			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.206.86/vod/J1.flv");
+			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.206.86/vod/J2.flv");
+			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.206.86/vod/J3.flv");
 			
 			createPointOfInterest(58.400843, 15.577512);
 			
