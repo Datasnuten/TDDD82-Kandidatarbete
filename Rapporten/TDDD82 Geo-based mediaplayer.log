@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  8 MAY 2016 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  10 MAY 2016 11:11
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -541,120 +541,113 @@ LaTeX Font Info:    Try loading font information for T1+aett on input line 30.
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-[1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-
-]
-[2
-
-]
-Overfull \hbox (14.7743pt too wide) in paragraph at lines 43--45
+Overfull \hbox (14.7743pt too wide) in paragraph at lines 44--46
 \T1/aer/m/n/9 ter-ac-tive video stream-ing, Ge-o-graph-i-cal based stream-ing (
 GBS),
  []
 
 
-Overfull \hbox (7.1352pt too wide) in paragraph at lines 59--60
+Overfull \hbox (7.1352pt too wide) in paragraph at lines 60--61
 \T1/aer/m/n/9 pos-si-bil-ity of scaleable on-demand con-tent with min-i-mal ser
 ver
  []
 
+[1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-Overfull \hbox (3.13028pt too wide) in paragraph at lines 61--62
+
+]
+Overfull \hbox (3.13028pt too wide) in paragraph at lines 62--63
 \T1/aer/m/n/9 video qual-ity by ob-serv-ing and con-trol-ling the play-back buf
 fer
  []
 
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (12.8137pt too wide) in paragraph at lines 73--74
+Overfull \hbox (12.8137pt too wide) in paragraph at lines 74--75
 \T1/aer/m/n/9 Krishnamoorthi et al. [5] use this tech-nique of stor-ing prefetc
 hed
  []
 
-<HAS1.png, id=17, 803.0pt x 602.25pt>
+[2] <HAS1.png, id=17, 803.0pt x 602.25pt>
 File: HAS1.png Graphic file (type png)
  <use HAS1.png>
-Package pdftex.def Info: HAS1.png used on input line 79.
+Package pdftex.def Info: HAS1.png used on input line 80.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 79--80
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 80--81
  [] 
  []
 
 <HAS2.png, id=19, 803.0pt x 602.25pt>
 File: HAS2.png Graphic file (type png)
  <use HAS2.png>
-Package pdftex.def Info: HAS2.png used on input line 87.
+Package pdftex.def Info: HAS2.png used on input line 88.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (0.90186pt too wide) in paragraph at lines 87--88
+Overfull \hbox (0.90186pt too wide) in paragraph at lines 88--89
  [] 
  []
 
-[4 <./HAS1.png>] <prefetch.png, id=28, 498.36188pt x 437.38406pt>
+[3 <./HAS1.png> <./HAS2.png>] <prefetch.png, id=26, 498.36188pt x 437.38406pt>
 File: prefetch.png Graphic file (type png)
 
 <use prefetch.png>
-Package pdftex.def Info: prefetch.png used on input line 115.
+Package pdftex.def Info: prefetch.png used on input line 116.
 (pdftex.def)             Requested size: 249.18033pt x 218.69148pt.
 
-Overfull \hbox (9.18033pt too wide) in paragraph at lines 115--116
+Overfull \hbox (9.18033pt too wide) in paragraph at lines 116--117
  [] 
  []
 
-<teomet.png, id=29, 469.755pt x 441.14813pt>
+<teomet.png, id=27, 469.755pt x 441.14813pt>
 File: teomet.png Graphic file (type png)
  <use teomet.png>
-Package pdftex.def Info: teomet.png used on input line 123.
+Package pdftex.def Info: teomet.png used on input line 124.
 (pdftex.def)             Requested size: 234.87692pt x 220.57352pt.
 
-<Media_player.png, id=30, 484.81125pt x 362.85562pt>
+<Media_player.png, id=28, 484.81125pt x 362.85562pt>
 File: Media_player.png Graphic file (type png)
  <use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 134.
+Package pdftex.def Info: Media_player.png used on input line 135.
 (pdftex.def)             Requested size: 242.40503pt x 181.42737pt.
 
-Overfull \hbox (2.40503pt too wide) in paragraph at lines 134--135
+Overfull \hbox (2.40503pt too wide) in paragraph at lines 135--136
  [] 
  []
 
 
-Overfull \hbox (1.61797pt too wide) in paragraph at lines 140--140
+Overfull \hbox (1.61797pt too wide) in paragraph at lines 141--141
 []\secfnt Relative place-ment of Ge-o-graph-i-cal Points 
  []
 
-[5 <./HAS2.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./prefetch.png> <./teomet.png> <./Media_player.png>]
-Overfull \hbox (14.03786pt too wide) in paragraph at lines 172--173
+Underfull \vbox (badness 1675) has occurred while \output is active []
+
+ [4 <./prefetch.png> <./teomet.png> <./Media_player.png>]
+Overfull \hbox (14.03786pt too wide) in paragraph at lines 173--174
 \T1/aer/m/n/9 tively bet-ter. This coun-ter-mea-sure is that the way x-coordina
 tes
  []
 
+[5]
+Overfull \hbox (193.12222pt too wide) in paragraph at lines 225--225
+[][]$\OML/cmm/m/it/9 https \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 ==www:macromedia:co
+m=support=documentation=en=flashplayer=help=settings[]anager\OT1/cmr/m/n/9 04\O
+ML/cmm/m/it/9 :html$| 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-[8
-
-]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 256--262
+[6]
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 263--269
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
-[9
+[7
 
 
 ] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
  3232 strings out of 493634
  40078 string characters out of 3134015
- 109720 words of memory out of 3000000
+ 108720 words of memory out of 3000000
  6531 multiletter control sequences out of 15000+200000
  51847 words of font info for 74 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -676,9 +669,9 @@ fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/L
 ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonathan/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (9 pages, 628787 bytes).
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (7 pages, 632861 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

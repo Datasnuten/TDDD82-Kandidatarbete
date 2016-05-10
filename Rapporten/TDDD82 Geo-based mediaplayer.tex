@@ -30,9 +30,10 @@
 \maketitle
 
 %%Ta bort två sidor
-\cleardoublepage
+%\cleardoublepage
+
 \pagenumbering{arabic}
-\setcounter{page}{3}
+%\setcounter{page}{3}
 
 \begin{abstract}
 Being able to interact with a video stream can be both fun and educational however, to achieve the best user experience, the interaction must be seamless. Creating a media player that can allow users to view a video stream from different geographical positions is a challenge that is tackled in this paper. This paper describes the material and methods used to accomplish this kind of media player. And it explains how to achieve a seemingly good and, to higher extent, enjoyable video streaming experience. A proof-of-concept is shown of a mediaplayer that enables a user to see an overview over a geographical streaming location. By seeing each streams relative location to the point-of-interest the users are able to click on that stream and switch to it in a seamless way. It is shown that it is possible to switch between most nearby videos without interrupting or impairing the video streaming experience. (This is not final or necessary correct but hopefully something we can accomplish)
@@ -127,7 +128,7 @@ As mentioned briefly in section 2.1 chunks will be downloaded in a round-robin w
 \end{figure}
 
 
-The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we'll be using the Adobe Media Server for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used in Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth. \cite{hasmultipath}.
+The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we'll be using the Adobe Media Server 5 for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used in Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth. \cite{hasmultipath}.
 
 \begin{figure}[t!]
 \begin{center}
@@ -205,17 +206,23 @@ Our progressing can be divided into different sections which will be explained i
 
 The details of the code and implementation will not be explained line by line but will give more a general idea of what was done.
 
-The first step was to make an interactive button which we open our view with. For this we had to create three different assets for how the button should look like, which we created in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons where then added to a SWC (ShockWave Component) file which stores the assets. The assets was then handed an assets id and name so they could be retrieved. A class for the button was created that was added to the control bar. The button extended ButtonWidget where we could add the assets to a face which allowed us to switch between the different assets when changing face. 
+The first step was to make an interactive button which we open our view with. For this we had to create three different assets for how the button should look like, which we created in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons where then added to a SWC (ShockWave Component) file which stores the assets. The assets was then handed an assets id and name so they could be retrieved. A class for the button was created that was added to the control bar. The button extended \textit{ButtonWidget} where we could add the assets to a face which allowed us to switch between the different assets when changing face. 
 
 The second step was to make a view appear that is represented as circle to better fit with how geo-map objects will be placed. For this a widget and sprite class was created. The geo-map widget class handles size of the clickable layout, creation of the geo-map view and handling of fullscreen. The geo-map view is placed in the middle of the stage for the player and when fullscreen is initiated everything will be scaled such that relativity is kept. In the geo-map sprite class the position algorithm, creation of every object and cardinal direction is handled.
 
-In third step...
+In the third step we created a new class called \textit{GeoMapObject} which will hold all our functions of the streaming video is shown on the view. This class will have functions to add and get the position of the geo-map object, the latitude and longitude, direction, setting the URL to be connected with the object etc. The geo-map object which is created in geo-map sprite is added to a list. This list will handle all the geo-map objects on the view and is used for when clicking on an object. Together with a function in the geo-map object class it helps to show which object is clicked on and make sure that no more than one object is highlighted at the same time.
+
+When getting to the fourth step the technicalities became a bit more complicated and here is when the servers are used and getting the videos to play was about to happen. The server will be explained more later and also the difficulties and problems that occurred. For this step each video in the geo-map objects needed to be played and therefore a class called   \textit{AdvertisementPluginInfo} which is a class used for playing videos in the beginning, middle or end of a video. In this project a modified function of playing the video in the middle was used and made it so that instead of waiting for the video to change the switch and loading of the video would happen directly when the object is clicked on. To get this to work the class needed to first stop the main video and signal that another video is playing. For this the main media player from the Strobe media playback needed to be fetched and sent in to the \textit{AdvertisementPluginInfo} class. This was solved by creating the geo-map button in the SMP class and then sending in an instance which was forwarded to the geo-map objects. This way the media container and media player that the SMP played mainly could be stopped and removed. When this was done the \textit{AdvertisementPluginInfo} class could change between the different videos as they were an advertisement, this meant that only playing the video was possible but not interacting with it.
+
+Step five, which was about getting the interaction for the video to work, is the most difficult task of them all. 
 
 
 
 \subsection{Server and video application}
 Här skriver vi hur vi praktiskt tillämpat adobe flash-servern och hur den hänger ihop med Apache-servern.
 Även hur spelaren och mediaservern bara accepterar .f4v-filer och att vi konverterat våra egna filmer till det formatet.
+
+As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Section 2}. The AMS 5 is a server used for HTTP streaming which is needed to use HAS. The AMS 5 uses something called an Apache server which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream an HTTP through the local media player\footnote{$https://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html$} otherwise there can occur an security error.
 
 
 \section{Validated Result}
