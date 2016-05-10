@@ -139,10 +139,10 @@ The SMP player is by default set to play a stream of video located at a server s
 \end{figure}
 
 \subsection{Relative placement of Geographical Points}
-The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to each other on the interface's geographical map. To accomplish this automatic placement and scaling we developed an algorithm to calculate where the points should be drawn to keep their relative positions between each other, so the graphical points accurately represents the real life locations of the recordings.
+The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to each other on the interface's geographical map, as shown in Figure \ref{fig:gpsinterface}. To accomplish this automatic placement and scaling we developed an algorithm to calculate where the points should be drawn to keep their relative positions between each other, so the graphical points accurately represents the real life locations of the recordings.
 
 \subsubsection{Geographical Position algorithm}
-The way the algorithm works is that every streamer and point of interest is an object in a list. Every object starts with having it's position in the middle of the so called geomap, a view similar to the interface in \ref{fig:gpsinterface}. What the algorithm does is that it goes through each and every object in the list and checks it's coordinates relative to the other ones. How this works is that the objects checks the distance between each other object by calculating the difference between the real-life coordinates of each one and gets a relative distance between each other. This is effectively done by using Pythagoras theorem like this:
+The way the algorithm works is that every streamer and point of interest is an object in a list. Every object starts with having it's position in the middle of the geographical map. What the algorithm basically does is that it goes through each and every object in the list and checks its coordinates relative to the other ones. This is done be checking the objects' actual real-life distance between each other by calculating the difference between the coordinates of each object to get a relative distance between them. This is effectively done by using Pythagoras theorem like this:
 
 \begin{align*}
 x &= (longitude2-longitude1)*40000  \\
@@ -151,9 +151,10 @@ y &= (latitude1-latitude2)*40000/360 \\
 z &= \sqrt{x^2+y^2}
 \end{align*}
 
-In the equation above x and y are the difference between two objects longitude and latitude values translated to x- and y-coordinates to fit our geomap as it represents a view on a flat plane. If we had used latitude and longitude as x and y values instead then the positions wouldn't translate as well to our view because they translate to the earth's spherical plane and as result the relative distance between each object would be weird. The view wouldn't give a good accurate picture of reality.
+The equations above show the equireqtangular approximation formula. It's a simple method of calculating the distance between two geographical points on the surface of a spherical area \cite[s.~5]{equi}. In the formula we approximate the earth's circumference as 40000 km. X and y are the difference between two objects' longitude and latitude values translated to x- and y-coordinates to fit our geographical map as it represents a view on a flat plane. If we had used latitude and longitude as plain x and y values instead the positions wouldn't have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances. For smaller distances used however, as in our project, equireqtangular projection suffices.
 
-With x,y and z can the relative move distance be calculated. The distance in which an object will move relative to another one.
+%%move distance?
+With x,y and z can the relative "move distance" be calculated. This move distance is a fixed distance in which an object will move relative to another one in the geographical map, depending on the number of objects to be drawn.
 
 \begin{align*}
 \label{eq:2}
@@ -161,30 +162,28 @@ valueX = moveDistance*|\frac{x}{z}| \\
 valueY = moveDistance*|\frac{y}{z}|
 \end{align*}
 
-ValueX and ValueY are the distance in which an object will move in x-axis and y-axis respectively and moveDistance is a constant value which represents how much an object should move, this is set as the radius of the geomap to help with scalability. The reason that we take the absolute vale of x/y divided by z is because of how the checking of where an object should move is done. When we have our scaling value the algorithm will check how to move the object relative to real-life. A check to see if the object in real-life is more to the west, north, south or east in-order to know the direction for moving the object in x-axis and y-axis on our flat plane.
+ValueX and ValueY are the distance in which an object will move in x-axis and y-axis respectively and moveDistance is the constant value which represents how much an object should move, this is set as the radius of the geomap to help with scalability. The reason we take the absolute value of x/y divided by z is to check where an object should move. When we have our scaling value the algorithm will check how to move the object relative to real-life. This check is to see if the object in real-life is more to the west, north, south or east in-order to know the direction for moving the object in x-axis and y-axis on our flat plane.
 
-For scalability of our algorithm the value of moveDistance will be changed accordingly to the number of objects to place. This is done by dividing the moveDistance to number of users. The reason for this is because every object will move relative to every object in the list thus the distance one object has to move will be moveDistance times the number of objects. Another reason for doing this scalability is to ensure that an object won't be placed outside the geomap, however if that would happen then there is another algorithm which will check if an object is outside the map and adjust it accordingly.
+For scalability of our algorithm the value of moveDistance will be changed accordingly to the number of objects to place. This is done by dividing the moveDistance to number of users. The reason for this is because every object will move relative to every object in the list thus the distance one object has to move will be moveDistance times the number of objects. Another reason for doing this scalability is to ensure that an object won't be placed outside the geomap, however if that would happen then there is another fail-safe algorithm which will check if an object is outside the map and adjust it accordingly.
 
 \subsubsection{Limitations and Accuracy}
-The geographical position algorithm places every object relatively good compared to reality but it is not perfect and there is room for improvements. The accuracy of the algorithm is generally good for the most cases but sometimes the relativity can seem a bit of and values aren't placed in the right place so to say. However the object is not placed in a completely wrong place and is more that the objects x- and/or y-coordinate is wrong relative to another object. Now this may be the case because we translate from latitude and longitude coordinates but if do the same positions but if we try with fewer objects then we can see how the position should be for the view in a flat plane.
+The geographical position algorithm places every object relatively good compared to reality but it is not perfect and there is room for improvements. The accuracy of the algorithm is generally good in most cases but sometimes the relativite placement can seem a bit off. However in this case the object is not placed in a completely wrong place, but the object's x- and/or y-coordinates is wrong relative to another object. This mostly happends if we have too many objects, one or two objects relativity will be off but not with a large margin. The reason can be because we convert the latitude and longitude to x- and y-coordinates, however this can not be the whole problem since relativity is generally good for a few objects (less than ten objects).
 
-When testing some cases it shows that when values the number of objects exceeds 10 then a few objects are placed in relatively different way compared to when the objects are fewer than 10. We are not entirely sure why but since our algorithm uses very simple equations and ideas then accuracy may decrease for many values because of our way of scaling the distance to move. The scaling distance may get so small that when rounding up to an integer the value will be of bay a small margin. This is the case when the few objects are placed relatively wrong, even though it seems wrong the margin of error is not big. Every cases tested shows that the margin in which the placement seem off is by a very small position in x-axis and y-axis. This will be shown in \textit{Section 4}.
+While testing, in some cases when the number of objects exceeds 10, a few objects are placed in relatively different way compared to when the objects are fewer than 10. We are not entirely sure why but since our algorithm uses very simple equations and ideas then accuracy may decrease for many values because of our way of scaling the distance to move. The scaling distance may get so small that when rounding up to an integer the value will be of bay a small margin. This is the case when the few objects are placed relatively wrong, even though it seems wrong the margin of error is not big. Every cases tested shows that the margin in which the placement seem off is by a very small position in x-axis and y-axis. This will be shown in \textit{Section 4}.
 
-For now the algorithm will utilize a countermeasure, which also can cause the relativity to seem off but it seems relatively better. This countermeasure is that the way x-coordinates and y-coordinates is calculated in another way.
+%For now the algorithm will also utilize a countermeasure, which is meant to improve the relativite location between the objects. This countermeasure is that the way x-coordinates and y-coordinates is calculated in another way.
 
 \begin{align*}
 x &= longitude1-longitude2  \\
 y &= latitude1-latitude2 \\
 \end{align*}
 
-The equation above is simpler and doesn't translate longitude and latitude to x- and y-coordinates so there is room for improvement but for many objects that isn't as big of an issue. When the number of objects are many then there isn't as much of and issue since every object will move so little compared to one another that how much they move in x- and y-axis isn't as important. 
-
-(Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
+The equation above is simpler and doesn't translate spherical longitude and latitude coordinates to flat x- and y-coordinates which leaves room for improvement, but for many objects in a small area this isn't as big of an issue. When the number of objects are many then there isn't as much of an issue since every object will move so little compared to one another that how much they move in x- and y-axis isn't as important. 
 
 \subsection{Technical details}
 Här skriver vi vad vi gjort i koden för att få allt att fungera. Att vi använt Advertisement plugin för att få saker att funka, och att vi dragit om lite kablar så att advertisementplugin ska fungera med flera videos och att det ska kunna gå att pausa och byta tid i filmerna (vilket inte gick innan ty advertisementplugin är gjort för opausbara reklamer).
 
-To be able to accomplish switching between videos and getting a functional UI there are a lot of technical details to be explained in-order to get a full understanding of how the code works. Since we used the code from Krishnamoorthi et al.\cite{qualbranch} there is first a lot to understand before even starting doing anything. The problems we had and complications we encountered will be explained in the discussion while the focus here will be on \textbf{our} code and implementations. 
+To be able to accomplish switching between videos and getting a functional UI there are a lot of technical details to be explained in-order to get a full understanding of how the code works. Since we used the code from Krishnamoorthi et al.\cite{qualbranch} there was first a lot to understand before we could start doing anything. The problems we had and complications we encountered will be explained in the discussion while the focus here will be on \textbf{our} code and implementations. 
 
 Our progressing can be divided into different sections which will be explained in a general detail:
 
@@ -204,9 +203,9 @@ Our progressing can be divided into different sections which will be explained i
 \item (Adjustments and improvements of the code.)
 \end{enumerate}
 
-The details of the code and implementation will not be explained line by line but will give more a general idea of what was done.
+The details of the code and implementation will not be explained line by line but will give more a general idea and overview of what was done.
 
-The first step was to make an interactive button which we open our view with. For this we had to create three different assets for how the button should look like, which we created in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons where then added to a SWC (ShockWave Component) file which stores the assets. The assets was then handed an assets id and name so they could be retrieved. A class for the button was created that was added to the control bar. The button extended \textit{ButtonWidget} where we could add the assets to a face which allowed us to switch between the different assets when changing face. 
+The first step was to make an interactive button which we open our view with. For this we had to create three different assets for how the button should look like, which we designed ourselves in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons where then added to a SWC (ShockWave Component) file which stores the assets. The assets was then handed an assets id and name so they could be retrieved. A class for the button was created that was added to the control bar. The button extended \textit{ButtonWidget} where we could add the assets to a face which allowed us to switch between the different assets when changing face. 
 
 The second step was to make a view appear that is represented as circle to better fit with how geo-map objects will be placed. For this a widget and sprite class was created. The geo-map widget class handles size of the clickable layout, creation of the geo-map view and handling of fullscreen. The geo-map view is placed in the middle of the stage for the player and when fullscreen is initiated everything will be scaled such that relativity is kept. In the geo-map sprite class the position algorithm, creation of every object and cardinal direction is handled.
 
@@ -226,9 +225,14 @@ As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is pr
 
 
 \section{Validated Result}
-Testfall
-Mätningar
-Lite bilder där vi kör programmet med egna filmer
+Testfall:
+Vi ställer oss utomhus på ett område i campus (utanför korallen/blå havet?) och filmar på 3-4+ ställen med lagom stort avstånd mellan varandra, med varierande riktningar. Gärna att vi filmar på en och samma punkt där det rör sig folk, samtidigt med olika kameror så att vi ser samma sak från olika håll. Vi antecknar koordinater för varje punkt vi filmar och väderriktningen.
+När det är avklarat så antecknar vi i rapporten de koordinater vi använt (på något sätt, i text eller i någon bild) och markerar ut koordinaterna i både Google Maps och vår karta, vilket demonstrerar att den relativa utplaceringsalgoritmen fungerar. Sen visar vi i rapporten två bilder där Media Playern står på samma tidsförlopp och visar samma (gärna rörande föremål/person) från två olika håll, vilket demonstrerar att vi kan byta videoströmmar för att få se samma sak från två olika ställen.
+
+Mätningar:
+Tid det tar att byta film och så?
+
+(Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
 
 
 \section{Discussion}
@@ -307,6 +311,12 @@ T. Huang, R. Johari, and N. McKeown.
 	\newline
 	 In Proc. ACM SIGCOMM FhMN
 Workshop, Aug. 2013.
+
+\bibitem{equi}
+John P. Snyder
+	\emph{Flattening the Earth: Two Thousand Years of Map Projections}
+	\newline
+	University Of Chicago Press, 1993
 
 
 %\bibitem{randall2008}
