@@ -197,8 +197,7 @@ Our progressing can be divided into different sections which will be explained i
 
 \item Making the geo-map videos interactable.
 
-\item (Attempting to make the geo-map switching seamless.)
-This will be added to result/discussion instead.
+%\item (Attempting to make the geo-map switching seamless.)This will be added to result/discussion instead.
 
 \item Adjustments and improvements of the code and implementation of a position algorithm. 
 \end{enumerate}
@@ -222,9 +221,9 @@ In the last step adjustments and improvements was done to the code and also the 
 \subsection{Server and video application}
 %Här skriver vi hur vi praktiskt tillämpat adobe flash-servern och hur den hänger ihop med Apache-servern. Även hur spelaren och mediaservern bara accepterar .f4v-filer och att vi konverterat våra egna filmer till det formatet.
 
-As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Section 2}. The AMS 5 is a server used for HTTP streaming which is needed in-order to use HAS. The AMS 5 uses something called an Apache server, specifically Apache 2.4, which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream a HTTP-video through the local media player\footnote{Global Security Settings panel: https://www.macromedia.com/support/documentation/en/ \\flashplayer/help/$settings_manager04.html$} otherwise there can occur an security error. Reason being that a call is made in the code to a plug-in which allows for sending and requesting a URL to be played.
+As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Section 2}. The AMS 5 is a server used for HTTP streaming which is needed in-order to use HAS. The AMS 5 uses something called an Apache server, specifically Apache 2.4, which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream a HTTP-video through the local media player\footnote{Global\:Security\:Settings\:panel: https://www.macromedia.com/support/documentation/en/flashplayer/help/settings$\_$manager04.html} otherwise there can occur an security error. Reason being that a call is made in the code to a plug-in which allows for sending and requesting a URL to be played.
 
-Except for using the AMS 5 to play a video through HTTP the video also needs to be in format of F4V or FLV which are two different video file formats used for delivering videos over internet using Adobe Flash player. Every video that has been filmed has been converted to F4V with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free software project that libraries and programs for handling multimedia data. It contains a program which allows us for transcoding media files.
+Except for using the AMS 5 to play a video through HTTP the video also needs to be in format of F4V or FLV which are two different video file formats used for delivering videos over internet using Adobe Flash player. Every video that has been filmed has been converted to FLV with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free software project that libraries and programs for handling multimedia data. It contains a program which allows us for transcoding media files.
 
 
 \section{Validated Result}
@@ -239,22 +238,51 @@ Tid det tar att byta film och så?
 
 (Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
 
-\begin{figure}[t!]
+\subsection{Position Algorithm}
+
+
+\begin{figure}[ht!]
 \begin{center}
-	\includegraphics[scale=0.5]{Google_Maps.png}
-	\caption{Google Maps view of Streaming locations}
+	\includegraphics[scale=0.6]{Google_Maps.png}
+	\caption{Google Maps view of the Streaming locations}
 	\label{fig:googlemaps}
 \end{center}
 \end{figure}
 
+\begin{figure}[ht!]
+\begin{center}
+	\includegraphics[scale=0.43]{TestfallGeomap.png}
+	\caption{Geo-map view of the Streaming locations}
+	\label{fig:testfallgeomap}
+\end{center}
+\end{figure}
 
-\subsection{Position Algorithm}
+
+
+
 
 \subsection{Geo-based Streaming}
+\begin{figure}[ht!]
+\begin{center}
+	\includegraphics[scale=0.36]{Hoverboard_1.png}
+	\caption{Test view 1}
+	\label{fig:googlemaps}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht!]
+\begin{center}
+	\includegraphics[scale=0.36]{Hoverboard_2.png}
+	\caption{Test view 2}
+	\label{fig:testfallgeomap}
+\end{center}
+\end{figure}
+
 
 
 \section{Discussion}
 Här prata om vilka svårigheter vi haft, vilka ändringar i planen vi gjorde från början till slutet, vad vi kompromissat med. Även att vi hoppade prefetching/överlämnade det jobbet till Vengeth?
+%Attempting to make the geo-map switching seamless.
 
 \section{Conclusion}
 
