@@ -151,7 +151,7 @@ y &= (latitude1-latitude2)*40000/360 \\
 z &= \sqrt{x^2+y^2}
 \end{align*}
 
-The equations above show the equireqtangular approximation formula. It's a simple method of calculating the distance between two geographical points on the surface of a spherical area \cite[s.~5]{equi}. In the formula we approximate the earth's circumference as 40000 km. X and y are the difference between two objects' longitude and latitude values translated to x- and y-coordinates to fit our geographical map as it represents a view on a flat plane. If we had used latitude and longitude as plain x and y values instead the positions wouldn't have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances. For smaller distances used however, as in our project, equireqtangular projection suffices.
+The equations above show the equireqtangular approximation formula. It's a simple method of calculating the distance between two geographical points on the surface of a spherical area \cite[s.~5]{equi}. In the formula we approximate the earth's circumference as 40000 km. X and y are the difference between two objects' longitude and latitude values translated to x- and y-coordinates to fit our geographical map as it represents a view on a flat plane. If we had used latitude and longitude as plain x and y values instead the positions wouldn't have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. For smaller distances used however, as in our project, equireqtangular projection suffices.
 
 With x,y and z can the relative "move distance" be calculated. This move distance is a fixed distance in which an object will move relative to another one in the geographical map, depending on the number of objects to be drawn.
 
@@ -244,7 +244,7 @@ To demonstrate the accuracy of our relative placement of geographical points in 
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[scale=0.6]{Google_Maps.png}
+	\includegraphics[scale=0.64]{Google_Maps.png}
 	\caption{Google Maps view of the Streaming locations}
 	\label{fig:googlemaps}
 \end{center}
@@ -252,7 +252,7 @@ To demonstrate the accuracy of our relative placement of geographical points in 
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[scale=0.43]{TestfallGeomap.png}
+	\includegraphics[scale=0.37]{TestfallGeomap.png}
 	\caption{Geo-map view of the Streaming locations}
 	\label{fig:testfallgeomap}
 \end{center}
@@ -266,7 +266,7 @@ As we’ve mentioned before, our implementations is as shown in Figure \ref{fig:
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[scale=0.36]{Hoverboard_1.png}
+	\includegraphics[scale=0.5]{Hoverboard_1.png}
 	\caption{Test view 1}
 	\label{fig:testview1}
 \end{center}
@@ -274,7 +274,7 @@ As we’ve mentioned before, our implementations is as shown in Figure \ref{fig:
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[scale=0.36]{Hoverboard_2.png}
+	\includegraphics[scale=0.5]{Hoverboard_2.png}
 	\caption{Test view 2}
 	\label{fig:testview2}
 \end{center}
@@ -354,7 +354,7 @@ Nonlinear Media}
 2007), pp. 1149-1162.
 
 \bibitem{bufferbased}
-T. Huang, R. Johari, and N. McKeown.
+T. Huang, R. Johari, and N. McKeown,
 	\emph{ Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming.}
 	\newline
 	 In Proc. ACM SIGCOMM FhMN
@@ -365,6 +365,14 @@ John P. Snyder
 	\emph{Flattening the Earth: Two Thousand Years of Map Projections}
 	\newline
 	University Of Chicago Press, 1993
+	
+\bibitem{haversine}
+Doctor Rick,
+	\emph{Deriving the haversine formula}.
+	\newline
+	Published: 1999-04-20. Fetched: 2016-04-11.
+	\newline
+	URL: \text{http://mathforum.org/library/drmath/view/51879.html}
 
 
 %\bibitem{randall2008}
