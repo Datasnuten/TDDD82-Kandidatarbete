@@ -41,14 +41,14 @@ Being able to interact with a video stream can be both fun and educational howev
 \end{abstract}
 
 \begin{keywords}
-HTTP Adaptive Streaming (HAS), OSMF video player, Interactive video streaming, Geographical based streaming (GBS)
+HTTP Adaptive Streaming (HAS), OSMF video player, Interactive video streaming, Geographical based streaming (GBS), Command-and-Control Center
 \end{keywords}
 
 \section{Introduction} 
 
 Streaming has evolved and become more popular over last couple of years. Thousands upon thousands of different streams are being watched every day\footnote{Twitch statistics https://stats.twitchapps.com/, Fetched: 2016-04-01}, thus the demand for better and more ways to stream are longed for. If we could stream videos in different ways we can create a more interesting streaming environment, this can provide both better entertainment but also a better way to potentially improve observation in science and other areas more reliably. If a stream can provide the possibility for watching a video from different angles it can give people the option to observe and also enjoy something from different perspectives. This project focuses on accomplishing that, by creating a geo-based video player that uses HTTP-adaptive streaming (HAS) that can allow people to view a video from different angles and change between them seamlessly without any buffering delay or stuttering. By looking at an existing video streaming player and improve it to accomplish this task we show that it is something worth implementing in already existing media players.
 
-In this project we design and develop a geo-based command-and-control video streaming player using geo-tags. In practice this means that a service in which you can choose between a set of recording streams of the same event, for example, but slightly different locations and angles. This would be a useful feature to have in any larger event where you would want to show the same scene from different locations and angles. The interface will be useful for both event-organizers that hire staff to make several different recordings of the same scene for simultaneous viewing, but could also be used by the public who volunteer to record the event live.
+In this project we design and develop a geo-based command-and-control video streaming player using geo-tags. In practice this means that a service in which you can choose between a set of recording streams of the same event, for example, but slightly different locations and angles. This would be a useful feature to have in any larger event where you would want to show the same scene from different locations and angles. The interface will be useful for both event-organizers that hire staff to make several different recordings of the same scene for simultaneous viewing, but could also be used by the public who volunteer to record the event live. One major thing that this also could be used for is during a disaster event or something similar. By helping the police, medical and the emergency service by allowing them to view a disaster scenario from angles that can help them in communication. To be able to see and interactive with how the situation is seen from different angles to give a better understanding of what needs to be done.
 
 \subsection{Boundaries}
 The application we provide is only going to be a proof-of-concept which means that we will only focus on the functionality of the video player. Factors like a pretty interface and usability on broader spectrum will be neglected. We will focus on making the application work for only one user to verify the functionality we want to accomplish. The number of video streams that we will be able to switch between will,for the purpose of testing, be limited to a few, but then expanded upon to support any reasonable number of streams. This is because we firstly want to make sure that it is possible to switch between video streams and not that it can be done over large numbers. The reason for this is that pre-buffering many videos can be difficult to accomplish with a large number of video streams. As long as we provide a way to do it the solution can be expanded upon.
@@ -221,24 +221,25 @@ In the last step adjustments and improvements was done to the code and also the 
 \subsection{Server and video application}
 %Här skriver vi hur vi praktiskt tillämpat adobe flash-servern och hur den hänger ihop med Apache-servern. Även hur spelaren och mediaservern bara accepterar .f4v-filer och att vi konverterat våra egna filmer till det formatet.
 
-As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Section 2}. The AMS 5 is a server used for HTTP streaming which is needed in-order to use HAS. The AMS 5 uses something called an Apache server, specifically Apache 2.4, which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream a HTTP-video through the local media player\footnote{Global\:Security\:Settings\:panel: https://www.macromedia.com/support/documentation/en/flashplayer/help/settings$\_$manager04.html} otherwise there can occur an security error. Reason being that a call is made in the code to a plug-in which allows for sending and requesting a URL to be played.
+As said earlier the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Section 2}. The AMS 5 is a server used for HTTP streaming which is needed in-order to use HAS. The AMS 5 uses something called an Apache server, specifically Apache 2.4, which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream a HTTP-video through the local media player\footnote{Global\:Security\:Settings\:panel: https://www.macromedia.com/support/documentation/en/\\flashplayer/help/settings$\_$manager04.html} otherwise there can occur an security error. Reason being that a call is made in the code to a plug-in which allows for sending and requesting a URL to be played.
 
-Except for using the AMS 5 to play a video through HTTP the video also needs to be in format of F4V or FLV which are two different video file formats used for delivering videos over internet using Adobe Flash player. Every video that has been filmed has been converted to FLV with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free software project that libraries and programs for handling multimedia data. It contains a program which allows us for transcoding media files.
+Except for using the AMS 5 to play a video through HTTP the video also needs to be in format of F4V or FLV which are two different video file formats used for delivering videos over internet using Adobe Flash player. Every video that has been filmed has been converted to FLV with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free software project that produces libraries and programs for handling multimedia data. It contains a program which allows us for transcoding media files.
 
 
 \section{Validated Result}
-Testfall:
-Vi ställer oss utomhus på ett område i campus (utanför korallen/blå havet?) och filmar på 3-4+ ställen med lagom stort avstånd mellan varandra, med varierande riktningar. Gärna att vi filmar på en och samma punkt där det rör sig folk, samtidigt med olika kameror så att vi ser samma sak från olika håll. Vi antecknar koordinater för varje punkt vi filmar och väderriktningen.
-När det är avklarat så antecknar vi i rapporten de koordinater vi använt (på något sätt, i text eller i någon bild) och markerar ut koordinaterna i både Google Maps och vår karta, vilket demonstrerar att den relativa utplaceringsalgoritmen fungerar. Sen visar vi i rapporten två bilder där Media Playern står på samma tidsförlopp och visar samma (gärna rörande föremål/person) från två olika håll, vilket demonstrerar att vi kan byta videoströmmar för att få se samma sak från två olika ställen.
+%Testfall:Vi ställer oss utomhus på ett område i campus (utanför korallen/blå havet?) och filmar på 3-4+ ställen med lagom stort avstånd mellan varandra, med varierande riktningar. Gärna att vi filmar på en och samma punkt där det rör sig folk, samtidigt med olika kameror så att vi ser samma sak från olika håll. Vi antecknar koordinater för varje punkt vi filmar och väderriktningen.När det är avklarat så antecknar vi i rapporten de koordinater vi använt (på något sätt, i text eller i någon bild) och markerar ut koordinaterna i både Google Maps och vår karta, vilket demonstrerar att den relativa utplaceringsalgoritmen fungerar. Sen visar vi i rapporten två bilder där Media Playern står på samma tidsförlopp och visar samma (gärna rörande föremål/person) från två olika håll, vilket demonstrerar att vi kan byta videoströmmar för att få se samma sak från två olika ställen.
 
-Vi kunde bara filma med två kamror samtidigt så vi har tre st set av filmer som körs samtidigt.
+%Vi kunde bara filma med två kamror samtidigt så vi har tre st set av filmer som körs samtidigt.
 
-Mätningar:
-Tid det tar att byta film och så?
+%Mätningar:Tid det tar att byta film och så?
 
-(Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
+%(Tänkte skriva i resultatdelen om hur placeringar ser ut och vart saker placeras samt nämna hur många object som algorithmen klarar av att placera ut på relativt bra sätt mm.)
+
+To demonstrate our geo-based mediaplayer, we went out and did some recordings to test every functionality we’ve been working in the mediaplayer on during this project. We went to “Blåa havet” in front of Kårallen located at Linköping Universitet where some students were promoting an upcoming event with some activities. We found that this was a suitable point of interest to record from different angles for our testing case. As we only had two cameras available we made three sets of recordings consisting of two recordings each, with each set displaying the same scene from two different locations and angles at the same time. The desired outcome of this test was to be able to swap between the recordings to view the same object at one point in time from different angles.
+
 
 \subsection{Position Algorithm}
+To demonstrate the accuracy of our relative placement of geographical points in our interface, we noted the GPS-coordinates and angles at the used recording locations. We then input the coordinates into Google Maps as seen in Figure \ref{fig:googlemaps}, which we will here use as a reference to prove the accuracy of our placement algorithm. We then input the same latitude, longitude and angle values into our interface and the result is shown in Figure \ref{fig:testfallgeomap}.
 
 
 \begin{figure}[ht!]
@@ -257,16 +258,17 @@ Tid det tar att byta film och så?
 \end{center}
 \end{figure}
 
-
-
+The arrow-points in the geographic map is almost an exact match to those in the Google Maps screenshot, at least in terms in relativity. There is a slight difference between the two and the reason for this is that the points in our geographical map is scaled to make use the entire map, in such a way that the distance between them are increased while their relative locations between each other remain intact. This would prove the accuracy of our relative placement of the geographical points.
 
 
 \subsection{Geo-based Streaming}
+As we’ve mentioned before, our implementations is as shown in Figure \ref{fig:gpsinterface} where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers/videos. When a video is selected the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured plenty of people doing plenty of stuff. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these 3 sets of two recordings each into our mediaplayer, we could swap between the two recordings and watch these same events unfold from different positions and angles. In Figure \ref{fig:testview1} and \ref{fig:testview2} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time. This would prove the desired functionality of where the user can display the same event from different geographical positions and angles.
+
 \begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=0.36]{Hoverboard_1.png}
 	\caption{Test view 1}
-	\label{fig:googlemaps}
+	\label{fig:testview1}
 \end{center}
 \end{figure}
 
@@ -274,7 +276,7 @@ Tid det tar att byta film och så?
 \begin{center}
 	\includegraphics[scale=0.36]{Hoverboard_2.png}
 	\caption{Test view 2}
-	\label{fig:testfallgeomap}
+	\label{fig:testview2}
 \end{center}
 \end{figure}
 

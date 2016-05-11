@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  10 MAY 2016 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  11 MAY 2016 11:07
 entering extended mode
 **"./TDDD82 Geo-based mediaplayer.tex"
 ("TDDD82 Geo-based mediaplayer.tex"
@@ -489,14 +489,7 @@ Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 LaTeX Warning: Unused global option(s):
     [9pt,a4paper].
 
-("TDDD82 Geo-based mediaplayer.aux"
-
-LaTeX Warning: Label `fig:googlemaps' multiply defined.
-
-
-LaTeX Warning: Label `fig:testfallgeomap' multiply defined.
-
-)
+("TDDD82 Geo-based mediaplayer.aux")
 \openout1 = `"TDDD82 Geo-based mediaplayer.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -548,26 +541,21 @@ LaTeX Font Info:    Try loading font information for T1+aett on input line 30.
 ("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (12.20938pt too wide) in paragraph at lines 44--46
+Overfull \hbox (14.7743pt too wide) in paragraph at lines 44--46
 \T1/aer/m/n/9 ter-ac-tive video stream-ing, Ge-o-graph-i-cal based stream-ing (
-GBS)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
-
- []
-
-
-Overfull \hbox (7.1352pt too wide) in paragraph at lines 60--61
-\T1/aer/m/n/9 pos-si-bil-ity of scaleable on-demand con-tent with min-i-mal ser
-ver
+GBS),
  []
 
 [1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
+Overfull \hbox (7.1352pt too wide) in paragraph at lines 60--61
+\T1/aer/m/n/9 pos-si-bil-ity of scaleable on-demand con-tent with min-i-mal ser
+ver
+ []
+
+
 Overfull \hbox (3.13028pt too wide) in paragraph at lines 62--63
 \T1/aer/m/n/9 video qual-ity by ob-serv-ing and con-trol-ling the play-back buf
 fer
@@ -631,88 +619,81 @@ Overfull \hbox (1.61797pt too wide) in paragraph at lines 141--141
 []\secfnt Relative place-ment of Ge-o-graph-i-cal Points 
  []
 
-
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
- [4 <./prefetch.png> <./teomet.png> <./Media_player.png>] [5]
+[4 <./prefetch.png> <./teomet.png> <./Media_player.png>] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 224--224
 [][]\T1/aer/m/n/9 GlobalSecuritySettingspanel:
  []
 
 
-Overfull \hbox (170.42842pt too wide) in paragraph at lines 224--224
-\T1/aer/m/n/9 https://www.macromedia.com/support/documentation/en/flashplayer/h
-elp/settings$[]$manager04.html| 
+Overfull \hbox (1.87062pt too wide) in paragraph at lines 224--224
+\T1/aer/m/n/9 https://www.macromedia.com/support/documentation/en/ 
  []
 
 [6] <Google_Maps.png, id=43, 374.90062pt x 356.83313pt>
 File: Google_Maps.png Graphic file (type png)
  <use Google_Maps.png>
-Package pdftex.def Info: Google_Maps.png used on input line 246.
+Package pdftex.def Info: Google_Maps.png used on input line 247.
 (pdftex.def)             Requested size: 224.94211pt x 214.10152pt.
 
 <TestfallGeomap.png, id=44, 641.39626pt x 481.8pt>
 File: TestfallGeomap.png Graphic file (type png)
  <use TestfallGeomap.png>
-Package pdftex.def Info: TestfallGeomap.png used on input line 254.
+Package pdftex.def Info: TestfallGeomap.png used on input line 255.
 (pdftex.def)             Requested size: 275.79501pt x 207.16995pt.
 
-Overfull \hbox (35.79501pt too wide) in paragraph at lines 254--255
+Overfull \hbox (35.79501pt too wide) in paragraph at lines 255--256
  [] 
  []
 
-<Hoverboard_1.png, id=45, 643.40375pt x 482.80376pt>
+[7 <./Google_Maps.png> <./TestfallGeomap.png>]
+<Hoverboard_1.png, id=51, 482.55281pt x 362.10281pt>
 File: Hoverboard_1.png Graphic file (type png)
  <use Hoverboard_1.png>
-Package pdftex.def Info: Hoverboard_1.png used on input line 267.
-(pdftex.def)             Requested size: 231.62517pt x 173.80922pt.
+Package pdftex.def Info: Hoverboard_1.png used on input line 269.
+(pdftex.def)             Requested size: 173.71887pt x 130.3569pt.
 
-<Hoverboard_2.png, id=46, 642.4pt x 481.8pt>
+<Hoverboard_2.png, id=52, 481.8pt x 361.35pt>
 File: Hoverboard_2.png Graphic file (type png)
  <use Hoverboard_2.png>
-Package pdftex.def Info: Hoverboard_2.png used on input line 275.
-(pdftex.def)             Requested size: 231.26382pt x 173.44786pt.
- [7 <./Google_Maps.png> <./TestfallGeomap.png>] [8
+Package pdftex.def Info: Hoverboard_2.png used on input line 277.
+(pdftex.def)             Requested size: 173.44786pt x 130.08589pt.
+ [8
 
  <./Hoverboard_1.png> <./Hoverboard_2.png>]
-Overfull \hbox (9.88014pt too wide) in paragraph at lines 313--319
+Overfull \hbox (9.88014pt too wide) in paragraph at lines 315--321
 \T1/aer/m/n/9 fiplanet.com/tutorials/article.php/3433451/Implementing- 
  []
 
 [9
 
 
-] ("TDDD82 Geo-based mediaplayer.aux")
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] ("TDDD82 Geo-based mediaplayer.aux") ) 
 Here is how much of TeX's memory you used:
- 3261 strings out of 493634
- 40583 string characters out of 3134015
- 108778 words of memory out of 3000000
- 6555 multiletter control sequences out of 15000+200000
+ 3263 strings out of 493634
+ 40613 string characters out of 3134015
+ 109755 words of memory out of 3000000
+ 6557 multiletter control sequences out of 15000+200000
  53338 words of font info for 75 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  41i,11n,28p,1667b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname
-/8r.enc}<C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Users/Jonathan/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Jonathan/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Us
-ers/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr12.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonathan/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Jonathan/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Jo
-nathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.p
-fb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helveti
-c/uhvb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
-rw/times/utmb8a.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on "TDDD82 Geo-based mediaplayer.pdf" (9 pages, 1704523 bytes).
+{C:/Users/Jonathan/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonathan/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonathan
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pf
+b><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jonathan/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Jonathan
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/
+Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti9.pfb><C:/Users/Jonathan/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Jonathan/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonathan/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonathan/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "TDDD82 Geo-based mediaplayer.pdf" (9 pages, 1701933 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
