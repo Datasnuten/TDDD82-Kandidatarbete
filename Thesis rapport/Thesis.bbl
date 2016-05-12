@@ -85,6 +85,26 @@
       \field{year}{2014}
       \field{pages}{259\bibrangedash 270}
     \endentry
+    \entry{bufferbased}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7f7f42de4eb4c05cbcc367f89df31824}
+      \strng{fullhash}{7f7f42de4eb4c05cbcc367f89df31824}
+      \field{sortinit}{H}
+      \field{labeltitle}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
+      \field{journaltitle}{In Proc. ACM SIGCOMM FhMN Workshop}
+      \field{month}{08}
+      \field{title}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
+      \field{year}{2013}
+    \endentry
     \entry{streamrate}{article}{}
       \name{labelname}{5}{}{%
         {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
@@ -206,6 +226,33 @@
       \verb http://mathforum.org/library/drmath/view/51879.html
       \endverb
     \endentry
+    \entry{watchingprefetching}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=02f12eae370d01079a0c2e20e61b74a3}{S}{S\bibinitperiod}{Khemmarat}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=974d00c57a3aeb4c12baf22f9808b263}{R}{R\bibinitperiod}{Zhou}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=a5d6a5c8ce2af112020c5c184d1e1b2d}{D.K}{D\bibinitperiod}{Krishnappa}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=96193b8d8a39fcf9708e0f64fabcf2fc}{Gao}{G\bibinitperiod}{L}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=e29cf938cdb71468856630648d4b6401}{Zink}{Z\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=02f12eae370d01079a0c2e20e61b74a3}{S}{S\bibinitperiod}{Khemmarat}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=974d00c57a3aeb4c12baf22f9808b263}{R}{R\bibinitperiod}{Zhou}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=a5d6a5c8ce2af112020c5c184d1e1b2d}{D.K}{D\bibinitperiod}{Krishnappa}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=96193b8d8a39fcf9708e0f64fabcf2fc}{Gao}{G\bibinitperiod}{L}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=e29cf938cdb71468856630648d4b6401}{Zink}{Z\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{d6050f231bd33ea8348f3b09df68d3e5}
+      \strng{fullhash}{ed392f193314926850566cb04674d8e1}
+      \field{sortinit}{S}
+      \field{labeltitle}{Watching user generated videos with prefetching}
+      \field{journaltitle}{Signalin Processing: Image Communication}
+      \field{month}{04}
+      \field{number}{4}
+      \field{title}{Watching user generated videos with prefetching}
+      \field{volume}{27}
+      \field{year}{2012}
+      \field{pages}{343\bibrangedash 359}
+    \endentry
     \entry{equi}{article}{}
       \name{labelname}{1}{}{%
         {{hash=e47362d8d626b598e2b0ba94d43fb413}{Snyder}{S\bibinitperiod}{John\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
@@ -245,7 +292,6 @@
       \field{pages}{1149\bibrangedash 1162}
     \endentry
   \endsortlist
-  \missing{bufferbased}
 \endrefsection
 \endinput
 
