@@ -10,8 +10,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Figures}{vi}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{vii}{section*.4}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Boundaries}{1}{section.1.1}
@@ -50,4 +48,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{19}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{20}{section*.6}
+\contentsline {chapter}{Bibliography}{20}{section*.5}

@@ -762,7 +762,7 @@ Examinator: \@examiner}
   \clearpage{}
   \listoffigures
   \clearpage{}
-  \listoftables
+  %\listoftables
   \cleartorecto%
   \pagenumbering{arabic}
   \pagestyle{ruled}
