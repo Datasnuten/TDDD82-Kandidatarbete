@@ -1,0 +1,251 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{optimizedbroadcast}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=3adb66a7c5f736db8848b7b1d0f2c9a5}{Li}{L\bibinitperiod}{Zongpeng}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=977b1f2c57eb787c42ebd039c21a6a2e}{Eager}{E\bibinitperiod}{Derek\bibnamedelima L.}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=3adb66a7c5f736db8848b7b1d0f2c9a5}{Li}{L\bibinitperiod}{Zongpeng}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=977b1f2c57eb787c42ebd039c21a6a2e}{Eager}{E\bibinitperiod}{Derek\bibnamedelima L.}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6c78f6932db889c5553e4ea2a578ec67}
+      \strng{fullhash}{bb0b829ffb30bca1a22b7082ebfa1489}
+      \field{sortinit}{C}
+      \field{labeltitle}{Optimized Periodic Broadcast of Non-linear Media}
+      \field{journaltitle}{IEEE Transactions on Multimedia}
+      \field{month}{08}
+      \field{number}{5}
+      \field{title}{Optimized Periodic Broadcast of Non-linear Media}
+      \field{volume}{10}
+      \field{year}{2008}
+      \field{pages}{871\bibrangedash 884}
+    \endentry
+    \entry{osmf}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=10e8967bea5464f27150f2b9a8fc2aad}{Hamer}{H\bibinitperiod}{Greg}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=10e8967bea5464f27150f2b9a8fc2aad}{Hamer}{H\bibinitperiod}{Greg}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{10e8967bea5464f27150f2b9a8fc2aad}
+      \strng{fullhash}{10e8967bea5464f27150f2b9a8fc2aad}
+      \field{sortinit}{H}
+      \field{labeltitle}{Open Source Media Framework: Introduction and overview}
+      \field{month}{03}
+      \field{title}{Open Source Media Framework: Introduction and overview}
+      \field{urlday}{09}
+      \field{urlmonth}{03}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.adobe.com/devnet/video/articles/osmf_overview.html
+      \endverb
+    \endentry
+    \entry{gtube}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=b177bbae3bb8cf6f617d41da56ce20bf}{Hao}{H\bibinitperiod}{Jia}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=f27e72e20246f57f530b3a80f3393661}{Zimmermann}{Z\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=a2e1699ebb1da59ff9b3299d9d6d919d}{Ma}{M\bibinitperiod}{Haiyang}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=b177bbae3bb8cf6f617d41da56ce20bf}{Hao}{H\bibinitperiod}{Jia}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=f27e72e20246f57f530b3a80f3393661}{Zimmermann}{Z\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=a2e1699ebb1da59ff9b3299d9d6d919d}{Ma}{M\bibinitperiod}{Haiyang}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e3943a9e7e9b02b885350745844f46ec}
+      \strng{fullhash}{e3943a9e7e9b02b885350745844f46ec}
+      \field{sortinit}{H}
+      \field{labeltitle}{GTube: Geo-Predictive Video Streaming over HTTP in Mobile Environments}
+      \field{journaltitle}{ACM Multimedia Systems Conference}
+      \field{title}{GTube: Geo-Predictive Video Streaming over HTTP in Mobile Environments}
+      \field{year}{2014}
+      \field{pages}{259\bibrangedash 270}
+    \endentry
+    \entry{streamrate}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=aa154a6397cd74634432cc5eb96cf252}{Handigol}{H\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=541a3561ac39b54ca36e32a8e27db422}{Heller}{H\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=aa154a6397cd74634432cc5eb96cf252}{Handigol}{H\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=541a3561ac39b54ca36e32a8e27db422}{Heller}{H\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{62d753cde6406d8efdb4adc3a8d8ba82}
+      \strng{fullhash}{82ba4e475e614c5ebffb8212352e5c3b}
+      \field{sortinit}{H}
+      \field{labeltitle}{Confused, timid, and unstable: Picking a video streaming rate is hard}
+      \field{journaltitle}{In Proc. ACM IMC}
+      \field{month}{11}
+      \field{title}{Confused, timid, and unstable: Picking a video streaming rate is hard}
+      \field{year}{2012}
+    \endentry
+    \entry{bandawarePrefetch}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{aecf7616e489a0774c5139c7bb22bf9e}
+      \strng{fullhash}{41cffe0d88515272ce49b36f3fa9ec3a}
+      \field{sortinit}{K}
+      \field{labeltitle}{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance}
+      \field{journaltitle}{Proc. ACM International Conference on Multimedia}
+      \field{month}{10}
+      \field{title}{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance}
+      \field{year}{2015}
+    \endentry
+    \entry{hasmultipath}{article}{}
+      \name{labelname}{6}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{6}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{aecf7616e489a0774c5139c7bb22bf9e}
+      \strng{fullhash}{45ea447f5f1a228d1236c3f10260c35d}
+      \field{sortinit}{K}
+      \field{labeltitle}{mpowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
+      \field{journaltitle}{Proc. ACM SIGCOMM Workshop on Future Human-Centric Multimedia Networking}
+      \field{month}{08}
+      \field{title}{mpowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
+      \field{year}{2013}
+      \field{pages}{55\bibrangedash 38}
+    \endentry
+    \entry{qualbranch}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{aecf7616e489a0774c5139c7bb22bf9e}
+      \strng{fullhash}{41cffe0d88515272ce49b36f3fa9ec3a}
+      \field{sortinit}{K}
+      \field{labeltitle}{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming}
+      \field{journaltitle}{Proc. ACM International Conference on Multimedia (ACM Multimedia)}
+      \field{month}{11}
+      \field{title}{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming}
+      \field{year}{2014}
+      \field{pages}{317\bibrangedash 326}
+    \endentry
+    \entry{haversine}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=a4bb0d4054525c68949d655375a337c7}{Rick}{R\bibinitperiod}{Doctor}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=a4bb0d4054525c68949d655375a337c7}{Rick}{R\bibinitperiod}{Doctor}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a4bb0d4054525c68949d655375a337c7}
+      \strng{fullhash}{a4bb0d4054525c68949d655375a337c7}
+      \field{sortinit}{R}
+      \field{labeltitle}{Deriving the Haversine Formula}
+      \field{month}{04}
+      \field{title}{Deriving the Haversine Formula}
+      \field{urlday}{11}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{1999}
+      \verb{url}
+      \verb http://mathforum.org/library/drmath/view/51879.html
+      \endverb
+    \endentry
+    \entry{equi}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=e47362d8d626b598e2b0ba94d43fb413}{Snyder}{S\bibinitperiod}{John\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e47362d8d626b598e2b0ba94d43fb413}{Snyder}{S\bibinitperiod}{John\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e47362d8d626b598e2b0ba94d43fb413}
+      \strng{fullhash}{e47362d8d626b598e2b0ba94d43fb413}
+      \field{sortinit}{S}
+      \field{labeltitle}{Flattening the Earth: Two Thousand Years of Map Projections}
+      \field{journaltitle}{University Of Chicago Press}
+      \field{title}{Flattening the Earth: Two Thousand Years of Map Projections}
+      \field{year}{1993}
+    \endentry
+    \entry{scalableOnDemand}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=7d697b1b311e4ccb6b0f0a2f1c13c519}{Zhao}{Z\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=e3ffa4ca9672b00d14e749a25ac3a1cf}{Eager}{E\bibinitperiod}{D.\bibnamedelimi L.}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=e45a4b44fae5da8fad5d0c7f8d805adf}{Vernon}{V\bibinitperiod}{M.\bibnamedelimi K.}{M\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=7d697b1b311e4ccb6b0f0a2f1c13c519}{Zhao}{Z\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=e3ffa4ca9672b00d14e749a25ac3a1cf}{Eager}{E\bibinitperiod}{D.\bibnamedelimi L.}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=e45a4b44fae5da8fad5d0c7f8d805adf}{Vernon}{V\bibinitperiod}{M.\bibnamedelimi K.}{M\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9f8e4edca52146594a2cd14584ee023c}
+      \strng{fullhash}{9f8e4edca52146594a2cd14584ee023c}
+      \field{sortinit}{Z}
+      \field{labeltitle}{Scalable On-Demand Streaming of Nonlinear Media}
+      \field{journaltitle}{IEEE/ACM Trans. on Networking}
+      \field{month}{10}
+      \field{number}{5}
+      \field{title}{Scalable On-Demand Streaming of Nonlinear Media}
+      \field{volume}{15}
+      \field{year}{2007}
+      \field{pages}{1149\bibrangedash 1162}
+    \endentry
+  \endsortlist
+  \missing{bufferbased}
+\endrefsection
+\endinput
+
