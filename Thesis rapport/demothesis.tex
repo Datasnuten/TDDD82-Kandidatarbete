@@ -1,0 +1,80 @@
+%%% demothesis.tex --- 
+%% 
+%% Filename: demothesis.tex
+%% Description: 
+%% Author: Ola Leifler
+%% Maintainer: 
+%% Created: Thu Oct 14 12:52:20 2010 (CEST)
+%% Version: $Id$
+%% Version: 
+%% Last-Updated: Thu Dec 17 16:28:11 2015 (+0100)
+%%           By: Ola Leifler
+%%     Update #: 74
+%% URL: 
+%% Keywords: 
+%% Compatibility: 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Commentary: 
+%% 
+%% 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Change log:
+%% 
+%% 
+%% RCS $Log$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Code:
+\documentclass[msc,lith,showtrims]{liuthesis}
+%% Settings go in settings.tex
+\include{settings}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage{tikz}
+% \usepackage{changebar}
+
+\department{Institutionen för datavetenskap}
+\departmentenglish{Department of Computer science}
+\departmentshort{IDA}
+\supervisor{Niklas Carlsson and Vengatanathan Krishnamoorthi}
+\examiner{Nahid Shahmehri}
+\titleenglish{Geo-based media player \\
+	\large An interactive interface for geo-based video streaming}
+\publicationyear{16}
+\currentyearthesisnumber{001}
+\dateofpublication{2016-05-13}
+\level{A}
+
+%\author{\texttt{\textbackslash author}}
+\author{Andreas Nordberg and Jonathan Sjölund}
+
+\begin{document}
+
+\chapterstyle{VZ43}
+
+\include{intro}
+\include{background}
+\include{systemdesign}
+\include{results}
+\include{discussion}
+\include{conclusion}
+
+\printbibliography
+% Demonstrates the use of included publications, for graduate-level theses
+\ifmsc
+\else
+\includearticle{scigen}
+\includearticletex{scigen}
+\fi
+\end{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% demothesis.tex ends here
+
