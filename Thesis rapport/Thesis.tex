@@ -1,0 +1,40 @@
+\documentclass[msc,lith,showtrims]{liuthesis}
+%% Settings go in settings.tex
+\include{settings}
+\usepackage{rotating}
+\usepackage{color}
+% \usepackage{changebar}
+
+\department{Institutionen för datavetenskap}
+\departmentenglish{Department of Computer science}
+\departmentshort{IDA}
+\supervisor{Min handledare}
+\examiner{Min examinator}
+\titleenglish{A very very long title -- with some subtitle as well}
+\publicationyear{15}
+\currentyearthesisnumber{001}
+\dateofpublication{2015-05-08}
+\level{A}
+
+%\author{\texttt{\textbackslash author}}
+\author{Ola Leifler}
+
+\begin{document}
+
+\chapterstyle{VZ43}
+
+\include{intro}
+\include{theory}
+\include{background}
+\include{results}
+\include{discussion}
+\include{conclusion}
+
+\printbibliography
+% Demonstrates the use of included publications, for graduate-level theses
+\ifmsc
+\else
+\includearticle{scigen}
+\includearticletex{scigen}
+\fi
+\end{document}
