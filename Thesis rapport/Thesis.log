@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  12 MAY 2016 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  13 MAY 2016 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1804,21 +1804,21 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 (./results.aux) (./discussion.aux) (./conclusion.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 26.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1888,7 +1888,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 26.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1899,16 +1899,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 25.
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
 (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
 
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 25.
+LaTeX Info: Redefining \selectfont on input line 26.
 
 
 ******************************************************
@@ -1931,21 +1931,21 @@ Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 ******************************************************
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
 <figures/titelsid-sv.pdf, id=135, 493.845pt x 349.305pt>
 File: figures/titelsid-sv.pdf Graphic file (type pdf)
 
 <use figures/titelsid-sv.pdf>
-Package pdftex.def Info: figures/titelsid-sv.pdf used on input line 25.
+Package pdftex.def Info: figures/titelsid-sv.pdf used on input line 26.
 (pdftex.def)             Requested size: 448.80249pt x 317.44164pt.
 
 
 Class memoir Warning: The material used in the footer is too large
 (20.39996pt) for the given foot skip (18.0pt), it is recommended to
 either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 25.
+(in both cases you will find help in the memoir manual). on input line 26.
 
 [1
 
@@ -1953,18 +1953,18 @@ either increase the foot skip or redesign the fotoer
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/titelsid-sv.pdf>]
-Overfull \hbox (90.6943pt too wide) in paragraph at lines 25--25
+Overfull \hbox (90.6943pt too wide) in paragraph at lines 26--26
  [][] 
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <9> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
  (./abstract.tex) [3
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
  (./acknowledgments.tex
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 3.
 
@@ -2030,8 +2030,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
  (./Thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 25.
-Package biblatex Info: Reference segment=0 on input line 25.
+Package biblatex Info: Reference section=0 on input line 26.
+Package biblatex Info: Reference segment=0 on input line 26.
 \openout2 = `intro.aux'.
 
  (./intro.tex
@@ -2050,28 +2050,30 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 
 
 
-] [4] <HAS1.png, id=286, 803.0pt x 602.25pt>
-File: HAS1.png Graphic file (type png)
+] [4] <figures/HAS1.png, id=288, 803.0pt x 602.25pt>
+File: figures/HAS1.png Graphic file (type png)
 
-<use HAS1.png>
-Package pdftex.def Info: HAS1.png used on input line 30.
+<use figures/HAS1.png>
+Package pdftex.def Info: figures/HAS1.png used on input line 30.
 (pdftex.def)             Requested size: 321.1943pt x 240.89572pt.
- <HAS2.png, id=288, 803.0pt x 602.25pt>
-File: HAS2.png Graphic file (type png)
- <use HAS2.png>
-Package pdftex.def Info: HAS2.png used on input line 38.
+ <figures/HAS2.png, id=290, 803.0pt x 602.25pt>
+File: figures/HAS2.png Graphic file (type png)
+
+<use figures/HAS2.png>
+Package pdftex.def Info: figures/HAS2.png used on input line 38.
 (pdftex.def)             Requested size: 321.1943pt x 240.89572pt.
  [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
 }) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.52 
-      <./HAS1.png>]) [6pdfTeX warning (ext4): destination with the same identif
-ier (name{figure.2.2}) has been already used, duplicate ignored
+l.47 \section
+             {Strobe Media Playback} <./figures/HAS1.png>]) [6pdfTeX warning (e
+xt4): destination with the same identifier (name{figure.2.2}) has been already 
+used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.30 \include{background}
-                          <./HAS2.png>]
+l.31 \include{background}
+                          <./figures/HAS2.png>]
 \openout2 = `systemdesign.aux'.
 
  (./systemdesign.tex [7
@@ -2079,96 +2081,103 @@ l.30 \include{background}
 
 
 ]
-<prefetch.png, id=316, 498.36188pt x 437.38406pt>
-File: prefetch.png Graphic file (type png)
- <use prefetch.png>
-Package pdftex.def Info: prefetch.png used on input line 22.
+<figures/prefetch.png, id=318, 498.36188pt x 437.38406pt>
+File: figures/prefetch.png Graphic file (type png)
+
+<use figures/prefetch.png>
+Package pdftex.def Info: figures/prefetch.png used on input line 22.
 (pdftex.def)             Requested size: 299.01942pt x 262.43245pt.
 
-<teomet.png, id=317, 469.755pt x 441.14813pt>
-File: teomet.png Graphic file (type png)
- <use teomet.png>
-Package pdftex.def Info: teomet.png used on input line 30.
+<figures/teomet.png, id=319, 469.755pt x 441.14813pt>
+File: figures/teomet.png Graphic file (type png)
+ <use figures/teomet.png>
+Package pdftex.def Info: figures/teomet.png used on input line 30.
 (pdftex.def)             Requested size: 281.85518pt x 264.69092pt.
- [8pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
-}) has been already used, duplicate ignored
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}
+) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
 l.40 
-      <./prefetch.png>] <Media_player.png, id=325, 484.81125pt x 362.85562pt>
-File: Media_player.png Graphic file (type png)
+      <./figures/prefetch.png>]
+<figures/Media_player.png, id=327, 484.81125pt x 362.85562pt>
+File: figures/Media_player.png Graphic file (type png)
 
-<use Media_player.png>
-Package pdftex.def Info: Media_player.png used on input line 43.
+<use figures/Media_player.png>
+Package pdftex.def Info: figures/Media_player.png used on input line 43.
 (pdftex.def)             Requested size: 339.36555pt x 253.99721pt.
  [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
 l.64 \end{align*}
-                  <./teomet.png>] [10pdfTeX warning (ext4): destination with th
-e same identifier (name{figure.3.3}) has been already used, duplicate ignored
+                  <./figures/teomet.png>] [10pdfTeX warning (ext4): destination
+ with the same identifier (name{figure.3.3}) has been already used, duplicate i
+gnored
 <recently read> \AtBeginShipoutBox 
                                    
 l.77 
-      <./Media_player.png>] [11] [12]) [13]
+      <./figures/Media_player.png>] [11] [12]) [13]
 \openout2 = `results.aux'.
 
  (./results.tex
-<Google_Maps.png, id=371, 374.90062pt x 356.83313pt>
-File: Google_Maps.png Graphic file (type png)
- <use Google_Maps.png>
-Package pdftex.def Info: Google_Maps.png used on input line 14.
+<figures/Google_Maps.png, id=373, 374.90062pt x 356.83313pt>
+File: figures/Google_Maps.png Graphic file (type png)
+
+<use figures/Google_Maps.png>
+Package pdftex.def Info: figures/Google_Maps.png used on input line 14.
 (pdftex.def)             Requested size: 239.93558pt x 228.3724pt.
 
-<TestfallGeomap.png, id=372, 641.39626pt x 481.8pt>
-File: TestfallGeomap.png Graphic file (type png)
- <use TestfallGeomap.png>
-Package pdftex.def Info: TestfallGeomap.png used on input line 22.
+<figures/TestfallGeomap.png, id=374, 641.39626pt x 481.8pt>
+File: figures/TestfallGeomap.png Graphic file (type png)
+
+<use figures/TestfallGeomap.png>
+Package pdftex.def Info: figures/TestfallGeomap.png used on input line 22.
 (pdftex.def)             Requested size: 237.3129pt x 178.2632pt.
-
-[14
-
+ [14
 
 
-] <Hoverboard_1.png, id=380, 482.55281pt x 362.10281pt>
-File: Hoverboard_1.png Graphic file (type png)
 
-<use Hoverboard_1.png>
-Package pdftex.def Info: Hoverboard_1.png used on input line 37.
+]
+<figures/Hoverboard_1.png, id=382, 482.55281pt x 362.10281pt>
+File: figures/Hoverboard_1.png Graphic file (type png)
+
+<use figures/Hoverboard_1.png>
+Package pdftex.def Info: figures/Hoverboard_1.png used on input line 37.
 (pdftex.def)             Requested size: 386.04276pt x 289.68263pt.
- <Hoverboard_2.png, id=381, 481.8pt x 361.35pt>
-File: Hoverboard_2.png Graphic file (type png)
 
-<use Hoverboard_2.png>
-Package pdftex.def Info: Hoverboard_2.png used on input line 45.
+<figures/Hoverboard_2.png, id=383, 481.8pt x 361.35pt>
+File: figures/Hoverboard_2.png Graphic file (type png)
+
+<use figures/Hoverboard_2.png>
+Package pdftex.def Info: figures/Hoverboard_2.png used on input line 45.
 (pdftex.def)             Requested size: 385.4405pt x 289.0804pt.
 ) [15pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .1}) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.32 \include{results}
+l.33 \include{results}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{figure.4.2}) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.32 \include{results}
-                       <./Google_Maps.png> <./TestfallGeomap.png>] [16pdfTeX wa
-rning (ext4): destination with the same identifier (name{figure.4.3}) has been 
-already used, duplicate ignored
+l.33 \include{results}
+                       <./figures/Google_Maps.png> <./figures/TestfallGeomap.pn
+g>] [16pdfTeX warning (ext4): destination with the same identifier (name{figure
+.4.3}) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.32 \include{results}
+l.33 \include{results}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{figure.4.4}) has been already used, duplicate ignored
 <recently read> \AtBeginShipoutBox 
                                    
-l.32 \include{results}
-                       <./Hoverboard_1.png> <./Hoverboard_2.png>]
+l.33 \include{results}
+                       <./figures/Hoverboard_1.png> <./figures/Hoverboard_2.png
+>]
 \openout2 = `discussion.aux'.
 
-
-(./discussion.tex [17
+ (./discussion.tex [17
 
 
 
@@ -2180,66 +2189,66 @@ l.32 \include{results}
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 37.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+) [21
+
+
+]
 
 Class memoir Warning: The material used in the footer is too large
 (20.39996pt) for the given foot skip (18.0pt), it is recommended to
 either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 43.
+(in both cases you will find help in the memoir manual). on input line 44.
 
-[21
-
-
-] <figures/copyright_exjobbsrapport.pdf, id=421, 597.23125pt x 845.1575pt>
+[22] <figures/copyright_exjobbsrapport.pdf, id=427, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 43.
+e 44.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 43.
+e 44.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=424, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=430, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 43.
+put line 44.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 43.
+put line 44.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 43.
+put line 44.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 43.
+put line 44.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 43.
+put line 44.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
- [22
+ [23
 
  <./figures/copyright_exjobbsrapport.pdf>]
 \tf@toc=\write7
@@ -2248,28 +2257,24 @@ put line 43.
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
  (./Thesis.aux (./intro.aux) (./background.aux)
 (./systemdesign.aux) (./results.aux) (./discussion.aux) (./conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 43.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D1ACF34DC65AE82F97E790F8BCCE4D8F;2025.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 28393 strings out of 493117
- 490764 string characters out of 6135433
- 964521 words of memory out of 5000000
- 31197 multiletter control sequences out of 15000+600000
+ 28396 strings out of 493117
+ 491103 string characters out of 6135433
+ 964582 words of memory out of 5000000
+ 31199 multiletter control sequences out of 15000+600000
  51215 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,18n,56p,2164b,1586s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2282,10 +2287,10 @@ live/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (28 pages, 1741572 bytes).
+Output written on Thesis.pdf (29 pages, 1742778 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 421 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 426 compressed objects within 5 object streams
+ 95 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 
