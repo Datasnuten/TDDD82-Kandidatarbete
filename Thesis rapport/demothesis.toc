@@ -12,13 +12,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Boundaries}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Boundaries}{2}{section.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Background and Related Work}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}HTTP-based Adaptive Streaming}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}HTTP-based Adaptive Streaming}{4}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Non-linear Streaming and Multipath}{4}{section.2.2}
+\contentsline {section}{\numberline {2.2}Non-linear Streaming and Multipath}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Strobe Media Playback}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
@@ -26,13 +26,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Interface design}{7}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multipath}{8}{section.3.2}
+\contentsline {section}{\numberline {3.2}Prefetching principle}{8}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Server Integration}{9}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Relative placement of Geographical Points}{9}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Geographical Position algorithm}{10}{section.3.5}
+\contentsline {section}{\numberline {3.5}Geographical Position algorithm}{9}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.6}Limitations and Accuracy}{11}{section.3.6}
 \defcounter {refsection}{0}\relax 
@@ -48,4 +48,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Discussion}{17}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{19}{chapter.6}
+\contentsline {section}{\numberline {5.1}Understanding the provided code}{17}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Issues with HAS and prefetching}{17}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Improvements the position algorithm}{18}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}The test case}{18}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Adobe Flash}{18}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}Issues with the server}{19}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Project structure improvements}{19}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{20}{chapter.6}
