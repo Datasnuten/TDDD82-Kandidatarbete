@@ -53,7 +53,7 @@ package org.osmf.player.chrome.widgets
 				state=!state
 				setFace(up);
 			}
-			//OwnWidgetHint.getInstance(this).hide();
+			OwnWidgetHint.getInstance(this).hide();
 			measure();
 			super.layout(Math.max(measuredWidth, availableWidth), Math.max(measuredHeight, availableHeight));
 		}
