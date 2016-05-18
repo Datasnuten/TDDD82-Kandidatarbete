@@ -22,6 +22,7 @@ package org.osmf.net.httpstreaming
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	
+	import mx.collections.ArrayList;
 	
 	import org.osmf.events.HTTPStreamingEvent;
 	import org.osmf.logging.Logger;
@@ -218,6 +219,9 @@ package org.osmf.net.httpstreaming
 		private var lineBreakOS:String;
 		
 		public var prevMediaPlayer:MediaPlayer;
+		
+		//##### ADDED BY PROJECT GROUP 9 ######
+		public var list:ArrayList = new ArrayList();
 		
 		CONFIG::LOGGING
 		{
@@ -538,7 +542,7 @@ package org.osmf.net.httpstreaming
 			try
 			{
 				var tid:Number=Math.floor(netStream1.time);
-				logger.debug("current time "+tid);
+				//logger.debug("current time "+tid);
 			}
 			catch(error:Error)
 			{

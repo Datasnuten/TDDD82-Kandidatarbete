@@ -14,6 +14,7 @@ package org.osmf.player.chrome.widgets
 	import flash.text.TextField;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
+	import flash.utils.getTimer;
 	
 	import org.osmf.advertisementplugin.src.org.osmf.advertisementplugin.AdvertisementPluginInfo;
 	import org.osmf.containers.MediaContainer;
@@ -30,6 +31,7 @@ package org.osmf.player.chrome.widgets
 	import org.osmf.net.httpstreaming.f4f.HTTPStreamingF4FFactory;
 	import org.osmf.player.chrome.assets.AssetIDs;
 	import org.osmf.player.chrome.assets.AssetsManager;
+	
 
 
 	public class GeoMapObject extends Widget
@@ -40,6 +42,7 @@ package org.osmf.player.chrome.widgets
 		private var yCoordinate:Number;
 		private var direction:int = 0;
 		private var text:TextField;
+		public var timeStart:int;
 		
 		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
 		protected var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
@@ -352,7 +355,7 @@ package org.osmf.player.chrome.widgets
 				var mediaElement:MediaElement = mediaFactory.createMediaElement(resource);
 				
 				// Load the plugin statically
-				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo);
+				var pluginResource:MediaResourceBase = new PluginInfoResource(new AdvertisementPluginInfo());
 				
 				// You can load it as a dynamic plugin as well
 				// var pluginResource:MediaResourceBase = new URLResource("http://localhost/AdvertisementPlugin/bin/AdvertisementPlugin.swf");

@@ -27,6 +27,9 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 	import flash.external.ExternalInterface;
 	import flash.utils.Dictionary;
 	import flash.utils.Timer;
+	import flash.utils.getTimer;
+	
+	import mx.collections.ArrayList;
 	
 	import org.osmf.containers.MediaContainer;
 	import org.osmf.events.AudioEvent;
@@ -54,9 +57,15 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		private static var adMediaPlayer:MediaPlayer;
 		//private var adMediaPlayer:MediaPlayer;
 		
+		//######### ADDED BY PROJECT GROUP 9 #####
+		private var list:ArrayList = new ArrayList();
+		public var startTime:int;
+		
 		public function AdvertisementPluginInfo()
 		{
 			super();
+			
+			this.startTime=getTimer();
 			
 			// Register the external interface callback functions which we'll use in our interactive demo.			
 			if (ExternalInterface.available)
@@ -293,6 +302,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			function playAd():void
 			{		
 				// Copy the player's current volume values
+				
+				//stopp
 				adMediaPlayer.volume = mediaPlayer.volume;
 				adMediaPlayer.muted = mediaPlayer.muted;
 				
@@ -346,6 +357,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				// Add the ad to the container
 				trace("Add the ad to the container");
 				mediaContainer.addMediaElement(adMediaElement);
+				
+				//trace("T: " + (getTimer() - startTime).toString());
+				fileDown.list.addItem((getTimer() - startTime).toString()+"\n");
+				trace("TimeList: \n"+fileDown.list);
 				
 				//######### ADDED PROJECT GROUP 9 ###############
 				if(adMediaPlaying){
