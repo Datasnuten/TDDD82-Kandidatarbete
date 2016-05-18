@@ -9,23 +9,22 @@
 \BOOKMARK [1][-]{section.2.2}{Non-linear Streaming and Multipath}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.3}{Strobe Media Playback}{chapter.2}% 10
 \BOOKMARK [0][-]{chapter.3}{System Design}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Interface design}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Prefetching principle}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.1}{Interface Design}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Prefetching Principle}{chapter.3}% 13
 \BOOKMARK [1][-]{section.3.3}{Server Integration}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.4}{Relative placement of Geographical Points}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.5}{Geographical Position algorithm}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.6}{Limitations and Accuracy}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.7}{Technical details}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.8}{Server and video application}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Validated Results}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Position Algorithm}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{Geo-based Streaming}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Understanding the provided code}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{Issues with HAS and prefetching}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.3}{Improvements the position algorithm}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.4}{The test case}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.5}{Adobe Flash}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.6}{Issues with the server}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.7}{Project structure improvements}{chapter.5}% 30
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 31
+\BOOKMARK [1][-]{section.3.4}{Relative Placement of Geographical Points}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.5}{Technical Details}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.6}{Server and Video Application}{chapter.3}% 17
+\BOOKMARK [0][-]{chapter.4}{Validated Results}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Position Algorithm}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{Geo-based Streaming}{chapter.4}% 20
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 21
+\BOOKMARK [1][-]{section.5.1}{Understanding the Provided Code}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.2}{Issues with HAS and Prefetching}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.3}{Improvements to the Position Algorithm}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.4}{The Test Case}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.5}{Adobe Flash}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.6}{Issues with the Server}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.7}{Project Structure Improvements}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.8}{Work in a Wider Context}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 30

@@ -24,21 +24,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}System Design}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Interface design}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}Interface Design}{7}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Prefetching principle}{8}{section.3.2}
+\contentsline {section}{\numberline {3.2}Prefetching Principle}{8}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Server Integration}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}Server Integration}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Relative placement of Geographical Points}{9}{section.3.4}
+\contentsline {section}{\numberline {3.4}Relative Placement of Geographical Points}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Geographical Position algorithm}{9}{section.3.5}
+\contentsline {subsection}{Geographical Position Algorithm}{10}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Limitations and Accuracy}{11}{section.3.6}
+\contentsline {subsection}{Limitations and Accuracy}{11}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Technical details}{11}{section.3.7}
+\contentsline {section}{\numberline {3.5}Technical Details}{12}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}Server and video application}{13}{section.3.8}
+\contentsline {section}{\numberline {3.6}Server and Video Application}{13}{section.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Validated Results}{14}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -48,18 +48,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Discussion}{17}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Understanding the provided code}{17}{section.5.1}
+\contentsline {section}{\numberline {5.1}Understanding the Provided Code}{17}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Issues with HAS and prefetching}{17}{section.5.2}
+\contentsline {section}{\numberline {5.2}Issues with HAS and Prefetching}{17}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Improvements the position algorithm}{18}{section.5.3}
+\contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{18}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}The test case}{18}{section.5.4}
+\contentsline {section}{\numberline {5.4}The Test Case}{18}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Adobe Flash}{18}{section.5.5}
+\contentsline {section}{\numberline {5.5}Adobe Flash}{19}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Issues with the server}{19}{section.5.6}
+\contentsline {section}{\numberline {5.6}Issues with the Server}{19}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Project structure improvements}{19}{section.5.7}
+\contentsline {section}{\numberline {5.7}Project Structure Improvements}{19}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Work in a Wider Context}{19}{section.5.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{20}{chapter.6}

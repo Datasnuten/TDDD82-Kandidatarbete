@@ -2086,6 +2086,8 @@
     <bcf:citekey order="31">equi</bcf:citekey>
     <bcf:citekey order="32">haversine</bcf:citekey>
     <bcf:citekey order="33">qualbranch</bcf:citekey>
+    <bcf:citekey order="34">haversine</bcf:citekey>
+    <bcf:citekey order="35">equi</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty/global" type="entry" sortscheme="nty" sortnamekeyscheme="global">
   <bcf:sorting>
