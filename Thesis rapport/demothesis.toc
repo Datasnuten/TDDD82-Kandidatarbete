@@ -46,22 +46,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Geo-based Streaming}{14}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Discussion}{17}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Discussion}{18}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Understanding the Provided Code}{17}{section.5.1}
+\contentsline {section}{\numberline {5.1}Understanding the Provided Code}{18}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Issues with HAS and Prefetching}{17}{section.5.2}
+\contentsline {section}{\numberline {5.2}Issues with HAS and Prefetching}{18}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{18}{section.5.3}
+\contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{19}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}The Test Case}{18}{section.5.4}
+\contentsline {section}{\numberline {5.4}The Test Case}{19}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Adobe Flash}{19}{section.5.5}
+\contentsline {section}{\numberline {5.5}Adobe Flash}{20}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Issues with the Server}{19}{section.5.6}
+\contentsline {section}{\numberline {5.6}Issues with the Server}{20}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Project Structure Improvements}{19}{section.5.7}
+\contentsline {section}{\numberline {5.7}Project Structure Improvements}{20}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Work in a Wider Context}{19}{section.5.8}
+\contentsline {section}{\numberline {5.8}Work in a Wider Context}{20}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{20}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{21}{chapter.6}
