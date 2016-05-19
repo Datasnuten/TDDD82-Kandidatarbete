@@ -367,6 +367,8 @@ package org.osmf.player.chrome.widgets
 				// Configure the plugin with the ad information
 				pluginResource.addMetadataValue("midroll", url);
 				
+				pluginResource.addMetadataValue("midrollTime",timeStart);
+				
 				netStreamLoad(resource);
 				
 				// Load the plugin.
