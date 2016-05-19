@@ -19,6 +19,29 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
+    \entry{optimizedstreaming}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=0c719be0837a07bf8b597e2075581c79}{Polishchuk}{P\bibinitperiod}{T}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=0c719be0837a07bf8b597e2075581c79}{Polishchuk}{P\bibinitperiod}{T}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6c78f6932db889c5553e4ea2a578ec67}
+      \strng{fullhash}{03c6c5aaceed242e1e2a16f46a1541be}
+      \field{sortinit}{C}
+      \field{labeltitle}{Optimized Adaptive Streaming of Multi-video Stream Bundles}
+      \field{journaltitle}{Tech Report/Preprint}
+      \field{title}{Optimized Adaptive Streaming of Multi-video Stream Bundles}
+      \field{year}{2016}
+    \endentry
     \entry{optimizedbroadcast}{article}{}
       \name{labelname}{4}{}{%
         {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
@@ -80,30 +103,10 @@
       \strng{fullhash}{e3943a9e7e9b02b885350745844f46ec}
       \field{sortinit}{H}
       \field{labeltitle}{GTube: Geo-Predictive Video Streaming over HTTP in Mobile Environments}
-      \field{journaltitle}{ACM Multimedia Systems Conference}
+      \field{journaltitle}{Proc. ACM Multimedia Systems Conference}
       \field{title}{GTube: Geo-Predictive Video Streaming over HTTP in Mobile Environments}
       \field{year}{2014}
       \field{pages}{259\bibrangedash 270}
-    \endentry
-    \entry{bufferbased}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{7f7f42de4eb4c05cbcc367f89df31824}
-      \strng{fullhash}{7f7f42de4eb4c05cbcc367f89df31824}
-      \field{sortinit}{H}
-      \field{labeltitle}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
-      \field{journaltitle}{In Proc. ACM SIGCOMM FhMN Workshop}
-      \field{month}{08}
-      \field{title}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
-      \field{year}{2013}
     \endentry
     \entry{streamrate}{article}{}
       \name{labelname}{5}{}{%
@@ -129,6 +132,53 @@
       \field{title}{Confused, timid, and unstable: Picking a video streaming rate is hard}
       \field{year}{2012}
     \endentry
+    \entry{bufferbased}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{Huang}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=6f26d8e6bbf63c994a9fa0d87cea4b5d}{Johari}{J\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3a7cab2af478724012cda5b73168018a}{McKeown}{M\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7f7f42de4eb4c05cbcc367f89df31824}
+      \strng{fullhash}{7f7f42de4eb4c05cbcc367f89df31824}
+      \field{sortinit}{H}
+      \field{labeltitle}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
+      \field{journaltitle}{In Proc. ACM SIGCOMM FhMN Workshop}
+      \field{month}{08}
+      \field{title}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
+      \field{year}{2013}
+    \endentry
+    \entry{hasmultipath}{article}{}
+      \name{labelname}{6}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{6}{}{%
+        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{aecf7616e489a0774c5139c7bb22bf9e}
+      \strng{fullhash}{45ea447f5f1a228d1236c3f10260c35d}
+      \field{sortinit}{K}
+      \field{labeltitle}{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
+      \field{journaltitle}{Proc. ACM SIGCOMM Workshop on Future Human-Centric Multimedia Networking}
+      \field{month}{08}
+      \field{title}{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
+      \field{year}{2013}
+      \field{pages}{55\bibrangedash 38}
+    \endentry
     \entry{bandawarePrefetch}{article}{}
       \name{labelname}{5}{}{%
         {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
@@ -152,33 +202,6 @@
       \field{month}{10}
       \field{title}{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance}
       \field{year}{2015}
-    \endentry
-    \entry{hasmultipath}{article}{}
-      \name{labelname}{6}{}{%
-        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
-        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{6}{}{%
-        {{hash=ddb802415ff54aecd25d3c4f108b2a30}{Krishnamoorthi}{K\bibinitperiod}{Vengatanathan}{V\bibinitperiod}{}{}{}{}}%
-        {{hash=967a1e581a74f2150ecc2eef5abc8e41}{Bergström}{B\bibinitperiod}{Patrik}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=1ba4ec28494c6c1448b200c46e0a4be2}{Eager}{E\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=cba147cebc8fb0322c739838461b11f8}{Mahanti}{M\bibinitperiod}{Anirban}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=04acd977b1fa1af963a6274c172d0c24}{Shahmehri}{S\bibinitperiod}{Nahid}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{aecf7616e489a0774c5139c7bb22bf9e}
-      \strng{fullhash}{45ea447f5f1a228d1236c3f10260c35d}
-      \field{sortinit}{K}
-      \field{labeltitle}{mpowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
-      \field{journaltitle}{Proc. ACM SIGCOMM Workshop on Future Human-Centric Multimedia Networking}
-      \field{month}{08}
-      \field{title}{mpowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
-      \field{year}{2013}
-      \field{pages}{55\bibrangedash 38}
     \endentry
     \entry{qualbranch}{article}{}
       \name{labelname}{5}{}{%
@@ -292,6 +315,7 @@
       \field{pages}{1149\bibrangedash 1162}
     \endentry
   \endsortlist
+  \missing{optimizedprefetching}
 \endrefsection
 \endinput
 
