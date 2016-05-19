@@ -21,7 +21,7 @@ Because we couldn’t get the HAS-functionality to work properly we therefore co
 \section{Improvements to the Position Algorithm}
 \label{sec:posimp}
 
-When developing the position algorithm we looked at several ways to translate the spherical longitude and latitude to accurate grid x- and y-coordinates. In the end the choice was made between the two formulas haversine \cite{haversine} and equirectangular \cite{equi} approximation. The formula we decided to use in the end was equirectangular projection because that’s the first one we tried to implement with the algorithm and it worked well. Since the accuracy of equirectangular approximation apparently is slightly worse than that of the haversine formula, we could have compared the use of both formulas to see if there were any significant difference in the implementation between the two. Nonetheless the final algorithm is up to the standard that we envisioned. 
+When developing the position algorithm we looked at several ways to translate the spherical longitude and latitude to accurate grid x- and y-coordinates. In the end the choice was made between the two formulas haversine and equirectangular approximation \cite{haversine,equi}. The formula we decided to use in the end was equirectangular projection because that’s the first one we tried to implement with the algorithm and it worked well. Since the accuracy of equirectangular approximation apparently is slightly worse than that of the haversine formula, we could have compared the use of both formulas to see if there were any significant difference in the implementation between the two. Nonetheless the final algorithm is up to the standard that we envisioned. 
 
 \section{The Test Case}
 \label{sec:test case}
@@ -41,7 +41,7 @@ One big obstacle which unnecessarily cost a lot of time was setting up the serve
 \section{Project Structure Improvements}
 \label{sec:psi}
 
-If the project was redone we would have made a more definite time plan of what was needed to be done. Our time plan, even though straightforward, was not very detailed. We knew what we wanted to accomplish and when but we did not really know how we would go about to accomplish it. This ended up unnecessarily consuming a lot of time since we did not know where to look in the giant web of provided code to solve any eventual issues or where exactly to implement the changes and solutions.
+If the project was redone we would have made a more definite time plan of what was needed to be done. Our time plan, even though straightforward, was not very detailed. We knew what we wanted to accomplish and when but we did not really know how we would go about to accomplish it. This ended up unnecessarily consuming a lot of time since we did not know where to look in the giant web of provided code to solve any eventual issues or where exactly to implement the changes and solutions. When we worked on this project we needed to ask for a lot of help in-order to know where to look before coding. What we could have done instead is make a time plane that we later could showed to our supervisor and then asked how we could go about to accomplish it. It could also have been very helpful if we could have been provided with some feedback on the time plan by our supervisors to know it it was any good or had some problems. 
 
 \section{Work in a Wider Context}
 \label{sec:workinawidercontext}

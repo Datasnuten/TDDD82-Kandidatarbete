@@ -16,7 +16,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Background and Related Work}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}HTTP-based Adaptive Streaming}{4}{section.2.1}
+\contentsline {section}{\numberline {2.1}HTTP-based Adaptive Streaming}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Non-linear Streaming and Multipath}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
