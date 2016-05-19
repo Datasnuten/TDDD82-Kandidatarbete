@@ -18,13 +18,14 @@
 \BOOKMARK [0][-]{chapter.4}{Validated Results}{}% 18
 \BOOKMARK [1][-]{section.4.1}{Position Algorithm}{chapter.4}% 19
 \BOOKMARK [1][-]{section.4.2}{Geo-based Streaming}{chapter.4}% 20
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 21
-\BOOKMARK [1][-]{section.5.1}{Understanding the Provided Code}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.2}{Issues with HAS and Prefetching}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.3}{Improvements to the Position Algorithm}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.4}{The Test Case}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.5}{Adobe Flash}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.6}{Issues with the Server}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.7}{Project Structure Improvements}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.8}{Work in a Wider Context}{chapter.5}% 29
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 30
+\BOOKMARK [1][-]{section.4.3}{Consistency with On-demand Switching}{chapter.4}% 21
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Understanding the Provided Code}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{Issues with HAS and Prefetching}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.3}{Improvements to the Position Algorithm}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.4}{The Test Case}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.5}{Adobe Flash}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.6}{Issues with the Server}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.7}{Project Structure Improvements}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.8}{Work in a Wider Context}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 31
