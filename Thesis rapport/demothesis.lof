@@ -22,19 +22,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Google Maps view of the Streaming locations}}{15}{figure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Geo-map compared to google map with equireqtangular algorithm}}{15}{figure.4.2}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Geo-map compared to google map using equireqtangular algorithm}}{15}{figure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Geo-map compared to google map with the simplified algorithm}}{15}{figure.4.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Geo-map compared to google map using simplified algorithm}}{15}{figure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Test view 1.A}}{16}{figure.4.4}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Geo-map with more than 10 objects compared to google map using equireqtangular algorithm}}{16}{figure.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Test view 1.B}}{16}{figure.4.5}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Geo-map with more than 10 objects compared to google map using simplified algorithm}}{16}{figure.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Test view 2.A}}{16}{figure.4.6}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Test view 1.A}}{16}{figure.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Test view 2.B}}{16}{figure.4.7}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Test view 1.B}}{16}{figure.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Click-time interval}}{17}{figure.4.8}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Test view 2.A}}{17}{figure.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Test view 2.B}}{17}{figure.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Click-time interval}}{17}{figure.4.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
