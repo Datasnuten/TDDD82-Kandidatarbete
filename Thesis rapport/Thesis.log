@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  20 MAY 2016 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  20 MAY 2016 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2256,7 +2256,7 @@ Class memoir Warning: The material used in the footer is too large
 either increase the foot skip or redesign the fotoer
 (in both cases you will find help in the memoir manual). on input line 49.
 
-[24] <figures/copyright_exjobbsrapport.pdf, id=497, 597.23125pt x 845.1575pt>
+[24] <figures/copyright_exjobbsrapport.pdf, id=498, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
@@ -2270,7 +2270,7 @@ Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
 e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=500, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=501, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
@@ -2335,15 +2335,16 @@ Here is how much of TeX's memory you used:
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (31 pages, 3641162 bytes).
+ve/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on Thesis.pdf (31 pages, 3642650 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 487 compressed objects within 5 object streams
+ 579 PDF objects out of 1000 (max. 8388607)
+ 490 compressed objects within 5 object streams
  109 named destinations out of 1000 (max. 500000)
  385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
