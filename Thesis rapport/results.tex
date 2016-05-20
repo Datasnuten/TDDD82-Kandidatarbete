@@ -17,65 +17,79 @@ To demonstrate the accuracy of the relative placement of geographical points in 
 \end{center}
 \end{figure}
 
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{GeomapVsGoogleBraAlg.png}
-  \caption{Geo-map compared to google map using equireqtangular algorithm}\label{fig:GeomapVsGoogleBraAlg}
-\endminipage\hfill
-\hspace{3px}
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{GeomapVsGoogleDaligAlg.png}
-  \caption{Geo-map compared to google map using simplified algorithm}\label{fig:GeomapVsGoogleDaligAlg}
-\endminipage\hfill
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{GeomapVsGoogleBraAlg.png}
+        \caption{Geo-map compared to google map using equireqtangular algorithm}
+        \label{fig:GeomapVsGoogleBraAlg}
+    \end{subfigure}\hfill 
+    \hspace{3px}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{GeomapVsGoogleDaligAlg.png}
+        \caption{Geo-map compared to google map using simplified algorithm}
+        \label{fig:tiger}
+    \label{fig:GeomapVsGoogleDaligAlg}
+    \end{subfigure}
+	\caption{Geo-map compared to google map with less than 10 objects}
+	\label{fig:GeomapVsGoogleWithLessThan10objects}
 \end{figure}
 
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10equi.png}
-  \caption{Geo-map with more than 10 objects compared to google map using equireqtangular algorithm}\label{fig:GeomapVsGoogleFleran10equi}
-\endminipage\hfill
-\hspace{3px}
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10Dalig.png}
-  \caption{Geo-map with more than 10 objects compared to google map using simplified algorithm}\label{fig:GeomapVsGoogleFleran10Dalig}
-\endminipage\hfill
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+       \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10equi.png}
+		\caption{Geo-map with more than 10 objects compared to google map using equireqtangular algorithm}
+  	\label{fig:GeomapVsGoogleFleran10equi}
+    \end{subfigure}\hfill 
+    \hspace{3px}
+    \begin{subfigure}[b]{0.5\textwidth}
+       \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10Dalig.png}
+  \caption{Geo-map with more than 10 objects compared to google map using simplified algorithm}	\label{fig:GeomapVsGoogleFleran10Dalig}
+    \end{subfigure}
+	\caption{Geo-map compared to google map with more than 10 objects}
+	\label{fig:GeomapVsGoogleWithMoreThan10objects}
 \end{figure}
 
-The arrow-points in the Figure \ref{fig:GeomapVsGoogleBraAlg} is almost an exact match to those in Figure \ref{fig:googlemaps}, at least in terms in relativity. There is a slight difference between the two and the reason for this is that the points in our geographical map is scaled to make use of the entire map, in such a way that the distance between them are increased while their relative locations between each other remain intact. When comparing the google maps view to Figure \ref{fig:GeomapVsGoogleDaligAlg},when the simplified algorithm is used, we can see that relativity is not as good but is still decent. However when looking at Figure \ref{fig:GeomapVsGoogleFleran10equi} and \ref{fig:GeomapVsGoogleFleran10Dalig} we can see that relativity when using the simplified algorithm is slightly better but still not perfect. 
+The arrow-points in the Figure \ref{fig:GeomapVsGoogleBraAlg} is almost an exact match to those in Figure \ref{fig:googlemaps}, at least in terms off relativity. There is a slight difference between the two and the reason for this is that the points in our geographical map is scaled to make use of the entire map, in such a way that the distance between them are increased while their relative locations between each other remain intact. When comparing the google maps view to Figure \ref{fig:GeomapVsGoogleDaligAlg},when the simplified algorithm is used, we can see that relativity is not as good but is still decent. However when looking at Figure \ref{fig:GeomapVsGoogleFleran10equi} and \ref{fig:GeomapVsGoogleFleran10Dalig} we can see that relativity when using the simplified algorithm is slightly better but still not perfect. 
 
-This would prove the accuracy of our relative placement of the geographical points and that the equiretangular algorithm is better, at least for number of objects less than 10.
+This would prove the accuracy of our relative placement of the geographical points and that the equiretangular algorithm is better in terms of relativity when the number of objects is less than 10 and that the simplified algorithm is slightly better when there are more objects.
 
 \section{Geo-based Streaming}
 \label{sec:geobasedstreaming}
 
 As we’ve mentioned before, our implementations is as shown in Figure \ref{fig:gpsinterface} where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers and videos. When a video is selected the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured plenty of people doing plenty of stuff. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these three sets of two recordings each into our media player, we could swap between the two recordings of each set and watch these same events unfold from different positions and angles. In Figure \ref{fig:testview1A} and \ref{fig:testview2A} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time of the videos. If we look at Figure \ref{fig:testview1B} and \ref{fig:testview2B} they show the geo-map interface of the views. Both interfaces shows that a different stream object is highlighted when a different view is shown. This would prove the desired functionality of where the user can display the same event from different geographical positions and angles.
 
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{Hoverboard_1.png}
-  \caption{Test view 1.A}\label{fig:testview1A}
-\endminipage\hfill
-\hspace{3px}
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{Hoverboard1medmap.png}
-  \caption{Test view 1.B}\label{fig:testview1B}
-\endminipage\hfill
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+ 	\includegraphics[width=\linewidth]{Hoverboard_1.png}
+  	\caption{Test view 1 without interface showing}\label{fig:testview1A}
+    \end{subfigure}\hfill 
+    \hspace{3px}
+    \begin{subfigure}[b]{0.5\textwidth}
+	\includegraphics[width=\linewidth]{Hoverboard1medmap.png}
+  	\caption{Test view 1 with interface showing}\label{fig:testview1B}
+    \end{subfigure}
+	\caption{Test view 1}
+	\label{fig:testview1}
 \end{figure}
 
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{Hoverboard_2.png}
-  \caption{Test view 2.A}\label{fig:testview2A}
-\endminipage\hfill
-\hspace{3px}
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{Hoverboard2medmap.png}
-  \caption{Test view 2.B}\label{fig:testview2B}
-\endminipage\hfill
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+ 	\includegraphics[width=\linewidth]{Hoverboard_2.png}
+  	\caption{Test view 2 without interface showing}\label{fig:testview2A}
+    \end{subfigure}\hfill 
+    \hspace{3px}
+    \begin{subfigure}[b]{0.5\textwidth}
+	 \includegraphics[width=\linewidth]{Hoverboard2medmap.png}
+ 	\caption{Test view 2 with interface showing}\label{fig:testview2B}
+    \end{subfigure}
+	\caption{Test view 2}
+	\label{fig:testview2}
 \end{figure}
 
 \section{Consistency with On-demand Switching}
-Even though prefetching is not implemented we can still test the consistency of the on-demand switching, looking at the time it take switch between different videos on-demand. The test was done by switching clicking between different streaming object on interface and check the time it takes to load that view to the media player. Switching different view was done 200 times and the time it took for each click is shown in Figure \ref{fig:clickgraph}. The blue line is the time it took when switching. We can see that the average time it took is roughly 137 milliseconds. Keep in mind that this test is done after the plug-in script is called which means that the average time may increase slightly. 
+Even though prefetching is not implemented we can still test the consistency of the on-demand switching, looking at the time it take switch between different videos on-demand. The test was done by switching clicking between different streaming object on interface and check the time it takes to load that view to the media player. Switching different view was done 200 times and the time it took for each click is shown in Figure \ref{fig:clickgraph}. The blue line is the time it took when switching. We can see that the average time it took is roughly 140 milliseconds, or 137 milliseconds to be precise. This test is done from another computer which did not have AMS 5 which means that it had to send a request to the computer with the AMS 5 in-order to request the videos.
+
+%Keep in mind that this test is done after the plug-in script is called which means that the average time may increase slightly. 
 
 \begin{figure}[ht!]
 \begin{center}

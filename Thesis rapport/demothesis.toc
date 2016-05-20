@@ -18,7 +18,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}HTTP-based Adaptive Streaming}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Non-linear Streaming and Multipath}{5}{section.2.2}
+\contentsline {section}{\numberline {2.2}Non-linear Streaming and Multipath}{4}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Strobe Media Playback}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
@@ -32,9 +32,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Relative Placement of Geographical Points}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Geographical Position Algorithm}{10}{section*.4}
+\contentsline {subsection}{\numberline {3.4.1}Geographical Position Algorithm}{10}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Limitations and Accuracy}{11}{section*.5}
+\contentsline {subsection}{\numberline {3.4.2}Limitations and Accuracy}{11}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Technical Details}{12}{section.3.5}
 \defcounter {refsection}{0}\relax 
