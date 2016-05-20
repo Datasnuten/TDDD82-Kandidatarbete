@@ -46,7 +46,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Geo-based Streaming}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{16}{section.4.3}
+\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Discussion}{18}{chapter.5}
 \defcounter {refsection}{0}\relax 
