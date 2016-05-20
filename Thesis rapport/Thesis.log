@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  19 MAY 2016 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  20 MAY 2016 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1790,6 +1790,38 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks50
 \@floatcapt=\box49
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+
+Class memoir Warning: You are using the caption package with the memoir class. 
+To prepare we will now reset all captioning macros and configurations to kernel
+ defaults, and then let the caption package take over. Please remember to use t
+he caption package interfaces in order to configure your captions. .
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen228
+Normal \dimen register pool exhausted, switching to extended pool.
+\captionmargin@=\dimen256
+\captionwidth=\dimen257
+\caption@tempdima=\dimen258
+\caption@indent=\dimen259
+\caption@parindent=\dimen260
+\caption@hangindent=\dimen261
+)
+\c@ContinuedFloat=\count370
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: rotating package is loaded.
+)
+\c@subfigure=\count371
+\c@subtable=\count372
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1804,38 +1836,37 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 (./results.aux) (./discussion.aux) (./conclusion.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 31.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count370
-\scratchdimen=\dimen228
+\scratchcounter=\count373
+\scratchdimen=\dimen262
 \scratchbox=\box50
-\nofMPsegments=\count371
-\nofMParguments=\count372
+\nofMPsegments=\count374
+\nofMParguments=\count375
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count373
-Normal \dimen register pool exhausted, switching to extended pool.
-\MPscratchDim=\dimen256
-\MPnumerator=\count374
-\makeMPintoPDFobject=\count375
+\MPscratchCnt=\count376
+\MPscratchDim=\dimen263
+\MPnumerator=\count377
+\makeMPintoPDFobject=\count378
 \everyMPtoPDFconversion=\toks52
 )
 \AtBeginShipoutBox=\box51
@@ -1888,27 +1919,27 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 31.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count376
+\c@section@level=\count379
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 26.
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
 (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
 
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 26.
+LaTeX Info: Redefining \selectfont on input line 31.
 
 
 ******************************************************
@@ -1931,21 +1962,21 @@ Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 ******************************************************
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
-<figures/titelsid-sv.pdf, id=135, 493.845pt x 349.305pt>
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
+<figures/titelsid-sv.pdf, id=143, 493.845pt x 349.305pt>
 File: figures/titelsid-sv.pdf Graphic file (type pdf)
 
 <use figures/titelsid-sv.pdf>
-Package pdftex.def Info: figures/titelsid-sv.pdf used on input line 26.
+Package pdftex.def Info: figures/titelsid-sv.pdf used on input line 31.
 (pdftex.def)             Requested size: 448.80249pt x 317.44164pt.
 
 
 Class memoir Warning: The material used in the footer is too large
 (20.39996pt) for the given foot skip (18.0pt), it is recommended to
 either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 26.
+(in both cases you will find help in the memoir manual). on input line 31.
 
 [1
 
@@ -1953,18 +1984,18 @@ either increase the foot skip or redesign the fotoer
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/titelsid-sv.pdf>]
-Overfull \hbox (90.6943pt too wide) in paragraph at lines 26--26
+Overfull \hbox (90.6943pt too wide) in paragraph at lines 31--31
  [][] 
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <9> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
  (./abstract.tex) [3
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 26.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
  (./acknowledgments.tex
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 3.
 
@@ -2029,17 +2060,11 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (./Thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                optimizedprefetching
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 26.
-Package biblatex Info: Reference segment=0 on input line 26.
+ (./Thesis.bbl)
+Package biblatex Info: Reference section=0 on input line 31.
+Package biblatex Info: Reference segment=0 on input line 31.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 \openout2 = `intro.aux'.
 
  (./intro.tex
@@ -2053,38 +2078,29 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 ] [2]
 \openout2 = `background.aux'.
 
- (./background.tex [3
+
+(./background.tex [3
 
 
 
-] [4]
-<figures/HAS1.png, id=293, 586.44093pt x 373.395pt>
+] <figures/HAS1.png, id=284, 586.44093pt x 373.395pt>
 File: figures/HAS1.png Graphic file (type png)
- <use figures/HAS1.png>
-Package pdftex.def Info: figures/HAS1.png used on input line 31.
+
+<use figures/HAS1.png>
+Package pdftex.def Info: figures/HAS1.png used on input line 27.
 (pdftex.def)             Requested size: 234.5722pt x 149.35535pt.
-
-<figures/HAS2.png, id=295, 594.72188pt x 383.18156pt>
+ <figures/HAS2.png, id=286, 594.72188pt x 383.18156pt>
 File: figures/HAS2.png Graphic file (type png)
- <use figures/HAS2.png>
-Package pdftex.def Info: figures/HAS2.png used on input line 39.
-(pdftex.def)             Requested size: 237.88454pt x 153.2699pt.
 
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
-) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.48 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
-.2}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.48 
-      <./figures/HAS1.png> <./figures/HAS2.png>]) [6]
+<use figures/HAS2.png>
+Package pdftex.def Info: figures/HAS2.png used on input line 35.
+(pdftex.def)             Requested size: 237.88454pt x 153.2699pt.
+ [4] [5 <./figures/HAS1.png> <./figures/HAS2.png>])
+[6]
 \openout2 = `systemdesign.aux'.
 
  (./systemdesign.tex
-<figures/Media_player.png, id=324, 484.81125pt x 362.85562pt>
+<figures/Media_player.png, id=331, 484.81125pt x 362.85562pt>
 File: figures/Media_player.png Graphic file (type png)
 
 <use figures/Media_player.png>
@@ -2095,45 +2111,31 @@ Package pdftex.def Info: figures/Media_player.png used on input line 13.
 
 
 ]
-<figures/teomet.png, id=335, 469.755pt x 441.14813pt>
+<figures/teomet.png, id=342, 469.755pt x 441.14813pt>
 File: figures/teomet.png Graphic file (type png)
  <use figures/teomet.png>
 Package pdftex.def Info: figures/teomet.png used on input line 30.
 (pdftex.def)             Requested size: 281.85518pt x 264.69092pt.
 
-<figures/prefetch.png, id=336, 498.36188pt x 437.38406pt>
+<figures/prefetch.png, id=343, 498.36188pt x 437.38406pt>
 File: figures/prefetch.png Graphic file (type png)
 
 <use figures/prefetch.png>
 Package pdftex.def Info: figures/prefetch.png used on input line 38.
 (pdftex.def)             Requested size: 299.01942pt x 262.43245pt.
- [8pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
-}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.48 
-      <./figures/Media_player.png>] [9pdfTeX warning (ext4): destination with t
-he same identifier (name{figure.3.2}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.48 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.3
-.3}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.48 
-      <./figures/teomet.png> <./figures/prefetch.png>] [10] [11] [12]) [13]
+ [8 <./figures/Media_player.png>] [9 <./figures/teomet.png> <./figures/prefetch
+.png>] [10] [11] [12]) [13]
 \openout2 = `results.aux'.
 
-
-(./results.tex <figures/Google_Maps.png, id=392, 374.90062pt x 356.83313pt>
+ (./results.tex
+<figures/Google_Maps.png, id=397, 374.90062pt x 356.83313pt>
 File: figures/Google_Maps.png Graphic file (type png)
 
 <use figures/Google_Maps.png>
 Package pdftex.def Info: figures/Google_Maps.png used on input line 14.
 (pdftex.def)             Requested size: 239.93558pt x 228.3724pt.
 
-<figures/GeomapVsGoogleBraAlg.png, id=393, 374.90062pt x 356.83313pt>
+<figures/GeomapVsGoogleBraAlg.png, id=398, 374.90062pt x 356.83313pt>
 File: figures/GeomapVsGoogleBraAlg.png Graphic file (type png)
 
 <use figures/GeomapVsGoogleBraAlg.png>
@@ -2141,156 +2143,106 @@ Package pdftex.def Info: figures/GeomapVsGoogleBraAlg.png used on input line 22
 .
 (pdftex.def)             Requested size: 204.0pt x 194.168pt.
 
-<figures/GeomapVsGoogleDaligAlg.png, id=394, 374.90062pt x 356.83313pt>
+<figures/GeomapVsGoogleDaligAlg.png, id=399, 374.90062pt x 356.83313pt>
 File: figures/GeomapVsGoogleDaligAlg.png Graphic file (type png)
 
 <use figures/GeomapVsGoogleDaligAlg.png>
 Package pdftex.def Info: figures/GeomapVsGoogleDaligAlg.png used on input line 
-27.
+28.
 (pdftex.def)             Requested size: 204.0pt x 194.168pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 21--30
-[]$[]$   $[]$ 
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 21--33
+[][]   [] 
  []
 
-<figures/GeomapVsGoogleFleran10equi.png, id=395, 444.66125pt x 480.79625pt>
+<figures/GeomapVsGoogleFleran10equi.png, id=400, 444.66125pt x 480.79625pt>
 File: figures/GeomapVsGoogleFleran10equi.png Graphic file (type png)
 
 <use figures/GeomapVsGoogleFleran10equi.png>
 Package pdftex.def Info: figures/GeomapVsGoogleFleran10equi.png used on input l
-ine 34.
+ine 39.
 (pdftex.def)             Requested size: 204.0pt x 220.5747pt.
 
-<figures/GeomapVsGoogleFleran10Dalig.png, id=396, 444.66125pt x 480.79625pt>
+<figures/GeomapVsGoogleFleran10Dalig.png, id=401, 444.66125pt x 480.79625pt>
 File: figures/GeomapVsGoogleFleran10Dalig.png Graphic file (type png)
 
 <use figures/GeomapVsGoogleFleran10Dalig.png>
 Package pdftex.def Info: figures/GeomapVsGoogleFleran10Dalig.png used on input 
-line 39.
+line 45.
 (pdftex.def)             Requested size: 204.0pt x 220.5747pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 33--42
-[]$[]$   $[]$ 
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 38--48
+[][]   [] 
  []
 
 [14
 
 
 
-] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.1}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.52 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.2}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.52 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.3}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.52 
-      <./figures/Google_Maps.png> <./figures/GeomapVsGoogleBraAlg.png> <./figur
+] [15 <./figures/Google_Maps.png> <./figures/GeomapVsGoogleBraAlg.png> <./figur
 es/GeomapVsGoogleDaligAlg.png>]
-<figures/Hoverboard_1.png, id=418, 482.55281pt x 362.10281pt>
+<figures/Hoverboard_1.png, id=423, 482.55281pt x 362.10281pt>
 File: figures/Hoverboard_1.png Graphic file (type png)
 
 <use figures/Hoverboard_1.png>
-Package pdftex.def Info: figures/Hoverboard_1.png used on input line 55.
+Package pdftex.def Info: figures/Hoverboard_1.png used on input line 63.
 (pdftex.def)             Requested size: 204.0pt x 153.07668pt.
 
-<figures/Hoverboard1medmap.png, id=419, 642.4pt x 481.8pt>
+<figures/Hoverboard1medmap.png, id=424, 642.4pt x 481.8pt>
 File: figures/Hoverboard1medmap.png Graphic file (type png)
 
 <use figures/Hoverboard1medmap.png>
-Package pdftex.def Info: figures/Hoverboard1medmap.png used on input line 60.
+Package pdftex.def Info: figures/Hoverboard1medmap.png used on input line 68.
 (pdftex.def)             Requested size: 204.0pt x 152.99553pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 54--63
-[]$[]$   $[]$ 
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 62--71
+[][]   [] 
  []
 
-<figures/Hoverboard_2.png, id=420, 481.8pt x 361.35pt>
+<figures/Hoverboard_2.png, id=425, 481.8pt x 361.35pt>
 File: figures/Hoverboard_2.png Graphic file (type png)
 
 <use figures/Hoverboard_2.png>
-Package pdftex.def Info: figures/Hoverboard_2.png used on input line 67.
+Package pdftex.def Info: figures/Hoverboard_2.png used on input line 77.
 (pdftex.def)             Requested size: 204.0pt x 152.99553pt.
 
-<figures/Hoverboard2medmap.png, id=421, 642.4pt x 480.79625pt>
+<figures/Hoverboard2medmap.png, id=426, 642.4pt x 480.79625pt>
 File: figures/Hoverboard2medmap.png Graphic file (type png)
 
 <use figures/Hoverboard2medmap.png>
-Package pdftex.def Info: figures/Hoverboard2medmap.png used on input line 72.
+Package pdftex.def Info: figures/Hoverboard2medmap.png used on input line 82.
 (pdftex.def)             Requested size: 204.0pt x 152.67677pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 66--75
-[]$[]$   $[]$ 
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 76--85
+[][]   [] 
  []
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
-}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.79 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.5}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.79 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.6}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.79 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.7}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.79 
-      <./figures/GeomapVsGoogleFleran10equi.png> <./figures/GeomapVsGoogleFlera
-n10Dalig.png> <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png>]
-<figures/clickgraph.png, id=432, 361.35pt x 217.5628pt>
+[16 <./figures/GeomapVsGoogleFleran10equi.png> <./figures/GeomapVsGoogleFleran1
+0Dalig.png> <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png>]
+<figures/clickgraph.png, id=437, 361.35pt x 217.5628pt>
 File: figures/clickgraph.png Graphic file (type png)
 
 <use figures/clickgraph.png>
-Package pdftex.def Info: figures/clickgraph.png used on input line 82.
+Package pdftex.def Info: figures/clickgraph.png used on input line 96.
 (pdftex.def)             Requested size: 361.34912pt x 217.56227pt.
-) [17pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.8}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.33 \include{results}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.4.9}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.33 \include{results}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.4.10}) has been already used, duplicate ignored
-<recently read> \AtBeginShipoutBox 
-                                   
-l.33 \include{results}
-                       <./figures/Hoverboard_2.png> <./figures/Hoverboard2medma
-p.png> <./figures/clickgraph.png>]
+) [17 <./figures/Hoverboard_2.png> <./figures/Hoverboard2medmap.png> <./figures
+/clickgraph.png>]
 \openout2 = `discussion.aux'.
 
  (./discussion.tex [18
 
 
 
-] [19] [20]) [21]
+] [19]
+[20]) [21]
 \openout2 = `conclusion.aux'.
 
-
-(./conclusion.tex) [22
+ (./conclusion.tex) [22
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 37.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 42.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -2302,52 +2254,52 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 Class memoir Warning: The material used in the footer is too large
 (20.39996pt) for the given foot skip (18.0pt), it is recommended to
 either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 44.
+(in both cases you will find help in the memoir manual). on input line 49.
 
-[24] <figures/copyright_exjobbsrapport.pdf, id=482, 597.23125pt x 845.1575pt>
+[24] <figures/copyright_exjobbsrapport.pdf, id=497, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 44.
+e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 44.
+e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=485, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=500, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 44.
+put line 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 44.
+put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 44.
+put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 44.
+put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf, page 1>
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 44.
+put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
  [25
 
@@ -2358,27 +2310,27 @@ put line 44.
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
  (./Thesis.aux (./intro.aux) (./background.aux)
 (./systemdesign.aux) (./results.aux) (./discussion.aux) (./conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5D08CDA77A0A37AA66118D0EBEE95EA8;2032.
+(rerunfilecheck)             Checksum: CEA12904366FB88B40FC13A36C714A08;2196.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 28451 strings out of 493117
- 492557 string characters out of 6135433
- 967641 words of memory out of 5000000
- 31234 multiletter control sequences out of 15000+600000
+ 29513 strings out of 493117
+ 512355 string characters out of 6135433
+ 989691 words of memory out of 5000000
+ 32288 multiletter control sequences out of 15000+600000
  52146 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,18n,56p,2188b,1576s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,18n,94p,2222b,1576s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive
@@ -2388,10 +2340,10 @@ live/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (31 pages, 3637357 bytes).
+Output written on Thesis.pdf (31 pages, 3641162 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
- 472 compressed objects within 5 object streams
+ 575 PDF objects out of 1000 (max. 8388607)
+ 487 compressed objects within 5 object streams
  109 named destinations out of 1000 (max. 500000)
- 369 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 385 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,6 +19,51 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
+    \entry{whathappens}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=f03ec5261fa7dec202a13678c580e214}{Akhshabi}{A\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=36d842ac4854923515d96af52ef1bf2d}{Ananthakrishnan}{A\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=d46ec8f748e5c31d3cf10afefb0d7897}{Begen}{B\bibinitperiod}{A.C.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=0efebec12fc88f75e79f5a356cb58b19}{Dovrolis}{D\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=f03ec5261fa7dec202a13678c580e214}{Akhshabi}{A\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=36d842ac4854923515d96af52ef1bf2d}{Ananthakrishnan}{A\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=d46ec8f748e5c31d3cf10afefb0d7897}{Begen}{B\bibinitperiod}{A.C.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=0efebec12fc88f75e79f5a356cb58b19}{Dovrolis}{D\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f7af59d6c9e980510d1a087d78fdbf3d}
+      \strng{fullhash}{c4ae60fc20e59e0a31654de8d709a5be}
+      \field{sortinit}{A}
+      \field{labeltitle}{What Happens When HTTP Adaptive Streaming Players Compete for Bandwidth?}
+      \field{journaltitle}{Proc. ACM International Workshop on Network and Operating System Support for Digital Audio and Video, New York}
+      \field{number}{9-14}
+      \field{title}{What Happens When HTTP Adaptive Streaming Players Compete for Bandwidth?}
+      \field{year}{2012}
+    \endentry
+    \entry{hastohelp}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=36e342e6b1ac0fec11f9d4c3a82db0f1}{Benno}{B\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=63da74f6b674d2fe5aed99d458c54d1f}{Esteban}{E\bibinitperiod}{J-O.}{J\bibinithyphendelim O\bibinitperiod}{}{}{}{}}%
+        {{hash=1fbdc5f511593c83656c63854d07bb13}{Rimae}{R\bibinitperiod}{I.}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=36e342e6b1ac0fec11f9d4c3a82db0f1}{Benno}{B\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=63da74f6b674d2fe5aed99d458c54d1f}{Esteban}{E\bibinitperiod}{J-O.}{J\bibinithyphendelim O\bibinitperiod}{}{}{}{}}%
+        {{hash=1fbdc5f511593c83656c63854d07bb13}{Rimae}{R\bibinitperiod}{I.}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{742fc8665f673c46ae5144129bfeb580}
+      \strng{fullhash}{742fc8665f673c46ae5144129bfeb580}
+      \field{sortinit}{B}
+      \field{labeltitle}{Adaptive Streaming: The network HAS to help}
+      \field{journaltitle}{Bell Labs Technical Journal}
+      \field{month}{09}
+      \field{number}{7}
+      \field{title}{Adaptive Streaming: The network HAS to help}
+      \field{volume}{16}
+      \field{year}{2011}
+      \field{pages}{101\bibrangedash 114}
+    \endentry
     \entry{optimizedstreaming}{article}{}
       \name{labelname}{5}{}{%
         {{hash=e072ad3e7567a27dd45c75023e207a9f}{Carlsson}{C\bibinitperiod}{Niklas}{N\bibinitperiod}{}{}{}{}}%
@@ -66,6 +111,40 @@
       \field{volume}{10}
       \field{year}{2008}
       \field{pages}{871\bibrangedash 884}
+    \endentry
+    \entry{distributedmeetings}{article}{}
+      \name{labelname}{10}{}{%
+        {{hash=4b248137f36fe1b5845077e42324cbe6}{Cutler}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=b45c1348bce78021a87ad4a749f3fb88}{Rui}{R\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=f5141b6c87a6cecd650b5fd98099034b}{Gupta}{G\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=203f77e65cc1e8e562d33092a6fced8e}{Cadiz}{C\bibinitperiod}{JJ}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=d9abc4b5f64ec802de8c2ad59815c20b}{Tashev}{T\bibinitperiod}{I.}{I\bibinitperiod}{}{}{}{}}%
+        {{hash=2ac4c9c3dea822525e5b1d1953bb0587}{He}{H\bibinitperiod}{L-W}{L\bibinithyphendelim W\bibinitperiod}{}{}{}{}}%
+        {{hash=2337f1e05b66149ac6ef678475fbe94d}{Colburn}{C\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=7969b27c3036c48b4c828e3e7465cebb}{Zhang}{Z\bibinitperiod}{Z.}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=19c74135e03ebc400715e4cdb04543d7}{Liu}{L\bibinitperiod}{Z.}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=b4f3bcc5ddf56bfce3fedd28eb621681}{Silverberg}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{10}{}{%
+        {{hash=4b248137f36fe1b5845077e42324cbe6}{Cutler}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=b45c1348bce78021a87ad4a749f3fb88}{Rui}{R\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=f5141b6c87a6cecd650b5fd98099034b}{Gupta}{G\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=203f77e65cc1e8e562d33092a6fced8e}{Cadiz}{C\bibinitperiod}{JJ}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=d9abc4b5f64ec802de8c2ad59815c20b}{Tashev}{T\bibinitperiod}{I.}{I\bibinitperiod}{}{}{}{}}%
+        {{hash=2ac4c9c3dea822525e5b1d1953bb0587}{He}{H\bibinitperiod}{L-W}{L\bibinithyphendelim W\bibinitperiod}{}{}{}{}}%
+        {{hash=2337f1e05b66149ac6ef678475fbe94d}{Colburn}{C\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=7969b27c3036c48b4c828e3e7465cebb}{Zhang}{Z\bibinitperiod}{Z.}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=19c74135e03ebc400715e4cdb04543d7}{Liu}{L\bibinitperiod}{Z.}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=b4f3bcc5ddf56bfce3fedd28eb621681}{Silverberg}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{69dad4ae144e5aeb1ce87360320e88be}
+      \strng{fullhash}{066efcaff920f53c809b4025b2101297}
+      \field{sortinit}{C}
+      \field{labeltitle}{Distributed Meetings: A Meeting Capture and Broadcasting System}
+      \field{journaltitle}{Proc. ACM International Conference on Multimedia, New York}
+      \field{number}{503-512}
+      \field{title}{Distributed Meetings: A Meeting Capture and Broadcasting System}
+      \field{year}{2002}
     \endentry
     \entry{osmf}{online}{}
       \name{labelname}{1}{}{%
@@ -228,6 +307,28 @@
       \field{year}{2014}
       \field{pages}{317\bibrangedash 326}
     \endentry
+    \entry{tvservices}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=c5a5c478f7436b19bf0dcc8817f155e7}{Krishnappa}{K\bibinitperiod}{DK}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=595ef6950e0f7e44fdfed6e77717a76d}{Khemmarat}{K\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=f25d2299651d8d644b6e27f50ea1fe77}{Gao}{G\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=8ad390309bd713c861f173de944a88f8}{Zink}{Z\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=c5a5c478f7436b19bf0dcc8817f155e7}{Krishnappa}{K\bibinitperiod}{DK}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=595ef6950e0f7e44fdfed6e77717a76d}{Khemmarat}{K\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=f25d2299651d8d644b6e27f50ea1fe77}{Gao}{G\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=8ad390309bd713c861f173de944a88f8}{Zink}{Z\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0b2e5a5c64c594e60639b279609907bd}
+      \strng{fullhash}{fb6a478216d52ff84cd9bd098cba8ae4}
+      \field{sortinit}{K}
+      \field{labeltitle}{On the feasibility of prefetching and caching for online TV services: a measurement study on hulu}
+      \field{journaltitle}{Proceedings of the 12th international conference on Passive and active measurement, PAM'11}
+      \field{number}{72-80}
+      \field{title}{On the feasibility of prefetching and caching for online TV services: a measurement study on hulu}
+      \field{year}{2011}
+    \endentry
     \entry{haversine}{online}{}
       \name{labelname}{1}{}{%
         {{hash=a4bb0d4054525c68949d655375a337c7}{Rick}{R\bibinitperiod}{Doctor}{D\bibinitperiod}{}{}{}{}}%
@@ -315,7 +416,6 @@
       \field{pages}{1149\bibrangedash 1162}
     \endentry
   \endsortlist
-  \missing{optimizedprefetching}
 \endrefsection
 \endinput
 
