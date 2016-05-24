@@ -134,34 +134,34 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.207.47/vod/J2.flv");
 			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");*/
 			
-			/*createGeoMapObjects(58.400543,15.577249,45,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.400543,15.577249,0,"http://130.236.207.47/vod/A1.flv");
 			createGeoMapObjects(58.400534,15.577459,0,"http://130.236.207.47/vod/A2.flv");
-			createGeoMapObjects(58.400537,15.577659,315,"http://130.236.207.47/vod/A3.flv");
-			createGeoMapObjects(58.400676,15.577678,300,"http://130.236.207.47/vod/J1.flv");
+			createGeoMapObjects(58.400537,15.577659,0,"http://130.236.207.47/vod/A3.flv");
+			createGeoMapObjects(58.400676,15.577678,0,"http://130.236.207.47/vod/J1.flv");
 			createGeoMapObjects(58.400679,15.577445,0,"http://130.236.207.47/vod/J2.flv");
-			createGeoMapObjects(58.400685,15.577233,45,"http://130.236.207.47/vod/J3.flv");
-			createGeoMapObjects(58.400824,15.577185,90,"http://130.236.207.47/vod/A1.flv");
-			createGeoMapObjects(58.400820,15.577442,180,"http://130.236.207.47/vod/A2.flv");
-			createGeoMapObjects(58.400827,15.577695,270,"http://130.236.207.47/vod/A3.flv");
-			createGeoMapObjects(58.400862,15.577889,260,"http://130.236.207.47/vod/J1.flv");
-			createGeoMapObjects(58.400917,15.577535,190,"http://130.236.207.47/vod/J2.flv");
-			createGeoMapObjects(58.400920,15.577280,135,"http://130.236.207.47/vod/J3.flv");
-			createGeoMapObjects(58.401020,15.577354,225,"http://130.236.207.47/vod/A1.flv");*/
+			createGeoMapObjects(58.400685,15.577233,0,"http://130.236.207.47/vod/J3.flv");
+			createGeoMapObjects(58.400824,15.577185,0,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.400820,15.577442,0,"http://130.236.207.47/vod/A2.flv");
+			createGeoMapObjects(58.400827,15.577695,0,"http://130.236.207.47/vod/A3.flv");
+			createGeoMapObjects(58.400862,15.577889,0,"http://130.236.207.47/vod/J1.flv");
+			createGeoMapObjects(58.400917,15.577535,0,"http://130.236.207.47/vod/J2.flv");
+			createGeoMapObjects(58.400920,15.577280,0,"http://130.236.207.47/vod/J3.flv");
+			createGeoMapObjects(58.401020,15.577354,0,"http://130.236.207.47/vod/A1.flv");
 			
 			
 			/*createPointOfInterest(58.400843, 15.577512);*/
 			
-			createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
+			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572434, 15.795149,0,"http://localhost/vod/Video_3.flv");
 			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
-			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");
+			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");*/
 			
 			/*createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
 			*/
-			createPointOfInterest(58.572177, 15.793485);
+			//createPointOfInterest(58.572177, 15.793485);
 			
 			//calculatePositionAlgorithm();
 			calculatePositionAlgorithm2();
