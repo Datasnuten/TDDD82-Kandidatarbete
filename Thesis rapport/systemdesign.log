@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  20 MAY 2016 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.29)  24 MAY 2016 11:39
 entering extended mode
 **./systemdesign.tex
 (systemdesign.tex
@@ -3000,9 +3000,20 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
+! Undefined control sequence.
+<write> ...: Reference `sec:has' on page \thepage 
+                                                  \space undefined\on@line .
+l.26 As mentioned briefly in Section \ref{sec:has}
+                                                   chunks will be downloaded...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:has' on page  undefined on input line 26.
+
 Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -4172,6 +4183,11 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 26--27
+[]
+ []
+
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 26--27
 []
  []
 
@@ -13308,10 +13324,17 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <write> ...eference `sec:server' on page \thepage 
                                                   \space undefined\on@line .
-l.128 ...ver will be explained in \ref{sec:server}
+l.128 ... be explained in Section \ref{sec:server}
                                                   , and also the main proble...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16886,11 +16909,11 @@ Overfull \hbox (19.50003pt too wide) in paragraph at lines 139--140
 
  
 Here is how much of TeX's memory you used:
- 29 strings out of 493634
- 373 string characters out of 3134015
+ 30 strings out of 493634
+ 382 string characters out of 3134015
  63604 words of memory out of 3000000
- 3512 multiletter control sequences out of 15000+200000
+ 3513 multiletter control sequences out of 15000+200000
  4294 words of font info for 16 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 20i,7n,26p,1705b,154s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 20i,7n,26p,1713b,154s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
