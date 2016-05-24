@@ -134,7 +134,7 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.207.47/vod/J2.flv");
 			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");*/
 			
-			createGeoMapObjects(58.400543,15.577249,45,"http://130.236.207.47/vod/A1.flv");
+			/*createGeoMapObjects(58.400543,15.577249,45,"http://130.236.207.47/vod/A1.flv");
 			createGeoMapObjects(58.400534,15.577459,0,"http://130.236.207.47/vod/A2.flv");
 			createGeoMapObjects(58.400537,15.577659,315,"http://130.236.207.47/vod/A3.flv");
 			createGeoMapObjects(58.400676,15.577678,300,"http://130.236.207.47/vod/J1.flv");
@@ -146,23 +146,25 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.400862,15.577889,260,"http://130.236.207.47/vod/J1.flv");
 			createGeoMapObjects(58.400917,15.577535,190,"http://130.236.207.47/vod/J2.flv");
 			createGeoMapObjects(58.400920,15.577280,135,"http://130.236.207.47/vod/J3.flv");
-			createGeoMapObjects(58.401020,15.577354,225,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.401020,15.577354,225,"http://130.236.207.47/vod/A1.flv");*/
 			
-			//createPointOfInterest(58.400843, 15.577512);
 			
-			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
+			/*createPointOfInterest(58.400843, 15.577512);*/
+			
+			createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572434, 15.795149,0,"http://localhost/vod/Video_3.flv");
 			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
 			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");
 			
-			createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
+			/*createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
+			*/
+			createPointOfInterest(58.572177, 15.793485);
 			
-			createPointOfInterest(58.572177, 15.793485);*/
-			
-			calculatePositionAlgorithm();
+			//calculatePositionAlgorithm();
+			calculatePositionAlgorithm2();
 			
 			if(geomapDict[0]){
 				geomapDict[0].setDefault();
@@ -249,6 +251,78 @@ package org.osmf.player.chrome.widgets
 			}
 		}
 		
+		//Niklas position algorithm
+		protected function calculatePositionAlgorithm2():void
+		{
+			var i:int = 0;
+			var j:int = 0;
+			
+			var relX:int = moveDistance;
+			var relY:int = moveDistance;
+			
+			var centerX:Number=0;
+			var centerY:Number=0;
+			
+			var maxX:Number=0;
+			var minX:Number=1000;
+			var maxY:Number=0;
+			var minY:Number=1000;
+			
+			var maxRadius:Number=0;
+			
+			var deltaX:Number=0;
+			var deltaY:Number=0;
+			
+			//Find the center of all points
+			for each(var obj:* in objectDict){
+				if(objectDict[i].getXcoordinate > maxX){
+					maxX = objectDict[i].getXcoordinate;
+				}
+				
+				if(objectDict[i].getXcoordinate < minX){
+					minX = objectDict[i].getXcoordinate;
+				}
+				
+				if(objectDict[i].getYcoordinate > maxY){
+					maxY = objectDict[i].getYcoordinate;
+				}
+				
+				if(objectDict[i].getYcoordinate < minY){
+					minY = objectDict[i].getYcoordinate;
+				}
+				
+				i++;
+			}
+			
+			centerX = (maxX+minX)/2;
+			centerY = (maxY+minY)/2;
+			
+			//Find the point furthest away from the center and get its radius
+			if((maxX-minX) > (maxY-minY)){
+				maxRadius = (maxX-minX)/2;
+			}else{
+				maxRadius = (maxY-minY)/2;
+			}
+			
+			i=0;
+			
+			//Calculate and set all points' distance to the center
+			for each(var obj:* in objectDict){
+				deltaX = (centerX-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+centerY)*Math.PI/360)/360;   
+				deltaY = (objectDict[i].getYcoordinate-centerY)*40000/360;
+				relX = (deltaX/maxRadius);
+				relY = (deltaY/maxRadius);
+				
+				
+				objectDict[i].setPositionX = objectDict[i].getPositionX - relX;
+				objectDict[i].setPositionY = objectDict[i].getPositionY - relY;
+				i++;
+			}
+			
+		}
+		
+		
+		
 		//Calculates the position of each geomapObject
 		protected function calculatePositionAlgorithm():void
 		{
@@ -262,11 +336,11 @@ package org.osmf.player.chrome.widgets
 				moveDistance = this.moveDistance/(incrementer);
 			}
 			
-			var valueX:int = moveDistance;
-			var valueY:int = moveDistance;
+			var relX:int = moveDistance;
+			var relY:int = moveDistance;
 			
-			var x:Number=0;
-			var y:Number=0;
+			var deltaX:Number=0;
+			var deltaY:Number=0;
 			var z:Number=0;
 			
 			//Checks if there is more than one object
@@ -279,49 +353,50 @@ package org.osmf.player.chrome.widgets
 							//Checks if there is more than 10 objects and then changes the way x and are measured 
 							//to make relativity better for more objects.
 							if(true){
-								x = (objectDict[j].getXcoordinate-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+objectDict[j].getYcoordinate)*Math.PI/360)/360;   
-								y = (objectDict[i].getYcoordinate-objectDict[j].getYcoordinate)*40000/360;
+								deltaX = (objectDict[j].getXcoordinate-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+objectDict[j].getYcoordinate)*Math.PI/360)/360;   
+								deltaY = (objectDict[i].getYcoordinate-objectDict[j].getYcoordinate)*40000/360;
 							}else{
-								x = objectDict[i].getXcoordinate-objectDict[j].getXcoordinate;
-								y = objectDict[i].getYcoordinate-objectDict[j].getYcoordinate;
+								deltaX = objectDict[i].getXcoordinate-objectDict[j].getXcoordinate;
+								deltaY = objectDict[i].getYcoordinate-objectDict[j].getYcoordinate;
 							}
-							z = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+							z = Math.sqrt(Math.pow(deltaX,2)+Math.pow(deltaY,2));
 							
-							/*trace("x: "+x+", y: "+y+", z: "+z);
-							trace(Math.pow(x,2)/Math.pow(z,2));
-							trace(Math.pow(y,2)/Math.pow(z,2));*/
-							valueX = moveDistance*(Math.abs(x/z));
-							valueY = moveDistance*(Math.abs(y/z));
+							relX = moveDistance*(Math.abs(deltaX/z));
+							relY = moveDistance*(Math.abs(deltaY/z));
 							
-							if(valueX==0){
-								valueX = moveDistance;
+							if(relX==0){
+								relX = moveDistance;
 							}
 							
-							if(valueY==0){
-								valueY = moveDistance;
+							if(relY==0){
+								relY = moveDistance;
 							}
 							
 							if (objectDict[i].getXcoordinate > objectDict[j].getXcoordinate){
-								objectDict[i].setPositionX = objectDict[i].getPositionX + valueX;
+								objectDict[i].setPositionX = objectDict[i].getPositionX + relX;
 							}else{
-								objectDict[i].setPositionX = objectDict[i].getPositionX - valueX;
+								objectDict[i].setPositionX = objectDict[i].getPositionX - relX;
 							}
 							
 							if (objectDict[i].getYcoordinate > objectDict[j].getYcoordinate){
-								objectDict[i].setPositionY = objectDict[i].getPositionY - valueY;
+								objectDict[i].setPositionY = objectDict[i].getPositionY - relY;
 							}else{
-								objectDict[i].setPositionY = objectDict[i].getPositionY + valueY;
+								objectDict[i].setPositionY = objectDict[i].getPositionY + relY;
 							}
 						}
 						j++;
 					}
 					i++;
 				}
-				checkIfOutsideMap();
 			}
 		}
 		
+		
+
+		
+		
 		//Checks if the objects are outside the map and adjust them if it so happens
+		//OBS! THIS IS NOT USED!
 		protected function checkIfOutsideMap():void
 		{
 			var i:int=0;
