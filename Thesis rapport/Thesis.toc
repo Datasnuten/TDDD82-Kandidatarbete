@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Contents}{v}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{vi}{section*.3}
+\contentsline {chapter}{List of Figures}{vii}{section*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -56,15 +56,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{19}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}The Test Case}{19}{section.5.4}
+\contentsline {section}{\numberline {5.4}Position Recordings}{19}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Adobe Flash}{20}{section.5.5}
+\contentsline {section}{\numberline {5.5}The Test Case}{19}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Issues with the Server}{20}{section.5.6}
+\contentsline {section}{\numberline {5.6}Adobe Flash}{20}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Project Structure Improvements}{20}{section.5.7}
+\contentsline {section}{\numberline {5.7}Issues with the Server}{20}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Work in a Wider Context}{20}{section.5.8}
+\contentsline {section}{\numberline {5.8}Project Structure Improvements}{20}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.9}Work in a Wider Context}{20}{section.5.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{22}{chapter.6}
 \defcounter {refsection}{0}\relax 
