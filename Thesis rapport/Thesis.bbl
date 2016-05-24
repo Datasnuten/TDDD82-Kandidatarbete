@@ -36,10 +36,10 @@
       \strng{fullhash}{c4ae60fc20e59e0a31654de8d709a5be}
       \field{sortinit}{A}
       \field{labeltitle}{What Happens When HTTP Adaptive Streaming Players Compete for Bandwidth?}
-      \field{journaltitle}{Proc. ACM International Workshop on Network and Operating System Support for Digital Audio and Video, New York}
-      \field{number}{9-14}
+      \field{journaltitle}{Proc. ACM International Workshop on Network and Operating System Support for Digital Audio and Video}
       \field{title}{What Happens When HTTP Adaptive Streaming Players Compete for Bandwidth?}
       \field{year}{2012}
+      \field{pages}{9\bibrangedash 14}
     \endentry
     \entry{hastohelp}{article}{}
       \name{labelname}{3}{}{%
@@ -57,7 +57,6 @@
       \field{sortinit}{B}
       \field{labeltitle}{Adaptive Streaming: The network HAS to help}
       \field{journaltitle}{Bell Labs Technical Journal}
-      \field{month}{09}
       \field{number}{7}
       \field{title}{Adaptive Streaming: The network HAS to help}
       \field{volume}{16}
@@ -105,7 +104,6 @@
       \field{sortinit}{C}
       \field{labeltitle}{Optimized Periodic Broadcast of Non-linear Media}
       \field{journaltitle}{IEEE Transactions on Multimedia}
-      \field{month}{08}
       \field{number}{5}
       \field{title}{Optimized Periodic Broadcast of Non-linear Media}
       \field{volume}{10}
@@ -141,10 +139,10 @@
       \strng{fullhash}{066efcaff920f53c809b4025b2101297}
       \field{sortinit}{C}
       \field{labeltitle}{Distributed Meetings: A Meeting Capture and Broadcasting System}
-      \field{journaltitle}{Proc. ACM International Conference on Multimedia, New York}
-      \field{number}{503-512}
+      \field{journaltitle}{Proc. ACM International Conference on Multimedia}
       \field{title}{Distributed Meetings: A Meeting Capture and Broadcasting System}
       \field{year}{2002}
+      \field{pages}{503\bibrangedash 512}
     \endentry
     \entry{osmf}{online}{}
       \name{labelname}{1}{}{%
@@ -206,10 +204,10 @@
       \strng{fullhash}{82ba4e475e614c5ebffb8212352e5c3b}
       \field{sortinit}{H}
       \field{labeltitle}{Confused, timid, and unstable: Picking a video streaming rate is hard}
-      \field{journaltitle}{In Proc. ACM IMC}
-      \field{month}{11}
+      \field{journaltitle}{Proc. ACM IMC}
       \field{title}{Confused, timid, and unstable: Picking a video streaming rate is hard}
       \field{year}{2012}
+      \field{pages}{225\bibrangedash 238}
     \endentry
     \entry{bufferbased}{article}{}
       \name{labelname}{3}{}{%
@@ -226,10 +224,10 @@
       \strng{fullhash}{7f7f42de4eb4c05cbcc367f89df31824}
       \field{sortinit}{H}
       \field{labeltitle}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
-      \field{journaltitle}{In Proc. ACM SIGCOMM FhMN Workshop}
-      \field{month}{08}
+      \field{journaltitle}{Proc. ACM SIGCOMM FhMN Workshop}
       \field{title}{Downton abbey without the hiccups: Buffer-based rate adaptation for HTTP video streaming}
       \field{year}{2013}
+      \field{pages}{9\bibrangedash 14}
     \endentry
     \entry{hasmultipath}{article}{}
       \name{labelname}{6}{}{%
@@ -253,7 +251,6 @@
       \field{sortinit}{K}
       \field{labeltitle}{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
       \field{journaltitle}{Proc. ACM SIGCOMM Workshop on Future Human-Centric Multimedia Networking}
-      \field{month}{08}
       \field{title}{Empowering the Creative User: Personalized HTTP-based Adaptive Streaming of Multi-path Nonlinear Video}
       \field{year}{2013}
       \field{pages}{55\bibrangedash 38}
@@ -278,9 +275,9 @@
       \field{sortinit}{K}
       \field{labeltitle}{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance}
       \field{journaltitle}{Proc. ACM International Conference on Multimedia}
-      \field{month}{10}
       \field{title}{Bandwidth-aware Prefetching for Proactive Multi-video Preloading and Improved HAS Performance}
       \field{year}{2015}
+      \field{pages}{551\bibrangedash 560}
     \endentry
     \entry{qualbranch}{article}{}
       \name{labelname}{5}{}{%
@@ -301,8 +298,7 @@
       \strng{fullhash}{41cffe0d88515272ce49b36f3fa9ec3a}
       \field{sortinit}{K}
       \field{labeltitle}{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming}
-      \field{journaltitle}{Proc. ACM International Conference on Multimedia (ACM Multimedia)}
-      \field{month}{11}
+      \field{journaltitle}{Proc. ACM International Conference on Multimedia}
       \field{title}{Quality-adaptive Prefetching for Interactive Branched Video using HTTP-based Adaptive Streaming}
       \field{year}{2014}
       \field{pages}{317\bibrangedash 326}
@@ -324,10 +320,10 @@
       \strng{fullhash}{fb6a478216d52ff84cd9bd098cba8ae4}
       \field{sortinit}{K}
       \field{labeltitle}{On the feasibility of prefetching and caching for online TV services: a measurement study on hulu}
-      \field{journaltitle}{Proceedings of the 12th international conference on Passive and active measurement, PAM'11}
-      \field{number}{72-80}
+      \field{journaltitle}{International conference on Passive and active measurement}
       \field{title}{On the feasibility of prefetching and caching for online TV services: a measurement study on hulu}
       \field{year}{2011}
+      \field{pages}{72\bibrangedash 80}
     \endentry
     \entry{haversine}{online}{}
       \name{labelname}{1}{}{%
@@ -370,7 +366,6 @@
       \field{sortinit}{S}
       \field{labeltitle}{Watching user generated videos with prefetching}
       \field{journaltitle}{Signalin Processing: Image Communication}
-      \field{month}{04}
       \field{number}{4}
       \field{title}{Watching user generated videos with prefetching}
       \field{volume}{27}
@@ -408,7 +403,6 @@
       \field{sortinit}{Z}
       \field{labeltitle}{Scalable On-Demand Streaming of Nonlinear Media}
       \field{journaltitle}{IEEE/ACM Trans. on Networking}
-      \field{month}{10}
       \field{number}{5}
       \field{title}{Scalable On-Demand Streaming of Nonlinear Media}
       \field{volume}{15}

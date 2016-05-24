@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  24 MAY 2016 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  24 MAY 2016 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2234,10 +2234,10 @@ Package pdftex.def Info: figures/clickgraph.png used on input line 97.
 
 
 ] [19]
-[20]) [21]
+[20]) [21] [22]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex) [22
+ (./conclusion.tex) [23
 
 
 
@@ -2246,7 +2246,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 42.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [23
+) [24
 
 
 ]
@@ -2256,7 +2256,7 @@ Class memoir Warning: The material used in the footer is too large
 either increase the foot skip or redesign the fotoer
 (in both cases you will find help in the memoir manual). on input line 49.
 
-[24] <figures/copyright_exjobbsrapport.pdf, id=512, 597.23125pt x 845.1575pt>
+[25] <figures/copyright_exjobbsrapport.pdf, id=516, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
@@ -2270,7 +2270,7 @@ Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
 e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=515, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=519, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
@@ -2301,7 +2301,7 @@ File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
 put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
- [25
+ [26
 
  <./figures/copyright_exjobbsrapport.pdf>]
 \tf@toc=\write7
@@ -2324,9 +2324,9 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 29517 strings out of 493117
- 512411 string characters out of 6135433
- 989765 words of memory out of 5000000
+ 29518 strings out of 493117
+ 512418 string characters out of 6135433
+ 988764 words of memory out of 5000000
  32290 multiletter control sequences out of 15000+600000
  52146 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2342,10 +2342,10 @@ exlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (32 pages, 3645649 bytes).
+Output written on Thesis.pdf (33 pages, 3646802 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 504 compressed objects within 6 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 507 compressed objects within 6 object streams
+ 112 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
