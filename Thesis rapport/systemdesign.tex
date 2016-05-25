@@ -62,7 +62,7 @@ centerX &= \frac{maxX+minX}{2},  \\
 centerY &= \frac{maxY+minY}{2}. \nonumber
 \end{align}
 
-The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that centerX, maxX and minX is actually spherical longitude values, similar with centerY, maxY and minY which is latitude values, and not flat surface x- and y-axis values. This direct translation may cause some inaccuracy. By taking half of maximum and minimum with both longitude and latitude we can get our center points as a representation on the real world map.
+The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that centerX, maxX and minX is actually spherical longitude values, similar with centerY, maxY and minY which is latitude values, and not flat surface x- and y-axis values. This direct translation may cause some inaccuracy. By taking half of maximum and minimum with both longitude and latitude we can get our center point as a representation off the real world map.
  
 Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale with as follows:
 
@@ -71,7 +71,7 @@ Third, now when we have the center point of all points we can calculate the maxi
 maxRadius &= max[\frac{maxX-minX}{2}, \frac{maxY-minY}{2}].
 \end{align}
 
-The calculation checks what the maximum difference is between maximum and minimum for longitude and for longitude then takes that value as its \textit{maxRadius}. This is to make the scaling and relativity as accurate as possible.
+The calculation checks what the maximum difference is between maximum and minimum for longitude and for longitude then takes that value as its \textit{maxRadius}. This is to get the correct radius for scaling and relativity.
 
 Fourth, with the maximum radius calculated we can now place all the objects onto the geographical map. This is done by calculating each objects relative position to the center point that we calculated in equation \ref{eq:center} and translate it to x- and y-coordinates. This translation is done with the equiretangular approximation formula \cite{equi}:
 
@@ -92,7 +92,7 @@ relX = \frac{deltaX}{maxRadius}, \\
 relY = \frac{deltaY}{maxRadius}.
 \end{align*}
 
-The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values \textit{relX} and \textit{relY} the algorithm will move each object with that value from the middle of the geo-map where all objects be as a startposition. 
+The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the middle of the geo-map where all objects will have as a startposition. 
 
 
 
