@@ -41,6 +41,26 @@
       \field{year}{2012}
       \field{pages}{9\bibrangedash 14}
     \endentry
+    \entry{experimentalevaluation}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=f03ec5261fa7dec202a13678c580e214}{Akhshabi}{A\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=4ee7d512e922806bad8d9186827c9654}{Begen}{B\bibinitperiod}{A.\bibnamedelimi C.}{A\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=ec32de871aa242bb9694c09384d1913b}{Dovrolis.}{D\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=f03ec5261fa7dec202a13678c580e214}{Akhshabi}{A\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=4ee7d512e922806bad8d9186827c9654}{Begen}{B\bibinitperiod}{A.\bibnamedelimi C.}{A\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=ec32de871aa242bb9694c09384d1913b}{Dovrolis.}{D\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f48759fd3d76a91dda23c5d2fa926661}
+      \strng{fullhash}{f48759fd3d76a91dda23c5d2fa926661}
+      \field{sortinit}{A}
+      \field{labeltitle}{An experimental evaluation of rate-adaptation algorithms in adaptive streaming over HTTP}
+      \field{journaltitle}{Proc. ACM MMSys}
+      \field{title}{An experimental evaluation of rate-adaptation algorithms in adaptive streaming over HTTP}
+      \field{year}{2011}
+      \field{pages}{157\bibrangedash 168}
+    \endentry
     \entry{hastohelp}{article}{}
       \name{labelname}{3}{}{%
         {{hash=36e342e6b1ac0fec11f9d4c3a82db0f1}{Benno}{B\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
