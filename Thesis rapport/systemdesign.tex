@@ -54,7 +54,7 @@ The interface accepts an arbitrary number of video streams coupled with a cardin
 \subsection{Geographical Position Algorithm}
 \label{sec:geoalgorithm}
 
-The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, the center for which all objects will be placed relative to is calculated from all the objects. This is done by checking each and every objects latitude and longitude position and take the maximum and minimum value from them. When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world maps longitude-axis and latitude-axis as follows:
+The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, the center for which all objects will be placed relative to is calculated from all the objects. This is done by checking each and every objects latitude and longitude position and take the maximum and minimum value from them. When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world map's longitude-axis and latitude-axis as follows:
 
 \begin{align}
 \label{eq:center}
@@ -62,7 +62,7 @@ centerX &= \frac{maxX+minX}{2},  \\
 centerY &= \frac{maxY+minY}{2}. \nonumber
 \end{align}
 
-The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that centerX, maxX and minX is actually longitude values, similar with centerY, maxY and minY which is latitude values, and not x- and y-axis values. By taking half of maximum and minimum with both longitude and latitude we can get our center points as a representation on the real world map.
+The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that centerX, maxX and minX is actually spherical longitude values, similar with centerY, maxY and minY which is latitude values, and not flat surface x- and y-axis values. This direct translation may cause some inaccuracy. By taking half of maximum and minimum with both longitude and latitude we can get our center points as a representation on the real world map.
  
 Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale with as follows:
 
