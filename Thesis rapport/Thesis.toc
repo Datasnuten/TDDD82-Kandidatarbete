@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Contents}{v}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{vii}{section*.3}
+\contentsline {chapter}{List of Figures}{vi}{section*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -36,38 +36,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.2}Simplification of the algorithm}{11}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Technical Details}{11}{section.3.5}
+\contentsline {section}{\numberline {3.5}Technical Details}{12}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.6}Server and Video Application}{13}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Validated Results}{14}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Validated Results}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Position Algorithm}{14}{section.4.1}
+\contentsline {section}{\numberline {4.1}Position Algorithm}{15}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Geo-based Streaming}{16}{section.4.2}
+\contentsline {section}{\numberline {4.2}Geo-based Streaming}{17}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{17}{section.4.3}
+\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{18}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Discussion}{19}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Discussion}{20}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Understanding the Provided Code}{19}{section.5.1}
+\contentsline {section}{\numberline {5.1}Understanding the Provided Code}{20}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Issues with HAS and Prefetching}{19}{section.5.2}
+\contentsline {section}{\numberline {5.2}Issues with HAS and Prefetching}{20}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{20}{section.5.3}
+\contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{21}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Position Recordings}{21}{section.5.4}
+\contentsline {section}{\numberline {5.4}Position Recordings}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}The Test Case}{21}{section.5.5}
+\contentsline {section}{\numberline {5.5}The Test Case}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Adobe Flash}{21}{section.5.6}
+\contentsline {section}{\numberline {5.6}Adobe Flash}{22}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Issues with the Server}{21}{section.5.7}
+\contentsline {section}{\numberline {5.7}Issues with the Server}{22}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Project Structure Improvements}{22}{section.5.8}
+\contentsline {section}{\numberline {5.8}Project Structure Improvements}{23}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}Work in a Wider Context}{22}{section.5.9}
+\contentsline {section}{\numberline {5.9}Work in a Wider Context}{23}{section.5.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{24}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{25}{section*.16}
+\contentsline {chapter}{Bibliography}{26}{section*.16}
