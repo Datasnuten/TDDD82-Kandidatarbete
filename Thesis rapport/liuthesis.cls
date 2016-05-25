@@ -45,6 +45,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
 %%% Code:
+\usepackage{setspace}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{liuthesis} [2010/10/19 PHD Thesis class for LiU]
 \typeout{PHD Thesis class for LiU by Ola Leifler - v 1.02}
@@ -758,7 +759,11 @@ Examinator: \@examiner}
   \addcontentsline{toc}{chapter}{Acknowledgments}
   \@acknowledgments
   \clearpage
-  \tableofcontents
+  
+  %%ta bort spacing om krångel
+  \begin{spacing}{0.9}
+	\tableofcontents
+	\end{spacing}
   \clearpage{}
   \listoffigures
   \clearpage{}
