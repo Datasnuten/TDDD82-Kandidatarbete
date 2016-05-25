@@ -46,7 +46,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Geo-based Streaming}{17}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{17}{section.4.3}
+\contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{18}{section.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Discussion}{20}{chapter.5}
 \defcounter {refsection}{0}\relax 
@@ -56,7 +56,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Improvements to the Position Algorithm}{21}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Position Recordings}{21}{section.5.4}
+\contentsline {section}{\numberline {5.4}Position Recordings}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.5}The Test Case}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
@@ -70,4 +70,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{26}{section*.17}
+\contentsline {chapter}{Bibliography}{26}{section*.16}
