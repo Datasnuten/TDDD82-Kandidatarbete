@@ -54,60 +54,55 @@ The interface accepts an arbitrary number of video streams coupled with a cardin
 \subsection{Geographical Position Algorithm}
 \label{sec:geoalgorithm}
 
-The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, a center of all points is calculated from all the points. This is done checking each and every objects latitude and longitude position and take the maximum and minimum of them. When having maximum and minimum longitude and latitude the algorithm will calculate the center of x-axis and y-axis as follows:
+The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, center of all points is calculated from all the objects. This is done by checking each and every objects latitude and longitude position and take the maximum and minimum value from them. When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of x-axis and y-axis as follows:
 
-\begin{align*}
+\begin{align}
+\label{eq:center}
 centerX &= \frac{maxX+minX}{2},  \\
-centerY &= \frac{maxY+minY}{2}.
-\end{align*}
+centerY &= \frac{maxY+minY}{2}. \nonumber
+\end{align}
 
-Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale as follows:
+Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale with as follows:
 
-\begin{align*}
+\begin{align}
+\label{eq:radius}
 maxRadius &= max[\frac{maxX-minX}{2}, \frac{maxY-minY}{2}].
-\end{align*}
+\end{align}
 
+Fourth, with the maximum radius calculated we can now place all the objects onto the geographical map. This is done by calculating each objects relative position to the center point that we calculated in equation \ref{eq:center} and translate it to x- and y-coordinates. This translation is done with the equiretangular approximation formula \cite{equi}:
 
+\begin{align}
+\label{eq:equiretangular}
+deltaX &= (centerX-longitude)*\frac{40000}{360}  \\
+ &\phantom{b=\,} *cos((latitude+centerY) * \frac{\pi}{360}), \nonumber\\
+deltaY &= (latitude-centerY)*\frac{40000}{360}. \nonumber
+\end{align}
 
-For our calculations here we use the equiretangular approximation formula \cite{equi}:
+Here, deltaX and deltaY are the projected real world x- and y-distances between a coordinate and the center point with <longitude, latitude> and <centerX, centerY>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equireqtangular projection suffices.
 
-\begin{align*}
-x &= (longitude2-longitude1)*40000/360  \\
- &\phantom{b=\,} *cos((latitude1+latitude2) * \pi/360), \nonumber \\
-y &= (latitude1-latitude2)*40000/360, \\
-z &= \sqrt{x^2+y^2}.
-\end{align*}
-
-Here, x and y are the projected real world x- and y-distances between two coordinates with <longitude1, latitude1> and <longitude2, latitude2>, and pythagoras theorem is used to calculate the absolute distance z. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. In the formula we approximate the earth's circumference as 40000 km. Again, with this algorithm \textit{x} and \textit{y} are the difference between two objects' longitude and latitude values translated to x- and y-coordinates to fit our geographical map as it represents a view on a flat plane. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equireqtangular projection suffices.
-
-With \textit{x}, \textit{y} and \textit{z} the relative distance on the display can be calculated. This relative distance is the distance between two objects relative to each other in the geographic map. For calculating these relative distances \textit{relX} and \textit{relY}, we use the formula:
+With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances \textit{relX} and \textit{relY}, we use the formula:
 
 \begin{align*}
 \label{eq:2}
-relX = moveDistance*|\frac{x}{z}|, \\
-relY = moveDistance*|\frac{y}{z}|,
+relX = \frac{deltaX}{maxRadius}, \\
+relY = \frac{deltaY}{maxRadius}.
 \end{align*}
 
-where \textit{moveDistance} is a constant value which represents how much an object at most should move, this is set as the radius of the geo-map to help with scalability. The reason we take the absolute value of \textit{x} divided by \textit{z}, or y divided by z, is to check how much an object should move in the x- and y- axis. When we have our scaling value the algorithm will check how to move the object relative to real-life. This check is done to see if the object in real-life is more to the west, north, south or east in-order to know the direction for moving the object in x-axis and y-axis on our flat plane.
+The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values \textit{relX} and \textit{relY} the algorithm will move each object with that value from the middle of the geo-map where all objects be as a startposition. 
 
-For scalability of our algorithm the value of \textit{moveDistance} will be changed accordingly to the number of objects to place. This is done by dividing the \textit{moveDistance} by the number of users. The reason for this is because every object will move relative to every object in the list thus the distance one object has to move will be \textit{moveDistance} times the number of objects. Another reason for doing this scalability is to ensure that an object won't be placed outside the geo-map, however if that would happen then there is another fail-safe algorithm which will check if an object is outside the map and adjust it accordingly.
 
-\subsection{Limitations and Accuracy}
+
+\subsection{Simplification of the algorithm}
 \label{sec:limacc}
 
-The geographical position algorithm places every object relatively good compared to reality but it is not perfect and there is room for improvements. The accuracy of the algorithm is generally good in most cases but sometimes the relative placement can seem a bit off. However in this case the object is not placed in a completely wrong place, but the object's x- and/or y-coordinates is wrong relative to another object. This mostly happens if we have too many objects, one or two objects relativity will be off but not by a large margin. The reason can be because we convert the latitude and longitude to x- and y-coordinates, however this cannot be the whole problem since relativity is generally good for a few objects (less than ten objects).
-
-While testing, in some cases when the number of objects exceeds 10, a few objects are placed in relatively different way compared to when the objects are fewer than 10. We are not entirely sure why but since our algorithm uses very simple equations and ideas the accuracy may decrease for many values because of our way of scaling the distance to move. The scaling distance may get so small that when rounding up to an integer the value will be of by a small margin. This may be the case when a few objects are placed relatively wrong, even though it seems wrong the margin of error is not big. Every case tested shows that the margin in which the placement seem off is by a very small distance in x-axis and y-axis. This will be shown in \textit{Chapter 4}.
-
-
-For now the solution to relative placement of many objects, when the number exceeds ten, will be handled by another equation. 
+The geographical position algorithm places every object very good compared to reality in a way that relativity is kept. However, the equiretangular approximation formula that is used in equation \ref{eq:equiretangular} can be approximated for us. Since every object is placed with a relatively small distance between each other the algorithm can be simplified to the following: 
 
 \begin{align*}
-x &= longitude1-longitude2  \\
-y &= latitude1-latitude2 \\
+deltaX &= (centerX-longitude)*\frac{40000}{360}, \\
+deltaY &= (latitude-centerY)*\frac{40000}{360}. \\
 \end{align*}
 
-The equation above is simpler and doesn't translate spherical longitude and latitude coordinates to flat x- and y-coordinates which leaves room for improvement, but for many objects in a small area this isn't as big of an issue. When the number of objects are many then there is not as much of an issue since every object will move so little compared to one another that how much they move in x- and y-axis isn't as important. This does not fix relativity entirely for many objects but when tested it looked better compared to the previous equation. 
+The equation above is simpler and removes the \textit{cos} that was used previously because for small distances the value of \textit{cos} will be close to one. Since video streams in a real-life scenario will be very close when streaming the same point of interest the simplification does not cause any problems in relativity. The accuracy of the algorithm will be shown in \textit{Chapter 4}.
 
 \section{Technical Details}
 \label{sec:technicaldetails}
