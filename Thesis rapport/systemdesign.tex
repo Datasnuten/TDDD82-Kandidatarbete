@@ -54,7 +54,22 @@ The interface accepts an arbitrary number of video streams coupled with a cardin
 \subsection{Geographical Position Algorithm}
 \label{sec:geoalgorithm}
 
-The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, every object starts with having it's position in the middle of the geographical map. Third, the algorithm goes through each and every object in the list and checks its coordinates relative to the other objects. This is done be checking the objects' actual real-life distance between each other by calculating the difference between the coordinates of each object to get a relative distance between them. For our calculations here we use the equiretangular approximation formula \cite{equi}:
+The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, a center of all points is calculated from all the points. This is done checking each and every objects latitude and longitude position and take the maximum and minimum of them. When having maximum and minimum longitude and latitude the algorithm will calculate the center of x-axis and y-axis as follows:
+
+\begin{align*}
+centerX &= \frac{maxX+minX}{2},  \\
+centerY &= \frac{maxY+minY}{2}.
+\end{align*}
+
+Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale as follows:
+
+\begin{align*}
+maxRadius &= max[\frac{maxX-minX}{2}, \frac{maxY-minY}{2}].
+\end{align*}
+
+
+
+For our calculations here we use the equiretangular approximation formula \cite{equi}:
 
 \begin{align*}
 x &= (longitude2-longitude1)*40000/360  \\
