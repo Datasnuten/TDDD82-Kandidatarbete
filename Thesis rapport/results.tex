@@ -36,7 +36,7 @@ To demonstrate the accuracy of the relative placement of geographical points in 
 
 The placement of the arrow points in Figure \ref{fig:GeomapVsGoogleLessThan10objects} is almost an exact match to the Google Maps reference stars for the respective coordinates, at least in terms off relativity. There is a slight difference between interface's placement and the reference in this figure and the reason for this is that our method for rotating the arrow points is not optimal. The default and only way of rotating a graphical object provided by our programming tools is to rotate the object around its top-left corner. Due to this we added some functionality to this existing rotation function to make the objects rotate around its center instead. Because this rotation code is not optimal there is a very slight deviation from its supposed placement. With the load test however, we did not angle the arrow points as shown in Figure \ref{fig:GeomapVsGoogleMoreThan10objects}. Because the suboptimal rotation function does not take place here the algorithm's relative placement is exactly on point with its reference.
 
-This would prove the accuracy of our relative placement of the geographical points, albeit with a slightly better precision if the objects are not rotated. The rotation function will be further discussed in \textit{Chapter \ref(cha:discussion}.
+This would prove the accuracy of our relative placement of the geographical points, albeit with a slightly better precision if the objects are not rotated. The rotation function will be further discussed in \textit{Chapter \ref{cha:discussion}}.
 
 \section{Geo-based Streaming}
 \label{sec:geobasedstreaming}

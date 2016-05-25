@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  25 MAY 2016 16:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  25 MAY 2016 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2162,20 +2162,16 @@ Overfull \hbox (8.98904pt too wide) in paragraph at lines 21--33
 
 
 
-]
-
-LaTeX Warning: Reference `(' on page 16 undefined on input line 39.
-
-[16 <./figures/Google_Maps.png> <./figures/GeomapVsGooglemindrean10.png> <./fig
-ures/GeomapVsGooglefleran10.png>]
-<figures/Hoverboard_1.png, id=436, 482.55281pt x 362.10281pt>
+] [16 <./figures/Google_Maps.png> <./figures/GeomapVsGooglemindrean10.png> <./f
+igures/GeomapVsGooglefleran10.png>]
+<figures/Hoverboard_1.png, id=437, 482.55281pt x 362.10281pt>
 File: figures/Hoverboard_1.png Graphic file (type png)
 
 <use figures/Hoverboard_1.png>
 Package pdftex.def Info: figures/Hoverboard_1.png used on input line 48.
 (pdftex.def)             Requested size: 204.0pt x 153.07668pt.
 
-<figures/Hoverboard1medmap.png, id=437, 642.4pt x 481.8pt>
+<figures/Hoverboard1medmap.png, id=438, 642.4pt x 481.8pt>
 File: figures/Hoverboard1medmap.png Graphic file (type png)
 
 <use figures/Hoverboard1medmap.png>
@@ -2186,14 +2182,14 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 47--56
 [][]   [] 
  []
 
-<figures/Hoverboard_2.png, id=438, 481.8pt x 361.35pt>
+<figures/Hoverboard_2.png, id=439, 481.8pt x 361.35pt>
 File: figures/Hoverboard_2.png Graphic file (type png)
 
 <use figures/Hoverboard_2.png>
 Package pdftex.def Info: figures/Hoverboard_2.png used on input line 62.
 (pdftex.def)             Requested size: 204.0pt x 152.99553pt.
 
-<figures/Hoverboard2medmap.png, id=439, 642.4pt x 480.79625pt>
+<figures/Hoverboard2medmap.png, id=440, 642.4pt x 480.79625pt>
 File: figures/Hoverboard2medmap.png Graphic file (type png)
 
 <use figures/Hoverboard2medmap.png>
@@ -2206,14 +2202,14 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 61--70
 
 [17 <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png> <./figures/H
 overboard_2.png> <./figures/Hoverboard2medmap.png>] [18]
-<figures/histogram.png, id=457, 380.17032pt x 263.48438pt>
+<figures/histogram.png, id=458, 380.17032pt x 263.48438pt>
 File: figures/histogram.png Graphic file (type png)
 
 <use figures/histogram.png>
 Package pdftex.def Info: figures/histogram.png used on input line 85.
 (pdftex.def)             Requested size: 380.16939pt x 263.48372pt.
 
-<figures/CDF.png, id=458, 415.5525pt x 218.31563pt>
+<figures/CDF.png, id=459, 415.5525pt x 218.31563pt>
 File: figures/CDF.png Graphic file (type png)
  <use figures/CDF.png>
 Package pdftex.def Info: figures/CDF.png used on input line 93.
@@ -2253,7 +2249,7 @@ Class memoir Warning: The material used in the footer is too large
 either increase the foot skip or redesign the fotoer
 (in both cases you will find help in the memoir manual). on input line 49.
 
-[27] <figures/copyright_exjobbsrapport.pdf, id=527, 597.23125pt x 845.1575pt>
+[27] <figures/copyright_exjobbsrapport.pdf, id=528, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
@@ -2267,7 +2263,7 @@ Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
 e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=530, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=531, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
@@ -2315,20 +2311,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E02A8DF1D12F49D4C484C9AD35CCA02F;2269.
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 29547 strings out of 493117
- 512659 string characters out of 6135433
+ 29546 strings out of 493117
+ 512656 string characters out of 6135433
  988414 words of memory out of 5000000
- 32311 multiletter control sequences out of 15000+600000
+ 32310 multiletter control sequences out of 15000+600000
  52146 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,18n,94p,2224b,1580s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2342,10 +2334,10 @@ live/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (34 pages, 2559903 bytes).
+Output written on Thesis.pdf (34 pages, 2559532 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 518 compressed objects within 6 object streams
+ 609 PDF objects out of 1000 (max. 8388607)
+ 519 compressed objects within 6 object streams
  117 named destinations out of 1000 (max. 500000)
  388 words of extra memory for PDF output out of 10000 (max. 10000000)
 
