@@ -6,7 +6,7 @@ To demonstrate the geo-based media player, we went out and did some recordings t
 \section{Position Algorithm}
 \label{sec:positionalgorithm}
 
-To demonstrate the accuracy of the relative placement of geographical points in the interface, we noted the GPS-coordinates and angles at the used recording locations. We then input the coordinates into Google Maps as seen in Figure \ref{fig:googlemaps}, which is used here as a reference to prove the accuracy of our placement algorithm. We also input the same latitude, longitude and angle values into our interface to test our two algorithms when the number of objects was less then ten. Figure \ref{fig:GeomapVsGoogleBraAlg} shows the comparison between the equiretangular algorithm's placement and the real world, and Figure \ref{fig:GeomapVsGoogleDaligAlg} shows the comparison between the simplified algorithm's placement and the real world. In these figures the displayed yellow stars represents Google Maps' placement of the given coordinates while the arrow-dots represents the same respective placement of the coordinates as received from the interface.
+To demonstrate the accuracy of the relative placement of geographical points in the interface, we noted the GPS-coordinates and angles at the used recording locations. We then input the coordinates into Google Maps as seen in Figure \ref{fig:googlemaps}, which is used here as a reference to prove the accuracy of our placement algorithm. We also input the same latitude, longitude and angle values into our interface to test our algorithm for a few objects and many objects. Figure \ref{fig:GeomapVsGoogleLessThan10objects} shows the comparison between the equiretangular algorithm's placement and the real world with less than 10 objects, and Figure \ref{fig:GeomapVsGoogleMoreThan10objects} shows the comparison when there are more than 10 objects. In these figures the displayed yellow stars represents Google Maps' placement of the given coordinates while the arrow-dots represents the same respective placement of the coordinates as received from the interface.
 
 
 \begin{figure}[ht!]
@@ -19,34 +19,19 @@ To demonstrate the accuracy of the relative placement of geographical points in 
 
 \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{GeomapVsGoogleBraAlg.png}
-        \caption{Geo-map compared to google map using equireqtangular algorithm}
-        \label{fig:GeomapVsGoogleBraAlg}
+        \includegraphics[width=\textwidth]{GeomapVsGooglemindrean10.png}
+        \caption{Geo-map compared to google map with less than 10 objects}
+        \label{fig:GeomapVsGoogleLessThan10objects}
     \end{subfigure}\hfill 
     \hspace{3px}
-    \begin{subfigure}[b]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{GeomapVsGoogleDaligAlg.png}
-        \caption{Geo-map compared to google map using simplified algorithm}
+    \begin{subfigure}[b]{0.51\textwidth}
+        \includegraphics[width=\textwidth]{GeomapVsGooglefleran10.png}
+        \caption{Geo-map compared to google map with more than 10 objects}
         \label{fig:tiger}
-    \label{fig:GeomapVsGoogleDaligAlg}
+    \label{fig:GeomapVsGoogleMoreThan10objects}
     \end{subfigure}
-	\caption{Geo-map compared to google map with less than 10 objects}
+	\caption{Geo-map compared to google map using equiretangular algorithm}
 	\label{fig:GeomapVsGoogleWithLessThan10objects}
-\end{figure}
-
-\begin{figure}
-\begin{subfigure}[b]{0.5\textwidth}
-       \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10equi.png}
-		\caption{Geo-map with more than 10 objects compared to google map using equireqtangular algorithm}
-  	\label{fig:GeomapVsGoogleFleran10equi}
-    \end{subfigure}\hfill 
-    \hspace{3px}
-    \begin{subfigure}[b]{0.5\textwidth}
-       \includegraphics[width=\linewidth]{GeomapVsGoogleFleran10Dalig.png}
-  \caption{Geo-map with more than 10 objects compared to google map using simplified algorithm}	\label{fig:GeomapVsGoogleFleran10Dalig}
-    \end{subfigure}
-	\caption{Geo-map compared to google map with more than 10 objects}
-	\label{fig:GeomapVsGoogleWithMoreThan10objects}
 \end{figure}
 
 The placement of the arrow points in Figure \ref{fig:GeomapVsGoogleBraAlg} is almost an exact match to those in Figure \ref{fig:googlemaps}, at least in terms off relativity. There is a slight difference between the two and the reason for this is that the points in our geographical map is scaled to make use of the entire map, in such a way that the distance between them are increased while their relative locations between each other remain intact. When looking at the placement of arrow-points in Figure \ref{fig:GeomapVsGoogleDaligAlg},when the simplified algorithm is used, we can see that relativity is not as good but is still decent. However, when looking at Figure \ref{fig:GeomapVsGoogleFleran10equi} and \ref{fig:GeomapVsGoogleFleran10Dalig}, when there are more than ten objects, we can see that relativity when using the simplified algorithm is slightly better than the equiretangular algorithm even though both of their relativity and accuracy still is not perfect. 

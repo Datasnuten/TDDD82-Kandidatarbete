@@ -44,7 +44,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Position Algorithm}{15}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Geo-based Streaming}{17}{section.4.2}
+\contentsline {section}{\numberline {4.2}Geo-based Streaming}{16}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Consistency with On-demand Switching}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
