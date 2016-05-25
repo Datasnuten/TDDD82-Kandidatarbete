@@ -92,7 +92,9 @@ relX = \frac{deltaX}{maxRadius}, \\
 relY = \frac{deltaY}{maxRadius}.
 \end{align*}
 
-The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the middle of the geo-map where all objects will have as a startposition. 
+The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map where all objects will have as a startposition. 
+
+When executing this algorithm for geographical placement of objects two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed so the final time to run the algorithm is $\mathcal{O}(n)$.
 
 
 
