@@ -134,7 +134,16 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.207.47/vod/J2.flv");
 			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");*/
 			
-			createGeoMapObjects(58.400543,15.577249,0,"http://130.236.207.47/vod/A1.flv");
+			//testfall med vinkeln 0
+			createGeoMapObjects(58.400992, 15.577557,0,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.401020, 15.577354,0,"http://130.236.207.47/vod/A2.flv");
+			createGeoMapObjects(58.400676, 15.577424,0,"http://130.236.207.47/vod/A3.flv");
+			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.207.47/vod/J1.flv");
+			createGeoMapObjects(58.400863, 15.577821,0,"http://130.236.207.47/vod/J2.flv");
+			createGeoMapObjects(58.400605, 15.577439,0,"http://130.236.207.47/vod/J3.flv");
+			
+			
+			/*createGeoMapObjects(58.400543,15.577249,0,"http://130.236.207.47/vod/A1.flv");
 			createGeoMapObjects(58.400534,15.577459,0,"http://130.236.207.47/vod/A2.flv");
 			createGeoMapObjects(58.400537,15.577659,0,"http://130.236.207.47/vod/A3.flv");
 			createGeoMapObjects(58.400676,15.577678,0,"http://130.236.207.47/vod/J1.flv");
@@ -146,10 +155,10 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.400862,15.577889,0,"http://130.236.207.47/vod/J1.flv");
 			createGeoMapObjects(58.400917,15.577535,0,"http://130.236.207.47/vod/J2.flv");
 			createGeoMapObjects(58.400920,15.577280,0,"http://130.236.207.47/vod/J3.flv");
-			createGeoMapObjects(58.401020,15.577354,0,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.401020,15.577354,0,"http://130.236.207.47/vod/A1.flv");*/
+					
 			
-			
-			/*createPointOfInterest(58.400843, 15.577512);*/
+			createPointOfInterest(58.400843, 15.577512);
 			
 			/*createGeoMapObjects(58.573290, 15.793486,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.571718, 15.792166,0,"http://localhost/vod/Video_2.flv");
@@ -157,14 +166,15 @@ package org.osmf.player.chrome.widgets
 			createGeoMapObjects(58.572490, 15.792156,0,"http://localhost/vod/Video_4.flv");
 			createGeoMapObjects(58.571791, 15.795053,0,"http://localhost/vod/Video_5.flv");*/
 			
+			
 			/*createGeoMapObjects(58.572921, 15.793497,0,"http://localhost/vod/Video_1.flv");
 			createGeoMapObjects(58.572283, 15.792800,0,"http://localhost/vod/Video_2.flv");
 			createGeoMapObjects(58.572311, 15.794323,0,"http://localhost/vod/Video_3.flv");
 			*/
+			
 			//createPointOfInterest(58.572177, 15.793485);
 			
-			//calculatePositionAlgorithm();
-			calculatePositionAlgorithm2();
+			calculatePositionAlgorithm();
 			
 			if(geomapDict[0]){
 				geomapDict[0].setDefault();
@@ -252,7 +262,7 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		//Niklas position algorithm
-		protected function calculatePositionAlgorithm2():void
+		protected function calculatePositionAlgorithm():void
 		{
 			var i:int = 0;
 			var j:int = 0;
@@ -304,10 +314,11 @@ package org.osmf.player.chrome.widgets
 				maxRadius = (maxY-minY)/2;
 			}
 			
+			trace("MaxRadius: "+maxRadius);
 			i=0;
 			
 			//Calculate and set all points' distance to the center
-			for each(var obj:* in objectDict){
+			for each(var obj2:* in objectDict){
 				deltaX = (centerX-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+centerY)*Math.PI/360)/360;   
 				deltaY = (objectDict[i].getYcoordinate-centerY)*40000/360;
 				relX = (deltaX/maxRadius);
@@ -322,9 +333,9 @@ package org.osmf.player.chrome.widgets
 		}
 		
 		
-		
+		// DEPRECATED!!!!!!!!
 		//Calculates the position of each geomapObject
-		protected function calculatePositionAlgorithm():void
+		/*protected function calculatePositionAlgorithm():void
 		{
 			var i:int = 0;
 			var j:int = 0;
@@ -389,7 +400,7 @@ package org.osmf.player.chrome.widgets
 					i++;
 				}
 			}
-		}
+		}*/
 		
 		
 
@@ -397,7 +408,7 @@ package org.osmf.player.chrome.widgets
 		
 		//Checks if the objects are outside the map and adjust them if it so happens
 		//OBS! THIS IS NOT USED!
-		protected function checkIfOutsideMap():void
+		/*protected function checkIfOutsideMap():void
 		{
 			var i:int=0;
 			for each(var obj:* in objectDict){
@@ -425,7 +436,7 @@ package org.osmf.player.chrome.widgets
 				}
 				i++;
 			}
-		}
+		}*/
 	}
 }
 
