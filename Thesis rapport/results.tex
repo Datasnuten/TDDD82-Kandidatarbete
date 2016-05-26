@@ -1,7 +1,7 @@
 \chapter{Validated Results}
 \label{cha:results}
 
-To demonstrate the geo-based media player, we went out and did some recordings to test the functionalities we designed and implemented in this thesis. We went to “Blåa havet” in front of Kårallen, located at Linköpings University, where some students were promoting an upcoming event with some activities. We found that this was a suitable point of interest to record from different angles for our testing case. As we only had two cameras available at the time we made three sets of recordings consisting of two recordings each, with each set displaying the same scene from two different locations and angles at the same time. The desired outcomes of this test was to prove the accuracy of the relative placement algorithm and, within the interface, be able to swap between the recordings to view the same object at one point in time from different angles.
+To demonstrate the geo-based media player, we went out and did some recordings to test the functionalities we designed and implemented in this thesis. We went to “Blåa havet” in front of Kårallen, located at Linköping University, where some students were promoting an upcoming event with some activities. We found that this was a suitable point of interest to record from different angles for our testing case. As we only had two cameras available at the time we made three sets of recordings consisting of two recordings each, with each set displaying the same scene from two different locations and angles at the same time. The desired outcomes of this test was to prove the accuracy of the relative placement algorithm and, within the interface, be able to swap between the recordings to view the same object at one point in time from different angles.
 
 \section{Position Algorithm}
 \label{sec:positionalgorithm}
@@ -41,17 +41,17 @@ This would prove the accuracy of our relative placement of the geographical poin
 \section{Geo-based Streaming}
 \label{sec:geobasedstreaming}
 
-As we have mentioned before our implementations is as shown in Figure \ref{fig:gpsinterface}, where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers and videos. When a video is selected the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured many people doing various activities. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these three sets of two recordings each into our media player, we could swap between the two recordings of each set and watch these same events unfold from different positions and angles. In Figures \ref{fig:testview1A} and \ref{fig:testview2A} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time of the videos. If we look at Figures \ref{fig:testview1B} and \ref{fig:testview2B} they show the geo-map interface of the views. Both interfaces shows that a different stream object is highlighted when a different view is shown. This would prove the desired functionality of where the user can display the same event from different geographical positions and angles.
+As we have mentioned before our implementations is as shown in Figure \ref{fig:gpsinterface}, where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers and videos. When a video is selected the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured many people doing various activities. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these three sets of two recordings each into our media player, we could swap between the two recordings of each set and watch these same events unfold from different positions and angles. In Figures \ref{fig:testview1A} and \ref{fig:testview2A} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time of the videos. If we look at Figures \ref{fig:testview1B} and \ref{fig:testview2B} they show the geo-map interface of the views. Both interfaces shows that a different stream object is highlighted when a different view is shown. This would prove the desired functionality of where the user can display the same events unfold from different geographical positions and angles.
 
 \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
  	\includegraphics[width=\linewidth]{Hoverboard_1.png}
-  	\caption{Test view 1 without interface showing}\label{fig:testview1A}
+  	\caption{Test view 1 without the interface visible}\label{fig:testview1A}
     \end{subfigure}\hfill 
     \hspace{3px}
     \begin{subfigure}[b]{0.5\textwidth}
 	\includegraphics[width=\linewidth]{Hoverboard1medmap.png}
-  	\caption{Test view 1 with interface showing}\label{fig:testview1B}
+  	\caption{Test view 1 with the interface visible}\label{fig:testview1B}
     \end{subfigure}
 	\caption{Test view 1}
 	\label{fig:testview1}
@@ -60,19 +60,19 @@ As we have mentioned before our implementations is as shown in Figure \ref{fig:g
 \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
  	\includegraphics[width=\linewidth]{Hoverboard_2.png}
-  	\caption{Test view 2 without interface showing}\label{fig:testview2A}
+  	\caption{Test view 2 without the interface visible}\label{fig:testview2A}
     \end{subfigure}\hfill 
     \hspace{3px}
     \begin{subfigure}[b]{0.5\textwidth}
 	 \includegraphics[width=\linewidth]{Hoverboard2medmap.png}
- 	\caption{Test view 2 with interface showing}\label{fig:testview2B}
+ 	\caption{Test view 2 with the interface visible}\label{fig:testview2B}
     \end{subfigure}
 	\caption{Test view 2}
 	\label{fig:testview2}
 \end{figure}
 
 \section{Consistency with On-demand Switching}
-Even though prefetching is not implemented we can still test the consistency of the on-demand switching, looking at the time it takes to switch between different videos on-demand. This test was done by clicking between different stream objects on interface and tracking the time it takes to load a video to the media player. Switching between different videos was done 200 times and two graphical representations of how long time each video switch took is shown in Figure \ref{fig:histogram} and \ref{fig:cdf}. The histogram in Figure \ref{fig:histogram} represents the frequency for a video switch in a certain time interval and the Cumulative Distribution Function (CDF) in Figure \ref{fig:cdf} shows the probability that a certain time \textit{x} will occur. We can see from the CDF graph that the probability that a video switch take less than 140 milliseconds is around 70 $\%$ and that the probability for a video switch under 160 milliseconds is around 90 $\%$. This means that a video switch will unlikely take more than 160 milliseconds or even more than 200 milliseconds. The average time it took to switch is roughly 140 milliseconds, or 137 milliseconds to be precise. The median is 129 milliseconds and the standard deviation is around 28 $\%$.
+Even though prefetching is not implemented we can still test the consistency of the on-demand switching, looking at the time it takes to switch between different videos on-demand. This test was done by clicking between different stream objects on interface and tracking the time it takes to load a video to the media player. Switching between different videos was done 200 times and two graphical representations of how long time each video switch took is shown in Figures \ref{fig:histogram} and \ref{fig:cdf}. The histogram in Figure \ref{fig:histogram} represents the frequency for a video switch in a certain time interval and the Cumulative Distribution Function (CDF) in Figure \ref{fig:cdf} shows the probability that a certain time \textit{x} will occur. We can see from the CDF graph that the probability that a video switch take less than 140 milliseconds is around 70 $\%$ and that the probability for a video switch under 160 milliseconds is around 90 $\%$. This means that a video switch will unlikely take more than 160 milliseconds or even more than 200 milliseconds. The average time it took to switch is roughly 140 milliseconds, or 137 milliseconds to be precise. The median is 129 milliseconds and the standard deviation is around 28 $\%$.
 
 The times for switching is likely a bit faster than shown because of how checking the time is done. The time starts when the object is clicked and a new advertisement is created. After that a new media player is created and the the URL will be retrieved through the AMS 5. The URL will then be sent to the plug-in script and then called by the \textit{AdvertisementPluginInfo} class. The URL is then prebuffered a little bit before the video is ready to be played in which the timer will stop. If prebuffering of the video can be done in a more efficient way with optimized prefetching similiar to what is done in the project \cite{optimizedstreaming} the time would likely have been a bit faster.
 
@@ -83,7 +83,7 @@ This test is done from another computer which did not host AMS 5 which means tha
 \begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=1]{histogram.png}
-	\caption{Histogram that shows the click-time interval}
+	\caption{Histogram with the click-time interval}
 	\label{fig:histogram}
 \end{center}
 \end{figure}
@@ -91,7 +91,7 @@ This test is done from another computer which did not host AMS 5 which means tha
 \begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=1]{CDF.png}
-	\caption{CDF that shows the click-time interval}
+	\caption{CDF with the click-time interval}
 	\label{fig:cdf}
 \end{center}
 \end{figure}

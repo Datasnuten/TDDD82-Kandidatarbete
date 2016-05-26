@@ -23,7 +23,7 @@ Along with these arrow objects representing the video streams in the graphical i
 \section{Prefetching Principle}
 \label{sec:prefetching}
 
-As mentioned briefly in Section \ref{sec:has}, chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. Krishnamoorthi et al. \cite{bandawarePrefetch} mention a policy called \textit{best-effort} that we will use, in which chunks are only downloaded after the buffer size has reached $T_{max}$ and will start to prefetch chunks from several other videos. These chunks are only going to download as long as the time it takes to download them does not go below $T_{min}$ of the currently streamed video. The policy adapts to the available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is a needed and important functionality in  scenarios with many different streams \cite{bandawarePrefetch}. In Figure \ref{fig:prefetch} an idea of this can be seen. Other nearby streaming videos will only be downloaded once $T_{max}$ is reached. A nearby video will be prefetched only in a few chunks and the videos are downloaded in a round-robin way. Alternative video 1 followed by 2 and so on. Once the $T_{min}$ is reached the main video resumes its downloading. The idea that would be best, but will not be implemented, is what video should be prefetched first, or if it should be chosen. Prefetching distant videos may be a better choice because they are probably more likely to be switched to. An interesting idea but not considered for our proof-of-concept interface. Carlsson et al. \cite{optimizedstreaming} has also designed and implemented optimized policies for this context. Interesting future work will incorporate these policies with our geo-based interface.
+As mentioned briefly in \textit{Section} \ref{sec:has}, chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. Krishnamoorthi et al. \cite{bandawarePrefetch} mention a policy called \textit{best-effort} that we will use, in which chunks are only downloaded after the buffer size has reached $T_{max}$ and will start to prefetch chunks from several other videos. These chunks are only going to download as long as the time it takes to download them does not go below $T_{min}$ of the currently streamed video. The policy adapts to the available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is a needed and important functionality in  scenarios with many different streams \cite{bandawarePrefetch}. In Figure \ref{fig:prefetch} an idea of this can be seen. Other nearby streaming videos will only be downloaded once $T_{max}$ is reached. A nearby video will be prefetched only in a few chunks and the videos are downloaded in a round-robin way. Alternative video 1 followed by 2 and so on. Once the $T_{min}$ is reached the main video resumes its downloading. The idea that would be best, but will not be implemented, is what video should be prefetched first, or if it should be chosen. Prefetching distant videos may be a better choice because they are probably more likely to be switched to. An interesting idea but not considered for our proof-of-concept interface. Carlsson et al. \cite{optimizedstreaming} has also designed and implemented optimized policies for this context. Interesting future work will incorporate these policies with our geo-based interface.
 
 \begin{figure}[t!]
 \begin{center}
@@ -44,17 +44,27 @@ As mentioned briefly in Section \ref{sec:has}, chunks will be downloaded in a ro
 \section{Server Integration}
 \label{sec:serverintegration}
 
-The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project, we will be using the Adobe Media Server 5 for enabling the chunked video streaming needed for our HAS functionality. Since we will be using a similar OSMF player that were used by Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth\cite{hasmultipath}.
+The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project, we use the Adobe Media Server 5 for enabling the chunked video streaming needed for our HAS functionality. Since we use a similar OSMF player that were used by Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth\cite{hasmultipath}.
 
 \section{Relative Placement of Geographical Points}
 \label{sec:relativeplacement}
 
-The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams with coordinates should then be placed and scaled relatively to each other on the interface's geographical map, as shown in Figure \ref{fig:gpsinterface}. To accomplish this automatic placement and scaling an algorithm was developed to calculate where the objects should be drawn to keep their relative positions between each other, so that the graphical points accurately represents the real life locations of the recordings.
+The interface accepts an arbitrary number of video streams coupled with a cardinal direction and GPS-coordinates, including latitude and longitude values. The graphical points representing these video streams should then be placed and scaled relatively to each other on the interface's geographical map, as shown in Figure \ref{fig:gpsinterface}. To accomplish this automatic placement and scaling, an algorithm was developed to calculate where the objects should be drawn to keep their relative positions between each other, so that the graphical points accurately represents the real life locations of the recordings.
 
 \subsection{Geographical Position Algorithm}
 \label{sec:geoalgorithm}
 
-The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, the center for which all objects will be placed relative to is calculated from all the objects. This is done by checking each and every objects latitude and longitude position and take the maximum and minimum value from them. When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world map's longitude-axis and latitude-axis as follows:
+The algorithm works as follows. First, every streamer and point of interest is an object in a list. Second, the center for which all objects will be placed relative to is calculated from all the objects. This is done by checking each and every objects latitude and longitude position and take the maximum and minimum value from them as follows:
+
+\begin{align}
+\label{eq:maxandmin}
+maxX &= max\{longitude_i\},  \\
+minX &= min\{longitude_i\}. \nonumber
+\end{align}
+ 
+We go through every object and take and biggest and smallest longitude value. This is done similarly for \textit{maxY} and \textit{minY} but with latitude instead of longitude.
+
+When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world map's longitude-axis and latitude-axis as follows:
 
 \begin{align}
 \label{eq:center}
@@ -71,40 +81,50 @@ Third, now when we have the center point of all points we can calculate the maxi
 maxRadius &= max[\frac{maxX-minX}{2}, \frac{maxY-minY}{2}].
 \end{align}
 
-The calculation checks what the maximum difference is between maximum and minimum for longitude and for longitude then takes that value as its \textit{maxRadius}. This is to get the correct radius for scaling and relativity.
+The calculation checks what the maximum difference is between maximum and minimum for longitude and for latitude then takes that value as its \textit{maxRadius}. This is to get the correct radius for scaling and relativity.
 
 Fourth, with the maximum radius calculated we can now place all the objects onto the geographical map. This is done by calculating each objects relative position to the center point that we calculated in equation \ref{eq:center} and translate it to x- and y-coordinates. This translation is done with the equirectangular approximation formula \cite{equi}:
 
 \begin{align}
 \label{eq:equiretangular}
-deltaX &= (centerX-longitude)*\frac{40000}{360}  \\
- &\phantom{b=\,} *cos((latitude+centerY) * \frac{\pi}{360}), \nonumber\\
-deltaY &= (latitude-centerY)*\frac{40000}{360}. \nonumber
+deltaX &= (centerX-longitude_i)\cdot\frac{40000}{360} \\
+ &\phantom{b=\,} \cdot cos((latitude_i+centerY) \cdot \frac{\pi}{360}), \nonumber\\
+deltaY &= (latitude_i-centerY)\cdot\frac{40000}{360}. \nonumber
 \end{align}
 
-Here, deltaX and deltaY are the projected real world x- and y-distances between a coordinate and the center point with <longitude, latitude> and <centerX, centerY>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equirectangular projection suffices.
-
-With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances \textit{relX} and \textit{relY}, we use the formula:
+Here, deltaX and deltaY are the projected real world x- and y-distances between a coordinate and the center point with <$longitude_i$, $latitude_i$> and <centerX, centerY>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equirectangular projection suffices.
 
 \begin{align*}
 relX = \frac{deltaX}{maxRadius}, \\
 relY = \frac{deltaY}{maxRadius}.
 \end{align*}
 
-The reason we take the \textit{deltaX} divided by \textit{maxRadius}, or \textit{deltaY} divided by \textit{maxRadius}, is to check how much an object should move in the x- and y- axis respectively. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map where all objects will have as a startposition. 
+With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances \textit{relX} and \textit{relY}, we use the following formulas:
 
-When executing this algorithm for geographical placement of objects two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed so the final time to run the algorithm is $\mathcal{O}(n)$.
+\begin{align*}
+deltaZ = \sqrt{deltaX^2 + deltaY^2}, \\
+procentOfX = \frac{deltaX}{deltaZ}, \\
+procentOfY = \frac{deltaY}{deltaZ}, \\
+\gamma = \frac{deltaZ}{maxRadius}, \\
+relZ = \gamma \cdot Mapradius, \\
+relX = relZ \cdot procentOfX, \\
+relY = relZ \cdot proecntOfY.
+\end{align*}
+
+What we basically do is make sure that scaling of the distances is adapted to our geographical map's boundaries. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map which all objects will have as its starting position. 
+
+When executing this algorithm for geographical placement of objects two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed due to the nature of big O so the final time complexity for the algorithm is $\mathcal{O}(n)$.
 
 
 
-\subsection{Simplification of the algorithm}
+\subsection{Simplification of the Algorithm}
 \label{sec:limacc}
 
 The geographical position algorithm places every object very good compared to reality in a way that relativity is kept. However, the equirectangular approximation formula that is used in equation \ref{eq:equiretangular} can be approximated for us. Since every object is placed with a relatively small distance between each other the algorithm can be simplified to the following: 
 
 \begin{align*}
-deltaX &= (centerX-longitude)*\frac{40000}{360}, \\
-deltaY &= (latitude-centerY)*\frac{40000}{360}. \\
+deltaX &= (centerX-longitude_i)\cdot\frac{40000}{360}, \\
+deltaY &= (latitude_i-centerY)\cdot\frac{40000}{360}. \\
 \end{align*}
 
 The equation above is simpler and removes the \textit{cos} that was used previously because for small distances the value of \textit{cos} will be close to one. Since video streams in a real-life scenario will be very close when streaming the same point of interest the simplification does not cause any problems in relativity. The accuracy of the algorithm will be shown in \textit{Chapter 4}.
@@ -140,7 +160,7 @@ The second step was to make a view appear that is represented as circle to bette
 
 In the third step a new class was created called \textit{GeoMapObject} which holds all functions of the streaming video to be shown in the media player. This class have functions to add and get the position of the geo-map object, the latitude and longitude of the real life recording position, direction, setting the video stream URL to be connected with the object etc. The geo-map object which is created in the geo-map sprite class is added to a list. This list will handle all the geo-map objects on the view and is used for when clicking on an object. Together with a function in the geo-map object class it helps to show which object is clicked on and make sure that no more than one object is highlighted at the same time.
 
-Continuing to the fourth step, the technicalities became a bit more complicated and this is the part when the servers came into play and getting the videos to show up on the media player. More details about the server will be explained in Section \ref{sec:server}, and also the main problems and difficulties that occurred when trying to use it. For this step each video in the geo-map objects needed to be played with a class called \textit{AdvertisementPluginInfo}, which is a class created for the purpose of playing advertisement videos in the beginning, middle or end of a video. In this stage, modifications were done to the functionality of the \textit{AdvertisementPluginInfo} class from instead of playing the video acting as an advertisement halfway through the main video, to play the video acting as an advertisement at the start of the main video stream. This allows for the switch to happen directly when the geo-map object is clicked on. However, to get this to work the class also needed to first stop the main video and signal that another video is playing. For this the main media player from the Strobe Media Playback needed to be fetched and sent in to the \textit{AdvertisementPluginInfo} class as a reference. This was solved by creating the geo-map button in the SMP class and then sending the reference which was forwarded to the geo-map objects. This way the media container and media player that the SMP intitially used could be stopped and removed. When this was done the \textit{AdvertisementPluginInfo} class could change between the different videos, as if they were multiple advertisements, which meant that only playing the advertisement videos was possible but not being able to interact with them. 
+Continuing to the fourth step, the technicalities became a bit more complicated and this is the part when the servers came into play and getting the videos to show up on the media player. More details about the server will be explained in \textit{Section} \ref{sec:server}, and also the main problems and difficulties that occurred when trying to use it. For this step each video in the geo-map objects needed to be played with a class called \textit{AdvertisementPluginInfo}, which is a class created for the purpose of playing advertisement videos in the beginning, middle or end of a video. In this stage, modifications were done to the functionality of the \textit{AdvertisementPluginInfo} class from instead of playing the video acting as an advertisement halfway through the main video, to play the video acting as an advertisement at the start of the main video stream. This allows for the switch to happen directly when the geo-map object is clicked on. However, to get this to work the class also needed to first stop the main video and signal that another video is playing. For this the main media player from the Strobe Media Playback needed to be fetched and sent in to the \textit{AdvertisementPluginInfo} class as a reference. This was solved by creating the geo-map button in the SMP class and then sending the reference which was forwarded to the geo-map objects. This way the media container and media player that the SMP intitially used could be stopped and removed. When this was done the \textit{AdvertisementPluginInfo} class could change between the different videos, as if they were multiple advertisements, which meant that only playing the advertisement videos was possible but not being able to interact with them. 
 
 Step five, which was about getting the interaction for the videos to work, was the most difficult task of them all. Since the videos were played as an advertisement some things needed to be changed, because these advertisement videos was set to not be interactable through the user interface. The main thing here is that the media player still recognizes the non-advertisement video as the main media from the Strobe Media Playback while the geo-map interface's videos was only some advertisements on top of it. What was done to fix this was to rewire all of the graphical user interface in a way that you would be able to control the advertisements with it. In other words instead of playing, pausing and interacting with the user interface for the main video, a check is done for the controls. What this check does is that it checks if an "advertisement" is being played and if it is, then the controls will be changed to affect the advertisement instead.
 
