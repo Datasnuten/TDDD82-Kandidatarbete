@@ -34,11 +34,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.1}Geographical Position Algorithm}{10}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Simplification of the algorithm}{11}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Simplification of the Algorithm}{12}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Technical Details}{12}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Server and Video Application}{13}{section.3.6}
+\contentsline {section}{\numberline {3.6}Server and Video Application}{14}{section.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Validated Results}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -60,9 +60,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.5}The Test Case}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Adobe Flash}{22}{section.5.6}
+\contentsline {section}{\numberline {5.6}Adobe Flash}{23}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Issues with the Server}{22}{section.5.7}
+\contentsline {section}{\numberline {5.7}Issues with the Server}{23}{section.5.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.8}Project Structure Improvements}{23}{section.5.8}
 \defcounter {refsection}{0}\relax 
@@ -70,4 +70,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{26}{section*.16}
+\contentsline {chapter}{Bibliography}{26}{section*.17}

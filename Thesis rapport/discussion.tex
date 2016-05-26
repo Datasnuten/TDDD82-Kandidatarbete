@@ -33,6 +33,8 @@ As we saw in the \textit{Chapter \ref{cha:results}}, the suboptimal rotation fun
 \end{center}
 \end{figure}
 
+\newpage
+
 \section{Position Recordings}
 \label{sec:positionrecordings}
 As we mention in the prelude to \textit{Chapter \ref{cha:sysdesign}}, one of the limitations for this project was that we do not to record videos coupled with geo-tags to use with our interface. This is a common feature with photos, as many cameras supports including geo-tags within a .jpg file's exif-data. Recently smartphones has actually come to support geo-tagging videos as well, but this video geo-tagging process is not done in the same way as with photos. As of this paper there is no standard for geo-tagging videos. When recording videos with Android OS geo-tags are not stored with the actual video itself, but with an additional log file tied to the video. For iOS the geo-tags \textit{are} stored within the video's QuickTime metadata. In our case, as we were using Android, we would have had to implement support for these log files within our interface to be able to fetch the coordinates for the recorded videos. This would however not be a general solution as it would not have worked with recordings made with other systems than Android. In the future a standard for geo-tagging videos might exist, allowing for an easier implementation of these kind of geo-tagged recordings into our interface and others. 
