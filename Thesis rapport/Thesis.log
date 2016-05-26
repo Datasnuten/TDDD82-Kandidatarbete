@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  26 MAY 2016 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  26 MAY 2016 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2318,6 +2318,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D12678A8A8D027FFED78AE0D2791B1AC;2269.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
@@ -2343,7 +2347,7 @@ xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (34 pages, 2600855 bytes).
+Output written on Thesis.pdf (34 pages, 2601273 bytes).
 PDF statistics:
  624 PDF objects out of 1000 (max. 8388607)
  531 compressed objects within 6 object streams
