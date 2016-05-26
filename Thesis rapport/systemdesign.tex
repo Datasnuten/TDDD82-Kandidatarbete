@@ -94,18 +94,13 @@ deltaY &= (latitude_i-centerY)\cdot\frac{40000}{360}. \nonumber
 
 Here, deltaX and deltaY are the projected real world x- and y-distances between a coordinate and the center point with <$longitude_i$, $latitude_i$> and <centerX, centerY>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equirectangular projection suffices.
 
-\begin{align*}
-relX = \frac{deltaX}{maxRadius}, \\
-relY = \frac{deltaY}{maxRadius}.
-\end{align*}
-
 With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances \textit{relX} and \textit{relY}, we use the following formulas:
 
 \begin{align*}
 deltaZ = \sqrt{deltaX^2 + deltaY^2}, \\
 procentOfX = \frac{deltaX}{deltaZ}, \\
 procentOfY = \frac{deltaY}{deltaZ}, \\
-\gamma = \frac{deltaZ}{maxRadius}, \\
+\gamma = \frac{deltaZ}{maxRadius*\frac{40000}{360}}, \\
 relZ = \gamma \cdot Mapradius, \\
 relX = relZ \cdot procentOfX, \\
 relY = relZ \cdot proecntOfY.
