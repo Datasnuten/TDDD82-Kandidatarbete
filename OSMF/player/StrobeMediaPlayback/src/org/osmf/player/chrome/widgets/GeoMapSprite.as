@@ -127,20 +127,20 @@ package org.osmf.player.chrome.widgets
 			
 			
 			//För thesisrapporten <10 objekt
-			/*createGeoMapObjects(58.400992, 15.577557,180,"http://130.236.207.47/vod/A1.flv");
+			createGeoMapObjects(58.400992, 15.577557,180,"http://130.236.207.47/vod/A1.flv");
 			createGeoMapObjects(58.401020, 15.577354,135,"http://130.236.207.47/vod/A2.flv");
 			createGeoMapObjects(58.400676, 15.577424,45,"http://130.236.207.47/vod/A3.flv");
 			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.207.47/vod/J1.flv");
 			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.207.47/vod/J2.flv");
-			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");*/
+			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");
 			
 			//testfall med vinkeln 0
-			createGeoMapObjects(58.400992, 15.577557,0,"http://130.236.207.47/vod/A1.flv");
+			/*createGeoMapObjects(58.400992, 15.577557,0,"http://130.236.207.47/vod/A1.flv");
 			createGeoMapObjects(58.401020, 15.577354,0,"http://130.236.207.47/vod/A2.flv");
 			createGeoMapObjects(58.400676, 15.577424,0,"http://130.236.207.47/vod/A3.flv");
 			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.207.47/vod/J1.flv");
 			createGeoMapObjects(58.400863, 15.577821,0,"http://130.236.207.47/vod/J2.flv");
-			createGeoMapObjects(58.400605, 15.577439,0,"http://130.236.207.47/vod/J3.flv");
+			createGeoMapObjects(58.400605, 15.577439,0,"http://130.236.207.47/vod/J3.flv");*/
 			
 			
 			/*createGeoMapObjects(58.400543,15.577249,0,"http://130.236.207.47/vod/A1.flv");
@@ -269,6 +269,7 @@ package org.osmf.player.chrome.widgets
 			
 			var relX:int = moveDistance;
 			var relY:int = moveDistance;
+			var relZ:int = 0;
 			
 			var centerX:Number=0;
 			var centerY:Number=0;
@@ -282,6 +283,12 @@ package org.osmf.player.chrome.widgets
 			
 			var deltaX:Number=0;
 			var deltaY:Number=0;
+			var deltaZ:Number=0;
+			
+			var procX:Number=0;
+			var procY:Number=0;
+			
+			var scale:Number=0;
 			
 			//Find the center of all points
 			for each(var obj:* in objectDict){
@@ -309,9 +316,9 @@ package org.osmf.player.chrome.widgets
 			
 			//Find the point furthest away from the center and get its radius
 			if((maxX-minX) > (maxY-minY)){
-				maxRadius = (maxX-minX)/2;
+				maxRadius = ((maxX-minX)/2)*40000/360;
 			}else{
-				maxRadius = (maxY-minY)/2;
+				maxRadius = ((maxY-minY)/2)*40000/360;
 			}
 			
 			trace("MaxRadius: "+maxRadius);
@@ -321,8 +328,19 @@ package org.osmf.player.chrome.widgets
 			for each(var obj2:* in objectDict){
 				deltaX = (centerX-objectDict[i].getXcoordinate)*40000*Math.cos((objectDict[i].getYcoordinate+centerY)*Math.PI/360)/360;   
 				deltaY = (objectDict[i].getYcoordinate-centerY)*40000/360;
-				relX = (deltaX/maxRadius);
-				relY = (deltaY/maxRadius);
+				//relX = (deltaX/maxRadius);
+				//relY = (deltaY/maxRadius);
+				deltaZ = Math.sqrt(Math.pow(deltaX,2)+Math.pow(deltaY,2));
+				
+				procX = deltaX/deltaZ;
+				procY = deltaY/deltaZ;
+				
+				scale = deltaZ/maxRadius;
+				
+				relZ = scale*(Mapradius-36);
+				
+				relX = relZ*procX;
+				relY = relZ*procY;
 				
 				
 				objectDict[i].setPositionX = objectDict[i].getPositionX - relX;
