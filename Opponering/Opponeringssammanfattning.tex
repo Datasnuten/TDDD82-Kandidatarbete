@@ -1,0 +1,77 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+
+\begin{document}
+
+\title{Opponeringssammanfattning för Projektgrupp 10}
+
+\maketitle
+
+\section{Generellt}
+Hela rapporten i sin helhet är informellt bra, med kort och koncist abstrakt, bra beskriven introduktion, metod och slutsats samt bra grafer för resultat. Vi fann dock att i bakgrund, resultat och diskussion så är det svårt att hänga med och att det känns lite väl rörigt. Det här kan bero mycket på att det blir en hel del hopp mellan de olika protokollen så det är svårt att förstå vad det pratas om, speciellt i diskussion och resultat, samt att vi inte är så insatta i dem. Den gjorda undersökningen i projektet anser vi vara väl gjord och väl strukturerad.
+Vår opponering här kommer behandla varje del av rapporten för sig, delarnas information och förståelighet kommer att tas upp samt om det finns nhade varit gynnsamt för eran undersökning att göra några få praktiska tester sågot som vi tycker saknas eller som de borde ha gjort eller beskrivit annorlunda. De grammatiska delarna kommer tas upp för sig och en helhet på hela rapporten kommer diskuteras i en egen del.
+
+\section{Abstrakt}
+Abstrakten är i sin helhet bra skriven, kort och koncist och ger förklarar bra vad rapporten handlar om och vad som gjorts. Läsaren får direkt en uppfattning och förståelse om vad rapporten tar upp. De saknar däremot att nämna vad resultatet av undersökningen blev, vilket ska vara en del av abstraktet. Det är bra att nämna för läsaren för att de ska förstå vad man kommit fram till i rapporten. En sak att tänka på är dock att formulera texten utifrån vad rapporten innehåller istället för att skriva vad som har gjorts.
+
+
+\section{Introduktion}
+Det är förvirrande att de två första två delarna av introduktionen, 1.1 Broadcast och 1.2 Multicast, består av ren och skär teori/bakgrund. Dessa hade exempelvis kunnat ersättas med en kort, enkel beskrivning av broadcast och multicast på en “high level”, och flyttats till Kapitel 2 Background där de förklaras i djupare detalj. 1.1 Broadcast hade förslagsvis kunnat bli sektion 2.1 Broadcast, med alla Broadcast-protokoll listade som subsektioner under 2.1 (tex 2.1.1 Periodic Broadcast Protocol, 2.1.2 Pyramid Broadcasting osv.). Första delen av introduktionen skulle också kunna nämna hur de problem som tas upp kan lösas med de protokoll som rapporten behandlar, då också på en “high level”. Annars är det tydligt vad målen är, vad ni fokuserar på och vad ni vill göra m.m. Introduktionen ger en bra inblick i vilket typ av “problem” som ni har fokuserat på att lösa och vilka frågor denna rapport fokuserar på att besvara. Syftet med projektet hade däremot kunnat göras mer övertygande och tydligare, tex. genom att beskriva mer diskret vad man kan få ut av resultatet i undersökningen. En sista sak är att i Limitations så nämns det inte att projektet endast begränsar sig till att undersöka två faktorer gällande protokollen, energianvändning och startup delay, när det antagligen finns dussintals andra faktorer att undersöka för protokollen.
+
+
+\section{Bakgrund}
+Bra att ni beskriver massa protokoll på ett kort och koncist sätt. Lite oklart dock om protokollen som beskrivs bara är broadcasting-protokoll eller om de innefattar multicast-protokoll också. Det kan vara bra att lägga till en sammanfattande context i början av kapitlet innan man börjar beskriva massa protokoll som säger vad som kommer tas upp. Detta för att lättare få en förståelse till varför just de protokollen evalueras och hur de är relevanta för projektet mer än att protokollen har “Broadcasting” i namnet. Ni nämner också tidigare att ni ska titta på fyra olika protokoll, men sju stycken protokoll tas upp i bakgrunden. Exakt vilka fyra protokoll som används nämns inte heller här, eller någon motivering till att just dessa fyra valdes. Det blir tydligare att nämna i bakgrundscontexten varför ni tar upp de andra protokollen som inte används i testet. En sak som upplevdes jobbigt för läsaren var att hänga med i förklaringen av energimodellerna. Det var svårt att förstå hur det fungerade, specifikt RRC modellen. 
+Placering av källhänvisningar kan också ses över, inte bara i Background. Källor placeras ibland mitt i en flytande text vilket kan minska läsbarheten. Ett styckes källhänvisningar grupperas även ofta ihop på ett ställe i stycket istället för att placeras där respektive källhänvisning passar in bäst, eller i slutet av stycket efter ett påstående gjorts som behöver styrkas med en källa.
+
+\section{Metod}
+Bra beskrivning av metoden, lätt att följa vad som gjorts och hur. Bra användning av punktlistor, gör det lättare för läsaren att hänga med. Först i resultatdelen av rapporten nämns det indirekt att energiförbrukningen för de olika protokollen mäts i Joule, vilket skulle kunna förtydligas och nämnas redan i metoddelen när man nämner metoden för att samla ihop mätdata och vad man väntas få ut av undersökningen.
+I metoden tas det även upp en mängd inställningar och dylikt som har valts att göra undersökningen med. Motiveringar saknas däremot till några av dessa val.
+
+
+\section{Resultat}
+Generellt i resultatdelen känns det som det blir mycket upprepning (speciellt med rubrikerna). Vi förstår varför de gör så men själva strukturen för resultatdelen kan nog ändras lite. De kan skriva i början av resultatet alla generella detaljer som gäller för alla tester, exempelvis räcker det att nämna att de mäter med 500 kbit/s och 1000 kbit/s i början så slipper det upprepas hela tiden. Sista delen i 4.3 om “Energy Consumption over channels” känns som något som kan läggas in i diskussionen istället.
+Graferna är väl gjorda och tydliga, de är simpla och enkla att följa och beskriver bra de mätningar som gjorts. Det kan tyckas vara lite onödigt att ha separata grafer för resultatet till varje protokollmätning när samma resultat visas, dessutom mycket tydligare, i 4.5 Protocol Comparision. Det är bra att ha separata beskrivningar för resultatet till varje protokollmätning men vi tror att det hade räckt med några få grafer där alla resultat tillhörande samma kategori är inritad i en och samma respektive graf. Det vore även bra att skriva enheterna i tabellen.
+Vi tycker även att jämförelsen mellan protokollen är lite tunn. Vi hade gärna sett en tydligare förklaring i text vad alla figurer i 4.5 Protocol Comparision innebär. Just nu är det bara tre korta paragrafer som inte säger så mycket. Just i detta stycket ska ju resultatet för hela undersökningen presenteras och vi tror att man skulle kunna nämna mer än att FB-protokollet har minst energiförbrukning och är därmed “bäst”. Exempelvis först i Conclusion nämns det att FB-protokollet är en av de sämre protokollen vad gäller startup delay, vilket också är en faktor i undersökningen. Detta skulle kunna stå i resultat, tillsammans med tex. en förklaring om vilket protokoll som är “bäst” om man prioriterar startup delay, eller vilket protokoll som är “bäst” om man prioriterar alla dessa faktorer lika mycket, något man då diskuterar vidare i Discussion.
+
+
+\section{Diskussion}
+Bra djupgående diskussion om förbättringar och de spekulationer som fanns. Diskussionen kan dock förenklas lite. När resultatet diskuteras så kan den delen delas upp och förenklas. Dela upp det i exempelvis Energy Consumption och Start-up delay. Gör det lättare för läsaren att följa och hänga med vad som diskuteras gällande resultatet. Just nu känns delen väldigt maffig och svår att följa. För att underlätta läsbarheten i detta kapitlet ytterligare skulle man kunna dela upp kapitlet i fler stycken.
+
+
+\section{Related work}
+Den här delen ser bra ut med undantag för några mindre referensfel där man några gånger refererar till en källa i flytande text direkt utan att använda “et al”.
+
+
+\section{Slutsats}
+Bättre att nämna en procentuell skillnad mellan protokollen istället för numerär skillnad. Ger en bättre och klarare förståelse när man läser det.
+
+\section{Grammatik och Struktur}
+Rapportens struktur är väldigt rörig gällande användning av paragrafer. Det blir en blandning mellan tre olika styckesdelningar. Välj mellan att ha indrag eller styckesdelning med mellanrum. En annan sak är användning av förkortningar. Ibland nämns förkortningen och ibland nämns hela namnet. Det är alltså oregelbundet när förkortningen nämns och inte. Skriv hela namnet vid första benämning följt av parentes och förkortning och därefter det förkortningen i resten av rapporten. Undantaget är ju figurbeskrivningar då hela namnet skrivs ut. Tänk även på tempus i vissa delar av rapporten. Att vissa grammatikfel förekommer på vissa ställen i rapporten men inte på andra tyder på att rapporten inte är noga kontrolläst. Eftersom rapporten är skriven på engelska så ska varje första bokstav i ett ord i ett namn vara en versal, vilket behövs korrekteras på många ställen i rapporten. En sista notering är att vi i PDF:ens kommentarer inte har kommenterat på alla grammatiska fel på alla ställen i rapporten. Vi förväntar oss att projektgruppen själva letar reda på och fixar alla fel av en och samma sort själva i rapporten.
+
+
+\section{Frågor}
+Här kommer en mängd förslag på frågor. Det kan möjligtvis förekomma frågor som ställs som inte står här, som vi kommer på och undrar över, under opponeringen.
+
+\begin{itemize}
+\item Någon har säkert gjort det här projektet och undersökningarna tidigare, ni funderade inte på att göra det mer nyskapande på något sätt? Till exempel genom att begränsa er undersökning till ett särskilt område som ni tror inte redan har behandlats.
+
+\item Fokus på broadcast och multicast i projektet är lite vagt. Det var väldigt mycket mer fokus på broadcast än multicast. Funderade ni på att behandla och undersöka multicastprotokoll att jämföra med de broadcastprotokollen ni gjorde undersökningar på i rapporten?
+
+\item Ni gjorde tester med hjälp av simuleringar, funderade ni på att utföra samma undersökningar på annat sätt än simuleringar? T.ex verkliga tester med egentliga mobiltelefoner, 3G och WiFi, samt LTE som ni inte kunde simulera? 
+EV. FÖLJDFRÅGA: Tror ni det hade varit gynnsamt för eran undersökning att göra några få praktiska tester som gått att jämföra med eran simulationer för att se om det hade blivit någon skillnad mellan de två?
+
+\item Ni utför era experiment med hjälp av UDP, varför använde ni inte TCP istället och vad hade det gett istället?
+
+\item Ni nämner i future work i slutsatsen att det finns arbete att gör på hur batteri användningen i 4G ser ut, varför evaluerade ni 3G istället för 4G eller varför gjorde ni inte en jämförelse mellan 3G och 4G? 
+
+\item Hur tror ni resultat för energiförbukning och start-up time kan se ut för 4G?
+
+\item Ni tar upp sju protokoll i bakgrunden men evaluerar bara fyra utav dem. Har ni några idéer eller spekulationer hur resultat hade varit om ni hade testat allihopa?
+\end{itemize}
+
+
+
+\end{document}
