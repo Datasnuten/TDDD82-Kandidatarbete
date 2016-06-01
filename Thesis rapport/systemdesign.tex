@@ -16,16 +16,7 @@ The main part of this project is to expand upon the existing user interface (UI)
 \end{center}
 \end{figure}
 
-For our interface design, we decided to add an additional button to the control bar of the UI. When pressed, a graphical interface similar to the one in Figure \ref{fig:gpsinterface} is shown in the media player. Within this graphical interface, the user can hover over the arrows representing the available video streams located at different geographical locations and angles in the area. While hovering over an arrow a tool-tip is shown with information about the video in question, including the GPS-coordinates and the angle, providing the user with a comprehensive overview of the available stream. Finally, when an arrow is clicked the selected video is played.
-
-Along with these arrow objects representing the video streams in the graphical interface, the layout will also display an optional “Point of interest” with its own geographical position. This point of interest is usually the center of attention of all the different video streams and can be anything from a concert to some other large event. The implemented geographical view will also display the north, west, east and south cardinal directions to know the angle of the every stream relative to them. The angle $\theta$ in Figure \ref{fig:gpsinterface} is taken from the magnetic heading from a recording client, this is the direction relative to north which the client interprets. This will give us the direction relative to the north cardinal direction.
-
-\section{Prefetching Principle}
-\label{sec:prefetching}
-
-As mentioned briefly in \textit{Section} \ref{sec:has}, chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. Krishnamoorthi et al. \cite{bandawarePrefetch} mention a policy called \textit{best-effort} that we will use, in which chunks are only downloaded after the buffer size has reached $T_{max}$ and will start to prefetch chunks from several other videos. These chunks are only going to download as long as the time it takes to download them does not go below $T_{min}$ of the currently streamed video. The policy adapts to the available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is a needed and important functionality in  scenarios with many different streams \cite{bandawarePrefetch}. In Figure \ref{fig:prefetch} an idea of this can be seen. Other nearby streaming videos will only be downloaded once $T_{max}$ is reached. A nearby video will be prefetched only in a few chunks and the videos are downloaded in a round-robin way. Alternative video 1 followed by 2 and so on. Once the $T_{min}$ is reached the main video resumes its downloading. The idea that would be best, but will not be implemented, is what video should be prefetched first, or if it should be chosen. Prefetching distant videos may be a better choice because they are probably more likely to be switched to. An interesting idea but not considered for our proof-of-concept interface. Carlsson et al. \cite{optimizedstreaming} has also designed and implemented optimized policies for this context. Interesting future work will incorporate these policies with our geo-based interface.
-
-\begin{figure}[t!]
+\begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=0.6]{teomet.png}
 	\caption{Conceptual interface of GPS and Direction selection map}
@@ -33,7 +24,16 @@ As mentioned briefly in \textit{Section} \ref{sec:has}, chunks will be downloade
 \end{center}
 \end{figure}
 
-\begin{figure}[t!]
+For our interface design we decided to add an additional button to the control bar of the UI. When pressed, a graphical interface similar to the one in Figure \ref{fig:gpsinterface} is shown in the media player. Within this graphical interface, the user can hover over the arrows representing the available video streams located at different geographical locations and angles in the area. While hovering over an arrow a tool-tip is shown with information about the video in question, including the GPS-coordinates and the angle, providing the user with a comprehensive overview of the available stream. Finally, when an arrow is clicked the selected video is played.
+
+Along with these arrow objects representing the video streams in the graphical interface, the layout will also display an optional “Point of interest” with its own geographical position. This point of interest is usually the center of attention of all the different video streams and can be \textcolor{red}{the main attraction of} anything from a concert to some other large event. The implemented geographical view will also display the north, west, east and south cardinal directions to know the angle of the every stream relative to them. The angle $\theta$ in Figure \ref{fig:gpsinterface} is taken from the magnetic heading from a recording client, \textcolor{red}{which} is the direction relative to north that the client interprets. This will give us the direction relative to the north cardinal direction.
+
+\section{Prefetching Principle}
+\label{sec:prefetching}
+
+As mentioned briefly in \textit{Section} \ref{sec:has}, chunks will be downloaded in a round-robin way and chunks will be downloaded only during the downtime of the HAS-player. Krishnamoorthi et al. \cite{bandawarePrefetch} mention a policy called \textit{best-effort} that we will use, in which chunks \textcolor{red}{from other videos} are only downloaded after the buffer size has reached $T_{max}$ and will \textcolor{red}{not until then} start to prefetch chunks from several other videos. These chunks are only going to download as long as the \textcolor{red}{buffertreshhold} does not go below $T_{min}$ \textcolor{red}{for} the currently streamed video. The policy adapts to the available bandwidth and varying network conditions. It is also one of the better policies discussed since it downloads chunks of as many videos as possible which is \textcolor{red}{an important and needed} functionality in scenarios with many different streams \cite{bandawarePrefetch}. In Figure \ref{fig:prefetch} an idea of this can be seen. Other nearby streaming videos will only be downloaded once $T_{max}$ is reached. A nearby video will be prefetched only in a few chunks and the videos are downloaded in a round-robin way. Alternative video 1 followed by 2 and so on. Once the $T_{min}$ is reached the main video resumes its downloading. \textcolor{red}{One} idea that would be best, but will not be implemented, is what video should be prefetched first, or if it should be chosen. Prefetching distant videos may be a better choice because they are probably more likely to be switched to. An interesting idea but not considered for our proof-of-concept interface. Carlsson et al. \cite{optimizedstreaming} has also designed and implemented optimized policies for this context. Interesting future work will incorporate these policies with our geo-based interface.
+
+\begin{figure}[ht!]
 \begin{center}
 	\includegraphics[scale=0.6]{prefetch.png}
 	\caption{Prefetching overview}
@@ -44,7 +44,7 @@ As mentioned briefly in \textit{Section} \ref{sec:has}, chunks will be downloade
 \section{Server Integration}
 \label{sec:serverintegration}
 
-The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project, we use the Adobe Media Server 5 for enabling the chunked video streaming needed for our HAS functionality. Since we use a similar OSMF player that were used by Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth\cite{hasmultipath}.
+The SMP player is by default set to play a stream of video located at a server supporting HTTP-streaming. For this project we use the Adobe Media Server 5 for enabling the chunked video streaming needed for our HAS functionality. Since we use a similar OSMF player that were used by Krishnamoorthi et al. \cite{hasmultipath}, the quality of our prefetched chunks will be adaptive to the available bandwidth\cite{hasmultipath}.
 
 \section{Relative Placement of Geographical Points}
 \label{sec:relativeplacement}
@@ -62,9 +62,7 @@ maxX &= max\{longitude_i\},  \\
 minX &= min\{longitude_i\}. \nonumber
 \end{align}
  
-We go through every object and take and biggest and smallest longitude value. This is done similarly for \textit{maxY} and \textit{minY} but with latitude instead of longitude.
-
-When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world map's longitude-axis and latitude-axis as follows:
+We go through every object and take and biggest and smallest longitude value. This is done similarly for \textit{maxY} and \textit{minY} but with latitude instead of longitude. When we have the maximum and minimum value of longitude and latitude the algorithm will calculate the center of the real world map's longitude-axis and latitude-axis as follows:
 
 \begin{align}
 \label{eq:center}
@@ -72,9 +70,9 @@ centerX &= \frac{maxX+minX}{2},  \\
 centerY &= \frac{maxY+minY}{2}. \nonumber
 \end{align}
 
-The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that centerX, maxX and minX is actually spherical longitude values, similar with centerY, maxY and minY which is latitude values, and not flat surface x- and y-axis values. This direct translation may cause some inaccuracy. By taking half of maximum and minimum with both longitude and latitude we can get our center point as a representation off the real world map.
+The formula calculates the center point of all the points for the real world map where all the points will be placed relative to. Note that \textit{centerX}, \textit{maxX} and \textit{minX} is actually spherical longitude values, similar with \textit{centerY}, \textit{maxY} and \textit{minY} which is latitude values, and not flat surface x- and y-axis values. This direct translation may cause some inaccuracy. By taking half of maximum and minimum with both longitude and latitude we can get our center point as a representation \textcolor{red}{of} the real world map.
  
-Third, now when we have the center point of all points we can calculate the maximum radius that everything will scale with as follows:
+Third, when we have the center point of all points we can calculate the maximum radius that everything will scale with as follows:
 
 \begin{align}
 \label{eq:radius}
@@ -92,30 +90,51 @@ deltaX &= (centerX-longitude_i)\cdot\frac{40000}{360} \\
 deltaY &= (latitude_i-centerY)\cdot\frac{40000}{360}. \nonumber
 \end{align}
 
-Here, deltaX and deltaY are the projected real world x- and y-distances between a coordinate and the center point with <$longitude_i$, $latitude_i$> and <centerX, centerY>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equirectangular projection suffices.
+Here, \textit{deltaX} and \textit{deltaY} are the projected real world x- and y-distances between a coordinate and the center point with <$longitude_i$, $latitude_i$> and <\textit{centerX}, \textit{centerY}>. This method simply calculate the distance between two geographical points on the surface of a spherical area \cite{equi}. The translation is done to fit our geographical map as it represents a view on a flat plane. In the formula we approximate the earth's circumference as 40000 km. If we had used latitude and longitude as plain \textit{x} and \textit{y} values instead the positions would not have provided a good enough accuracy to the flat x-/y-plane because of the spherical nature of latitude and longitude coordinates. An alternative method of calculating the distance between two objects would have been the Haversine formula, which excels at accuracy along high distances \cite{haversine}. However, for smaller distances, as used in our project, equirectangular projection suffices.
 
-With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances \textit{relX} and \textit{relY}, we use the following formulas:
+With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances, \textit{relX} and \textit{relY}, \textcolor{red}{we first have to calculate a point's distance to the center point. For this, Pythagoras theorem is used:}
 
 \begin{align*}
-deltaZ = \sqrt{deltaX^2 + deltaY^2}, \\
-procentOfX = \frac{deltaX}{deltaZ}, \\
-procentOfY = \frac{deltaY}{deltaZ}, \\
-\gamma = \frac{deltaZ}{maxRadius*\frac{40000}{360}}, \\
-relZ = \gamma \cdot Mapradius, \\
-relX = relZ \cdot procentOfX, \\
-relY = relZ \cdot proecntOfY.
+deltaZ = \sqrt{deltaX^2 + deltaY^2}.
 \end{align*}
 
-What we basically do is make sure that scaling of the distances is adapted to our geographical map's boundaries. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map which all objects will have as its starting position. 
+\textcolor{red}{With \textit{deltaZ} the relative placement for the point in the x- and y-axis compared to this distance can be calculated:}
 
-When executing this algorithm for geographical placement of objects two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed due to the nature of big O so the final time complexity for the algorithm is $\mathcal{O}(n)$.
+\begin{align}
+\label{eq:percent}
+percentOfX = \frac{deltaX}{deltaZ}, \\
+percentOfY = \frac{deltaY}{deltaZ}. \nonumber
+\end{align}
+
+\textcolor{red}{The two values,  \textit{percentOfX} and \textit{percentOfY},  represents how many percent of \textit{deltaZ} a point is placed in the x- and y-axis. With this the only thing left to do is to calculate a scaling factor, in order to rescale the point's position according to the interface's size without losing relativity:} 
+
+\begin{align*}
+\gamma = \frac{deltaZ}{maxRadius*\frac{40000}{360}}.
+\end{align*}
+
+\textcolor{red}{The scaling factor \textit{$\gamma$} is calculated by multiplying the \textit{maxRadius} with a constant that is used in the equirectangular formula to get the radius for x- and y-coordinates. Then we calculate how many percent of \textit{maxRadius} the distance \textit{deltaZ} is. With the scaling factor \textit{$\gamma$} a new \textit{deltaZ} can be calculated that is adapted to the interface's size: }
+
+\begin{align*}
+relZ = \gamma \cdot Mapradius.
+\end{align*}
+
+\textcolor{red}{The value \textit{relZ} is the distance from the interface center point and where the point should be on the interface, and \textit{Mapradius} is the radius for the interface. To calculate how much to move the point in the x- and y-axis we only need to multiply \textit{relZ} with the percent we got from equation \ref{eq:percent}:}
+
+\begin{align*}
+relX = relZ \cdot percentOfX, \\
+relY = relZ \cdot perecntOfY.
+\end{align*}
+
+What we basically \textcolor{red}{have done} is make sure that scaling of the distances is adapted to our geographical map's boundaries. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map which all objects will have as its starting position. 
+
+When executing this algorithm for geographical placement of objects two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed due to the nature of big O \textcolor{red}{making} the final time complexity for the algorithm $\mathcal{O}(n)$.
 
 
 
 \subsection{Simplification of the Algorithm}
 \label{sec:limacc}
 
-The geographical position algorithm places every object very good compared to reality in a way that relativity is kept. However, the equirectangular approximation formula that is used in equation \ref{eq:equiretangular} can be approximated for us. Since every object is placed with a relatively small distance between each other the algorithm can be simplified to the following: 
+The geographical position algorithm places every object very good compared to reality in a way that relativity is kept. However, the equirectangular approximation formula that is used in equation \ref{eq:equiretangular} can be approximated. Since every object is placed with a relatively small distance between each other the algorithm can be simplified to the following: 
 
 \begin{align*}
 deltaX &= (centerX-longitude_i)\cdot\frac{40000}{360}, \\
@@ -149,7 +168,7 @@ Our progression can be divided into different sections which will be explained i
 
 The details of the code and implementation will not be explained line by line but a more general idea and overview will be given of what was done.
 
-The first step was to make an interactive button which opens the graphical interface. Three different colored assets had to be create for how the button should look like, which was designed in photoshop. The button is illustrated as three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons were then added to a ShockWave Component (SWC) file which stores the assets. The assets were then given an assets id and name so they could be retrieved using these as references. A class for the button was created and was added to the control bar. The button extended \textit{ButtonWidget} where it could add the assets to a "face", a kind of state, which allowed the button to switch between the different assets when changing face. 
+The first step was to make an interactive button which opens the graphical interface. Three different colored assets had to be created for how the button should look like, which was designed in photoshop. The button illustrates three arrows with a dot at each end facing a general direction. This shows that a view is opened with objects similar to those. These buttons were then added to a ShockWave Component (SWC) file which stores the assets. The assets were then given an assets id and name so they could be retrieved using these as references. A class for the button was created and was added to the control bar. The button extended \textit{ButtonWidget} where it could add the assets to a "face", a kind of state, which allowed the button to switch between the different assets when changing face. 
 
 The second step was to make a view appear that is represented as circle to better fit with how geo-map objects will be placed. For this step a widget and sprite class was created. The geo-map widget class handles the layout of the clickable layout, the creation of the geo-map view and the handling of fullscreen. The geo-map view is placed in the middle of the stage for the player and when fullscreen is initiated the graphical interface will be moved and scaled in such a way that relativity is kept. In the geo-map sprite class the position algorithm, creation of every object and cardinal direction is handled.
 
@@ -166,5 +185,5 @@ In the last step adjustments and improvements was done to the code and also the 
 
 As previously mentioned in the report the server used is the Adobe Media Server 5 (AMS 5), which is primary used for downloading videos from cache as similar to the works described in \textit{Chapter 2}. AMS 5 is a server used for HTTP-streaming which is needed in order to use HAS. The AMS 5 uses something called an Apache server, specifically Apache 2.4, which enables a video to be called with HTTP. To stream videos with the AMS 5 there can be a need to allow the the flash player to stream a HTTP-video through the local media player\footnote{Global\:Security\:Settings\:panel: https://www.macromedia.com/support/documentation/en/\\flashplayer/help/settings$\_$manager04.html} otherwise security errors may occur. The reason for this security error being that a call is made in the code to a plug-in which allows for sending and requesting a URL to be played.
 
-Except for using the AMS 5 to play a video through HTTP the video also needs to be in format of F4V or FLV which are two different video file formats used for delivering videos over internet using Adobe Flash Player. Every video that has been filmed has been converted to FLV with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free open source software project that produces libraries and programs for handling multimedia data. It contains a program which allows for transcoding media files.
+Except for using the AMS 5 to play a video through HTTP the video also needs to be in formats of F4V or FLV which are two different video file formats \textcolor{red}{commonly} used for delivering videos over internet using Adobe Flash Player. \textcolor{red}{Every recorded video for this thesis} has been converted to FLV with FFmpeg\footnote{FFmpeg: https://ffmpeg.org/} which is a free open source software project \textcolor{red}{including} libraries and \textcolor{red}{utilities for converting multimedia data}.
 

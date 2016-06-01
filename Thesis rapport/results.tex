@@ -20,13 +20,13 @@ To demonstrate the accuracy of the relative placement of geographical points in 
 \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth]{GeomapVsGooglemindrean10.png}
-        \caption{Geo-map compared to google map with less than 10 objects}
+        \caption{Geo-map compared to \textcolor{red}{Google Maps in the test case}}
         \label{fig:GeomapVsGoogleLessThan10objects}
     \end{subfigure}\hfill 
     \hspace{3px}
     \begin{subfigure}[b]{0.51\textwidth}
         \includegraphics[width=\textwidth]{GeomapVsGooglefleran10.png}
-        \caption{Geo-map compared to google map with more than 10 objects}
+        \caption{Geo-map compared to \textcolor{red}{Google Maps in the load test}}
         \label{fig:tiger}
     \label{fig:GeomapVsGoogleMoreThan10objects}
     \end{subfigure}
@@ -41,7 +41,7 @@ This would prove the accuracy of our relative placement of the geographical poin
 \section{Geo-based Streaming}
 \label{sec:geobasedstreaming}
 
-As we have mentioned before our implementations is as shown in Figure \ref{fig:gpsinterface}, where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers and videos. When a video is selected the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured many people doing various activities. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these three sets of two recordings each into our media player, we could swap between the two recordings of each set and watch these same events unfold from different positions and angles. In Figures \ref{fig:testview1A} and \ref{fig:testview2A} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time of the videos. If we look at Figures \ref{fig:testview1B} and \ref{fig:testview2B} they show the geo-map interface of the views. Both interfaces shows that a different stream object is highlighted when a different view is shown. This would prove the desired functionality of where the user can display the same events unfold from different geographical positions and angles.
+As we have mentioned before our implementations is as shown in Figure \ref{fig:gpsinterface}, where we have a button that opens the geographical map, a circle that represents a “map” and arrows pointing in a direction that represents streamers and videos. \textcolor{red}{When a user selects a} video the arrow is highlighted and that video is then played. In our test case, we set up two cameras at a time and did recordings of 90 seconds each. In these videos we captured many people doing various activities. There were people jumping the trampoline, using hoverboards, walking and biking around. When we input these three sets of two recordings each into our media player, we could swap between the two recordings of each set and watch these same events unfold from different positions and angles. In Figures \ref{fig:testview1A} and \ref{fig:testview2A} two different recordings are selected and they show the same event where, for example, the guy inside the red circle in the pictures are hoverboarding in front of the red shirt guy the same time of the videos. If we look at Figures \ref{fig:testview1B} and \ref{fig:testview2B} they show the geo-map interface of the views. Both interfaces shows that a different stream object is highlighted when a different view is shown. This would prove the desired functionality of where the user can display the same events unfold from different geographical positions and angles.
 
 \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
