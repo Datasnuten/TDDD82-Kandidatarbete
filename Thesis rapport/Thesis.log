@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  26 MAY 2016 13:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  1 JUN 2016 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1968,7 +1968,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
-<figures/titelsid-sv.pdf, id=147, 493.845pt x 349.305pt>
+<figures/titelsid-sv.pdf, id=151, 493.845pt x 349.305pt>
 File: figures/titelsid-sv.pdf Graphic file (type pdf)
 
 <use figures/titelsid-sv.pdf>
@@ -2073,12 +2073,12 @@ Package caption Info: End \AtBeginDocument code.
  (./intro.tex
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 8.
-) [1
+ [1
 
 
 
 
-] [2]
+]) [2]
 \openout2 = `background.aux'.
 
 
@@ -2086,13 +2086,13 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 
 
 
-] <figures/HAS1.png, id=294, 586.44093pt x 373.395pt>
+] <figures/HAS1.png, id=304, 586.44093pt x 373.395pt>
 File: figures/HAS1.png Graphic file (type png)
 
 <use figures/HAS1.png>
 Package pdftex.def Info: figures/HAS1.png used on input line 29.
 (pdftex.def)             Requested size: 234.5722pt x 149.35535pt.
- <figures/HAS2.png, id=296, 594.72188pt x 383.18156pt>
+ <figures/HAS2.png, id=306, 594.72188pt x 383.18156pt>
 File: figures/HAS2.png Graphic file (type png)
 
 <use figures/HAS2.png>
@@ -2103,42 +2103,43 @@ Package pdftex.def Info: figures/HAS2.png used on input line 37.
 \openout2 = `systemdesign.aux'.
 
  (./systemdesign.tex
-<figures/Media_player.png, id=340, 484.81125pt x 362.85562pt>
+<figures/Media_player.png, id=349, 484.81125pt x 362.85562pt>
 File: figures/Media_player.png Graphic file (type png)
 
 <use figures/Media_player.png>
 Package pdftex.def Info: figures/Media_player.png used on input line 13.
 (pdftex.def)             Requested size: 339.36555pt x 253.99721pt.
- [7
 
-
-
-]
-<figures/teomet.png, id=353, 469.755pt x 441.14813pt>
+<figures/teomet.png, id=350, 469.755pt x 441.14813pt>
 File: figures/teomet.png Graphic file (type png)
  <use figures/teomet.png>
-Package pdftex.def Info: figures/teomet.png used on input line 30.
+Package pdftex.def Info: figures/teomet.png used on input line 21.
 (pdftex.def)             Requested size: 281.85518pt x 264.69092pt.
 
-<figures/prefetch.png, id=354, 498.36188pt x 437.38406pt>
+[7
+
+
+
+] [8 <./figures/Media_player.png> <./figures/teomet.png>]
+<figures/prefetch.png, id=370, 498.36188pt x 437.38406pt>
 File: figures/prefetch.png Graphic file (type png)
 
 <use figures/prefetch.png>
 Package pdftex.def Info: figures/prefetch.png used on input line 38.
 (pdftex.def)             Requested size: 299.01942pt x 262.43245pt.
- [8 <./figures/Media_player.png>] [9 <./figures/teomet.png> <./figures/prefetch
-.png>] [10] [11] [12] [13]) [14]
+ [9 <./figures/prefetch.png>] [10] [11] [12] [13])
+[14]
 \openout2 = `results.aux'.
 
  (./results.tex
-<figures/Google_Maps.png, id=422, 374.90062pt x 356.83313pt>
+<figures/Google_Maps.png, id=434, 374.90062pt x 356.83313pt>
 File: figures/Google_Maps.png Graphic file (type png)
 
 <use figures/Google_Maps.png>
 Package pdftex.def Info: figures/Google_Maps.png used on input line 14.
 (pdftex.def)             Requested size: 239.93558pt x 228.3724pt.
 
-<figures/GeomapVsGooglemindrean10.png, id=423, 374.90062pt x 356.83313pt>
+<figures/GeomapVsGooglemindrean10.png, id=435, 374.90062pt x 356.83313pt>
 File: figures/GeomapVsGooglemindrean10.png Graphic file (type png)
 
 <use figures/GeomapVsGooglemindrean10.png>
@@ -2146,7 +2147,7 @@ Package pdftex.def Info: figures/GeomapVsGooglemindrean10.png used on input lin
 e 22.
 (pdftex.def)             Requested size: 204.0pt x 194.168pt.
 
-<figures/GeomapVsGooglefleran10.png, id=424, 371.13657pt x 348.55219pt>
+<figures/GeomapVsGooglefleran10.png, id=436, 371.13657pt x 348.55219pt>
 File: figures/GeomapVsGooglefleran10.png Graphic file (type png)
 
 <use figures/GeomapVsGooglefleran10.png>
@@ -2164,14 +2165,14 @@ Overfull \hbox (8.98904pt too wide) in paragraph at lines 21--33
 
 ] [16 <./figures/Google_Maps.png> <./figures/GeomapVsGooglemindrean10.png> <./f
 igures/GeomapVsGooglefleran10.png>]
-<figures/Hoverboard_1.png, id=444, 482.55281pt x 362.10281pt>
+<figures/Hoverboard_1.png, id=455, 482.55281pt x 362.10281pt>
 File: figures/Hoverboard_1.png Graphic file (type png)
 
 <use figures/Hoverboard_1.png>
 Package pdftex.def Info: figures/Hoverboard_1.png used on input line 48.
 (pdftex.def)             Requested size: 204.0pt x 153.07668pt.
 
-<figures/Hoverboard1medmap.png, id=445, 642.4pt x 481.8pt>
+<figures/Hoverboard1medmap.png, id=456, 642.4pt x 481.8pt>
 File: figures/Hoverboard1medmap.png Graphic file (type png)
 
 <use figures/Hoverboard1medmap.png>
@@ -2182,14 +2183,14 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 47--56
 [][]   [] 
  []
 
-<figures/Hoverboard_2.png, id=446, 481.8pt x 361.35pt>
+<figures/Hoverboard_2.png, id=457, 481.8pt x 361.35pt>
 File: figures/Hoverboard_2.png Graphic file (type png)
 
 <use figures/Hoverboard_2.png>
 Package pdftex.def Info: figures/Hoverboard_2.png used on input line 62.
 (pdftex.def)             Requested size: 204.0pt x 152.99553pt.
 
-<figures/Hoverboard2medmap.png, id=447, 642.4pt x 480.79625pt>
+<figures/Hoverboard2medmap.png, id=458, 642.4pt x 480.79625pt>
 File: figures/Hoverboard2medmap.png Graphic file (type png)
 
 <use figures/Hoverboard2medmap.png>
@@ -2202,14 +2203,14 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 61--70
 
 [17 <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png> <./figures/H
 overboard_2.png> <./figures/Hoverboard2medmap.png>] [18]
-<figures/histogram.png, id=465, 380.92313pt x 263.48438pt>
+<figures/histogram.png, id=476, 380.92313pt x 263.48438pt>
 File: figures/histogram.png Graphic file (type png)
 
 <use figures/histogram.png>
 Package pdftex.def Info: figures/histogram.png used on input line 85.
 (pdftex.def)             Requested size: 380.92218pt x 263.48372pt.
 
-<figures/CDF.png, id=466, 415.5525pt x 218.31563pt>
+<figures/CDF.png, id=477, 415.5525pt x 218.31563pt>
 File: figures/CDF.png Graphic file (type png)
  <use figures/CDF.png>
 Package pdftex.def Info: figures/CDF.png used on input line 93.
@@ -2227,7 +2228,7 @@ Overfull \hbox (7.55148pt too wide) in paragraph at lines 93--94
 
 
 ]
-<figures/Rotation.png, id=481, 1014.79124pt x 488.82625pt>
+<figures/Rotation.png, id=492, 1014.79124pt x 488.82625pt>
 File: figures/Rotation.png Graphic file (type png)
 
 <use figures/Rotation.png>
@@ -2256,7 +2257,7 @@ Class memoir Warning: The material used in the footer is too large
 either increase the foot skip or redesign the fotoer
 (in both cases you will find help in the memoir manual). on input line 49.
 
-[27] <figures/copyright_exjobbsrapport.pdf, id=537, 597.23125pt x 845.1575pt>
+[27] <figures/copyright_exjobbsrapport.pdf, id=548, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
@@ -2270,7 +2271,7 @@ Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
 e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=540, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=551, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
@@ -2317,24 +2318,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D12678A8A8D027FFED78AE0D2791B1AC;2269.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 28DE79D4DA493339C6E1A73F51E68D4C;2332.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 29556 strings out of 493117
- 512832 string characters out of 6135433
- 988609 words of memory out of 5000000
- 32316 multiletter control sequences out of 15000+600000
+ 29560 strings out of 493117
+ 512882 string characters out of 6135433
+ 988683 words of memory out of 5000000
+ 32318 multiletter control sequences out of 15000+600000
  52403 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,18n,94p,2167b,1576s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,18n,94p,2167b,1645s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -2347,10 +2344,10 @@ xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (34 pages, 2601273 bytes).
+Output written on Thesis.pdf (34 pages, 2603742 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
- 531 compressed objects within 6 object streams
- 119 named destinations out of 1000 (max. 500000)
- 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 543 compressed objects within 6 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
