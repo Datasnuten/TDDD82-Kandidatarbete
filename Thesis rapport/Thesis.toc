@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Contents}{v}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{vi}{section*.3}
+\contentsline {chapter}{List of Figures}{vii}{section*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -60,16 +60,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.4}Position Recordings}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}The Test Case}{22}{section.5.5}
+\contentsline {section}{\numberline {5.5}GPS \& Sensors}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Adobe Flash}{23}{section.5.6}
+\contentsline {subsection}{\numberline {5.5.1}Collecting Position Data}{23}{subsection.5.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Issues with the Server}{23}{section.5.7}
+\contentsline {subsection}{\numberline {5.5.2}Collecting Rotational Data}{23}{subsection.5.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Project Structure Improvements}{23}{section.5.8}
+\contentsline {subsection}{\numberline {5.5.3}Phone API}{24}{subsection.5.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}Work in a Wider Context}{23}{section.5.9}
+\contentsline {subsection}{\numberline {5.5.4}VR Technology}{24}{subsection.5.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{25}{chapter.6}
+\contentsline {section}{\numberline {5.6}The Test Case}{25}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{26}{section*.17}
+\contentsline {section}{\numberline {5.7}Adobe Flash}{25}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Issues with the Server}{25}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.9}Project Structure Improvements}{26}{section.5.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.10}Work in a Wider Context}{26}{section.5.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{28}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{29}{section*.19}

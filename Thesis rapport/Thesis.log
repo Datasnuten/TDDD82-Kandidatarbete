@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  1 JUN 2016 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  13 JUN 2016 23:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1968,7 +1968,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
-<figures/titelsid-sv.pdf, id=151, 493.845pt x 349.305pt>
+<figures/titelsid-sv.pdf, id=171, 493.845pt x 349.305pt>
 File: figures/titelsid-sv.pdf Graphic file (type pdf)
 
 <use figures/titelsid-sv.pdf>
@@ -2053,7 +2053,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 5.
 ) [5
 
-] (./Thesis.lof) [6
+] [6] (./Thesis.lof) [7
 
 ]
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -2063,7 +2063,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (./Thesis.bbl)
+ (./Thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                useofgeo
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 31.
 Package biblatex Info: Reference segment=0 on input line 31.
 Package caption Info: Begin \AtBeginDocument code.
@@ -2081,36 +2089,35 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 ]) [2]
 \openout2 = `background.aux'.
 
-
-(./background.tex [3
-
+ (./background.tex [3
 
 
-] <figures/HAS1.png, id=304, 586.44093pt x 373.395pt>
+
+]
+<figures/HAS1.png, id=338, 586.44093pt x 373.395pt>
 File: figures/HAS1.png Graphic file (type png)
-
-<use figures/HAS1.png>
+ <use figures/HAS1.png>
 Package pdftex.def Info: figures/HAS1.png used on input line 29.
 (pdftex.def)             Requested size: 234.5722pt x 149.35535pt.
- <figures/HAS2.png, id=306, 594.72188pt x 383.18156pt>
-File: figures/HAS2.png Graphic file (type png)
 
-<use figures/HAS2.png>
+<figures/HAS2.png, id=340, 594.72188pt x 383.18156pt>
+File: figures/HAS2.png Graphic file (type png)
+ <use figures/HAS2.png>
 Package pdftex.def Info: figures/HAS2.png used on input line 37.
 (pdftex.def)             Requested size: 237.88454pt x 153.2699pt.
- [4] [5 <./figures/HAS1.png> <./figures/HAS2.png>])
-[6]
+
+[4] [5 <./figures/HAS1.png> <./figures/HAS2.png>]) [6]
 \openout2 = `systemdesign.aux'.
 
  (./systemdesign.tex
-<figures/Media_player.png, id=349, 484.81125pt x 362.85562pt>
+<figures/Media_player.png, id=383, 484.81125pt x 362.85562pt>
 File: figures/Media_player.png Graphic file (type png)
 
 <use figures/Media_player.png>
 Package pdftex.def Info: figures/Media_player.png used on input line 13.
 (pdftex.def)             Requested size: 339.36555pt x 253.99721pt.
 
-<figures/teomet.png, id=350, 469.755pt x 441.14813pt>
+<figures/teomet.png, id=384, 469.755pt x 441.14813pt>
 File: figures/teomet.png Graphic file (type png)
  <use figures/teomet.png>
 Package pdftex.def Info: figures/teomet.png used on input line 21.
@@ -2121,7 +2128,7 @@ Package pdftex.def Info: figures/teomet.png used on input line 21.
 
 
 ] [8 <./figures/Media_player.png> <./figures/teomet.png>]
-<figures/prefetch.png, id=370, 498.36188pt x 437.38406pt>
+<figures/prefetch.png, id=403, 498.36188pt x 437.38406pt>
 File: figures/prefetch.png Graphic file (type png)
 
 <use figures/prefetch.png>
@@ -2132,14 +2139,14 @@ Package pdftex.def Info: figures/prefetch.png used on input line 38.
 \openout2 = `results.aux'.
 
  (./results.tex
-<figures/Google_Maps.png, id=434, 374.90062pt x 356.83313pt>
+<figures/Google_Maps.png, id=467, 374.90062pt x 356.83313pt>
 File: figures/Google_Maps.png Graphic file (type png)
 
 <use figures/Google_Maps.png>
 Package pdftex.def Info: figures/Google_Maps.png used on input line 14.
 (pdftex.def)             Requested size: 239.93558pt x 228.3724pt.
 
-<figures/GeomapVsGooglemindrean10.png, id=435, 374.90062pt x 356.83313pt>
+<figures/GeomapVsGooglemindrean10.png, id=468, 374.90062pt x 356.83313pt>
 File: figures/GeomapVsGooglemindrean10.png Graphic file (type png)
 
 <use figures/GeomapVsGooglemindrean10.png>
@@ -2147,7 +2154,7 @@ Package pdftex.def Info: figures/GeomapVsGooglemindrean10.png used on input lin
 e 22.
 (pdftex.def)             Requested size: 204.0pt x 194.168pt.
 
-<figures/GeomapVsGooglefleran10.png, id=436, 371.13657pt x 348.55219pt>
+<figures/GeomapVsGooglefleran10.png, id=469, 371.13657pt x 348.55219pt>
 File: figures/GeomapVsGooglefleran10.png Graphic file (type png)
 
 <use figures/GeomapVsGooglefleran10.png>
@@ -2165,14 +2172,14 @@ Overfull \hbox (8.98904pt too wide) in paragraph at lines 21--33
 
 ] [16 <./figures/Google_Maps.png> <./figures/GeomapVsGooglemindrean10.png> <./f
 igures/GeomapVsGooglefleran10.png>]
-<figures/Hoverboard_1.png, id=455, 482.55281pt x 362.10281pt>
+<figures/Hoverboard_1.png, id=488, 482.55281pt x 362.10281pt>
 File: figures/Hoverboard_1.png Graphic file (type png)
 
 <use figures/Hoverboard_1.png>
 Package pdftex.def Info: figures/Hoverboard_1.png used on input line 48.
 (pdftex.def)             Requested size: 204.0pt x 153.07668pt.
 
-<figures/Hoverboard1medmap.png, id=456, 642.4pt x 481.8pt>
+<figures/Hoverboard1medmap.png, id=489, 642.4pt x 481.8pt>
 File: figures/Hoverboard1medmap.png Graphic file (type png)
 
 <use figures/Hoverboard1medmap.png>
@@ -2183,14 +2190,14 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 47--56
 [][]   [] 
  []
 
-<figures/Hoverboard_2.png, id=457, 481.8pt x 361.35pt>
+<figures/Hoverboard_2.png, id=490, 481.8pt x 361.35pt>
 File: figures/Hoverboard_2.png Graphic file (type png)
 
 <use figures/Hoverboard_2.png>
 Package pdftex.def Info: figures/Hoverboard_2.png used on input line 62.
 (pdftex.def)             Requested size: 204.0pt x 152.99553pt.
 
-<figures/Hoverboard2medmap.png, id=458, 642.4pt x 480.79625pt>
+<figures/Hoverboard2medmap.png, id=491, 642.4pt x 480.79625pt>
 File: figures/Hoverboard2medmap.png Graphic file (type png)
 
 <use figures/Hoverboard2medmap.png>
@@ -2202,25 +2209,87 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 61--70
  []
 
 [17 <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png> <./figures/H
-overboard_2.png> <./figures/Hoverboard2medmap.png>] [18]
-<figures/histogram.png, id=476, 380.92313pt x 263.48438pt>
-File: figures/histogram.png Graphic file (type png)
+overboard_2.png> <./figures/Hoverboard2medmap.png>]
+<figures/Histogram_Click-time.png, id=504, 267.24844pt x 208.52907pt>
+File: figures/Histogram_Click-time.png Graphic file (type png)
 
-<use figures/histogram.png>
-Package pdftex.def Info: figures/histogram.png used on input line 85.
-(pdftex.def)             Requested size: 380.92218pt x 263.48372pt.
+<use figures/Histogram_Click-time.png>
+Package pdftex.def Info: figures/Histogram_Click-time.png used on input line 85
+.
+(pdftex.def)             Requested size: 204.0pt x 159.18375pt.
 
-<figures/CDF.png, id=477, 415.5525pt x 218.31563pt>
-File: figures/CDF.png Graphic file (type png)
- <use figures/CDF.png>
-Package pdftex.def Info: figures/CDF.png used on input line 93.
-(pdftex.def)             Requested size: 415.55148pt x 218.31508pt.
+<figures/CDF_Click-time.png, id=505, 361.35pt x 217.5628pt>
+File: figures/CDF_Click-time.png Graphic file (type png)
 
-Overfull \hbox (7.55148pt too wide) in paragraph at lines 93--94
- [] 
+<use figures/CDF_Click-time.png>
+Package pdftex.def Info: figures/CDF_Click-time.png used on input line 90.
+(pdftex.def)             Requested size: 204.0pt x 122.82361pt.
+
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 84--93
+[][]   [] 
  []
 
-) [19 <./figures/histogram.png> <./figures/CDF.png>]
+<figures/Histogram_Load-time.png, id=506, 371.88937pt x 232.61906pt>
+File: figures/Histogram_Load-time.png Graphic file (type png)
+
+<use figures/Histogram_Load-time.png>
+Package pdftex.def Info: figures/Histogram_Load-time.png used on input line 99.
+
+(pdftex.def)             Requested size: 204.0pt x 127.60722pt.
+
+<figures/CDF_Load-time.png, id=507, 361.35pt x 217.5628pt>
+File: figures/CDF_Load-time.png Graphic file (type png)
+
+<use figures/CDF_Load-time.png>
+Package pdftex.def Info: figures/CDF_Load-time.png used on input line 104.
+(pdftex.def)             Requested size: 204.0pt x 122.82361pt.
+
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 98--107
+[][]   [] 
+ []
+
+<figures/Histogram_Play-time.png, id=508, 264.23718pt x 211.54031pt>
+File: figures/Histogram_Play-time.png Graphic file (type png)
+
+<use figures/Histogram_Play-time.png>
+Package pdftex.def Info: figures/Histogram_Play-time.png used on input line 113
+.
+(pdftex.def)             Requested size: 204.0pt x 163.31583pt.
+
+<figures/CDF_Play-time.png, id=509, 361.35pt x 217.5628pt>
+File: figures/CDF_Play-time.png Graphic file (type png)
+
+<use figures/CDF_Play-time.png>
+Package pdftex.def Info: figures/CDF_Play-time.png used on input line 118.
+(pdftex.def)             Requested size: 204.0pt x 122.82361pt.
+
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 112--121
+[][]   [] 
+ []
+
+<figures/Histogram_Start-time.png, id=510, 369.63094pt x 256.70906pt>
+File: figures/Histogram_Start-time.png Graphic file (type png)
+
+<use figures/Histogram_Start-time.png>
+Package pdftex.def Info: figures/Histogram_Start-time.png used on input line 12
+7.
+(pdftex.def)             Requested size: 204.0pt x 141.68004pt.
+
+<figures/CDF_Start-time.png, id=511, 361.35pt x 217.5628pt>
+File: figures/CDF_Start-time.png Graphic file (type png)
+
+<use figures/CDF_Start-time.png>
+Package pdftex.def Info: figures/CDF_Start-time.png used on input line 132.
+(pdftex.def)             Requested size: 204.0pt x 122.82361pt.
+
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 126--135
+[][]   [] 
+ []
+
+) [18 <./figures/Histogram_Click-time.png> <./figures/CDF_Click-time.png>]
+[19 <./figures/Histogram_Load-time.png> <./figures/CDF_Load-time.png> <./figure
+s/Histogram_Play-time.png> <./figures/CDF_Play-time.png> <./figures/Histogram_S
+tart-time.png> <./figures/CDF_Start-time.png>]
 \openout2 = `discussion.aux'.
 
  (./discussion.tex [20
@@ -2228,17 +2297,22 @@ Overfull \hbox (7.55148pt too wide) in paragraph at lines 93--94
 
 
 ]
-<figures/Rotation.png, id=492, 1014.79124pt x 488.82625pt>
+<figures/Rotation.png, id=533, 1014.79124pt x 488.82625pt>
 File: figures/Rotation.png Graphic file (type png)
 
 <use figures/Rotation.png>
 Package pdftex.def Info: figures/Rotation.png used on input line 30.
 (pdftex.def)             Requested size: 405.9093pt x 195.52702pt.
- [21] [22 <./figures/Rotation.png>] [23]) [24]
+ [21] [22 <./figures/Rotation.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[][] [][][]\T1/ppl/m/n/8 Adobe Phone-Gap Build for com-bin-ing com-pass data wi
+th HTML-based ap-pli-ca-tions:
+ []
+
+[23] [24] [25]) [26] [27]
 \openout2 = `conclusion.aux'.
 
-
-(./conclusion.tex) [25
+ (./conclusion.tex) [28
 
 
 
@@ -2247,7 +2321,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 42.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [26
+) [29
 
 
 ]
@@ -2257,7 +2331,7 @@ Class memoir Warning: The material used in the footer is too large
 either increase the foot skip or redesign the fotoer
 (in both cases you will find help in the memoir manual). on input line 49.
 
-[27] <figures/copyright_exjobbsrapport.pdf, id=548, 597.23125pt x 845.1575pt>
+[30] <figures/copyright_exjobbsrapport.pdf, id=634, 597.23125pt x 845.1575pt>
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 
 <use figures/copyright_exjobbsrapport.pdf>
@@ -2271,7 +2345,7 @@ Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
 e 49.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<figures/copyright_exjobbsrapport.pdf, id=551, page=1, 597.23125pt x 845.1575pt
+<figures/copyright_exjobbsrapport.pdf, id=637, page=1, 597.23125pt x 845.1575pt
 >
 File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
  <use figures/copyright_exjobbsrapport.pdf, page 1>
@@ -2302,7 +2376,7 @@ File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
 put line 49.
 (pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
- [28
+ [31
 
  <./figures/copyright_exjobbsrapport.pdf>]
 \tf@toc=\write7
@@ -2318,20 +2392,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 28DE79D4DA493339C6E1A73F51E68D4C;2332.
+(rerunfilecheck)             Checksum: 273104AEA3198F1FC24BE22C976C9A1B;2684.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 29560 strings out of 493117
- 512882 string characters out of 6135433
- 988683 words of memory out of 5000000
- 32318 multiletter control sequences out of 15000+600000
+ 29646 strings out of 493117
+ 514798 string characters out of 6135433
+ 991973 words of memory out of 5000000
+ 32377 multiletter control sequences out of 15000+600000
  52403 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,18n,94p,2167b,1645s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,18n,94p,2202b,1645s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -2344,10 +2418,10 @@ xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (34 pages, 2603742 bytes).
+Output written on Thesis.pdf (38 pages, 2642132 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 543 compressed objects within 6 object streams
- 121 named destinations out of 1000 (max. 500000)
- 401 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 471 words of extra memory for PDF output out of 10000 (max. 10000000)
 

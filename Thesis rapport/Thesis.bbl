@@ -164,6 +164,58 @@
       \field{year}{2002}
       \field{pages}{503\bibrangedash 512}
     \endentry
+    \entry{privacyissues}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=e91267ab11487e0bbbf5dbe8e061a96b}{Doty}{D\bibinitperiod}{Nick}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=3500ac72be7c8f297aa59e31c09bbd31}{Mulligan}{M\bibinitperiod}{Deirdre\bibnamedelima K.}{D\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=f296960570b55b9357825d30c04fe353}{Wilde}{W\bibinitperiod}{Erik}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=e91267ab11487e0bbbf5dbe8e061a96b}{Doty}{D\bibinitperiod}{Nick}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=3500ac72be7c8f297aa59e31c09bbd31}{Mulligan}{M\bibinitperiod}{Deirdre\bibnamedelima K.}{D\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=f296960570b55b9357825d30c04fe353}{Wilde}{W\bibinitperiod}{Erik}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{64b67dfad87dee26f96b93f68d76ccd8}
+      \strng{fullhash}{64b67dfad87dee26f96b93f68d76ccd8}
+      \field{sortinit}{D}
+      \field{labeltitle}{Privacy Issues of the W3C Geolocation API}
+      \field{title}{Privacy Issues of the W3C Geolocation API}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://arxiv.org/pdf/1003.1775v1.pdf
+      \endverb
+    \endentry
+    \entry{geoapi}{online}{}
+      \field{sortinit}{G}
+      \field{labeltitle}{Geolocation API Specification}
+      \field{journaltitle}{W3C Editors Draft}
+      \field{title}{Geolocation API Specification}
+      \field{urlday}{13}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://dev.w3.org/geo/api/spec-source.html#coordinates_interface
+      \endverb
+    \endentry
+    \entry{gpsdir}{article}{}
+      \field{sortinit}{G}
+      \field{labeltitle}{Global Positioning Systems Directorate Systems Engineering \& Integration: Interface Specification IS-GPS-200}
+      \field{title}{Global Positioning Systems Directorate Systems Engineering \& Integration: Interface Specification IS-GPS-200}
+      \field{pages}{97}
+      \verb{url}
+      \verb http://www.gps.gov/technical/ps/2008-SPS-performance-standard.pdf
+      \endverb
+    \endentry
+    \entry{spsperf}{article}{}
+      \field{sortinit}{G}
+      \field{labeltitle}{GPS Standard Positioning Service (SPS) Performance Standard}
+      \field{title}{GPS Standard Positioning Service (SPS) Performance Standard}
+      \field{pages}{22}
+      \verb{url}
+      \verb http://www.gps.gov/technical/ps/2008-SPS-performance-standard.pdf
+      \endverb
+    \endentry
     \entry{osmf}{online}{}
       \name{labelname}{1}{}{%
         {{hash=10e8967bea5464f27150f2b9a8fc2aad}{Hamer}{H\bibinitperiod}{Greg}{G\bibinitperiod}{}{}{}{}}%
@@ -345,6 +397,17 @@
       \field{year}{2011}
       \field{pages}{72\bibrangedash 80}
     \endentry
+    \entry{locationstrategies}{online}{}
+      \field{sortinit}{L}
+      \field{labeltitle}{Location Strategies}
+      \field{title}{Location Strategies}
+      \field{urlday}{13}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://developer.android.com/guide/topics/location/strategies.html
+      \endverb
+    \endentry
     \entry{haversine}{online}{}
       \name{labelname}{1}{}{%
         {{hash=a4bb0d4054525c68949d655375a337c7}{Rick}{R\bibinitperiod}{Doctor}{D\bibinitperiod}{}{}{}{}}%
@@ -407,6 +470,19 @@
       \field{title}{Flattening the Earth: Two Thousand Years of Map Projections}
       \field{year}{1993}
     \endentry
+    \entry{compassapi}{online}{}
+      \field{sortinit}{T}
+      \field{labeltitle}{The Compass API}
+      \field{journaltitle}{W3C Editor's Draft}
+      \field{title}{The Compass API}
+      \field{urlday}{13}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2009}
+      \verb{url}
+      \verb https://dev.w3.org/2009/dap/system-info/compass.html#compasscallback
+      \endverb
+    \endentry
     \entry{scalableOnDemand}{article}{}
       \name{labelname}{3}{}{%
         {{hash=7d697b1b311e4ccb6b0f0a2f1c13c519}{Zhao}{Z\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
@@ -430,6 +506,7 @@
       \field{pages}{1149\bibrangedash 1162}
     \endentry
   \endsortlist
+  \missing{useofgeo}
 \endrefsection
 \endinput
 
