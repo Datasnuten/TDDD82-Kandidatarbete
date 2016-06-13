@@ -59,13 +59,10 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		
 		//######### ADDED BY PROJECT GROUP 9 #####
 		private var list:ArrayList = new ArrayList();
-		public var startTime:int;
 		
 		public function AdvertisementPluginInfo()
 		{
 			super();
-			
-			this.startTime=getTimer();
 			
 			// Register the external interface callback functions which we'll use in our interactive demo.			
 			if (ExternalInterface.available)
@@ -100,6 +97,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			overlayURL = resource.getMetadataValue("overlay") as String;
 			overlayTime = int(resource.getMetadataValue("overlayTime"));
 						
+			trace("TIME: "+ overlayTime);
 			// Expose so that we can disable the seek WORKAROUND for http://bugs.adobe.com/jira/browse/ST-397 
 			// GPU Decoding issue on stagevideo: Win7, Flash Player version WIN 10,2,152,26 (debug)
 			seekWorkaround = resource.getMetadataValue("seekWorkaround") != "false";
@@ -207,6 +205,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 		{
 			// Set up the ad 
 			var adMediaElement:MediaElement = mediaFactory.createMediaElement(new URLResource(url));
+			
+			
 			CONFIG::LOGGING
 				{
 					logger.debug("ad manager");
@@ -250,7 +250,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			
 			//###### COMMENTED OUT PROJECT GROUP 9 ##########
 			//adMediaPlayer.addEventListener(TimeEvent.COMPLETE, onAdComplete);
-			
+			fileDown.list.addItem("1:"+(getTimer() - HTTPDownloadManager.timeClick).toString()+" ");
+			HTTPDownloadManager.timeLoad = getTimer();
 			if (preBufferAd)
 			{
 				trace("Is preBuffering the ad");
@@ -272,7 +273,7 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						}
 						
 						//##### ADDED PROJECT GROUP 9 #####
-						var checkIfSeekAvailableTimer:Timer = new Timer(50, 0); //checks every 50 ms if seek is available
+						var checkIfSeekAvailableTimer:Timer = new Timer(10, 0); //checks every 50 ms if seek is available
 						checkIfSeekAvailableTimer.addEventListener(TimerEvent.TIMER, checkIfseekAvailable);
 						checkIfSeekAvailableTimer.start();
 						var hasSeeked:Boolean = false;
@@ -289,6 +290,8 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 						}
 						
 						trace("PlayAD");
+						fileDown.list.addItem("2:"+(getTimer() - HTTPDownloadManager.timeLoad).toString()+" ");
+						HTTPDownloadManager.timePlay = getTimer();
 						playAd();
 					}
 				}		
@@ -302,8 +305,6 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 			function playAd():void
 			{		
 				// Copy the player's current volume values
-				
-				//stopp
 				adMediaPlayer.volume = mediaPlayer.volume;
 				adMediaPlayer.muted = mediaPlayer.muted;
 				
@@ -358,9 +359,9 @@ package org.osmf.advertisementplugin.src.org.osmf.advertisementplugin
 				trace("Add the ad to the container");
 				mediaContainer.addMediaElement(adMediaElement);
 				
-				//trace("T: " + (getTimer() - startTime).toString());
-				fileDown.list.addItem((getTimer() - startTime).toString()+"\n");
-				trace("TimeList: \n"+fileDown.list);
+				fileDown.list.addItem("3:"+(getTimer() - HTTPDownloadManager.timePlay).toString()+" ");
+				fileDown.list.addItem("4:"+(getTimer() - HTTPDownloadManager.timeStart).toString()+"\n");
+				trace("TimeListStart: \n"+fileDown.list);
 				
 				//######### ADDED PROJECT GROUP 9 ###############
 				if(adMediaPlaying){

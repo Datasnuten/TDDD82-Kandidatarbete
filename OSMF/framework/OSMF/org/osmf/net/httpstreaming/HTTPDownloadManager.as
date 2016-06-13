@@ -222,6 +222,10 @@ package org.osmf.net.httpstreaming
 		
 		//##### ADDED BY PROJECT GROUP 9 ######
 		public var list:ArrayList = new ArrayList();
+		public static var timeStart:int = 0;
+		public static var timeClick:int = 0;
+		public static var timeLoad:int = 0;
+		public static var timePlay:int = 0;
 		
 		CONFIG::LOGGING
 		{

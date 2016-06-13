@@ -127,12 +127,12 @@ package org.osmf.player.chrome.widgets
 			
 			
 			//För thesisrapporten <10 objekt
-			createGeoMapObjects(58.400992, 15.577557,180,"http://130.236.207.47/vod/A1.flv");
-			createGeoMapObjects(58.401020, 15.577354,135,"http://130.236.207.47/vod/A2.flv");
-			createGeoMapObjects(58.400676, 15.577424,45,"http://130.236.207.47/vod/A3.flv");
-			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.207.47/vod/J1.flv");
-			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.207.47/vod/J2.flv");
-			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.207.47/vod/J3.flv");
+			createGeoMapObjects(58.400992, 15.577557,180,"http://130.236.204.252/vod/A1.flv");
+			createGeoMapObjects(58.401020, 15.577354,135,"http://130.236.204.252/vod/A2.flv");
+			createGeoMapObjects(58.400676, 15.577424,45,"http://130.236.204.252/vod/A3.flv");
+			createGeoMapObjects(58.400727, 15.577550,0,"http://130.236.204.252/vod/J1.flv");
+			createGeoMapObjects(58.400863, 15.577821,270,"http://130.236.204.252/vod/J2.flv");
+			createGeoMapObjects(58.400605, 15.577439,35,"http://130.236.204.252/vod/J3.flv");
 			
 			//testfall med vinkeln 0
 			/*createGeoMapObjects(58.400992, 15.577557,0,"http://130.236.207.47/vod/A1.flv");
@@ -261,7 +261,7 @@ package org.osmf.player.chrome.widgets
 			}
 		}
 		
-		//Niklas position algorithm
+		//Calculates the position for each geomapObject
 		protected function calculatePositionAlgorithm():void
 		{
 			var i:int = 0;
@@ -285,8 +285,8 @@ package org.osmf.player.chrome.widgets
 			var deltaY:Number=0;
 			var deltaZ:Number=0;
 			
-			var procX:Number=0;
-			var procY:Number=0;
+			var percentOfX:Number=0;
+			var percentOfY:Number=0;
 			
 			var scale:Number=0;
 			
@@ -321,7 +321,6 @@ package org.osmf.player.chrome.widgets
 				maxRadius = ((maxY-minY)/2)*40000/360;
 			}
 			
-			trace("MaxRadius: "+maxRadius);
 			i=0;
 			
 			//Calculate and set all points' distance to the center
@@ -332,15 +331,15 @@ package org.osmf.player.chrome.widgets
 				//relY = (deltaY/maxRadius);
 				deltaZ = Math.sqrt(Math.pow(deltaX,2)+Math.pow(deltaY,2));
 				
-				procX = deltaX/deltaZ;
-				procY = deltaY/deltaZ;
+				percentOfX = deltaX/deltaZ;
+				percentOfY = deltaY/deltaZ;
 				
 				scale = deltaZ/maxRadius;
 				
 				relZ = scale*(Mapradius-36);
 				
-				relX = relZ*procX;
-				relY = relZ*procY;
+				relX = relZ*percentOfX;
+				relY = relZ*percentOfY;
 				
 				
 				objectDict[i].setPositionX = objectDict[i].getPositionX - relX;

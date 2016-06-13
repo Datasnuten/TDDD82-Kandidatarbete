@@ -42,7 +42,6 @@ package org.osmf.player.chrome.widgets
 		private var yCoordinate:Number;
 		private var direction:int = 0;
 		private var text:TextField;
-		public var timeStart:int;
 		
 		protected var normalFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_NORMAL;
 		protected var selectedFace:String = AssetIDs.MAP_GPS_DIRECTION_DOTARROW_SELECTED;
@@ -135,6 +134,8 @@ package org.osmf.player.chrome.widgets
 						obj.state = false;
 					}
 				}
+			HTTPDownloadManager.timeClick = getTimer();
+			HTTPDownloadManager.timeStart = getTimer();
 			updateFace(selected);
 			loadURL();
 			highlighted = true;
@@ -149,8 +150,8 @@ package org.osmf.player.chrome.widgets
 		
 		public function onMouseMove(event:MouseEvent):void
 		{
-			if(mouseY < this.getPositionY+selected.height && mouseY > this.getPositionY-selected.height && 
-				mouseX < this.getPositionX+selected.width && mouseX > this.getPositionX-selected.width ){
+			if(mouseY < this.getPositionY+selected.height/2 && mouseY > this.getPositionY-selected.height/2 && 
+				mouseX < this.getPositionX+selected.width/2 && mouseX > this.getPositionX-selected.width/2 ){
 				
 				Mouse.cursor = flash.ui.MouseCursor.BUTTON;
 				
@@ -366,9 +367,7 @@ package org.osmf.player.chrome.widgets
 				
 				// Configure the plugin with the ad information
 				pluginResource.addMetadataValue("midroll", url);
-				
-				pluginResource.addMetadataValue("midrollTime",timeStart);
-				
+		
 				netStreamLoad(resource);
 				
 				// Load the plugin.
