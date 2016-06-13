@@ -27,9 +27,14 @@
 \BOOKMARK [1][-]{section.5.2}{Issues with HAS and Prefetching}{chapter.5}% 27
 \BOOKMARK [1][-]{section.5.3}{Improvements to the Position Algorithm}{chapter.5}% 28
 \BOOKMARK [1][-]{section.5.4}{Position Recordings}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.5}{The Test Case}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.6}{Adobe Flash}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.7}{Issues with the Server}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.8}{Project Structure Improvements}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.9}{Work in a Wider Context}{chapter.5}% 34
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 35
+\BOOKMARK [1][-]{section.5.5}{GPS \046 Sensors}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.5.1}{Collecting Position Data}{section.5.5}% 31
+\BOOKMARK [2][-]{subsection.5.5.2}{Collecting Rotational Data}{section.5.5}% 32
+\BOOKMARK [2][-]{subsection.5.5.3}{Phone API}{section.5.5}% 33
+\BOOKMARK [2][-]{subsection.5.5.4}{VR Technology}{section.5.5}% 34
+\BOOKMARK [1][-]{section.5.6}{The Test Case}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.7}{Adobe Flash}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.8}{Issues with the Server}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.9}{Project Structure Improvements}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.10}{Work in a Wider Context}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
