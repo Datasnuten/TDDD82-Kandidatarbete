@@ -1,0 +1,36 @@
+Andreas Nordberg and Jonathan Sjölund
+
+Geo-based media player
+A mention of the files in the provided code we changed the most/added.
+
+In many of the places where we've made changes in the existing code we also added something along the lines of "//##### ADDED PROJECT GROUP 9 #####" to make this clear.
+
+To make the player work with other videos, the file paths to the videos in the function ”createObjects();” in GeoMapSprite.as should be changed appropriately. 
+
+OSMF/framework/OSMF/org/osmf/advertisementplugin/src/org/osmf/advertisementplugin/AdvertisementPluginInfo.as
+OSMF/framework/OSMF/org/osmf/net/httpstreaming/HTTPDownloadManager.as
+OSMF/framework/OSMF/org/osmf/net/httpstreaming/HTTPNetStream.as
+OSMF/player/StrobeMediaPlayback/src/StrobeMediaPlayback.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/hint/OwnWidgetHint.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/assets/AssetIDs.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/GeoMapButton.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/GeoMapObject.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/GeoMapSprite.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/GeoMapWidget.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/PauseButton.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/PlayButton.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/widgets/ScrubBar.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/AssetsProvider.as
+OSMF/player/StrobeMediaPlayback/src/org/osmf/player/chrome/ControlBar.as
+OSMF/player/StrobeMediaPlayback/assets/assets_geo.swc
+-ASSET_geoikonSelected
+-ASSET_geoikon
+-ASSET_geoikonHover
+-ASSET_dotarrow_normal
+-ASSET_dotarrow_selected
+
+
+
+
+
+
