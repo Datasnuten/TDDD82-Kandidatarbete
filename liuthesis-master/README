@@ -1,6 +1,6 @@
 LiU Thesis class
 
-Ola Leifler, ola.leifler@liu.se, 110523
+Ola Leifler, ola.leifler@liu.se, 2011-2016
 
 ** Package options **
 
@@ -8,7 +8,8 @@ The following options are recognized by the liuthesis document class
 
 phd - For dissertations 
 lic - For licentiate theses
-msc - For Master's theses (default)
+msc - For Masters' theses (default)
+bachelor - For Bachelors' theses
 
 hu     - For the medical sciences
 filfak - For the humanities
@@ -17,6 +18,11 @@ lith   - For LiTH (default)
 exhibitpage - Produce an exhibit page (spikblad) and no thesis. Use
 	      this option to produce an exhibit page only for PhD
 	      dissertations.
+
+printerfriendly - ensure chapters begin on recto pages
+
+swedish - use Swedish as the main language, English as the secondary language
+english - use English as the main language
 
 plus all the options recognized by the memoir package, which liuthesis extends.
 
@@ -30,6 +36,10 @@ xunicode and xltxtra packages are loaded. All manuscript files should
 be written with UTF-8 encoding. When PDFLaTeX is used as the
 typsetting engine, the babel, palatino and mathpazo packages are used
 instead.
+
+Note that for correct typesetting of the front matter, XeTeX must be
+used as a typesettings engine on a platform where the proprietary
+fonts Calibri and Calibri Italicare available.
 
 The BibLaTeX package is used for managing references. Currently, there
 is no way to specify the load-time options to biblatex as document
@@ -54,6 +64,9 @@ provides an example of how this works.
 
 Abstract.tex is a mandatory file with your abstract, other files can
 be included at will from your main thesis file.
+
+For further usage instructions, please refer to demothesis.tex that
+provides a minimal example of an undergraduate thesis.
 
 ** Including articles **
 

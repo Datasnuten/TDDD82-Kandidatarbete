@@ -7,9 +7,9 @@
 %% Created: Thu Oct 14 12:52:20 2010 (CEST)
 %% Version: $Id$
 %% Version: 
-%% Last-Updated: Thu Dec 17 16:28:11 2015 (+0100)
+%% Last-Updated: Thu Jun  2 16:18:27 2016 (+0200)
 %%           By: Ola Leifler
-%%     Update #: 74
+%%     Update #: 121
 %% URL: 
 %% Keywords: 
 %% Compatibility: 
@@ -29,27 +29,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
 %%% Code:
-\documentclass[msc,lith,showtrims]{liuthesis}
+\documentclass[bachelor,lith,showtrims,english]{liuthesis}
 %% Settings go in settings.tex
 \include{settings}
 \usepackage{rotating}
 \usepackage{color}
-\usepackage{tikz}
 % \usepackage{changebar}
 
 \department{Institutionen för datavetenskap}
-\departmentenglish{Department of Computer science}
+\departmentenglish{Department of Computer Science}
 \departmentshort{IDA}
 \supervisor{Min handledare}
 \examiner{Min examinator}
-\titleenglish{A very very long title -- with some subtitle as well}
+\titleenglish{A very very long title}
+\subtitleenglish{with a subtitle}
+\thesissubject{Datateknik}
+
+
 \publicationyear{15}
 \currentyearthesisnumber{001}
 \dateofpublication{2015-05-08}
-\level{A}
 
 %\author{\texttt{\textbackslash author}}
-\author{Ola Leifler}
+\author{\parbox{\textwidth}{Ola Leifler\\
+  Alexander Sanner}}
 
 \begin{document}
 
@@ -63,7 +66,7 @@
 \include{conclusion}
 \printbibliography
 % Demonstrates the use of included publications, for graduate-level theses
-\ifmsc
+\ifstudent
 \else
 \includearticle{scigen}
 \includearticletex{scigen}
