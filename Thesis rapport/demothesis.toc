@@ -60,7 +60,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.4}Position Recordings}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}GPS \& Sensors}{22}{section.5.5}
+\contentsline {section}{\numberline {5.5}GPS and Sensors}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5.1}Collecting Position Data}{23}{subsection.5.5.1}
 \defcounter {refsection}{0}\relax 
