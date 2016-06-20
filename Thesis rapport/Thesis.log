@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  13 JUN 2016 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.10)  20 JUN 2016 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,11 +7,8 @@ entering extended mode
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./liuthesis.cls
-(/usr/local/texlive/2014/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
-Document Class: liuthesis 2010/10/19 PHD Thesis class for LiU
-PHD Thesis class for LiU by Ola Leifler - v 1.02
+Document Class: liuthesis 2016/03/10 Thesis class for LiU
+Undergraduate and graduate thesis class for LiU by Ola Leifler - v 1.1
 (/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/05/09 v2.6d package option processing (HA)
 
@@ -242,7 +239,28 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/memoir/memoir.cls
+(/usr/local/texlive/2014/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2014/01/03 v1.7j
+
+Package: textpos 2014/01/03 1.7j, absolute positioning of text on the page
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)
+\TP@textbox=\box26
+\TP@holdbox=\box27
+\TPHorizModule=\dimen102
+\TPVertModule=\dimen103
+\TP@margin=\dimen104
+\TP@absmargin=\dimen105
+
+Grid set 16 x 16 = 0.0pt x 0.0pt
+\TPboxrulesize=\dimen106
+\TP@ox=\dimen107
+\TP@oy=\dimen108
+\TP@tbargs=\toks18
+\TP@prevdepth=\dimen109
+TextBlockOrigin set to 0pt x 0pt
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
 ment class
 \onelineskip=\skip41
@@ -285,7 +303,7 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \mem@maxfootheight=\skip56
 \headwidth=\skip57
 \c@storedpagenumber=\count83
-\memPD=\dimen102
+\memPD=\dimen110
 \m@mabparskip=\skip58
 \thanksmarkwidth=\skip59
 \thanksmarksep=\skip60
@@ -321,8 +339,8 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \pfbreakskip=\skip82
 \c@@ppsavesec=\count92
 \c@@ppsaveapp=\count93
-\ragrparindent=\dimen103
-\everylistparindent=\dimen104
+\ragrparindent=\dimen111
+\everylistparindent=\dimen112
 \parsepi=\skip83
 \topsepi=\skip84
 \itemsepi=\skip85
@@ -335,10 +353,10 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \partopsepiii=\skip92
 \m@msavetopsep=\skip93
 \m@msavepartopsep=\skip94
-\@enLab=\toks18
+\@enLab=\toks19
 \abstitleskip=\skip95
 \absleftindent=\skip96
-\abs@leftindent=\dimen105
+\abs@leftindent=\dimen113
 \absrightindent=\skip97
 \absparindent=\skip98
 \absparsep=\skip99
@@ -352,7 +370,7 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \versewidth=\skip103
 \vgap=\skip104
 \vindent=\skip105
-\vleftmargin=\dimen106
+\vleftmargin=\dimen114
 \c@verse=\count98
 \c@chrsinstr=\count99
 \beforepoemtitleskip=\skip106
@@ -361,45 +379,45 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \beforePoemTitleskip=\skip108
 \midPoemTitleskip=\skip109
 \afterPoemTitleskip=\skip110
-\col@sep=\dimen107
-\extrarowheight=\dimen108
-\NC@list=\toks19
+\col@sep=\dimen115
+\extrarowheight=\dimen116
+\NC@list=\toks20
 \extratabsurround=\skip111
 \backup@length=\skip112
-\TX@col@width=\dimen109
-\TX@old@table=\dimen110
-\TX@old@col=\dimen111
-\TX@target=\dimen112
-\TX@delta=\dimen113
+\TX@col@width=\dimen117
+\TX@old@table=\dimen118
+\TX@old@col=\dimen119
+\TX@target=\dimen120
+\TX@delta=\dimen121
 \TX@cols=\count101
-\TX@ftn=\toks20
-\heavyrulewidth=\dimen114
-\lightrulewidth=\dimen115
-\cmidrulewidth=\dimen116
-\belowrulesep=\dimen117
-\belowbottomsep=\dimen118
-\aboverulesep=\dimen119
-\abovetopsep=\dimen120
-\cmidrulesep=\dimen121
-\cmidrulekern=\dimen122
-\defaultaddspace=\dimen123
+\TX@ftn=\toks21
+\heavyrulewidth=\dimen122
+\lightrulewidth=\dimen123
+\cmidrulewidth=\dimen124
+\belowrulesep=\dimen125
+\belowbottomsep=\dimen126
+\aboverulesep=\dimen127
+\abovetopsep=\dimen128
+\cmidrulesep=\dimen129
+\cmidrulekern=\dimen130
+\defaultaddspace=\dimen131
 \@cmidla=\count102
 \@cmidlb=\count103
-\@aboverulesep=\dimen124
-\@belowrulesep=\dimen125
+\@aboverulesep=\dimen132
+\@belowrulesep=\dimen133
 \@thisruleclass=\count104
 \@lastruleclass=\count105
-\@thisrulewidth=\dimen126
+\@thisrulewidth=\dimen134
 \ctableftskip=\skip113
 \ctabrightskip=\skip114
 \abovecolumnspenalty=\count106
 \@linestogo=\count107
 \@cellstogo=\count108
 \@cellsincolumn=\count109
-\crtok=\toks21
-\@mincolumnwidth=\dimen127
+\crtok=\toks22
+\@mincolumnwidth=\dimen135
 \c@newflo@tctr=\count110
-\mem@margin@floatbox=\box26
+\mem@margin@floatbox=\box28
 \@contcwidth=\skip115
 \@contindw=\skip116
 \abovecaptionskip=\skip117
@@ -409,17 +427,17 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \subfloatcaptopadj=\skip121
 \subfloatbottomskip=\skip122
 \subfloatlabelskip=\skip123
-\subfloatcapmargin=\dimen128
+\subfloatcapmargin=\dimen136
 \c@@contsubnum=\count111
-\m@mscap@capbox=\box27
-\m@mscap@fbox=\box28
-\sidecapsep=\dimen129
-\sidecapwidth=\dimen130
-\m@m@tempdima=\dimen131
-\m@mscapraise=\dimen132
-\sidecapraise=\dimen133
-\m@mscapmainwidth=\dimen134
-\m@mscaplkern=\dimen135
+\m@mscap@capbox=\box29
+\m@mscap@fbox=\box30
+\sidecapsep=\dimen137
+\sidecapwidth=\dimen138
+\m@m@tempdima=\dimen139
+\m@mscapraise=\dimen140
+\sidecapraise=\dimen141
+\m@mscapmainwidth=\dimen142
+\m@mscaplkern=\dimen143
 \beforeepigraphskip=\skip124
 \afterepigraphskip=\skip125
 \epigraphwidth=\skip126
@@ -430,8 +448,8 @@ LaTeX Info: Redefining \emph on input line 7500.
 \tocbaseline=\skip129
 \cftparskip=\skip130
 \cftbeforebookskip=\skip131
-\cftbookindent=\dimen136
-\cftbooknumwidth=\dimen137
+\cftbookindent=\dimen144
+\cftbooknumwidth=\dimen145
 \cftbeforepartskip=\skip132
 \cftpartindent=\skip133
 \cftpartnumwidth=\skip134
@@ -453,16 +471,16 @@ LaTeX Info: Redefining \emph on input line 7500.
 \cftbeforesubparagraphskip=\skip150
 \cftsubparagraphindent=\skip151
 \cftsubparagraphnumwidth=\skip152
-\prechapterprecisshift=\dimen138
+\prechapterprecisshift=\dimen146
 \c@maxsecnumdepth=\count112
-\bibindent=\dimen139
+\bibindent=\dimen147
 \bibitemsep=\skip153
 \indexcolsep=\skip154
 \indexrule=\skip155
-\indexmarkstyle=\toks22
+\indexmarkstyle=\toks23
 \@indexbox=\insert233
-\glossarycolsep=\dimen140
-\glossaryrule=\dimen141
+\glossarycolsep=\dimen148
+\glossaryrule=\dimen149
 \sideparvshift=\skip156
 \sideins=\insert232
 \sidebartopsep=\skip157
@@ -476,7 +494,7 @@ LaTeX Info: Redefining \emph on input line 7500.
 \footinsv@r=\insert231
 \@mpfootinsv@r=\insert230
 \m@m@k=\count113
-\m@m@h=\dimen142
+\m@m@h=\dimen150
 \m@mipn@skip=\skip165
 \sidefootins=\insert229
 \sidefootadjust=\skip166
@@ -492,9 +510,9 @@ LaTeX Info: Redefining \emph on input line 7500.
 \c@pagenote=\count115
 \c@pagenoteshadow=\count116
 \mem@pn@lastkern=\skip175
-\every@verbatim=\toks23
-\afterevery@verbatim=\toks24
-\verbatim@line=\toks25
+\every@verbatim=\toks24
+\afterevery@verbatim=\toks25
+\verbatim@line=\toks26
 \tab@position=\count117
 \verbatim@in@stream=\read1
 \verbatimindent=\skip176
@@ -503,10 +521,10 @@ LaTeX Info: Redefining \emph on input line 7500.
 \c@memfbvline=\count118
 \c@bvlinectr=\count119
 \bvnumlength=\skip178
-\fb@frw=\dimen143
-\fb@frh=\dimen144
-\FrameRule=\dimen145
-\FrameSep=\dimen146
+\fb@frw=\dimen151
+\fb@frh=\dimen152
+\FrameRule=\dimen153
+\FrameSep=\dimen154
 \c@cp@cntr=\count120
 LaTeX Info: Redefining \: on input line 11958.
 LaTeX Info: Redefining \! on input line 11960.
@@ -623,8 +641,8 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count140
 \calc@Bcount=\count141
-\calc@Adimen=\dimen147
-\calc@Bdimen=\dimen148
+\calc@Adimen=\dimen155
+\calc@Bdimen=\dimen156
 \calc@Askip=\skip185
 \calc@Bskip=\skip186
 LaTeX Info: Redefining \setlength on input line 75.
@@ -653,66 +671,63 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen149
-\Gin@req@width=\dimen150
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box29
-\AM@toc@title=\toks26
+\AM@pagebox=\box31
+\AM@toc@title=\toks27
 \c@AM@survey=\count143
-\AM@templatesizebox=\box30
+\AM@templatesizebox=\box32
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen151
-\pgfutil@tempdimb=\dimen152
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen159
+\pgfutil@tempdimb=\dimen160
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box31
-(/usr/local/texlive/2014/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+\pgfutil@abb=\box33
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
 Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks28
-\pgfkeys@temptoks=\toks29
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
-\pgfkeys@tmptoks=\toks30
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen153
-\pgf@y=\dimen154
-\pgf@xa=\dimen155
-\pgf@ya=\dimen156
-\pgf@xb=\dimen157
-\pgf@yb=\dimen158
-\pgf@xc=\dimen159
-\pgf@yc=\dimen160
+\pgf@x=\dimen161
+\pgf@y=\dimen162
+\pgf@xa=\dimen163
+\pgf@ya=\dimen164
+\pgf@xb=\dimen165
+\pgf@yb=\dimen166
+\pgf@xc=\dimen167
+\pgf@yc=\dimen168
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
 \c@pgf@counta=\count144
 \c@pgf@countb=\count145
 \c@pgf@countc=\count146
 \c@pgf@countd=\count147
-\t@pgf@toka=\toks31
-\t@pgf@tokb=\toks32
-\t@pgf@tokc=\toks33
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -743,12 +758,12 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen161
+\pgfmath@dimen=\dimen169
 \pgfmath@count=\count150
-\pgfmath@box=\box32
-\pgfmath@toks=\toks34
-\pgfmath@stack@operand=\toks35
-\pgfmath@stack@operation=\toks36
+\pgfmath@box=\box34
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -774,52 +789,52 @@ erarithmetics.code.tex)))
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen162
-\pgf@picmaxx=\dimen163
-\pgf@picminy=\dimen164
-\pgf@picmaxy=\dimen165
-\pgf@pathminx=\dimen166
-\pgf@pathmaxx=\dimen167
-\pgf@pathminy=\dimen168
-\pgf@pathmaxy=\dimen169
-\pgf@xx=\dimen170
-\pgf@xy=\dimen171
-\pgf@yx=\dimen172
-\pgf@yy=\dimen173
-\pgf@zx=\dimen174
-\pgf@zy=\dimen175
+\pgf@picminx=\dimen170
+\pgf@picmaxx=\dimen171
+\pgf@picminy=\dimen172
+\pgf@picmaxy=\dimen173
+\pgf@pathminx=\dimen174
+\pgf@pathmaxx=\dimen175
+\pgf@pathminy=\dimen176
+\pgf@pathmaxy=\dimen177
+\pgf@xx=\dimen178
+\pgf@xy=\dimen179
+\pgf@yx=\dimen180
+\pgf@yy=\dimen181
+\pgf@zx=\dimen182
+\pgf@zy=\dimen183
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen176
-\pgf@path@lasty=\dimen177
+\pgf@path@lastx=\dimen184
+\pgf@path@lasty=\dimen185
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
-\pgf@shorten@end@additional=\dimen178
-\pgf@shorten@start@additional=\dimen179
+\pgf@shorten@end@additional=\dimen186
+\pgf@shorten@start@additional=\dimen187
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
-\pgfpic=\box33
-\pgf@hbox=\box34
-\pgf@layerbox@main=\box35
+\pgfpic=\box35
+\pgf@hbox=\box36
+\pgf@layerbox@main=\box37
 \pgf@picture@serial@count=\count152
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
-\pgflinewidth=\dimen180
+\pgflinewidth=\dimen188
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
-\pgf@pt@x=\dimen181
-\pgf@pt@y=\dimen182
-\pgf@pt@temp=\dimen183
+\pgf@pt@x=\dimen189
+\pgf@pt@y=\dimen190
+\pgf@pt@temp=\dimen191
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -836,12 +851,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
-\pgfarrowsep=\dimen184
+\pgfarrowsep=\dimen192
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen185
+\pgf@max=\dimen193
 \pgf@sys@shading@range@num=\count153
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
@@ -851,7 +866,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
-\pgfexternal@startupbox=\box36
+\pgfexternal@startupbox=\box38
 ))
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -868,7 +883,7 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
-\pgfnodeparttextbox=\box37
+\pgfnodeparttextbox=\box39
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -877,8 +892,8 @@ File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen186
-\pgf@nodesepend=\dimen187
+\pgf@nodesepstart=\dimen194
+\pgf@nodesepend=\dimen195
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
@@ -893,10 +908,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen188
-\pgffor@skip=\dimen189
-\pgffor@stack=\toks37
-\pgffor@toks=\toks38
+\pgffor@iter=\dimen196
+\pgffor@skip=\dimen197
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
 ))
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -906,18 +921,18 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count154
-\pgfplotmarksize=\dimen190
+\pgfplotmarksize=\dimen198
 )
-\tikz@lastx=\dimen191
-\tikz@lasty=\dimen192
-\tikz@lastxsaved=\dimen193
-\tikz@lastysaved=\dimen194
-\tikzleveldistance=\dimen195
-\tikzsiblingdistance=\dimen196
-\tikz@figbox=\box38
-\tikz@figbox@bg=\box39
-\tikz@tempbox=\box40
-\tikz@tempbox@bg=\box41
+\tikz@lastx=\dimen199
+\tikz@lasty=\dimen200
+\tikz@lastxsaved=\dimen201
+\tikz@lastysaved=\dimen202
+\tikzleveldistance=\dimen203
+\tikzsiblingdistance=\dimen204
+\tikz@figbox=\box40
+\tikz@figbox@bg=\box41
+\tikz@tempbox=\box42
+\tikz@tempbox@bg=\box43
 \tikztreelevel=\count155
 \tikznumberofchildren=\count156
 \tikznumberofcurrentchild=\count157
@@ -950,15 +965,15 @@ Package ifvtex Info: VTeX not detected.
 \Gm@cnth=\count163
 \Gm@cntv=\count164
 \c@Gm@tempcnt=\count165
-\Gm@bindingoffset=\dimen197
-\Gm@wd@mp=\dimen198
-\Gm@odd@mp=\dimen199
-\Gm@even@mp=\dimen200
-\Gm@layoutwidth=\dimen201
-\Gm@layoutheight=\dimen202
-\Gm@layouthoffset=\dimen203
-\Gm@layoutvoffset=\dimen204
-\Gm@dimlist=\toks39
+\Gm@bindingoffset=\dimen205
+\Gm@wd@mp=\dimen206
+\Gm@odd@mp=\dimen207
+\Gm@even@mp=\dimen208
+\Gm@layoutwidth=\dimen209
+\Gm@layoutheight=\dimen210
+\Gm@layouthoffset=\dimen211
+\Gm@layoutvoffset=\dimen212
+\Gm@dimlist=\toks40
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -1011,7 +1026,7 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen205
+\@linkdim=\dimen213
 \Hy@linkcounter=\count166
 \Hy@pagecounter=\count167
 
@@ -1040,10 +1055,10 @@ Package hyperref Info: Bookmarks ON on input line 4688.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen206
+\XeTeXLinkMargin=\dimen214
 \Fld@menulength=\count170
-\Field@Width=\dimen207
-\Fld@charsize=\dimen208
+\Field@Width=\dimen215
+\Fld@charsize=\dimen216
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -1086,7 +1101,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks40
+\@emptytoks=\toks41
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -1102,12 +1117,12 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks41
-\ex@=\dimen209
+\@emptytoks=\toks42
+\ex@=\dimen217
 ))
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen210
+\pmbraise@=\dimen218
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -1122,9 +1137,9 @@ LaTeX Info: Redefining \overline on input line 306.
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box42
-\strutbox@=\box43
-\big@size=\dimen211
+\Mathstrutbox@=\box44
+\strutbox@=\box45
+\big@size=\dimen219
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count183
@@ -1132,21 +1147,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip11
 \c@parentequation=\count185
 \dspbrk@lvl=\count186
-\tag@help=\toks42
+\tag@help=\toks43
 \row@=\count187
 \column@=\count188
 \maxfields@=\count189
-\andhelp@=\toks43
-\eqnshift@=\dimen212
-\alignsep@=\dimen213
-\tagshift@=\dimen214
-\tagwidth@=\dimen215
-\totwidth@=\dimen216
-\lineht@=\dimen217
-\@envbody=\toks44
+\andhelp@=\toks44
+\eqnshift@=\dimen220
+\alignsep@=\dimen221
+\tagshift@=\dimen222
+\tagwidth@=\dimen223
+\totwidth@=\dimen224
+\lineht@=\dimen225
+\@envbody=\toks45
 \multlinegap=\skip191
 \multlinetaggap=\skip192
-\mathdisplay@stack=\toks45
+\mathdisplay@stack=\toks46
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -1420,7 +1435,7 @@ LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
 \mayacnta=\count191
 \mayacntb=\count192
 \mayacntc=\count193
-\mayawidth=\dimen218
+\mayawidth=\dimen226
 LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
 LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
 LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
@@ -1474,7 +1489,7 @@ Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 \csq@qlevel=\count198
 \csq@maxlvl=\count199
 \csq@tshold=\count200
-\csq@ltx@everypar=\toks46
+\csq@ltx@everypar=\toks47
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2011/10/22 v5.1d csquotes generic definitions
@@ -1494,7 +1509,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 (/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/03/24 3.9k Babel common definitions
 \babel@savecnt=\count201
-\U@D=\dimen219
+\U@D=\dimen227
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -1522,27 +1537,8 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \JustifyingParindent=\skip206
 )
 \marginboxlength=\skip207
-\feline@article=\box44
+\feline@article=\box46
 \c@article=\count202
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/textpos/textpos.sty
-Package: textpos 2014/01/03 v1.7j
-
-Package: textpos 2014/01/03 1.7j, absolute positioning of text on the page
-\TP@textbox=\box45
-\TP@holdbox=\box46
-\TPHorizModule=\dimen220
-\TPVertModule=\dimen221
-\TP@margin=\dimen222
-\TP@absmargin=\dimen223
-Grid set 16 x 16 = 38.39343pt x 49.68562pt
-\TPboxrulesize=\dimen224
-\TP@ox=\dimen225
-\TP@oy=\dimen226
-\TP@tbargs=\toks47
-\TP@prevdepth=\dimen227
-TextBlockOrigin set to 0pt x 0pt
-)
 \mylen=\skip208
 
 The length of the alphabet is 142.54852pt
@@ -1554,9 +1550,9 @@ Top and edge trims: 9.95847pt and 7.11319pt
 Page height and width: 825.12991pt by 583.2815pt
 Text height and width: 660.14246pt by 408pt
 Spine and edge margins: 87.63123pt and 87.65027pt
-Upper and lower margins: 63.03406pt and 101.9534pt
-Headheight and headsep: 12pt and 31.53333pt
-Footskip: 18pt
+Upper and lower margins: 56.9055pt and 108.08195pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
 Columnsep and columnseprule: 10pt and 0pt
 Marginparsep and marginparwidth: 7pt and 71pt
 Sidecapsep and sidecapwidth: 7pt and 71pt
@@ -1573,8 +1569,8 @@ Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 Page height and width: 825.12991pt by 583.2815pt
 Text height and width: 660.14246pt by 408pt
 Oddside and evenside margins: 19.8752pt and 19.8752pt
-Topmargin and footskip: -6.94011pt and 18pt
-Headheight and headsep: 12pt and 31.53333pt
+Topmargin and footskip: -6.94011pt and 25.29494pt
+Headheight and headsep: 12pt and 18.06749pt
 Columnsep and columnseprule: 10pt and 0pt
 Marginparsep and marginparwidth: 7pt and 71pt
 ******************************************************
@@ -1839,25 +1835,26 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 (./results.aux) (./discussion.aux) (./conclusion.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 33.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count373
@@ -1887,7 +1884,6 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1906,9 +1902,9 @@ ABD: EveryShipout initializing macros
 * \evensidemargin=19.8752pt
 * \topmargin=-6.94011pt
 * \headheight=12.0pt
-* \headsep=31.53333pt
+* \headsep=18.06749pt
 * \topskip=10.0pt
-* \footskip=18.0pt
+* \footskip=25.29494pt
 * \marginparwidth=71.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
@@ -1922,7 +1918,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 33.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1933,16 +1929,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 31.
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
 
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 31.
+LaTeX Info: Redefining \selectfont on input line 33.
 
 
 ******************************************************
@@ -1951,9 +1947,9 @@ Top and edge trims: 9.95847pt and 7.11319pt
 Page height and width: 825.12991pt by 583.2815pt
 Text height and width: 665.2019pt by 408pt
 Spine and edge margins: 87.63123pt and 87.65027pt
-Upper and lower margins: 63.03406pt and 96.89395pt
-Headheight and headsep: 12pt and 31.53333pt
-Footskip: 18pt
+Upper and lower margins: 56.9055pt and 103.0225pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
 Columnsep and columnseprule: 10pt and 0pt
 Marginparsep and marginparwidth: 7pt and 73.65027pt
 Sidecapsep and sidecapwidth: 7pt and 71pt
@@ -1964,79 +1960,97 @@ Sidefoothsep and sidefootwidth: 7pt and 71pt
 Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 ******************************************************
 
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
-<figures/titelsid-sv.pdf, id=171, 493.845pt x 349.305pt>
-File: figures/titelsid-sv.pdf Graphic file (type pdf)
-
-<use figures/titelsid-sv.pdf>
-Package pdftex.def Info: figures/titelsid-sv.pdf used on input line 31.
-(pdftex.def)             Requested size: 448.80249pt x 317.44164pt.
-
-
-Class memoir Warning: The material used in the footer is too large
-(20.39996pt) for the given foot skip (18.0pt), it is recommended to
-either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 31.
-
-[1
-
-
-
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
-es/titelsid-sv.pdf>]
-Overfull \hbox (90.6943pt too wide) in paragraph at lines 31--31
- [][] 
- []
-
-[2]
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <9> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
- (./abstract.tex) [3
-
-]
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
- (./acknowledgments.tex
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 3.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 33.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+\thesiswidth=\skip219
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 33.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 3.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 33.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 3.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 33.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 33.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 3.
+(Font)              scaled to size 10.42007pt on input line 33.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 3.
+(Font)              scaled to size 7.91925pt on input line 33.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 3.
+(Font)              scaled to size 6.25204pt on input line 33.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 3.
+(Font)              scaled to size 10.42007pt on input line 33.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 3.
+(Font)              scaled to size 7.91925pt on input line 33.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 3.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 3.
+(Font)              scaled to size 6.25204pt on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 33.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
+<figures/liu_primary_black_en.png, id=171, 314.3745pt x 112.9821pt>
+File: figures/liu_primary_black_en.png Graphic file (type png)
+
+<use figures/liu_primary_black_en.png>
+Package pdftex.def Info: figures/liu_primary_black_en.png used on input line 33
+.
+(pdftex.def)             Requested size: 241.84842pt x 86.92061pt.
+
+Overfull \hbox (78.65091pt too wide) in paragraph at lines 33--33
+[][] 
+ []
+
+
+Overfull \hbox (69.04637pt too wide) in paragraph at lines 33--33
+[]$[]$ |  $[]$ 
+ []
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+ <./figures/liu_primary_black_en.png>]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 33.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+
+Overfull \hbox (26.90004pt too wide) in paragraph at lines 33--33
+[][] $[]$ 
+ []
+
+[2]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <9> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 33.
+ (./abstract.tex) [3
+
+]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 33.
+ (./acknowledgments.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 8.33606pt on input line 3.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -2047,13 +2061,13 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 3.
 ) [4
 
-]
-(./Thesis.toc
+] (./Thesis.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 5.
-) [5
+ [5
 
-] [6] (./Thesis.lof) [7
+])
+[6] (./Thesis.lof) [7
 
 ]
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -2063,44 +2077,32 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (./Thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                useofgeo
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 31.
-Package biblatex Info: Reference segment=0 on input line 31.
+ (./Thesis.bbl)
+Package biblatex Info: Reference section=0 on input line 33.
+Package biblatex Info: Reference segment=0 on input line 33.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \openout2 = `intro.aux'.
 
- (./intro.tex
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 8.
- [1
-
+ (./intro.tex [1
 
 
 
 ]) [2]
 \openout2 = `background.aux'.
 
- (./background.tex [3
+ (./background.tex
+[3
 
 
 
-]
-<figures/HAS1.png, id=338, 586.44093pt x 373.395pt>
+] <figures/HAS1.png, id=335, 586.44093pt x 373.395pt>
 File: figures/HAS1.png Graphic file (type png)
  <use figures/HAS1.png>
 Package pdftex.def Info: figures/HAS1.png used on input line 29.
 (pdftex.def)             Requested size: 234.5722pt x 149.35535pt.
 
-<figures/HAS2.png, id=340, 594.72188pt x 383.18156pt>
+<figures/HAS2.png, id=336, 594.72188pt x 383.18156pt>
 File: figures/HAS2.png Graphic file (type png)
  <use figures/HAS2.png>
 Package pdftex.def Info: figures/HAS2.png used on input line 37.
@@ -2110,14 +2112,14 @@ Package pdftex.def Info: figures/HAS2.png used on input line 37.
 \openout2 = `systemdesign.aux'.
 
  (./systemdesign.tex
-<figures/Media_player.png, id=383, 484.81125pt x 362.85562pt>
+<figures/Media_player.png, id=379, 484.81125pt x 362.85562pt>
 File: figures/Media_player.png Graphic file (type png)
 
 <use figures/Media_player.png>
 Package pdftex.def Info: figures/Media_player.png used on input line 13.
 (pdftex.def)             Requested size: 339.36555pt x 253.99721pt.
 
-<figures/teomet.png, id=384, 469.755pt x 441.14813pt>
+<figures/teomet.png, id=380, 469.755pt x 441.14813pt>
 File: figures/teomet.png Graphic file (type png)
  <use figures/teomet.png>
 Package pdftex.def Info: figures/teomet.png used on input line 21.
@@ -2128,13 +2130,18 @@ Package pdftex.def Info: figures/teomet.png used on input line 21.
 
 
 ] [8 <./figures/Media_player.png> <./figures/teomet.png>]
-<figures/prefetch.png, id=403, 498.36188pt x 437.38406pt>
+<figures/prefetch.png, id=399, 498.36188pt x 437.38406pt>
 File: figures/prefetch.png Graphic file (type png)
 
 <use figures/prefetch.png>
 Package pdftex.def Info: figures/prefetch.png used on input line 38.
 (pdftex.def)             Requested size: 299.01942pt x 262.43245pt.
- [9 <./figures/prefetch.png>] [10] [11] [12] [13])
+ [9 <./figures/prefetch.png>]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 54.
+ [10] [11] [12] [13
+
+])
 [14]
 \openout2 = `results.aux'.
 
@@ -2210,86 +2217,86 @@ Overfull \hbox (4.91129pt too wide) in paragraph at lines 61--70
 
 [17 <./figures/Hoverboard_1.png> <./figures/Hoverboard1medmap.png> <./figures/H
 overboard_2.png> <./figures/Hoverboard2medmap.png>]
-<figures/Histogram_Click-time.png, id=504, 267.24844pt x 208.52907pt>
+<figures/Histogram_Click-time.png, id=506, 267.24844pt x 208.52907pt>
 File: figures/Histogram_Click-time.png Graphic file (type png)
 
 <use figures/Histogram_Click-time.png>
-Package pdftex.def Info: figures/Histogram_Click-time.png used on input line 85
+Package pdftex.def Info: figures/Histogram_Click-time.png used on input line 86
 .
 (pdftex.def)             Requested size: 204.0pt x 159.18375pt.
 
-<figures/CDF_Click-time.png, id=505, 361.35pt x 217.5628pt>
+<figures/CDF_Click-time.png, id=507, 361.35pt x 217.5628pt>
 File: figures/CDF_Click-time.png Graphic file (type png)
 
 <use figures/CDF_Click-time.png>
-Package pdftex.def Info: figures/CDF_Click-time.png used on input line 90.
+Package pdftex.def Info: figures/CDF_Click-time.png used on input line 91.
 (pdftex.def)             Requested size: 204.0pt x 122.82361pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 84--93
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 85--94
 [][]   [] 
  []
 
-<figures/Histogram_Load-time.png, id=506, 371.88937pt x 232.61906pt>
+<figures/Histogram_Load-time.png, id=508, 371.88937pt x 232.61906pt>
 File: figures/Histogram_Load-time.png Graphic file (type png)
 
 <use figures/Histogram_Load-time.png>
-Package pdftex.def Info: figures/Histogram_Load-time.png used on input line 99.
-
+Package pdftex.def Info: figures/Histogram_Load-time.png used on input line 100
+.
 (pdftex.def)             Requested size: 204.0pt x 127.60722pt.
 
-<figures/CDF_Load-time.png, id=507, 361.35pt x 217.5628pt>
+<figures/CDF_Load-time.png, id=509, 361.35pt x 217.5628pt>
 File: figures/CDF_Load-time.png Graphic file (type png)
 
 <use figures/CDF_Load-time.png>
-Package pdftex.def Info: figures/CDF_Load-time.png used on input line 104.
+Package pdftex.def Info: figures/CDF_Load-time.png used on input line 105.
 (pdftex.def)             Requested size: 204.0pt x 122.82361pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 98--107
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 99--108
 [][]   [] 
  []
 
-<figures/Histogram_Play-time.png, id=508, 264.23718pt x 211.54031pt>
+[18 <./figures/Histogram_Click-time.png> <./figures/CDF_Click-time.png>]
+<figures/Histogram_Play-time.png, id=517, 264.23718pt x 211.54031pt>
 File: figures/Histogram_Play-time.png Graphic file (type png)
 
 <use figures/Histogram_Play-time.png>
-Package pdftex.def Info: figures/Histogram_Play-time.png used on input line 113
+Package pdftex.def Info: figures/Histogram_Play-time.png used on input line 114
 .
 (pdftex.def)             Requested size: 204.0pt x 163.31583pt.
 
-<figures/CDF_Play-time.png, id=509, 361.35pt x 217.5628pt>
+<figures/CDF_Play-time.png, id=518, 361.35pt x 217.5628pt>
 File: figures/CDF_Play-time.png Graphic file (type png)
 
 <use figures/CDF_Play-time.png>
-Package pdftex.def Info: figures/CDF_Play-time.png used on input line 118.
+Package pdftex.def Info: figures/CDF_Play-time.png used on input line 119.
 (pdftex.def)             Requested size: 204.0pt x 122.82361pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 112--121
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 113--122
 [][]   [] 
  []
 
-<figures/Histogram_Start-time.png, id=510, 369.63094pt x 256.70906pt>
+<figures/Histogram_Start-time.png, id=519, 369.63094pt x 256.70906pt>
 File: figures/Histogram_Start-time.png Graphic file (type png)
 
 <use figures/Histogram_Start-time.png>
 Package pdftex.def Info: figures/Histogram_Start-time.png used on input line 12
-7.
+8.
 (pdftex.def)             Requested size: 204.0pt x 141.68004pt.
 
-<figures/CDF_Start-time.png, id=511, 361.35pt x 217.5628pt>
+<figures/CDF_Start-time.png, id=520, 361.35pt x 217.5628pt>
 File: figures/CDF_Start-time.png Graphic file (type png)
 
 <use figures/CDF_Start-time.png>
-Package pdftex.def Info: figures/CDF_Start-time.png used on input line 132.
+Package pdftex.def Info: figures/CDF_Start-time.png used on input line 133.
 (pdftex.def)             Requested size: 204.0pt x 122.82361pt.
 
-Overfull \hbox (4.91129pt too wide) in paragraph at lines 126--135
+Overfull \hbox (4.91129pt too wide) in paragraph at lines 127--136
 [][]   [] 
  []
 
-) [18 <./figures/Histogram_Click-time.png> <./figures/CDF_Click-time.png>]
-[19 <./figures/Histogram_Load-time.png> <./figures/CDF_Load-time.png> <./figure
-s/Histogram_Play-time.png> <./figures/CDF_Play-time.png> <./figures/Histogram_S
-tart-time.png> <./figures/CDF_Start-time.png>]
+) [19 <./figures/Histogram_Load-time.png> <./figures/CDF_Load-time.png> <./figu
+res/Histogram_Play-time.png> <./figures/CDF_Play-time.png> <./figures/Histogram
+_Start-time.png> <./figures/CDF_Start-time.png>]
 \openout2 = `discussion.aux'.
 
  (./discussion.tex [20
@@ -2297,7 +2304,7 @@ tart-time.png> <./figures/CDF_Start-time.png>]
 
 
 ]
-<figures/Rotation.png, id=533, 1014.79124pt x 488.82625pt>
+<figures/Rotation.png, id=539, 1014.79124pt x 488.82625pt>
 File: figures/Rotation.png Graphic file (type png)
 
 <use figures/Rotation.png>
@@ -2317,95 +2324,42 @@ th HTML-based ap-pli-ca-tions:
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 42.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 44.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [29
 
 
-]
-
-Class memoir Warning: The material used in the footer is too large
-(20.39996pt) for the given foot skip (18.0pt), it is recommended to
-either increase the foot skip or redesign the fotoer
-(in both cases you will find help in the memoir manual). on input line 49.
-
-[30] <figures/copyright_exjobbsrapport.pdf, id=634, 597.23125pt x 845.1575pt>
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 49.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf used on input lin
-e 49.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-
-<figures/copyright_exjobbsrapport.pdf, id=637, page=1, 597.23125pt x 845.1575pt
->
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
- <use figures/copyright_exjobbsrapport.pdf, page 1>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 49.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf, page 1>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 49.
-(pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf, page 1>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 49.
-(pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf, page 1>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 49.
-(pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
-File: figures/copyright_exjobbsrapport.pdf Graphic file (type pdf)
-
-<use figures/copyright_exjobbsrapport.pdf, page 1>
-Package pdftex.def Info: figures/copyright_exjobbsrapport.pdf, page1 used on in
-put line 49.
-(pdftex.def)             Requested size: 583.17752pt x 825.26973pt.
- [31
-
- <./figures/copyright_exjobbsrapport.pdf>]
+] [30]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
- (./Thesis.aux (./intro.aux) (./background.aux)
-(./systemdesign.aux) (./results.aux) (./discussion.aux) (./conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
+
+(./Thesis.aux (./intro.aux) (./background.aux) (./systemdesign.aux)
+(./results.aux) (./discussion.aux) (./conclusion.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 273104AEA3198F1FC24BE22C976C9A1B;2684.
+(rerunfilecheck)             Checksum: 52BC00B4D36AC5919253C0B8F850513C;2684.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 29646 strings out of 493117
- 514798 string characters out of 6135433
- 991973 words of memory out of 5000000
- 32377 multiletter control sequences out of 15000+600000
- 52403 words of font info for 109 fonts, out of 8000000 for 9000
+ 29647 strings out of 493117
+ 514124 string characters out of 6135433
+ 994653 words of memory out of 5000000
+ 32371 multiletter control sequences out of 15000+600000
+ 53974 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,18n,94p,2202b,1645s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,12n,94p,2203b,1834s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -2415,13 +2369,14 @@ e/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local/texli
 ve/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Thesis.pdf (38 pages, 2642132 bytes).
+14/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/urw/palatino/uplri8a.pfb>
+Output written on Thesis.pdf (37 pages, 2605312 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 621 compressed objects within 7 object streams
- 142 named destinations out of 1000 (max. 500000)
- 471 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 718 PDF objects out of 1000 (max. 8388607)
+ 618 compressed objects within 7 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 451 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,13 +2,13 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abstract}{iii}{Doc-Start}
+\contentsline {chapter}{Abstract}{iii}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acknowledgments}{iv}{chapter*.1}
+\contentsline {chapter}{Acknowledgments}{iv}{chapter*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Contents}{v}{section*.2}
+\contentsline {chapter}{Contents}{v}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{vii}{section*.3}
+\contentsline {chapter}{List of Figures}{vii}{section*.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -60,7 +60,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.4}Position Recordings}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}GPS \& Sensors}{22}{section.5.5}
+\contentsline {section}{\numberline {5.5}GPS and Sensors}{22}{section.5.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5.1}Collecting Position Data}{23}{subsection.5.5.1}
 \defcounter {refsection}{0}\relax 
@@ -82,4 +82,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{28}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{29}{section*.19}
+\contentsline {chapter}{Bibliography}{29}{section*.21}

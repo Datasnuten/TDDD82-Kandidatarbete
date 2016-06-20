@@ -1,7 +1,7 @@
-\BOOKMARK [0][-]{Doc-Start}{Abstract}{}% 1
-\BOOKMARK [0][-]{chapter*.1}{Acknowledgments}{}% 2
-\BOOKMARK [0][-]{section*.2}{Contents}{}% 3
-\BOOKMARK [0][-]{section*.3}{List of Figures}{}% 4
+\BOOKMARK [0][-]{section*.2}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Acknowledgments}{}% 2
+\BOOKMARK [0][-]{section*.4}{Contents}{}% 3
+\BOOKMARK [0][-]{section*.5}{List of Figures}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
 \BOOKMARK [1][-]{section.1.1}{Boundaries}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.2}{Thesis Structure}{chapter.1}% 7
@@ -27,7 +27,7 @@
 \BOOKMARK [1][-]{section.5.2}{Issues with HAS and Prefetching}{chapter.5}% 27
 \BOOKMARK [1][-]{section.5.3}{Improvements to the Position Algorithm}{chapter.5}% 28
 \BOOKMARK [1][-]{section.5.4}{Position Recordings}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.5}{GPS \046 Sensors}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.5}{GPS and Sensors}{chapter.5}% 30
 \BOOKMARK [2][-]{subsection.5.5.1}{Collecting Position Data}{section.5.5}% 31
 \BOOKMARK [2][-]{subsection.5.5.2}{Collecting Rotational Data}{section.5.5}% 32
 \BOOKMARK [2][-]{subsection.5.5.3}{Phone API}{section.5.5}% 33
@@ -38,4 +38,4 @@
 \BOOKMARK [1][-]{section.5.9}{Project Structure Improvements}{chapter.5}% 38
 \BOOKMARK [1][-]{section.5.10}{Work in a Wider Context}{chapter.5}% 39
 \BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
-\BOOKMARK [0][-]{section*.19}{Bibliography}{}% 41
+\BOOKMARK [0][-]{section*.21}{Bibliography}{}% 41

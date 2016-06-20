@@ -6,9 +6,9 @@
 %% Maintainer: 
 %% Created: Fri Mar 20 08:25:23 2009 (CET)
 %% Version: 
-%% Last-Updated: Thu Jun  2 16:17:57 2016 (+0200)
+%% Last-Updated: Tue Jan 12 15:07:04 2016 (+0100)
 %%           By: Ola Leifler
-%%     Update #: 1133
+%%     Update #: 951
 %% URL: 
 %% Keywords: 
 %% Compatibility: 
@@ -45,20 +45,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
 %%% Code:
+\usepackage{setspace}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{liuthesis} [2016/03/10 Thesis class for LiU]
-\typeout{Undergraduate and graduate thesis class for LiU by Ola Leifler - v 1.1}
+\ProvidesClass{liuthesis} [2010/10/19 PHD Thesis class for LiU]
+\typeout{PHD Thesis class for LiU by Ola Leifler - v 1.02}
 \def\createvariable#1{%
   \expandafter\def\csname #1\endcsname{\expandafter\gdef\csname @#1\endcsname}
   \csname #1\endcsname{\texttt{\textbackslash #1}}
 }
-
-% \def\createconditionalvariable#1{
-%   \expandafter\newif\csname if#1\endcsname
-%   \csname #1 false\endcsname
-%   \def\csname#1\endcsname
-% }
-
 \RequirePackage{xkeyval}
 \RequirePackage{ifxetex}
 
@@ -66,8 +60,6 @@
 \else
 \RequirePackage[utf8]{inputenc}
 \fi
-
-\RequirePackage[absolute]{textpos}
 
 \createvariable{thesislanguage}
 \createvariable{faculty}
@@ -96,23 +88,10 @@
 % Undergrad specific
 \createvariable{area}
 \createvariable{level}
-\createvariable{thesistypenameswedish}
-\createvariable{thesistypenameenglish}
-\createvariable{thesiscredits}
-\createvariable{thesissubject}
-
-\newif\ifsubtitleswedish
-\subtitleswedishfalse
-\def\subtitleswedish#1{\subtitleswedishtrue\gdef\@subtitleswedish{#1}}
-
-\newif\ifsubtitleenglish
-\subtitleenglishfalse
-\def\subtitleenglish#1{\subtitleenglishtrue\gdef\@subtitleenglish{#1}}
 
 \newif\ifdedication
 \dedicationfalse
 \def\dedication#1{\dedicationtrue\gdef\@dedication{#1}}
-
 \createvariable{divanumber}
 % Include the abstract
 \gdef\@abstract{\input{abstract}}
@@ -127,10 +106,8 @@
 % \phdtrue
 \newif\iflic
 \licfalse
-\newif\ifstudent
-\studenttrue
-\newif\ifprinterfriendly
-\printerfriendlyfalse
+\newif\ifmsc
+\msctrue
 
 \DeclareOption{hu}{%
   \hutrue
@@ -168,49 +145,33 @@
 }
 
 \DeclareOption{msc}{%
-  \studenttrue
+  \msctrue
   \phdfalse
   \licfalse
-  \level{A}
-  \gdef\@thesistypenameenglish{Master}
-  \gdef\@thesistypenameswedish{avancerad nivå}
-  \thesiscredits{30}
-  \PassOptionsToClass{oneside}{memoir}
-}
-
-\DeclareOption{bachelor}{%
-  \studenttrue
-  \phdfalse
-  \licfalse
-  \level{G}
-  \gdef\@thesistypenameenglish{Bachelor}
-  \gdef\@thesistypenameswedish{grundnivå}
-  \thesiscredits{16}
   \PassOptionsToClass{oneside}{memoir}
 }
 
 \DeclareOption{lic}{%
   \lictrue
   \phdfalse
-  \studentfalse
+  \mscfalse
 }
 
 \DeclareOption{phd}{%
   \licfalse
-  \studentfalse
+  \mscfalse
   \phdtrue
 }
 
-\DeclareOption{printerfriendly}{%
-  \printerfriendlytrue
+\DeclareOption{swedish}{%
+ \thesislanguage{swedish}
+  \gdef\@thepaper{Artikel}
 }
 
-\DeclareOption{swedish}{%
-  \thesislanguage{swedish}
-}
 
 \DeclareOption{english}{%
   \thesislanguage{english}
+  \gdef\@thepaper{Paper}
 }
 
 \newif\ifexhibitpage
@@ -315,7 +276,7 @@
 \RequirePackage{csquotes}
 \ifxetex
 \swedishenglish{
-  \RequirePackage{polyglossia}
+  \RequirePackage[swedish,english]{polyglossia}
   \setmainlanguage{swedish}
   \setotherlanguages{english}
 }{
@@ -365,6 +326,7 @@
 \setcounter{article}{0}
 \renewcommand{\thearticle}{\Roman{article}}
 \includepdfset{pages=-}
+\RequirePackage[absolute]{textpos}
 \setlength{\TPVertModule}{2cm}
 \setlength{\TPHorizModule}{\paperwidth - 4.3cm}
 \newcommand{\papermark}{\@thepaper{} \thearticle}
@@ -520,121 +482,47 @@
 \iflic
 \newcommand{\isrn}{LIU-\@facultyshort{}-Lic-{}-\@publicationyear:\@currentyearthesisnumber}
 \fi
-\ifstudent
+\ifmsc
 \newcommand{\isrn}{LIU-\@departmentshort{}/\@area{}-EX-\@level{}-{}-\@publicationyear/\@currentyearthesisnumber-{}-SE}
 \fi
 
 
-\ifstudent 
-\renewcommand*\maketitle{%
-  {\ifxetex\fontspec{Calibri}\fi
-%  \vspace*{-22mm}%
-% \hspace*{-10mm}%
-%  \noindent\parbox[l][0pt][t]{0pt}{%
-%    \begin{minipage}[t][\paperheight+5mm][t]{\paperwidth-15mm}%
-      {\raggedleft%
-      \sffamily%
-      \swedishenglish{%
-      \begin{large}%
-        Linköpings universitet | \@department\par
-        Examensarbete på \@thesistypenameswedish, \@thesiscredits hp | \@thesissubject\par%
-        20\@publicationyear\ | \isrn\par%
-      \end{large}%
-      }{%
-      \begin{large}%
-        Linköping University | \@departmentenglish\par
-        \@thesistypenameenglish{} thesis, \@thesiscredits{} ECTS | \@thesissubject\par%
-        20\@publicationyear\ | \isrn\par%
-      \end{large}%
-      }%
-      }%
-      \vspace*{50mm}%
-      \swedishenglish{%
-        \hspace*{36mm}%
-      }{%
-        \hspace*{38mm}%
-      }%
-      \newlength{\thesiswidth}%
-      \swedishenglish{%
-        \setlength{\thesiswidth}{\paperwidth-86mm}%
-      }{%
-        \setlength{\thesiswidth}{\paperwidth-88mm}%
-      }%
-\begin{minipage}[t]{\thesiswidth}
-      {\fontsize{25pt}{30pt}\selectfont\swedishenglish{\@titleswedish}{\@titleenglish}\par}%
-      \swedishenglish{\ifsubtitleswedish}{\ifsubtitleenglish} -- {\fontsize{13pt}{15pt}\selectfont\swedishenglish{\@subtitleswedish}{\@subtitleenglish}\par}\fi%
-      \hrulefill{}
-      \\{}
-      {\ifxetex\fontspec{Calibri Italic}\fi{\fontsize{13pt}{15pt}\selectfont\swedishenglish{\@titleenglish}{\@titleswedish}\par}%
-        \swedishenglish{\ifsubtitleenglish}{\ifsubtitleswedish}--
-        {\fontsize{13pt}{15pt}\selectfont\swedishenglish{\@subtitleenglish}{\@subtitleswedish}\par}
-      \fi}%
-
-      \vspace*{10mm}%
-      {\ifxetex\fontspec{Calibri}\fi\fontsize{12pt}{13pt}\selectfont\textbf{\@author}\par
-      }%
-      \vspace*{10mm}%
-      {\ifxetex\fontspec{Calibri}\fi\fontsize{10pt}{11pt}\selectfont
-        \parbox{\textwidth}{\swedishenglish{Handledare}{Supervisor}: \@supervisor\\
-          \swedishenglish{Examinator}{Examiner}: \@examiner}}%
-
- \end{minipage}
-\vfill{}
-\begin{textblock*}{\textwidth}(2cm,\paperheight-4cm)
-  \swedishenglish{%
-    \parbox{0.4\textwidth}{\includegraphics[width=85mm]{liu_primary_black_sv}}%
-  }{%
-    \parbox{0.4\textwidth}{\includegraphics[width=85mm]{liu_primary_black_en}}%
-  }%
-  \hspace*{32mm}
-  \parbox{0.5\textwidth}{\raggedleft%
-    \vspace*{4mm}
-    Linköpings universitet\\
-    SE--581 83 Linköping\\
-    \swedishenglish{013-28 10 00}{+46 13 28 10 00}, \href{http://www.liu.se}{www.liu.se}}
-\end{textblock*}
-
-      
-      % }%
+\ifmsc
+\renewcommand{\maketitle}{
+   \copypagestyle{titlestyle}{plain}
+   \makeevenfoot{titlestyle}{\ifxetex\fontspec{Times}\fi Linköpings
+     universitet\\
+   SE-581 83 Linköping, Sweden
+   }{}{\ifxetex\fontspec{Times}\fi Linköpings universitet\\
+   581 83 Linköping}
+   \makeoddfoot{titlestyle}{\ifxetex\fontspec{Times}\fi Linköpings
+     universitet\\
+   SE-581 83 Linköping, Sweden
+   }{}{\ifxetex\fontspec{Times}\fi Linköpings universitet\\
+   581 83 Linköping}
+   \thispagestyle{titlestyle}
+    {\centering
+      \ifxetex\fontspec{Times}\fi
+      \fontsize{27pt}{27pt}\selectfont
+      \@department\\
+      \fontsize{18pt}{18pt}\selectfont
+      \@departmentenglish\\[2\baselineskip]
+      Examensarbete
+      \\[\baselineskip]
+      \fontsize{24pt}{24pt}\selectfont{\bfseries\swedishenglish{\@titleswedish}{\@titleenglish}}
+      \\[\baselineskip]
+      \fontsize{12pt}{12pt}\selectfont\swedishenglish{av}{by}
+      \\[1.5\baselineskip]
+      \fontsize{24pt}{24pt}\selectfont{\bfseries\@author}
+      \vfill
+      \fontsize{18pt}{18pt}\selectfont\isrn
+      \vfill
+      \@dateofpublication
+      \vfill
+      \centering{\includegraphics[width=1.1\textwidth]{titelsid-sv}}
+      \\[.5\baselineskip]
     }
-  }
-
-
-% \renewcommand{\maketitle}{
-%    \copypagestyle{titlestyle}{plain}
-%    \makeevenfoot{titlestyle}{\ifxetex\fontspec{Times}\fi Linköpings
-%      universitet\\
-%    SE-581 83 Linköping, Sweden
-%    }{}{\ifxetex\fontspec{Times}\fi Linköpings universitet\\
-%    581 83 Linköping}
-%    \makeoddfoot{titlestyle}{\ifxetex\fontspec{Times}\fi Linköpings
-%      universitet\\
-%    SE-581 83 Linköping, Sweden
-%    }{}{\ifxetex\fontspec{Times}\fi Linköpings universitet\\
-%    581 83 Linköping}
-%    \thispagestyle{titlestyle}
-%     {\centering
-%       \ifxetex\fontspec{Times}\fi
-%       \fontsize{27pt}{27pt}\selectfont
-%       \@department\\
-%       \fontsize{18pt}{18pt}\selectfont
-%       \@departmentenglish\\[2\baselineskip]
-%       Examensarbete
-%       \\[\baselineskip]
-%       \fontsize{24pt}{24pt}\selectfont{\bfseries\swedishenglish{\@titleswedish}{\@titleenglish}}
-%       \\[\baselineskip]
-%       \fontsize{12pt}{12pt}\selectfont\swedishenglish{av}{by}
-%       \\[1.5\baselineskip]
-%       \fontsize{24pt}{24pt}\selectfont{\bfseries\@author}
-%       \vfill
-%       \fontsize{18pt}{18pt}\selectfont\isrn
-%       \vfill
-%       \@dateofpublication
-%       \vfill
-%       \centering{\includegraphics[width=1.1\textwidth]{titelsid-sv}}
-%       \\[.5\baselineskip]
-%     }
-% }
+}
 \else
 \renewcommand{\maketitle}{
   {\center
@@ -724,49 +612,33 @@
   \clearpage}
 
 % Intro page for MSC theses
-\ifstudent
+\ifmsc
 \newcommand{\makeinsidepage}{
   \thispagestyle{empty}
-  {\ifxetex\fontspec{Calibri}\fi\selectfont
-
-\vspace*{2cm}
- \section*{Upphovsrätt}
-\label{sec:upphovsratt}
-
-Detta dokument hålls tillgängligt på Internet – eller dess framtida ersättare – under 25 år från
-publiceringsdatum under förutsättning att inga extraordinära omständigheter uppstår.
-Tillgång till dokumentet innebär tillstånd för var och en att läsa, ladda ner, skriva ut enstaka kopior för
-enskilt bruk och att använda det oförändrat för ickekommersiell forskning och för undervisning.
-Överföring av upphovsrätten vid en senare tidpunkt kan inte upphäva detta tillstånd. All annan
-användning av dokumentet kräver upphovsmannens medgivande. För att garantera äktheten, säkerheten
-och tillgängligheten finns lösningar av teknisk och administrativ art.
-Upphovsmannens ideella rätt innefattar rätt att bli nämnd som upphovsman i den omfattning som god
-sed kräver vid användning av dokumentet på ovan beskrivna sätt samt skydd mot att dokumentet ändras
-eller presenteras i sådan form eller i sådant sammanhang som är kränkande för upphovsmannenslitterära
-eller konstnärliga anseende eller egenart.
-För ytterligare information om Linköping University Electronic Press se förlagets hemsida
-\href{http://www.ep.liu.se/}{http://www.ep.liu.se/}.
-\vspace*{2cm}
-\section*{Copyright}
-\label{sec:copyright}
-
-The publishers will keep this document online on the Internet – or its possible replacement – for a period
-of 25 years starting from the date of publication barring exceptional circumstances.
-The online availability of the document implies permanent permission for anyone to read, to
-download, or to print out single copies for his/hers own use and to use it unchanged for non-commercial
-research and educational purpose. Subsequent transfers of copyright cannot revoke this permission. All
-other uses of the document are conditional upon the consent of the copyright owner. The publisher has
-taken technical and administrative measures to assure authenticity, security and accessibility.
-According to intellectual property law the author has the right to be mentioned when his/her work is
-accessed as described above and to be protected against infringement.
-For additional information about the Linköping University Electronic Press and its procedures for
-publication and for assurance of document integrity, please refer to its www home page:
-\href{http://www.ep.liu.se/}{http://www.ep.liu.se/}.
-
-\vfill{}
-\copyright{} \parbox{\textwidth}{Ola Leifler\\
-  Alexander Sanner}
-\vfill{}
+  {\ifxetex\fontspec{Times}\fi\selectfont
+  \setlength{\unitlength}{1mm}
+  \begin{picture}(170,20)(20,-20)
+    \put(0,5){Linköpings universitet}
+    \put(0,0){\@department}
+  \end{picture}
+  {\centering\fontsize{18pt}{18pt}\selectfont
+ 
+Examensarbete
+\vfill
+\fontsize{24pt}{24pt}\selectfont{\bfseries\swedishenglish{\@titleswedish}{\@titleenglish}}
+\\[\baselineskip]
+\fontsize{12pt}{12pt}\selectfont\swedishenglish{av}{by}
+\\[1.5\baselineskip]
+\fontsize{24pt}{24pt}\selectfont{\bfseries\@author}
+\vfill
+\fontsize{18pt}{18pt}\selectfont\isrn
+\vfill
+\hfill\@dateofpublication\hfill
+}
+\vfill
+{\setlength{\parindent}{0pt}Handledare: \@supervisor\hfill\\
+Examinator: \@examiner}
+\vfill
 }
 }
 \fi
@@ -808,7 +680,7 @@ publication and for assurance of document integrity, please refer to its www hom
 % Tryckmaterialets storlek
 \setstocksize{297mm}{210mm}
 % 
-\ifstudent
+\ifmsc
 \settrimmedsize{290mm}{205mm}{*}
 \settypeblocksize{*}{34pc}{1.618} % golden ratio
 \else
@@ -826,19 +698,16 @@ publication and for assurance of document integrity, please refer to its www hom
   % Beskär runt om: Centrera tryckytan på pappret
   \settrims{0.5\trimtop}{0.5\trimedge}
   % Inner margin 2cm
-  \ifprinterfriendly
-  \renewcommand{\clearforchapter}{\cleartooddpage}
-  \fi
-\ifstudent
+\ifmsc
   \setlrmargins{*}{*}{1}
 \else
   \setlrmargins{*}{55pt}{*}
 \fi
   % Övre marginal 2cm, den undre automatiskt beräknad
-  \setulmargins{2cm}{*}{*}
+  \setulmargins{*}{*}{1.618}
   % Avståndet till sidhuvud och sidfot
- % \setheadfoot{\baselineskip}{1.5\baselineskip}
-%  \setheaderspaces{*}{*}{1.618}
+  \setheadfoot{\baselineskip}{1.5\baselineskip}
+  \setheaderspaces{*}{*}{1.618}
 }
 \resetlayout
 %
@@ -871,7 +740,7 @@ publication and for assurance of document integrity, please refer to its www hom
   \newpage
 \end{adjustwidth}
 
-  \ifstudent
+  \ifmsc
   \makeinsidepage
   \else
   \pagestyle{plain}
@@ -890,15 +759,16 @@ publication and for assurance of document integrity, please refer to its www hom
   \addcontentsline{toc}{chapter}{Acknowledgments}
   \@acknowledgments
   \clearpage
-  \tableofcontents
+  
+  %%ta bort spacing om krångel
+  \begin{spacing}{0.9}
+	\tableofcontents
+	\end{spacing}
   \clearpage{}
   \listoffigures
   \clearpage{}
-  \listoftables
-  %\cleartorecto% Does not work for some reason
-  \ifprinterfriendly
-  \cleartooddpage
-  \fi
+  %\listoftables
+  \cleartorecto%
   \pagenumbering{arabic}
   \pagestyle{ruled}
 }
@@ -998,7 +868,7 @@ publication and for assurance of document integrity, please refer to its www hom
     \put(7,114){\@author}
 %%% Enbart för lic
     \iflic{\put(34,178){\scriptsize $\times$}}\fi
-    \ifstudent{\put(34,174){\scriptsize $\times$}}\fi
+    \ifmsc{\put(34,174){\scriptsize $\times$}}\fi
 
 %%% Språk
     \swedishenglish{\put(0.98,178.25){\scriptsize $\times$}}{\put(1,174){\scriptsize $\times$}}
@@ -1007,6 +877,20 @@ publication and for assurance of document integrity, please refer to its www hom
   \end{picture}
   \pagestyle{plain}
 }
+
+\ifmsc
+\AtEndDocument{\cleartorecto%
+\thispagestyle{empty}
+\includepdf[pagecommand={\begin{tikzpicture}[remember picture,overlay]
+    \begin{scope}[shift={(current page.south west)},every node/.style={anchor=base west}]
+        % Grid to help find the positions (remove in final version)
+        %
+        \node at (32mm,34mm) {\ifxetex\fontspec{Times}\fi\fontsize{12pt}{12pt}\selectfont\@author};
+    \end{scope}
+\end{tikzpicture}}]{copyright_exjobbsrapport}
+%  \includepdf{rygg-sv}
+}
+\fi
 
 \iflic
 \AtEndDocument{\cleartorecto%

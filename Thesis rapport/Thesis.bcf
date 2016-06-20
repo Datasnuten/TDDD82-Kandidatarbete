@@ -85,7 +85,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -2015,7 +2015,7 @@
     <bcf:citekey order="38">spsperf</bcf:citekey>
     <bcf:citekey order="39">gpsdir</bcf:citekey>
     <bcf:citekey order="40">geoapi</bcf:citekey>
-    <bcf:citekey order="41">useofgeo</bcf:citekey>
+    <bcf:citekey order="41">usesofgeo</bcf:citekey>
     <bcf:citekey order="42">privacyissues</bcf:citekey>
     <bcf:citekey order="43">compassapi</bcf:citekey>
     <bcf:citekey order="44">locationstrategies</bcf:citekey>
