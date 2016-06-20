@@ -95,9 +95,10 @@ Here, \textit{deltaX} and \textit{deltaY} are the projected real world x- and y-
 With \textit{deltaX}, \textit{deltaY} and \textit{maxRadius} the relative distance on the display can be calculated. For calculating these relative distances, \textit{relX} and \textit{relY}, 
 we first have to calculate a point's distance to the center point. For this, Pythagoras theorem is used:
 
-\begin{align*}
+\begin{align}
+\label{eq:deltaZ}
 deltaZ = \sqrt{deltaX^2 + deltaY^2}.
-\end{align*}
+\end{align}
 
 With \textit{deltaZ} the relative placement for the point in the x- and y-axis compared to this distance can be calculated:
 
@@ -109,26 +110,29 @@ percentOfY = \frac{deltaY}{deltaZ}. \nonumber
 
 The two values,  \textit{percentOfX} and \textit{percentOfY},  represents how many percent of \textit{deltaZ} a point is placed in the x- and y-axis. With this the only thing left to do is to calculate a scaling factor, in order to rescale the point's position according to the interface's size without losing relativity: 
 
-\begin{align*}
+\begin{align}
+\label{eq:scalingFactor}
 \gamma = \frac{deltaZ}{maxRadius*\frac{40000}{360}}.
-\end{align*}
+\end{align}
 
 The scaling factor \textit{$\gamma$} is calculated by multiplying the \textit{maxRadius} with a constant that is used in the equirectangular formula to get the radius for x- and y-coordinates. Then we calculate how many percent of \textit{maxRadius} the distance \textit{deltaZ} is. With the scaling factor \textit{$\gamma$} a new \textit{deltaZ} can be calculated that is adapted to the interface's size:
 
-\begin{align*}
+\begin{align}
+\label{eq:newZ}
 relZ = \gamma \cdot Mapradius.
-\end{align*}
+\end{align}
 
 The value \textit{relZ} is the distance from the interface center point and where the point should be on the interface, and \textit{Mapradius} is the radius for the interface. To calculate how much to move the point in the x- and y-axis we only need to multiply \textit{relZ} with the percent we got from equation \ref{eq:percent}:
 
-\begin{align*}
+\begin{align}
+\label{eq:newXandY}
 relX = relZ \cdot percentOfX, \\
-relY = relZ \cdot perecntOfY.
-\end{align*}
+relY = relZ \cdot perecntOfY. \nonumber
+\end{align}
 
 What we basically have done is to make sure that scaling of the distances is adapted to our geographical map's boundaries. When we have the move values, \textit{relX} and \textit{relY}, the algorithm will move each object with that value from the center of the geo-map which all objects will have as its starting position. 
 
-When executing this algorithm for geographical object placement two checks are done on all the objects to be placed. One time for equation \ref{eq:center} and one time for equation \ref{eq:equiretangular}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed due to the nature of big O making the final time complexity for the algorithm $\mathcal{O}(n)$.
+When executing this algorithm for geographical object placement two checks are done on all the objects to be placed. One time for equation \ref{eq:maxandmin} and one time for equations \ref{eq:equiretangular}-\ref{eq:newXandY}. Since the number of objects is \textit{n} and we go through them two times the time to execute the algorithm is $\mathcal{O}(2n)$. The constant two can be removed due to the nature of big O making the final time complexity for the algorithm $\mathcal{O}(n)$.
 
 
 
@@ -149,6 +153,7 @@ The equation above is simpler and removes the \textit{cos} that was used previou
 
 To be able to accomplish switching between videos and getting a functional UI there are a lot of technical details to be explained in-order to get a full understanding of how the code works. Since we used the code from Krishnamoorthi et al. \cite{qualbranch} there was first a lot to understand before we could start doing anything. The problems we had and complications we encountered will be explained \textit{Chapter 5} while the focus in this section will be on \textbf{our} code and implementations. 
 
+\clearpage
 Our progression can be divided into different sections which will be explained in a general detail:
 
 \begin{enumerate}
