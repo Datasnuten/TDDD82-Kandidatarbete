@@ -76,7 +76,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.8}Issues with the Server}{25}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}Project Structure Improvements}{26}{section.5.9}
+\contentsline {section}{\numberline {5.9}Project Structure Improvements}{25}{section.5.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.10}Work in a Wider Context}{26}{section.5.10}
 \defcounter {refsection}{0}\relax 
