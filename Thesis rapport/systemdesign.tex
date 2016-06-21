@@ -112,7 +112,7 @@ The two values,  \textit{percentOfX} and \textit{percentOfY},  represents how ma
 
 \begin{align}
 \label{eq:scalingFactor}
-\gamma = \frac{deltaZ}{maxRadius*\frac{40000}{360}}.
+\gamma = \frac{deltaZ}{maxRadius \cdot \frac{40000}{360}}.
 \end{align}
 
 The scaling factor \textit{$\gamma$} is calculated by multiplying the \textit{maxRadius} with a constant that is used in the equirectangular formula to get the radius for x- and y-coordinates. Then we calculate how many percent of \textit{maxRadius} the distance \textit{deltaZ} is. With the scaling factor \textit{$\gamma$} a new \textit{deltaZ} can be calculated that is adapted to the interface's size:
