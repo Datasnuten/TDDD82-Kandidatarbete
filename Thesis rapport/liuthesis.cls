@@ -889,7 +889,9 @@ publication and for assurance of document integrity, please refer to its www hom
   \addcontentsline{toc}{chapter}{Acknowledgments}
   \@acknowledgments
   \clearpage
-  \tableofcontents
+  \thispagestyle{plain}
+    \tableofcontents
+    \thispagestyle{plain}
   \clearpage{}
   \listoffigures
   \clearpage{}
